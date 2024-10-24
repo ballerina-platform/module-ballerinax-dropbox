@@ -340,7 +340,11 @@ paths:
 
         Disables the access token used to authenticate the call.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Path-Root
           in: header
@@ -491,7 +495,11 @@ paths:
         on your team or who you imported. New contacts will be added when you
         share.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Path-Root
           in: header
@@ -1152,7 +1160,11 @@ paths:
         Get the template identifiers for a team. To get the schema of each
         template use `templates/get_for_team`.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       security:
         - bearerAuth: []
       responses:
@@ -1190,7 +1202,11 @@ paths:
         template use `templates/get_for_user`. This endpoint can't be called on
         a team member or admin's behalf.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Path-Root
           in: header
@@ -1443,7 +1459,11 @@ paths:
         Returns the total number of file requests owned by this user. Includes
         both open and closed file requests.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Path-Root
           in: header
@@ -1639,7 +1659,11 @@ paths:
 
         Delete all closed file requests owned by this user.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Path-Root
           in: header
@@ -2972,7 +2996,11 @@ paths:
 
         Download a file from a user's Dropbox.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -3056,7 +3084,11 @@ paths:
         The input cannot be a single file. Any single file must be less than 4GB
         in size.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -3124,7 +3156,11 @@ paths:
         files that cannot be downloaded directly  and whose
         `ExportResult.file_metadata` has `ExportInfo.export_as` populated.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -3398,7 +3434,11 @@ paths:
 
         Other formats will return an unsupported extension error.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -3678,7 +3718,11 @@ paths:
 
         Get a thumbnail for a file.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -5271,7 +5315,11 @@ paths:
         limit
         page](https://www.dropbox.com/developers/reference/data-transport-limit).
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -5367,7 +5415,11 @@ paths:
         limit
         page](https://www.dropbox.com/developers/reference/data-transport-limit).
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -5425,7 +5477,11 @@ paths:
         limit
         page](https://www.dropbox.com/developers/reference/data-transport-limit).
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -5741,7 +5797,11 @@ paths:
         limit
         page](https://www.dropbox.com/developers/reference/data-transport-limit).
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -6397,7 +6457,11 @@ paths:
 
         Download the shared link's file from a user's Dropbox.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Arg
           in: header
@@ -12557,7 +12621,11 @@ paths:
 
         Retrieves information about a team.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       security:
         - bearerAuth: []
       responses:
@@ -12608,7 +12676,11 @@ paths:
         Returns the member profile of the admin who generated the team access
         token used to make the call.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       responses:
         '200':
           description: OK
@@ -13121,7 +13193,11 @@ paths:
 
         Get information about the current user's account.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Path-Root
           in: header
@@ -13202,7 +13278,11 @@ paths:
 
         Get the space usage information for the current user's account.
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
       parameters:
         - name: Dropbox-API-Path-Root
           in: header
