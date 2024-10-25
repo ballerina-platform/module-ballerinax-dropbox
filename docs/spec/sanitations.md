@@ -10,7 +10,7 @@ The OpenAPI specification is obtained from https://www.postman.com/dropbox-api/d
 These changes are done in order to improve the overall usability, and as workarounds for some known language limitations.
 
 [//]: # (TODO: Add sanitation details)
-1. Add content-type and schema to each empty content
+1. Add a content type and schema to each empty content in the request body.
 2. 
 3. 
 
