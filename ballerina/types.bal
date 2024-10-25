@@ -19,174 +19,1507 @@
 
 import ballerina/http;
 
-# Represents the Headers record for the operation: post2FilesCopy_referenceGet
-public type Post2FilesCopy_referenceGetHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: createFolderBatch
+public type CreateFolderBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesTemplatesRemove_for_team
-public type Post2File_propertiesTemplatesRemove_for_teamHeaders record {
-    string? Content\-Type?;
+public type finish_batch_check_body record {
+    string async_job_id?;
 };
 
-# Represents the Headers record for the operation: post2UsersGet_account
-public type Post2UsersGet_accountHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_31_file_lock_info record {
+    string created?;
+    boolean is_lockholder?;
+    string lockholder_name?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersRemoveJob_statusGet
-public type Post2TeamMembersRemoveJob_statusGetHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: checkRemoveMemberJobStatus
+public type CheckRemoveMemberJobStatusHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2SharingUnshare_folder
-public type Post2SharingUnshare_folderHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: listContinue
+public type ListContinueHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2TeamLegal_holdsRelease_policy
-public type Post2TeamLegal_holdsRelease_policyHeaders record {
-    string? Content\-Type?;
+public type '2sharinglist_file_membersbatch_result_members_platform_type record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2SharingRelinquish_file_membership
-public type Post2SharingRelinquish_file_membershipHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_15_metadata_sharing_info record {
+    boolean no_access?;
+    string parent_shared_folder_id?;
+    boolean read_only?;
+    boolean traverse_only?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_file_membersContinue
-public type Post2SharingList_file_membersContinueHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_30_matches record {
+    inline_response_200_30_metadata metadata?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_file_members
-public type Post2SharingList_file_membersHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type list_folder_longpoll_body record {
+    string cursor?;
+    decimal timeout?;
 };
 
-# Represents the Headers record for the operation: post2TeamTeam_folderActivate
-public type Post2TeamTeam_folderActivateHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_73_event_category record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2TeamLegal_holdsList_held_revisions
-public type Post2TeamLegal_holdsList_held_revisionsHeaders record {
-    string? Content\-Type?;
+public type '2sharinglist_file_membersbatch_result_members_invitee record {
+    string \.tag?;
+    string email?;
 };
 
-# Represents the Headers record for the operation: post2SharingRevoke_shared_link
-public type Post2SharingRevoke_shared_linkHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_39_team_member_info record {
+    string display_name?;
+    string member_id?;
+    '2sharingget_file_metadatabatch_result_owner_team team_info?;
 };
 
-# Represents the Headers record for the operation: post2FilesUpload
-public type Post2FilesUploadHeaders record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type groups_create_body record {
+    boolean add_creator_as_owner?;
+    string group_external_id?;
+    string group_name?;
 };
 
-# Represents the Headers record for the operation: post2SharingRemove_file_member_2
-public type Post2SharingRemove_file_member_2Headers record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type legal_holds_update_policy_body record {
+    string id?;
+    string[] members?;
 };
 
-# Represents the Headers record for the operation: post2UsersFeaturesGet_values
-public type Post2UsersFeaturesGet_valuesHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_21_metadata record {
+    string client_modified?;
+    string content_hash?;
+    inline_response_200_31_file_lock_info file_lock_info?;
+    boolean has_explicit_shared_members?;
+    string id?;
+    boolean is_downloadable?;
+    string name?;
+    string path_display?;
+    string path_lower?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+    string rev?;
+    string server_modified?;
+    inline_response_200_31_sharing_info sharing_info?;
+    decimal size?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesPropertiesAdd
-public type Post2File_propertiesPropertiesAddHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type delete_batch_check_body record {
+    string async_job_id?;
 };
 
-# Represents the Headers record for the operation: post2SharingShare_folder
-public type Post2SharingShare_folderHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_73_path record {
+    string contextual?;
+    inline_response_200_73_path_namespace_relative namespace_relative?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersGet_info
-public type Post2TeamMembersGet_infoHeaders record {
-    string? Content\-Type?;
+public type '2teamgroupsget_info_profile_secondary_emails record {
+    string email?;
+    boolean is_verified?;
 };
 
-# Represents the Headers record for the operation: post2TeamLinked_appsList_member_linked_apps
-public type Post2TeamLinked_appsList_member_linked_appsHeaders record {
-    string? Content\-Type?;
+public type '2filesupload_sessionfinish_batch_cursor record {
+    decimal offset?;
+    string session_id?;
 };
 
-# Represents the Headers record for the operation: post2SharingGet_folder_metadata
-public type Post2SharingGet_folder_metadataHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type member_space_limits_set_custom_quota_body record {
+    '2teammember_space_limitsset_custom_quota_users_and_quotas[] users_and_quotas?;
 };
 
-# Represents the Headers record for the operation: post2SharingGet_file_metadataBatch
-public type Post2SharingGet_file_metadataBatchHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: moveBatch
+public type MoveBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2FilesCreate_folder_batch
-public type Post2FilesCreate_folder_batchHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type sharing_list_folders_body record {
+    anydata[] actions?;
+    decimal 'limit?;
 };
 
-# Represents the Headers record for the operation: post2TeamDevicesList_members_devices
-public type Post2TeamDevicesList_members_devicesHeaders record {
-    string? Content\-Type?;
+public type job_status_get_body_1 record {
+    string async_job_id?;
 };
 
-# Represents the Headers record for the operation: post2UsersGet_space_usage
-public type Post2UsersGet_space_usageHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type job_status_get_body_2 record {
+    string async_job_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamNamespacesList
-public type Post2TeamNamespacesListHeaders record {
-    string? Content\-Type?;
+public type sharing_remove_folder_member_body record {
+    boolean leave_a_copy?;
+    '2sharingadd_file_member_members member?;
+    string shared_folder_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamMember_space_limitsExcluded_usersRemove
-public type Post2TeamMember_space_limitsExcluded_usersRemoveHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: getSharedLinkFile
+public type GetSharedLinkFileHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type files_search_v2_body record {
+    boolean include_highlights?;
+    string query?;
+};
+
+# Represents the Headers record for the operation: setProfilePhoto
+public type SetProfilePhotoHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type templates_remove_for_team_body record {
+    string template_id?;
+};
+
+public type '2file_requestsupdate_deadline record {
+    string \.tag?;
+    string allow_late_uploads?;
+    string deadline?;
+};
+
+public type file_requests_get_body record {
+    string id?;
+};
+
+public type templates_update_for_user_body record {
+    '2file_propertiestemplatesadd_for_team_fields[] add_fields?;
+    string description?;
+    string name?;
+    string template_id?;
+};
+
+public type inline_response_200_77_team_sharing_policies_shared_link_create_policy record {
+    string \.tag?;
+};
+
+public type team_folder_permanently_delete_body record {
+    string team_folder_id?;
+};
+
+public type files_list_folder_body record {
+    boolean include_deleted?;
+    boolean include_has_explicit_shared_members?;
+    boolean include_media_info?;
+    boolean include_mounted_folders?;
+    boolean include_non_downloadable_files?;
+    string path?;
+    boolean recursive?;
+};
+
+public type sharing_list_shared_links_body record {
+    string cursor?;
+};
+
+public type templates_update_for_team_body record {
+    '2file_propertiestemplatesadd_for_team_fields[] add_fields?;
+    string description?;
+    string name?;
+    string template_id?;
+};
+
+# Represents the Headers record for the operation: propertiesRemove
+public type PropertiesRemoveHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type '2sharinglist_file_membersbatch_result_members_invitees record {
+    '2sharingget_file_metadatabatch_result_access_type access_type?;
+    '2sharinglist_file_membersbatch_result_members_invitee invitee?;
+    boolean is_inherited?;
+    anydata[] permissions?;
+};
+
+public type templates_remove_for_user_body record {
+    string template_id?;
+};
+
+public type list_folders_continue_body record {
+    string cursor?;
+};
+
+# Provides settings related to HTTP/1.x protocol.
+public type ClientHttp1Settings record {|
+    # Specifies whether to reuse a connection for multiple requests
+    http:KeepAlive keepAlive = http:KEEPALIVE_AUTO;
+    # The chunking behaviour of the request
+    http:Chunking chunking = http:CHUNKING_AUTO;
+    # Proxy server related options
+    ProxyConfig proxy?;
+|};
+
+public type '2teammembersadd_new_members record {
+    string member_email?;
+    string member_external_id?;
+    string member_given_name?;
+    string member_surname?;
+    string role?;
+    boolean send_welcome_email?;
+};
+
+public type inline_response_200_42_users record {
+    '2sharingget_file_metadatabatch_result_policy_acl_update_policy access_type?;
+    boolean is_inherited?;
+    anydata[] permissions?;
+    '2sharinglist_file_membersbatch_result_members_user user?;
+};
+
+# Represents the Headers record for the operation: getTemporaryLink
+public type GetTemporaryLinkHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type sharing_update_folder_member_body record {
+    string access_level?;
+    '2sharingadd_file_member_members member?;
+    string shared_folder_id?;
+};
+
+public type '2file_propertiespropertiesadd_property_groups record {
+    '2file_propertiespropertiesadd_fields[] fields?;
+    string template_id?;
+};
+
+# Represents the Headers record for the operation: getThumbnailBatch
+public type GetThumbnailBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: listFileMembersContinue
+public type ListFileMembersContinueHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_62_results record {
+    string \.tag?;
+    '2teamgroupsget_info_profile_secondary_emails success?;
+    string unavailable?;
+};
+
+# Represents the Headers record for the operation: getTemporaryUploadLink
+public type GetTemporaryUploadLinkHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type '2sharingget_file_metadatabatch_result_policy_acl_update_policy record {
+    string \.tag?;
+};
+
+public type file_requests_update_body record {
+    '2file_requestsupdate_deadline deadline?;
+    string destination?;
+    string id?;
+    boolean open?;
+    string title?;
+};
+
+public type secondary_emails_add_body record {
+    '2teammemberssecondary_emailsadd_new_secondary_emails[] new_secondary_emails?;
+};
+
+public type sharing_add_folder_member_body record {
+    string custom_message?;
+    '2sharingadd_folder_member_members[] members?;
+    boolean quiet?;
+    string shared_folder_id?;
+};
+
+# Represents the Headers record for the operation: listMountableFoldersContinue
+public type ListMountableFoldersContinueHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: permanentlyDelete
+public type PermanentlyDeleteHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type get_events_continue_body record {
+    string cursor?;
+};
+
+public type team_folder_list_body record {
+    decimal 'limit?;
+};
+
+public type list_folder_continue_body record {
+    string cursor?;
+};
+
+# Represents the Headers record for the operation: listMountableFolders
+public type ListMountableFoldersHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type sharing_get_file_metadata_body record {
+    anydata[] actions?;
+    string file?;
+};
+
+# Represents the Headers record for the operation: listFolders
+public type ListFoldersHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type file_requests_delete_body record {
+    string[] ids?;
+};
+
+public type members_set_profile_body record {
+    string new_email?;
+    string new_surname?;
+    members_send_welcome_email_body user?;
+};
+
+public type inline_response_200_73_origin_geo_location record {
+    string city?;
+    string country?;
+    string ip_address?;
+    string region?;
+};
+
+# Represents the Headers record for the operation: transferFolder
+public type TransferFolderHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type contacts_delete_manual_contacts_batch_body record {
+    string[] email_addresses?;
+};
+
+public type '2sharingget_file_metadatabatch_result_policy_resolved_member_policy record {
+    string \.tag?;
+};
+
+public type files_get_temporary_link_body record {
+    string path?;
+};
+
+public type '2teamteam_folderupdate_sync_settings_content_sync_settings record {
+    string id?;
+    string sync_setting?;
+};
+
+public type inline_response_200_74_paper_as_files record {
+    string \.tag?;
+    boolean enabled?;
+};
+
+public type '2sharingmodify_shared_link_settings_settings record {
+    string access?;
+    string audience?;
+    string requested_visibility?;
+};
+
+public type files_save_url_body record {
+    string path?;
+    string url?;
+};
+
+public type archive_check_body record {
+    string async_job_id?;
+};
+
+public type '2teamgroupsmembersadd_members record {
+    string access_type?;
+    '2teamgroupsmembersadd_user user?;
+};
+
+public type '2teammembersget_info_role record {
+    string \.tag?;
+};
+
+# Represents the Headers record for the operation: listFoldersContinue
+public type ListFoldersContinueHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type excluded_users_list_body record {
+    decimal 'limit?;
+};
+
+# Represents the Headers record for the operation: getCurrentAccount
+public type GetCurrentAccountHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type member_space_limits_remove_custom_quota_body record {
+    '2teamgroupsmembersadd_user[] users?;
+};
+
+# Represents the Headers record for the operation: propertiesUpdate
+public type PropertiesUpdateHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type list_continue_body record {
+    string cursor?;
+};
+
+public type sharing_get_folder_metadata_body record {
+    anydata[] actions?;
+    string shared_folder_id?;
+};
+
+public type files_get_thumbnail_batch_body record {
+    '2filesget_thumbnail_batch_entries[] entries?;
+};
+
+public type files_create_folder_v2_body record {
+    boolean autorename?;
+    string path?;
+};
+
+# Represents the Headers record for the operation: addFolderMember
+public type AddFolderMemberHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_77_account_type record {
+    string \.tag?;
+};
+
+public type inline_response_200_19_entries record {
+    string \.tag?;
+    inline_response_200_19_lock 'lock?;
+    inline_response_200_30_metadata_metadata metadata?;
+};
+
+# Represents the Headers record for the operation: checkJobStatus
+public type CheckJobStatusHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_66_namespace_type record {
+    string \.tag?;
+};
+
+public type members_suspend_body record {
+    members_send_welcome_email_body user?;
+    boolean wipe_data?;
+};
+
+public type '2usersfeaturesget_values_features record {
+    string \.tag?;
+};
+
+# Represents the Headers record for the operation: propertiesSearch
+public type PropertiesSearchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type legal_holds_create_policy_body record {
+    string end_date?;
+    string[] members?;
+    string name?;
+    string start_date?;
+};
+
+public type '2filesupload_sessionfinish_batch_entries record {
+    '2filesget_temporary_upload_link_commit_info 'commit?;
+    '2filesupload_sessionfinish_batch_cursor cursor?;
+};
+
+# Represents the Headers record for the operation: move
+public type MoveHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_44_entries record {
+    '2sharingget_file_metadatabatch_result_access_type access_type?;
+    string id?;
+    string name?;
+    string[] owner_display_names?;
+    '2sharingget_file_metadatabatch_result_owner_team owner_team?;
+    string path_display?;
+    string path_lower?;
+    anydata[] permissions?;
+    '2sharingget_file_metadatabatch_result_policy policy?;
+    string preview_url?;
+    string time_invited?;
+};
+
+public type sharing_relinquish_folder_membership_body record {
+    boolean leave_a_copy?;
+    string shared_folder_id?;
+};
+
+public type '2filesget_thumbnail_batch_entries record {
+    string format?;
+    string mode?;
+    string path?;
+    string size?;
+};
+
+# Represents the Headers record for the operation: getAccountBatch
+public type GetAccountBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type members_add_body record {
+    groups_delete_body group?;
+    '2teamgroupsmembersadd_members[] members?;
+    boolean return_members?;
+};
+
+public type inline_response_200_73_actor_user_team record {
+    string display_name?;
+};
+
+public type templates_get_for_team_body record {
+    string template_id?;
+};
+
+# Represents the Headers record for the operation: deleteBatch
+public type DeleteBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: unmountFolder
+public type UnmountFolderHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_5_type record {
+    string \.tag?;
+};
+
+public type files_get_file_lock_batch_body record {
+    '2filesget_file_lock_batch_entries[] entries?;
+};
+
+public type files_restore_body record {
+    string path?;
+    string rev?;
+};
+
+# Represents the Headers record for the operation: propertiesAdd
+public type PropertiesAddHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: revokeSharedLink
+public type RevokeSharedLinkHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: copyReferenceGet
+public type CopyReferenceGetHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type namespaces_list_body record {
+    decimal 'limit?;
+};
+
+# Represents the Headers record for the operation: listReceivedFiles
+public type ListReceivedFilesHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type groups_update_body record {
+    groups_delete_body group?;
+    string new_group_external_id?;
+    string new_group_management_type?;
+    string new_group_name?;
+    boolean return_members?;
+};
+
+public type inline_response_200_54_entries record {
+    string author_email?;
+    string author_member_id?;
+    '2teamgroupsget_info_profile_status author_member_status?;
+    string content_hash?;
+    string file_type?;
+    string new_filename?;
+    string original_file_path?;
+    string original_revision_id?;
+    string server_modified?;
+    decimal size?;
+};
+
+public type team_folder_activate_body record {
+    string team_folder_id?;
+};
+
+public type members_add_body_1 record {
+    boolean force_async?;
+    '2teammembersadd_new_members[] new_members?;
+};
+
+# Represents the Headers record for the operation: templatesGetForUser
+public type TemplatesGetForUserHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type '2teammemberssecondary_emailsadd_new_secondary_emails record {
+    string[] secondary_emails?;
+    '2teamgroupsmembersadd_user user?;
+};
+
+public type sharing_list_received_files_body record {
+    anydata[] actions?;
+    decimal 'limit?;
+};
+
+public type legal_holds_get_policy_body record {
+    string id?;
+};
+
+# Represents the Headers record for the operation: lockFileBatch
+public type LockFileBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_68_sync_setting record {
+    string \.tag?;
+};
+
+public type '2sharingadd_folder_member_member record {
+    string \.tag?;
+    string dropbox_id?;
+    string email?;
+};
+
+public type inline_response_200_64_results_1 record {
+    string \.tag?;
+    inline_response_200_64_results[] results?;
+    members_send_welcome_email_body user?;
+};
+
+public type inline_response_200_31_entries record {
+    string \.tag?;
+    string client_modified?;
+    string content_hash?;
+    inline_response_200_31_file_lock_info file_lock_info?;
+    boolean has_explicit_shared_members?;
+    string id?;
+    boolean is_downloadable?;
+    string name?;
+    string path_display?;
+    string path_lower?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+    string rev?;
+    string server_modified?;
+    inline_response_200_31_sharing_info sharing_info?;
+    decimal size?;
+};
+
+# Represents the Headers record for the operation: getFileMetadataBatch
+public type GetFileMetadataBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: featuresGetValues1
+public type FeaturesGetValues1Headers record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: copyReferenceSave
+public type CopyReferenceSaveHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: templatesUpdateForUser
+public type TemplatesUpdateForUserHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_25_entries record {
+    string \.tag?;
+    string client_modified?;
+    string content_hash?;
+    inline_response_200_31_file_lock_info file_lock_info?;
+    boolean has_explicit_shared_members?;
+    string id?;
+    boolean is_downloadable?;
+    string name?;
+    string path_display?;
+    string path_lower?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+    string rev?;
+    string server_modified?;
+    inline_response_200_25_sharing_info sharing_info?;
+    decimal size?;
+};
+
+public type list_mountable_folders_continue_body record {
+    string cursor?;
+};
+
+public type search_continue_body record {
+    string cursor?;
+};
+
+public type member_space_limits_get_custom_quota_body record {
+    '2teamgroupsmembersadd_user[] users?;
+};
+
+public type legal_holds_list_policies_body record {
+    boolean include_released?;
+};
+
+public type '2filesget_temporary_upload_link_commit_info record {
+    boolean autorename?;
+    string mode?;
+    boolean mute?;
+    string path?;
+    boolean strict_conflict?;
+};
+
+public type '2teamgroupsmembersadd_user record {
+    string \.tag?;
+    string team_member_id?;
+};
+
+public type inline_response_200_55_members record {
+    decimal permanently_deleted_users?;
+    string[] team_member_ids?;
+};
+
+public type inline_response_200_62_results_1 record {
+    string \.tag?;
+    members_send_welcome_email_body invalid_user?;
+    inline_response_200_62_results[] results?;
+    members_send_welcome_email_body user?;
+};
+
+# Represents the Headers record for the operation: getFileLockBatch
+public type GetFileLockBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: downloadZip
+public type DownloadZipHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: relinquishFolderMembership
+public type RelinquishFolderMembershipHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_9_deadline_allow_late_uploads record {
+    string \.tag?;
+};
+
+# Represents the Headers record for the operation: listFolderLongpoll
+public type ListFolderLongpollHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type '2accountset_profile_photo_photo record {
+    string \.tag?;
+    string base64_data?;
+};
+
+public type team_folder_create_body record {
+    string name?;
+    string sync_setting?;
+};
+
+# Represents the Headers record for the operation: tokenRevoke
+public type TokenRevokeHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type members_remove_body_1 record {
+    boolean keep_account?;
+    boolean retain_team_shares?;
+    '2teamgroupsmembersadd_user transfer_admin_id?;
+    '2teamgroupsmembersadd_user transfer_dest_id?;
+    '2teamgroupsmembersadd_user user?;
+    boolean wipe_data?;
+};
+
+public type '2teamgroupsget_info_access_type record {
+    string \.tag?;
+};
+
+public type secondary_emails_delete_body record {
+    '2teammemberssecondary_emailsadd_new_secondary_emails[] emails_to_delete?;
+};
+
+public type inline_response_200_73_user record {
+    string \.tag?;
+    string account_id?;
+    string display_name?;
+    string email?;
+    string member_external_id?;
+    inline_response_200_73_actor_user_team team?;
+    string team_member_id?;
+};
+
+# Represents the Headers record for the operation: list
+public type ListHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_35_link_metadata_action record {
+    string \.tag?;
+};
+
+public type inline_response_200_43_entries record {
+    inline_response_200_35_access_inheritance access_inheritance?;
+    '2sharingget_file_metadatabatch_result_policy_acl_update_policy access_type?;
+    boolean is_inside_team_folder?;
+    boolean is_team_folder?;
+    inline_response_200_35_link_metadata link_metadata?;
+    string name?;
+    string path_lower?;
+    anydata[] permissions?;
+    '2sharingget_file_metadatabatch_result_policy policy?;
+    string preview_url?;
+    string shared_folder_id?;
+    string time_invited?;
+};
+
+# Represents the Headers record for the operation: uploadSessionStart
+public type UploadSessionStartHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_73_origin_access_method record {
+    string \.tag?;
+    inline_response_200_73_origin_access_method_end_user end_user?;
+};
+
+public type '2teammember_space_limitsset_custom_quota_users_and_quotas record {
+    decimal quota_gb?;
+    '2teamgroupsmembersadd_user user?;
+};
+
+public type members_remove_body record {
+    groups_delete_body group?;
+    boolean return_members?;
+    '2teamgroupsmembersadd_user[] users?;
+};
+
+# Represents the Headers record for the operation: updateFileMember
+public type UpdateFileMemberHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_73_actor_user record {
+    string \.tag?;
+    string account_id?;
+    string display_name?;
+    string email?;
+    string member_external_id?;
+    inline_response_200_73_actor_user_team team?;
+    string team_member_id?;
+};
+
+# Represents the Headers record for the operation: listReceivedFilesContinue
+public type ListReceivedFilesContinueHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type sharing_unshare_file_body record {
+    string file?;
+};
+
+public type '2sharingget_file_metadatabatch_result_owner_team record {
+    string id?;
+    string name?;
+};
+
+public type inline_response_200_24_entries record {
+    string \.tag?;
+    inline_response_200_21_metadata metadata?;
+    string thumbnail?;
+};
+
+public type sharing_add_file_member_body record {
+    string access_level?;
+    boolean add_message_as_comment?;
+    string custom_message?;
+    string file?;
+    '2sharingadd_file_member_members[] members?;
+    boolean quiet?;
+};
+
+# Represents the Headers record for the operation: removeFileMember2
+public type RemoveFileMember2Headers record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type move_batch_check_v2_body record {
+    string async_job_id?;
+};
+
+public type sharing_modify_shared_link_settings_body record {
+    boolean remove_expiration?;
+    '2sharingmodify_shared_link_settings_settings settings?;
+    string url?;
+};
+
+public type inline_response_200_9 record {
+    inline_response_200_9_file_requests[] file_requests?;
+};
+
+public type inline_response_200_5 record {
+    string description?;
+    inline_response_200_5_fields[] fields?;
+    string name?;
+};
+
+public type inline_response_200_6 record {
+    string[] template_ids?;
+};
+
+public type inline_response_200_7 record {
+    decimal file_request_count?;
+};
+
+public type inline_response_200_8 record {
+    string created?;
+    inline_response_200_9_deadline deadline?;
+    string destination?;
+    decimal file_count?;
+    string id?;
+    boolean is_open?;
+    string title?;
+    string url?;
+};
+
+# Represents the Headers record for the operation: updateFolderPolicy
+public type UpdateFolderPolicyHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_77_root_info record {
+    string \.tag?;
+    string home_namespace_id?;
+    string root_namespace_id?;
+};
+
+public type inline_response_200_39_link_permissions record {
+    boolean can_revoke?;
+    inline_response_200_35_link_metadata_audience_options resolved_visibility?;
+    inline_response_200_39_link_permissions_revoke_failure_reason revoke_failure_reason?;
+};
+
+public type inline_response_200_68_content_sync_settings record {
+    string id?;
+    inline_response_200_68_sync_setting sync_setting?;
+};
+
+public type sharing_update_folder_policy_body record {
+    string acl_update_policy?;
+    string member_policy?;
+    string shared_folder_id?;
+    string shared_link_policy?;
+};
+
+public type properties_overwrite_body record {
+    string path?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+};
+
+# Represents the Headers record for the operation: modifySharedLinkSettings
+public type ModifySharedLinkSettingsHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type sharing_list_file_members_body record {
+    string file?;
+    boolean include_inherited?;
+    decimal 'limit?;
+};
+
+# Represents the Headers record for the operation: saveUrl
+public type SaveUrlHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type account_set_profile_photo_body record {
+    '2accountset_profile_photo_photo photo?;
+};
+
+public type sharing_update_file_member_body record {
+    string access_level?;
+    string file?;
+    '2sharingadd_file_member_members member?;
+};
+
+public type inline_response_200_1 record {
+    string oauth2_token?;
+};
+
+public type inline_response_200_2 record {
+    string result?;
+};
+
+public type inline_response_200_3 record {
+    inline_response_200_3_matches[] matches?;
+};
+
+public type files_copy_batch_v2_body record {
+    boolean autorename?;
+    '2filescopy_batch_v2_entries[] entries?;
+};
+
+public type inline_response_200_4 record {
+    string template_id?;
+};
+
+public type '2file_propertiespropertiesupdate_update_property_groups record {
+    '2file_propertiespropertiesadd_fields[] add_or_update_fields?;
+    anydata[] remove_fields?;
+    string template_id?;
+};
+
+public type members_set_profile_photo_body record {
+    '2accountset_profile_photo_photo photo?;
+    members_send_welcome_email_body user?;
+};
+
+public type inline_response_200_11 record {
+    inline_response_200_30_metadata_metadata metadata?;
+};
+
+public type inline_response_200_10 record {
+    string cursor?;
+    inline_response_200_9_file_requests[] file_requests?;
+    boolean has_more?;
+};
+
+public type members_recover_body record {
+    '2teamgroupsmembersadd_user user?;
+};
+
+public type inline_response_200_13 record {
+    string copy_reference?;
+    string expires?;
+    inline_response_200_30_metadata_metadata metadata?;
+};
+
+public type inline_response_200_12 record {
+    string \.tag?;
+    inline_response_200_12_entries[] entries?;
+};
+
+public type inline_response_200_19 record {
+    inline_response_200_19_entries[] entries?;
+};
+
+# Represents the Headers record for the operation: user
+public type UserHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_18 record {
+    inline_response_200_18_export_metadata export_metadata?;
+    inline_response_200_21_metadata file_metadata?;
+};
+
+public type inline_response_200_61_members record {
+    '2teammembersget_info_profile profile?;
+    '2teammembersget_info_role role?;
+};
+
+public type files_list_revisions_body record {
+    decimal 'limit?;
+    string mode?;
+    string path?;
+};
+
+public type inline_response_200_12_entries record {
+    string \.tag?;
+    inline_response_200_30_metadata_metadata success?;
+};
+
+public type inline_response_200_15 record {
+    string \.tag?;
+    inline_response_200_15_entries[] entries?;
+};
+
+# Represents the Headers record for the operation: createFolder
+public type CreateFolderHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_14 record {
+    inline_response_200_15_metadata metadata?;
+};
+
+public type inline_response_200_17 record {
+    string client_modified?;
+    string content_hash?;
+    inline_response_200_31_file_lock_info file_lock_info?;
+    boolean has_explicit_shared_members?;
+    string id?;
+    boolean is_downloadable?;
+    string name?;
+    string path_display?;
+    string path_lower?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+    string rev?;
+    string server_modified?;
+    inline_response_200_31_sharing_info sharing_info?;
+    decimal size?;
+};
+
+public type inline_response_200_16 record {
+    string \.tag?;
+    inline_response_200_16_entries[] entries?;
+};
+
+public type inline_response_200_35_access_inheritance record {
+    string \.tag?;
+};
+
+public type inline_response_200_63_results_1 record {
+    string \.tag?;
+    inline_response_200_63_results[] results?;
+    members_send_welcome_email_body user?;
+};
+
+# Represents the Headers record for the operation: deleteManualContacts
+public type DeleteManualContactsHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: count
+public type CountHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: search
+public type SearchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_78_allocation record {
+    string \.tag?;
+    decimal allocated?;
+};
+
+public type inline_response_200_25_sharing_info record {
+    string modified_by?;
+    boolean no_access?;
+    string parent_shared_folder_id?;
+    boolean read_only?;
+    boolean traverse_only?;
+};
+
+public type sharing_check_remove_member_job_status_body record {
+    string async_job_id?;
+};
+
+public type files_move_v2_body record {
+    boolean allow_ownership_transfer?;
+    boolean allow_shared_folder?;
+    boolean autorename?;
+    string from_path?;
+    string to_path?;
+};
+
+# Represents the Headers record for the operation: delete
+public type DeleteHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type '2teamgroupsget_info_profile_membership_type record {
+    string \.tag?;
+};
+
+# Represents the Headers record for the operation: unshareFolder
+public type UnshareFolderHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type '2sharingadd_file_member_members record {
+    string \.tag?;
+    string email?;
+};
+
+# Represents the Headers record for the operation: listFileMembers
+public type ListFileMembersHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_71_policies record {
+    inline_response_200_77_team_office_addin_policy emm_state?;
+    inline_response_200_77_team_office_addin_policy office_addin?;
+    inline_response_200_77_team_sharing_policies sharing?;
+};
+
+public type '2teamgroupsget_info_members record {
+    '2teamgroupsget_info_access_type access_type?;
+    '2teamgroupsget_info_profile profile?;
+};
+
+public type inline_response_200_33 record {
+    '2sharingadd_file_member_members member?;
+    '2sharingadd_file_member_result result?;
+};
+
+public type inline_response_200_32 record {
+    string session_id?;
+};
+
+public type inline_response_200_35 record {
+    string \.tag?;
+    inline_response_200_35_access_inheritance access_inheritance?;
+    '2sharingget_file_metadatabatch_result_policy_acl_update_policy access_type?;
+    boolean is_inside_team_folder?;
+    boolean is_team_folder?;
+    inline_response_200_35_link_metadata link_metadata?;
+    string name?;
+    string path_lower?;
+    anydata[] permissions?;
+    '2sharingget_file_metadatabatch_result_policy policy?;
+    string preview_url?;
+    string shared_folder_id?;
+    string time_invited?;
+};
+
+public type groups_delete_body record {
+    string \.tag?;
+    string group_id?;
+};
+
+public type inline_response_200_34 record {
+    string \.tag?;
+};
+
+public type members_get_info_body record {
+    '2teamgroupsmembersadd_user[] members?;
+};
+
+public type secondary_emails_resend_verification_emails_body record {
+    '2teammemberssecondary_emailsadd_new_secondary_emails[] emails_to_resend?;
+};
+
+public type inline_response_200_31 record {
+    string \.tag?;
+    inline_response_200_31_entries[] entries?;
+};
+
+public type inline_response_200_50_groups record {
+    string group_id?;
+    '2sharinglist_file_membersbatch_result_members_group_group_management_type group_management_type?;
+    string group_name?;
+    decimal member_count?;
+};
+
+public type inline_response_200_30 record {
+    boolean has_more?;
+    inline_response_200_30_matches[] matches?;
+};
+
+# Represents the Headers record for the operation: deleteBatchCheck
+public type DeleteBatchCheckHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type '2teammembersget_info_profile_secondary_emails record {
+    string email?;
+    boolean is_verified?;
+};
+
+public type sharing_check_job_status_body record {
+    string async_job_id?;
+};
+
+public type inline_response_200_73_details record {
+    string \.tag?;
+    inline_response_200_73_details_shared_content_access_level shared_content_access_level?;
+    string shared_content_link?;
+    inline_response_200_73_actor_user shared_content_owner?;
+};
+
+# Represents the Headers record for the operation: getSpaceUsage
+public type GetSpaceUsageHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_37 record {
+    string file?;
+    '2sharingget_file_metadatabatch_result result?;
+};
+
+public type team_folder_update_sync_settings_body record {
+    '2teamteam_folderupdate_sync_settings_content_sync_settings[] content_sync_settings?;
+    string sync_setting?;
+    string team_folder_id?;
+};
+
+# Represents the Headers record for the operation: shareFolder
+public type ShareFolderHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_36 record {
+    '2sharingget_file_metadatabatch_result_access_type access_type?;
+    string id?;
+    string name?;
+    string[] owner_display_names?;
+    '2sharingget_file_metadatabatch_result_owner_team owner_team?;
+    string path_display?;
+    string path_lower?;
+    anydata[] permissions?;
+    '2sharingget_file_metadatabatch_result_policy policy?;
+    string preview_url?;
+    string time_invited?;
+};
+
+public type inline_response_200_39 record {
+    string \.tag?;
+    string client_modified?;
+    string id?;
+    inline_response_200_39_link_permissions link_permissions?;
+    string name?;
+    string path_lower?;
+    string rev?;
+    string server_modified?;
+    decimal size?;
+    inline_response_200_39_team_member_info team_member_info?;
+    string url?;
+};
+
+public type inline_response_200_38 record {
+    inline_response_200_35_access_inheritance access_inheritance?;
+    '2sharingget_file_metadatabatch_result_policy_acl_update_policy access_type?;
+    boolean is_inside_team_folder?;
+    boolean is_team_folder?;
+    inline_response_200_35_link_metadata link_metadata?;
+    string name?;
+    string path_lower?;
+    anydata[] permissions?;
+    '2sharingget_file_metadatabatch_result_policy policy?;
+    string preview_url?;
+    string shared_folder_id?;
+    string time_invited?;
+};
+
+public type properties_remove_body record {
+    string path?;
+    string[] property_template_ids?;
+};
+
+public type inline_response_200_74_values record {
+    string \.tag?;
+    inline_response_200_74_paper_as_files paper_as_files?;
+};
+
+public type legal_holds_list_held_revisions_body record {
+    string id?;
+};
+
+public type files_create_folder_batch_body record {
+    boolean autorename?;
+    boolean force_async?;
+    string[] paths?;
+};
+
+# Represents the Headers record for the operation: setAccessInheritance
+public type SetAccessInheritanceHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type files_lock_file_batch_body record {
+    '2filesget_file_lock_batch_entries[] entries?;
+};
+
+public type '2sharinglist_file_membersbatch_result_members_access_type record {
+    string \.tag?;
+};
+
+public type groups_get_info_body record {
+    string \.tag?;
+    string[] group_ids?;
 };
 
 # Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
@@ -224,950 +1557,1432 @@ public type ConnectionConfig record {|
     boolean validation = true;
 |};
 
-# Represents the Headers record for the operation: post2FilesUnlock_file_batch
-public type Post2FilesUnlock_file_batchHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_22 record {
+    string link?;
 };
 
-# Represents the Headers record for the operation: post2File_requestsDelete_all_closed
-public type Post2File_requestsDelete_all_closedHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_21 record {
+    string link?;
+    inline_response_200_21_metadata metadata?;
 };
 
-# Represents the Headers record for the operation: post2FilesDelete_batchCheck
-public type Post2FilesDelete_batchCheckHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_24 record {
+    inline_response_200_24_entries[] entries?;
 };
 
-# Represents the Headers record for the operation: post2TeamMember_space_limitsExcluded_usersList
-public type Post2TeamMember_space_limitsExcluded_usersListHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_23 record {
+    inline_response_200_21_metadata file_metadata?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsGet_info
-public type Post2TeamGroupsGet_infoHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_20 record {
+    string \.tag?;
+    string client_modified?;
+    string content_hash?;
+    inline_response_200_31_file_lock_info file_lock_info?;
+    boolean has_explicit_shared_members?;
+    string id?;
+    boolean is_downloadable?;
+    string name?;
+    string path_display?;
+    string path_lower?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+    string rev?;
+    string server_modified?;
+    inline_response_200_31_sharing_info sharing_info?;
+    decimal size?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersMove_former_member_filesJob_statusCheck
-public type Post2TeamMembersMove_former_member_filesJob_statusCheckHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: create
+public type CreateHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2TeamReportsGet_activity
-public type Post2TeamReportsGet_activityHeaders record {
-    string? Content\-Type?;
+public type files_delete_batch_body record {
+    files_delete_v2_body[] entries?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_shared_links
-public type Post2SharingList_shared_linksHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_70_values record {
+    string \.tag?;
+    inline_response_200_70_has_team_shared_dropbox has_team_shared_dropbox?;
+    inline_response_200_70_upload_api_rate_limit upload_api_rate_limit?;
 };
 
-# Represents the Headers record for the operation: post2UsersGet_current_account
-public type Post2UsersGet_current_accountHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: delete1
+public type Delete1Headers record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2AuthTokenFrom_oauth1
-public type Post2AuthTokenFrom_oauth1Headers record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type '2sharinglist_file_membersbatch_result_members_group_group_management_type record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2FilesGet_temporary_upload_link
-public type Post2FilesGet_temporary_upload_linkHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_29 record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2TeamLegal_holdsList_policies
-public type Post2TeamLegal_holdsList_policiesHeaders record {
-    string? Content\-Type?;
+public type files_get_metadata_body record {
+    boolean include_deleted?;
+    boolean include_has_explicit_shared_members?;
+    boolean include_media_info?;
+    string path?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersSuspend
-public type Post2TeamMembersSuspendHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_26 record {
+    boolean changes?;
 };
 
-# Represents the Headers record for the operation: post2AccountSet_profile_photo
-public type Post2AccountSet_profile_photoHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_25 record {
+    string cursor?;
+    inline_response_200_25_entries[] entries?;
+    boolean has_more?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersSecondary_emailsResend_verification_emails
-public type Post2TeamMembersSecondary_emailsResend_verification_emailsHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_28 record {
+    string \.tag?;
+    string client_modified?;
+    string content_hash?;
+    inline_response_200_31_file_lock_info file_lock_info?;
+    boolean has_explicit_shared_members?;
+    string id?;
+    boolean is_downloadable?;
+    string name?;
+    string path_display?;
+    string path_lower?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+    string rev?;
+    string server_modified?;
+    inline_response_200_31_sharing_info sharing_info?;
+    decimal size?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_folders
-public type Post2SharingList_foldersHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_27 record {
+    inline_response_200_21_metadata[] entries?;
+    boolean is_deleted?;
 };
 
-# Represents the Headers record for the operation: post2SharingSet_access_inheritance
-public type Post2SharingSet_access_inheritanceHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_73_event_type record {
+    string \.tag?;
+    string description?;
 };
 
-# Represents the Headers record for the operation: post2FilesGet_temporary_link
-public type Post2FilesGet_temporary_linkHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type files_get_temporary_upload_link_body record {
+    '2filesget_temporary_upload_link_commit_info commit_info?;
+    decimal duration?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsMembersAdd
-public type Post2TeamGroupsMembersAddHeaders record {
-    string? Content\-Type?;
+public type '2teamfeaturesget_values_features record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2FilesCreate_folder_v2
-public type Post2FilesCreate_folder_v2Headers record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type members_delete_profile_photo_body record {
+    '2teamgroupsmembersadd_user user?;
 };
 
-# Represents the Headers record for the operation: post2FilesMove_v2
-public type Post2FilesMove_v2Headers record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_73_actor record {
+    string \.tag?;
+    inline_response_200_73_actor_user user?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersAdd
-public type Post2TeamMembersAddHeaders record {
-    string? Content\-Type?;
+public type sharing_get_shared_link_metadata_body record {
+    string path?;
+    string url?;
 };
 
-# Represents the Headers record for the operation: post2TeamMember_space_limitsGet_custom_quota
-public type Post2TeamMember_space_limitsGet_custom_quotaHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: upload
+public type UploadHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2SharingTransfer_folder
-public type Post2SharingTransfer_folderHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: download
+public type DownloadHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2TeamReportsGet_storage
-public type Post2TeamReportsGet_storageHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_55 record {
+    inline_response_200_55_policies[] policies?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsMembersList
-public type Post2TeamGroupsMembersListHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_54 record {
+    inline_response_200_54_entries[] entries?;
+    boolean has_more?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsMembersRemove
-public type Post2TeamGroupsMembersRemoveHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_57 record {
+    string cursor?;
+    boolean has_more?;
+    anydata[] users?;
 };
 
-# Represents the Headers record for the operation: post2TeamReportsGet_membership
-public type Post2TeamReportsGet_membershipHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_56 record {
+    '2sharingadd_file_member_result status?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsCreate
-public type Post2TeamGroupsCreateHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_51 record {
+    string async_job_id?;
+    inline_response_200_51_group_info group_info?;
 };
 
-# Represents the Headers record for the operation: post2FilesGet_preview
-public type Post2FilesGet_previewHeaders record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_50 record {
+    string cursor?;
+    inline_response_200_50_groups[] groups?;
+    boolean has_more?;
 };
 
-# Represents the Headers record for the operation: post2TeamTeam_folderListContinue
-public type Post2TeamTeam_folderListContinueHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_53 record {
+    string activation_time?;
+    string end_date?;
+    string id?;
+    inline_response_200_55_members members?;
+    string name?;
+    string start_date?;
+    '2teamgroupsget_info_profile_status status?;
 };
 
-# Represents the Headers record for the operation: post2TeamMember_space_limitsExcluded_usersAdd
-public type Post2TeamMember_space_limitsExcluded_usersAddHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_52 record {
+    string cursor?;
+    boolean has_more?;
+    anydata[] members?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsMembersSet_access_type
-public type Post2TeamGroupsMembersSet_access_typeHeaders record {
-    string? Content\-Type?;
+public type sharing_revoke_shared_link_body record {
+    string url?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesPropertiesOverwrite
-public type Post2File_propertiesPropertiesOverwriteHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: unshareFile
+public type UnshareFileHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2AuthTokenRevoke
-public type Post2AuthTokenRevokeHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_77_team record {
+    string id?;
+    string name?;
+    inline_response_200_77_team_office_addin_policy office_addin_policy?;
+    inline_response_200_77_team_sharing_policies sharing_policies?;
 };
 
-# Represents the Headers record for the operation: post2SharingUnshare_file
-public type Post2SharingUnshare_fileHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_59 record {
+    '2teammembersget_info_profile profile?;
+    '2teammembersget_info_role role?;
 };
 
-# Represents the Headers record for the operation: post2File_requestsList_v2
-public type Post2File_requestsList_v2Headers record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_58 record {
+    string \.tag?;
+    inline_response_200_58_complete[] complete?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersListContinue
-public type Post2TeamMembersListContinueHeaders record {
-    string? Content\-Type?;
+public type files_permanently_delete_body record {
+    string path?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersRecover
-public type Post2TeamMembersRecoverHeaders record {
-    string? Content\-Type?;
+public type '2sharingadd_file_member_result record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2TeamDevicesRevoke_device_session
-public type Post2TeamDevicesRevoke_device_sessionHeaders record {
-    string? Content\-Type?;
+public type list_folder_members_continue_body record {
+    string cursor?;
 };
 
-# Represents the Headers record for the operation: post2TeamMember_space_limitsExcluded_usersListContinue
-public type Post2TeamMember_space_limitsExcluded_usersListContinueHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_9_file_requests record {
+    string created?;
+    inline_response_200_9_deadline deadline?;
+    string destination?;
+    decimal file_count?;
+    string id?;
+    boolean is_open?;
+    string title?;
+    string url?;
 };
 
-# Represents the Headers record for the operation: post2TeamTeam_folderPermanently_delete
-public type Post2TeamTeam_folderPermanently_deleteHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: checkShareJobStatus
+public type CheckShareJobStatusHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsDelete
-public type Post2TeamGroupsDeleteHeaders record {
-    string? Content\-Type?;
+public type '2file_propertiespropertiessearch_queries record {
+    string logical_operator?;
+    '2file_propertiespropertiessearch_mode mode?;
+    string query?;
 };
 
-# Represents the Headers record for the operation: post2FilesPermanently_delete
-public type Post2FilesPermanently_deleteHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_60 record {
+    string \.tag?;
+    '2teammembersget_info_profile profile?;
+    '2teammembersget_info_role role?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsListContinue
-public type Post2TeamGroupsListContinueHeaders record {
-    string? Content\-Type?;
+public type team_log_get_events_body record {
+    string category?;
+    decimal 'limit?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesTemplatesList_for_user
-public type Post2File_propertiesTemplatesList_for_userHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_44 record {
+    string cursor?;
+    inline_response_200_44_entries[] entries?;
 };
 
-# Represents the Headers record for the operation: post2FilesCreate_folder_batchCheck
-public type Post2FilesCreate_folder_batchCheckHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_43 record {
+    string cursor?;
+    inline_response_200_43_entries[] entries?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesTemplatesUpdate_for_team
-public type Post2File_propertiesTemplatesUpdate_for_teamHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_46 record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2SharingModify_shared_link_settings
-public type Post2SharingModify_shared_link_settingsHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_45 record {
+    string cursor?;
+    boolean has_more?;
+    inline_response_200_45_links[] links?;
 };
 
-# Represents the Headers record for the operation: post2SharingGet_file_metadata
-public type Post2SharingGet_file_metadataHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type members_send_welcome_email_body record {
+    string \.tag?;
+    string team_member_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersRemove
-public type Post2TeamMembersRemoveHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_40 record {
+    '2sharinglist_file_membersbatch_result_members_groups[] groups?;
+    '2sharinglist_file_membersbatch_result_members_invitees[] invitees?;
+    '2sharinglist_file_membersbatch_result_members_users[] users?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersSecondary_emailsDelete
-public type Post2TeamMembersSecondary_emailsDeleteHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_42 record {
+    string cursor?;
+    '2sharinglist_file_membersbatch_result_members_groups[] groups?;
+    '2sharinglist_file_membersbatch_result_members_invitees[] invitees?;
+    inline_response_200_42_users[] users?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesPropertiesUpdate
-public type Post2File_propertiesPropertiesUpdateHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_41 record {
+    string file?;
+    '2sharinglist_file_membersbatch_result result?;
 };
 
-# Represents the Headers record for the operation: post2TeamLegal_holdsUpdate_policy
-public type Post2TeamLegal_holdsUpdate_policyHeaders record {
-    string? Content\-Type?;
+public type '2teamgroupsget_info_profile record {
+    string account_id?;
+    string email?;
+    boolean email_verified?;
+    string joined_on?;
+    '2teamgroupsget_info_profile_membership_type membership_type?;
+    '2teamgroupsget_info_profile_name name?;
+    string profile_photo_url?;
+    '2teamgroupsget_info_profile_secondary_emails[] secondary_emails?;
+    '2teamgroupsget_info_profile_status status?;
+    string team_member_id?;
 };
 
-# Represents the Headers record for the operation: post2FilesCopy_referenceSave
-public type Post2FilesCopy_referenceSaveHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_48 record {
+    decimal created?;
+    string group_id?;
+    '2sharinglist_file_membersbatch_result_members_group_group_management_type group_management_type?;
+    string group_name?;
+    decimal member_count?;
+    '2teamgroupsget_info_members[] members?;
 };
 
-# Represents the Headers record for the operation: post2FilesList_folderContinue
-public type Post2FilesList_folderContinueHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_47 record {
+    string \.tag?;
+    string async_job_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersSet_profile
-public type Post2TeamMembersSet_profileHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_49 record {
+    string \.tag?;
+    decimal created?;
+    string group_id?;
+    '2sharinglist_file_membersbatch_result_members_group_group_management_type group_management_type?;
+    string group_name?;
+    decimal member_count?;
+    '2teamgroupsget_info_members[] members?;
 };
 
-# Represents the Headers record for the operation: post2FilesGet_file_lock_batch
-public type Post2FilesGet_file_lock_batchHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type properties_search_body record {
+    '2file_propertiespropertiessearch_queries[] queries?;
+    string template_filter?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesTemplatesGet_for_team
-public type Post2File_propertiesTemplatesGet_for_teamHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_73_assets record {
+    string \.tag?;
+    string display_name?;
+    string file_id?;
+    decimal file_size?;
+    inline_response_200_73_path path?;
 };
 
-# Represents the Headers record for the operation: post2FilesList_folderLongpoll
-public type Post2FilesList_folderLongpollHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type file_requests_create_body record {
+    '2file_requestscreate_deadline deadline?;
+    string destination?;
+    boolean open?;
+    string title?;
 };
 
-# Represents the Headers record for the operation: post2FilesCopy_batch_v2
-public type Post2FilesCopy_batch_v2Headers record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_73_participants record {
+    string \.tag?;
+    inline_response_200_73_user user?;
 };
 
-# Represents the Headers record for the operation: post2SharingUpdate_folder_policy
-public type Post2SharingUpdate_folder_policyHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_77 record {
+    string account_id?;
+    inline_response_200_77_account_type account_type?;
+    string country?;
+    boolean disabled?;
+    string email?;
+    boolean email_verified?;
+    boolean is_paired?;
+    string locale?;
+    '2teamgroupsget_info_profile_name name?;
+    string referral_link?;
+    inline_response_200_77_root_info root_info?;
+    inline_response_200_77_team team?;
+    string team_member_id?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesTemplatesRemove_for_user
-public type Post2File_propertiesTemplatesRemove_for_userHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_76 record {
+    string account_id?;
+    boolean disabled?;
+    string email?;
+    boolean email_verified?;
+    boolean is_teammate?;
+    '2teamgroupsget_info_profile_name name?;
+    string profile_photo_url?;
 };
 
-# Represents the Headers record for the operation: post2Team_logGet_events
-public type Post2Team_logGet_eventsHeaders record {
-    string? Content\-Type?;
+public type '2sharinglist_file_membersbatch_result_members_users record {
+    '2sharingget_file_metadatabatch_result_policy_acl_update_policy access_type?;
+    boolean is_inherited?;
+    anydata[] permissions?;
+    '2sharinglist_file_membersbatch_result_members_platform_type platform_type?;
+    string time_last_seen?;
+    '2sharinglist_file_membersbatch_result_members_user user?;
 };
 
-# Provides settings related to HTTP/1.x protocol.
-public type ClientHttp1Settings record {|
-    # Specifies whether to reuse a connection for multiple requests
-    http:KeepAlive keepAlive = http:KEEPALIVE_AUTO;
-    # The chunking behaviour of the request
-    http:Chunking chunking = http:CHUNKING_AUTO;
-    # Proxy server related options
-    ProxyConfig proxy?;
-|};
+# Represents the Headers record for the operation: tokenFromOauth1
+public type TokenFromOauth1Headers record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_78 record {
+    inline_response_200_78_allocation allocation?;
+    decimal used?;
+};
+
+public type inline_response_200_73 record {
+    string cursor?;
+    inline_response_200_73_events[] events?;
+    boolean has_more?;
+};
+
+public type inline_response_200_72 record {
+    '2teammembersget_info_profile admin_profile?;
+};
+
+public type file_requests_list_v2_body record {
+    decimal 'limit?;
+};
+
+public type inline_response_200_75 record {
+    string account_id?;
+    boolean disabled?;
+    string email?;
+    boolean email_verified?;
+    boolean is_teammate?;
+    '2teamgroupsget_info_profile_name name?;
+    string profile_photo_url?;
+};
+
+public type inline_response_200_74 record {
+    inline_response_200_74_values[] values?;
+};
+
+public type inline_response_200_73_details_shared_content_access_level record {
+    string \.tag?;
+};
+
+# Represents the Headers record for the operation: propertiesSearchContinue
+public type PropertiesSearchContinueHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type members_unsuspend_body record {
+    members_send_welcome_email_body user?;
+};
+
+# Represents the Headers record for the operation: export
+public type ExportHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_51_group_info record {
+    decimal created?;
+    string group_id?;
+    '2sharinglist_file_membersbatch_result_members_group_group_management_type group_management_type?;
+    string group_name?;
+    decimal member_count?;
+    '2teamgroupsget_info_members[] members?;
+};
+
+public type users_get_account_body record {
+    string account_id?;
+};
+
+# Represents the Headers record for the operation: searchContinue
+public type SearchContinueHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: getFileMetadata
+public type GetFileMetadataHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type team_folder_get_info_body record {
+    string[] team_folder_ids?;
+};
+
+# Represents the Headers record for the operation: getMetadata
+public type GetMetadataHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type team_folder_rename_body record {
+    string name?;
+    string team_folder_id?;
+};
+
+public type inline_response_200_66 record {
+    string cursor?;
+    boolean has_more?;
+    inline_response_200_66_namespaces[] namespaces?;
+};
+
+public type inline_response_200_65 record {
+    '2teammembersget_info_role role?;
+    string team_member_id?;
+};
+
+public type inline_response_200_68 record {
+    string \.tag?;
+    inline_response_200_68_content_sync_settings[] content_sync_settings?;
+    boolean is_team_shared_dropbox?;
+    string name?;
+    '2teamgroupsget_info_profile_status status?;
+    inline_response_200_68_sync_setting sync_setting?;
+    string team_folder_id?;
+};
+
+public type inline_response_200_67 record {
+    inline_response_200_68_content_sync_settings[] content_sync_settings?;
+    boolean is_team_shared_dropbox?;
+    string name?;
+    '2teamgroupsget_info_profile_status status?;
+    inline_response_200_68_sync_setting sync_setting?;
+    string team_folder_id?;
+};
+
+public type inline_response_200_62 record {
+    inline_response_200_62_results_1[] results?;
+};
+
+public type inline_response_200_61 record {
+    string cursor?;
+    boolean has_more?;
+    inline_response_200_61_members[] members?;
+};
+
+public type sharing_list_mountable_folders_body record {
+    anydata[] actions?;
+    decimal 'limit?;
+};
+
+public type inline_response_200_64 record {
+    inline_response_200_64_results_1[] results?;
+};
+
+public type inline_response_200_63 record {
+    inline_response_200_63_results_1[] results?;
+};
+
+public type inline_response_200_70_upload_api_rate_limit record {
+    string \.tag?;
+    decimal 'limit?;
+};
+
+public type inline_response_200_69 record {
+    string cursor?;
+    boolean has_more?;
+    inline_response_200_69_team_folders[] team_folders?;
+};
+
+public type '2sharingget_file_metadatabatch_result_access_type record {
+    string \.tag?;
+};
+
+public type '2sharingget_file_metadatabatch_result_policy record {
+    '2sharingget_file_metadatabatch_result_policy_acl_update_policy acl_update_policy?;
+    '2sharingget_file_metadatabatch_result_policy_member_policy member_policy?;
+    '2sharingget_file_metadatabatch_result_policy_resolved_member_policy resolved_member_policy?;
+    '2sharingget_file_metadatabatch_result_policy_member_policy shared_link_policy?;
+};
+
+public type copy_reference_get_body record {
+    string path?;
+};
+
+public type inline_response_200_77_team_sharing_policies_shared_folder_join_policy record {
+    string \.tag?;
+};
+
+public type token_from_oauth1_body record {
+    string oauth1_token?;
+    string oauth1_token_secret?;
+};
+
+public type inline_response_200_71 record {
+    string name?;
+    decimal num_licensed_users?;
+    decimal num_provisioned_users?;
+    inline_response_200_71_policies policies?;
+    string team_id?;
+};
+
+public type inline_response_200_70 record {
+    inline_response_200_70_values[] values?;
+};
+
+public type save_url_check_job_status_body record {
+    string async_job_id?;
+};
+
+public type list_folder_get_latest_cursor_body record {
+    boolean include_deleted?;
+    boolean include_has_explicit_shared_members?;
+    boolean include_media_info?;
+    boolean include_mounted_folders?;
+    boolean include_non_downloadable_files?;
+    string path?;
+    boolean recursive?;
+};
+
+public type '2file_propertiestemplatesadd_for_team_fields record {
+    string description?;
+    string name?;
+    string 'type?;
+};
+
+public type '2filescopy_batch_v2_entries record {
+    string from_path?;
+    string to_path?;
+};
+
+public type job_status_get_body record {
+    string async_job_id?;
+};
+
+# Represents the Headers record for the operation: restore
+public type RestoreHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type groups_list_body record {
+    decimal 'limit?;
+};
+
+public type members_list_body_1 record {
+    boolean include_removed?;
+    decimal 'limit?;
+};
+
+public type inline_response_200_73_origin record {
+    inline_response_200_73_origin_access_method access_method?;
+    inline_response_200_73_origin_geo_location geo_location?;
+};
+
+# Represents the Headers record for the operation: getAccount
+public type GetAccountHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: deleteAllClosed
+public type DeleteAllClosedHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type '2sharinglist_file_membersbatch_result_members_groups record {
+    '2sharinglist_file_membersbatch_result_members_access_type access_type?;
+    '2sharinglist_file_membersbatch_result_members_group group?;
+    boolean is_inherited?;
+    anydata[] permissions?;
+};
+
+public type members_set_access_type_body record {
+    string access_type?;
+    groups_delete_body group?;
+    boolean return_members?;
+    '2teamgroupsmembersadd_user user?;
+};
+
+public type users_get_account_batch_body record {
+    string[] account_ids?;
+};
+
+public type legal_holds_release_policy_body record {
+    string id?;
+};
+
+public type templates_add_for_user_body record {
+    string description?;
+    '2file_propertiestemplatesadd_for_team_fields[] fields?;
+    string name?;
+};
+
+public type members_move_former_member_files_body record {
+    '2teamgroupsmembersadd_user transfer_admin_id?;
+    '2teamgroupsmembersadd_user transfer_dest_id?;
+    '2teamgroupsmembersadd_user user?;
+};
+
+public type '2sharinglist_file_membersbatch_result record {
+    string \.tag?;
+    decimal member_count?;
+    '2sharinglist_file_membersbatch_result_members members?;
+};
+
+public type sharing_unmount_folder_body record {
+    string shared_folder_id?;
+};
+
+public type properties_update_body record {
+    string path?;
+    '2file_propertiespropertiesupdate_update_property_groups[] update_property_groups?;
+};
+
+public type templates_add_for_team_body record {
+    string description?;
+    '2file_propertiestemplatesadd_for_team_fields[] fields?;
+    string name?;
+};
+
+# Represents the Headers record for the operation: templatesAddForUser
+public type TemplatesAddForUserHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type sharing_set_access_inheritance_body record {
+    string access_inheritance?;
+    string shared_folder_id?;
+};
+
+public type members_list_body record {
+    groups_delete_body group?;
+    decimal 'limit?;
+};
+
+public type inline_response_200_35_link_metadata_link_permissions record {
+    inline_response_200_35_link_metadata_action action?;
+    boolean allow?;
+};
+
+public type inline_response_200_19_lock_content record {
+    string \.tag?;
+    string created?;
+    string lock_holder_account_id?;
+    string lock_holder_team_id?;
+};
+
+public type inline_response_200_64_results record {
+    string \.tag?;
+    string success?;
+};
+
+public type inline_response_200_35_link_metadata_audience_options record {
+    string \.tag?;
+};
+
+public type inline_response_200_77_team_sharing_policies record {
+    inline_response_200_77_team_sharing_policies_shared_folder_join_policy shared_folder_join_policy?;
+    '2sharingget_file_metadatabatch_result_policy_resolved_member_policy shared_folder_member_policy?;
+    inline_response_200_77_team_sharing_policies_shared_link_create_policy shared_link_create_policy?;
+};
+
+public type sharing_remove_file_member_2_body record {
+    string file?;
+    '2sharingadd_file_member_members member?;
+};
+
+public type inline_response_200_5_fields record {
+    string description?;
+    string name?;
+    inline_response_200_5_type 'type?;
+};
+
+public type inline_response_200_3_matches record {
+    string id?;
+    boolean is_deleted?;
+    string path?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+};
+
+public type features_get_values_body_1 record {
+    '2usersfeaturesget_values_features[] features?;
+};
+
+public type list_file_members_batch_body record {
+    string[] files?;
+    decimal 'limit?;
+};
+
+public type '2file_propertiespropertiessearch_mode record {
+    string \.tag?;
+    string field_name?;
+};
+
+# Represents the Headers record for the operation: listRevisions
+public type ListRevisionsHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type excluded_users_add_body record {
+    '2teamgroupsmembersadd_user[] users?;
+};
+
+public type inline_response_200_73_origin_access_method_end_user record {
+    string \.tag?;
+    string session_id?;
+};
+
+public type copy_reference_save_body record {
+    string copy_reference?;
+    string path?;
+};
+
+public type inline_response_200_73_path_namespace_relative record {
+    boolean is_shared_namespace?;
+    string ns_id?;
+    string relative_path?;
+};
+
+# Represents the Headers record for the operation: listFolder
+public type ListFolderHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: propertiesOverwrite
+public type PropertiesOverwriteHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_45_links record {
+    string \.tag?;
+    string client_modified?;
+    string id?;
+    inline_response_200_39_link_permissions link_permissions?;
+    string name?;
+    string path_lower?;
+    string rev?;
+    string server_modified?;
+    decimal size?;
+    inline_response_200_39_team_member_info team_member_info?;
+    string url?;
+};
+
+# Represents the Headers record for the operation: unlockFileBatch
+public type UnlockFileBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: listFileMembersBatch
+public type ListFileMembersBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type search_continue_v2_body record {
+    string cursor?;
+};
+
+# Represents the Headers record for the operation: addFileMember
+public type AddFileMemberHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type inline_response_200_16_entries record {
+    string \.tag?;
+    inline_response_200_30_metadata_metadata metadata?;
+};
+
+# Represents the Headers record for the operation: listSharedLinks
+public type ListSharedLinksHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+# Represents the Headers record for the operation: templatesRemoveForUser
+public type TemplatesRemoveForUserHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type team_folder_archive_body record {
+    boolean force_async_off?;
+    string team_folder_id?;
+};
+
+public type inline_response_200_39_link_permissions_revoke_failure_reason record {
+    string \.tag?;
+};
+
+# Represents the Headers record for the operation: removeFolderMember
+public type RemoveFolderMemberHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
+};
+
+public type '2sharinglist_file_membersbatch_result_members_group record {
+    string group_id?;
+    '2sharinglist_file_membersbatch_result_members_group_group_management_type group_management_type?;
+    string group_name?;
+    '2sharinglist_file_membersbatch_result_members_group_group_management_type group_type?;
+    boolean is_member?;
+    boolean is_owner?;
+    decimal member_count?;
+    boolean same_team?;
+};
 
-# Represents the Headers record for the operation: post2FilesList_folder
-public type Post2FilesList_folderHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type sharing_unshare_folder_body record {
+    boolean leave_a_copy?;
+    string shared_folder_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamTeam_folderArchiveCheck
-public type Post2TeamTeam_folderArchiveCheckHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_35_link_metadata record {
+    inline_response_200_35_link_metadata_audience_options[] audience_options?;
+    inline_response_200_35_link_metadata_audience_options current_audience?;
+    inline_response_200_35_link_metadata_link_permissions[] link_permissions?;
+    boolean password_protected?;
+    string url?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesPropertiesSearch
-public type Post2File_propertiesPropertiesSearchHeaders record {
-    string? Authorization?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type legal_holds_list_held_revisions_continue_body record {
+    string id?;
 };
 
-# Represents the Headers record for the operation: post2File_requestsListContinue
-public type Post2File_requestsListContinueHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type list_received_files_continue_body record {
+    string cursor?;
 };
 
-# Represents the Headers record for the operation: post2TeamMember_space_limitsRemove_custom_quota
-public type Post2TeamMember_space_limitsRemove_custom_quotaHeaders record {
-    string? Content\-Type?;
+public type members_set_admin_permissions_body record {
+    string new_role?;
+    members_send_welcome_email_body user?;
 };
 
-# Represents the Headers record for the operation: post2TeamTeam_folderCreate
-public type Post2TeamTeam_folderCreateHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_30_metadata_metadata record {
+    string \.tag?;
+    string client_modified?;
+    string content_hash?;
+    inline_response_200_31_file_lock_info file_lock_info?;
+    boolean has_explicit_shared_members?;
+    string id?;
+    boolean is_downloadable?;
+    string name?;
+    string path_display?;
+    string path_lower?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+    string rev?;
+    string server_modified?;
+    inline_response_200_31_sharing_info sharing_info?;
+    decimal size?;
 };
 
-# Represents the Headers record for the operation: post2SharingMount_folder
-public type Post2SharingMount_folderHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: mountFolder
+public type MountFolderHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2FilesUpload_sessionAppend_v2
-public type Post2FilesUpload_sessionAppend_v2Headers record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: listFolderContinue
+public type ListFolderContinueHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2FilesSearch_v2
-public type Post2FilesSearch_v2Headers record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type '2sharinglist_file_membersbatch_result_members_user record {
+    string account_id?;
+    string display_name?;
+    string email?;
+    boolean same_team?;
+    string team_member_id?;
 };
 
-# Represents the Headers record for the operation: post2FilesUpload_sessionStart
-public type Post2FilesUpload_sessionStartHeaders record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type '2file_requestscreate_deadline record {
+    string allow_late_uploads?;
+    string deadline?;
 };
 
-# Represents the Headers record for the operation: post2SharingCheck_job_status
-public type Post2SharingCheck_job_statusHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type devices_list_member_devices_body record {
+    boolean include_desktop_clients?;
+    boolean include_mobile_clients?;
+    boolean include_web_sessions?;
+    string team_member_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamTeam_folderUpdate_sync_settings
-public type Post2TeamTeam_folderUpdate_sync_settingsHeaders record {
-    string? Content\-Type?;
+public type files_move_batch_v2_body record {
+    boolean allow_ownership_transfer?;
+    boolean autorename?;
+    '2filescopy_batch_v2_entries[] entries?;
 };
 
-# Represents the Headers record for the operation: post2TeamDevicesRevoke_device_session_batch
-public type Post2TeamDevicesRevoke_device_session_batchHeaders record {
-    string? Content\-Type?;
+public type check_app_body record {
+    string query?;
 };
 
-# Represents the Headers record for the operation: post2SharingAdd_folder_member
-public type Post2SharingAdd_folder_memberHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: deleteManualContactsBatch
+public type DeleteManualContactsBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2SharingRelinquish_folder_membership
-public type Post2SharingRelinquish_folder_membershipHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: copyBatchCheck
+public type CopyBatchCheckHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersAddJob_statusGet
-public type Post2TeamMembersAddJob_statusGetHeaders record {
-    string? Content\-Type?;
+public type list_file_members_continue_body record {
+    string cursor?;
 };
 
-# Represents the Headers record for the operation: post2TeamLinked_appsRevoke_linked_app
-public type Post2TeamLinked_appsRevoke_linked_appHeaders record {
-    string? Content\-Type?;
+public type files_copy_v2_body record {
+    boolean allow_ownership_transfer?;
+    boolean allow_shared_folder?;
+    boolean autorename?;
+    string from_path?;
+    string to_path?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_mountable_folders
-public type Post2SharingList_mountable_foldersHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type job_status_check_body record {
+    string async_job_id?;
 };
 
-# Represents the Headers record for the operation: post2ContactsDelete_manual_contacts
-public type Post2ContactsDelete_manual_contactsHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_30_metadata record {
+    string \.tag?;
+    inline_response_200_30_metadata_metadata metadata?;
 };
 
-# Represents the Headers record for the operation: post2TeamTeam_folderList
-public type Post2TeamTeam_folderListHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: createFolderBatchCheck
+public type CreateFolderBatchCheckHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_file_membersBatch
-public type Post2SharingList_file_membersBatchHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: get
+public type GetHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2File_requestsCreate
-public type Post2File_requestsCreateHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: listFolderMembersContinue
+public type ListFolderMembersContinueHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2File_requestsGet
-public type Post2File_requestsGetHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: uploadSessionAppend
+public type UploadSessionAppendHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2FilesLock_file_batch
-public type Post2FilesLock_file_batchHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type properties_add_body record {
+    string path?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsMembersListContinue
-public type Post2TeamGroupsMembersListContinueHeaders record {
-    string? Content\-Type?;
+public type sharing_relinquish_file_membership_body record {
+    string file?;
 };
 
-# Represents the Headers record for the operation: post2Team_logGet_eventsContinue
-public type Post2Team_logGet_eventsContinueHeaders record {
-    string? Content\-Type?;
+public type check_user_body record {
+    string query?;
 };
 
-# Represents the Headers record for the operation: post2TeamMember_space_limitsSet_custom_quota
-public type Post2TeamMember_space_limitsSet_custom_quotaHeaders record {
-    string? Content\-Type?;
+public type devices_revoke_device_session_body record {
+    string \.tag?;
+    string session_id?;
+    string team_member_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsList
-public type Post2TeamGroupsListHeaders record {
-    string? Content\-Type?;
+public type files_unlock_file_batch_body record {
+    '2filesget_file_lock_batch_entries[] entries?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersSet_admin_permissions
-public type Post2TeamMembersSet_admin_permissionsHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: saveUrlCheckJobStatus
+public type SaveUrlCheckJobStatusHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2SharingGet_shared_link_file
-public type Post2SharingGet_shared_link_fileHeaders record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: copy
+public type CopyHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_mountable_foldersContinue
-public type Post2SharingList_mountable_foldersContinueHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type excluded_users_remove_body record {
+    '2teamgroupsmembersadd_user[] users?;
 };
 
-# Represents the Headers record for the operation: post2SharingAdd_file_member
-public type Post2SharingAdd_file_memberHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: update
+public type UpdateHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2FilesDelete_batch
-public type Post2FilesDelete_batchHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: listFolderGetLatestCursor
+public type ListFolderGetLatestCursorHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2TeamLegal_holdsList_held_revisions_continue
-public type Post2TeamLegal_holdsList_held_revisions_continueHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: updateFolderMember
+public type UpdateFolderMemberHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_received_files
-public type Post2SharingList_received_filesHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: getSharedLinkMetadata
+public type GetSharedLinkMetadataHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesPropertiesSearchContinue
-public type Post2File_propertiesPropertiesSearchContinueHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_55_policies record {
+    string activation_time?;
+    string end_date?;
+    string id?;
+    inline_response_200_55_members members?;
+    string name?;
+    string start_date?;
+    '2teamgroupsget_info_profile_status status?;
 };
 
-# Represents the Headers record for the operation: post2UsersGet_account_batch
-public type Post2UsersGet_account_batchHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type sharing_check_share_job_status_body record {
+    string async_job_id?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesTemplatesAdd_for_team
-public type Post2File_propertiesTemplatesAdd_for_teamHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: moveBatchCheck
+public type MoveBatchCheckHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersList
-public type Post2TeamMembersListHeaders record {
-    string? Content\-Type?;
+public type create_folder_batch_check_body record {
+    string async_job_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsUpdate
-public type Post2TeamGroupsUpdateHeaders record {
-    string? Content\-Type?;
+public type sharing_share_folder_body record {
+    string access_inheritance?;
+    string acl_update_policy?;
+    boolean force_async?;
+    string member_policy?;
+    string path?;
+    string shared_link_policy?;
 };
 
-# Represents the Headers record for the operation: post2TeamGroupsJob_statusGet
-public type Post2TeamGroupsJob_statusGetHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_31_sharing_info record {
+    string modified_by?;
+    string parent_shared_folder_id?;
+    boolean read_only?;
 };
 
-# Represents the Headers record for the operation: post2FilesExport
-public type Post2FilesExportHeaders record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: uploadSessionFinishBatchCheck
+public type UploadSessionFinishBatchCheckHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesTemplatesGet_for_user
-public type Post2File_propertiesTemplatesGet_for_userHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type features_get_values_body record {
+    '2teamfeaturesget_values_features[] features?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_received_filesContinue
-public type Post2SharingList_received_filesContinueHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type sharing_mount_folder_body record {
+    string shared_folder_id?;
 };
 
-# Represents the Headers record for the operation: post2FilesMove_batch_v2
-public type Post2FilesMove_batch_v2Headers record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: uploadSessionFinish
+public type UploadSessionFinishHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2FilesDownload
-public type Post2FilesDownloadHeaders record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_66_namespaces record {
+    string name?;
+    string namespace_id?;
+    inline_response_200_66_namespace_type namespace_type?;
+    string team_member_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamLinked_appsList_members_linked_apps
-public type Post2TeamLinked_appsList_members_linked_appsHeaders record {
-    string? Content\-Type?;
+public type '2teamgroupsget_info_profile_status record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2FilesRestore
-public type Post2FilesRestoreHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type files_delete_v2_body record {
+    string path?;
 };
 
-# Represents the Headers record for the operation: post2FilesGet_metadata
-public type Post2FilesGet_metadataHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_15_metadata record {
+    string id?;
+    string name?;
+    string path_display?;
+    string path_lower?;
+    '2file_propertiespropertiesadd_property_groups[] property_groups?;
+    inline_response_200_15_metadata_sharing_info sharing_info?;
 };
 
-# Represents the Headers record for the operation: post2FilesCopy_batchCheck_v2
-public type Post2FilesCopy_batchCheck_v2Headers record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type '2sharingadd_folder_member_members record {
+    string access_level?;
+    '2sharingadd_folder_member_member member?;
 };
 
-# Represents the Headers record for the operation: post2TeamTeam_folderArchive
-public type Post2TeamTeam_folderArchiveHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: copyBatch
+public type CopyBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2SharingCheck_share_job_status
-public type Post2SharingCheck_share_job_statusHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type '2teamgroupsget_info_profile_name record {
+    string abbreviated_name?;
+    string display_name?;
+    string familiar_name?;
+    string given_name?;
+    string surname?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersSecondary_emailsAdd
-public type Post2TeamMembersSecondary_emailsAddHeaders record {
-    string? Content\-Type?;
+public type '2sharingget_file_metadatabatch_result record {
+    string \.tag?;
+    '2sharingget_file_metadatabatch_result_access_type access_type?;
+    string id?;
+    string name?;
+    string[] owner_display_names?;
+    '2sharingget_file_metadatabatch_result_owner_team owner_team?;
+    string path_display?;
+    string path_lower?;
+    anydata[] permissions?;
+    '2sharingget_file_metadatabatch_result_policy policy?;
+    string preview_url?;
+    string time_invited?;
 };
 
-# Represents the Headers record for the operation: post2FilesSave_urlCheck_job_status
-public type Post2FilesSave_urlCheck_job_statusHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: relinquishFileMembership
+public type RelinquishFileMembershipHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2TeamDevicesList_member_devices
-public type Post2TeamDevicesList_member_devicesHeaders record {
-    string? Content\-Type?;
+public type templates_get_for_user_body record {
+    string template_id?;
 };
 
-# Represents the Headers record for the operation: post2TeamFeaturesGet_values
-public type Post2TeamFeaturesGet_valuesHeaders record {
-    string? Content\-Type?;
+public type '2teammembersget_info_profile record {
+    string account_id?;
+    string email?;
+    boolean email_verified?;
+    string external_id?;
+    string[] groups?;
+    string joined_on?;
+    string member_folder_id?;
+    '2teamgroupsget_info_profile_membership_type membership_type?;
+    '2teamgroupsget_info_profile_name name?;
+    string profile_photo_url?;
+    '2teammembersget_info_profile_secondary_emails[] secondary_emails?;
+    '2teamgroupsget_info_profile_status status?;
+    string team_member_id?;
 };
 
-# Represents the Headers record for the operation: post2SharingUpdate_file_member
-public type Post2SharingUpdate_file_memberHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type list_continue_body_1 record {
+    string cursor?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesTemplatesUpdate_for_user
-public type Post2File_propertiesTemplatesUpdate_for_userHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_19_lock record {
+    inline_response_200_19_lock_content content?;
 };
 
-# Represents the Headers record for the operation: post2TeamTeam_folderRename
-public type Post2TeamTeam_folderRenameHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_9_deadline record {
+    inline_response_200_9_deadline_allow_late_uploads allow_late_uploads?;
+    string deadline?;
 };
 
-# Represents the Headers record for the operation: post2SharingGet_shared_link_metadata
-public type Post2SharingGet_shared_link_metadataHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_63_results record {
+    string \.tag?;
+    string not_found?;
+    string success?;
 };
 
-# Represents the Headers record for the operation: post2FilesDelete_v2
-public type Post2FilesDelete_v2Headers record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_77_team_office_addin_policy record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2TeamMembersSend_welcome_email
-public type Post2TeamMembersSend_welcome_emailHeaders record {
-    string? Content\-Type?;
+public type inline_response_200_18_export_metadata record {
+    string export_hash?;
+    string name?;
+    decimal size?;
 };
 
-# Represents the Headers record for the operation: post2CheckApp
-public type Post2CheckAppHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type list_continue_body_5 record {
+    string cursor?;
 };
 
-# Represents the Headers record for the operation: post2FilesGet_thumbnail_batch
-public type Post2FilesGet_thumbnail_batchHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type list_continue_body_4 record {
+    string cursor?;
 };
 
-# Represents the Headers record for the operation: post2TeamLegal_holdsCreate_policy
-public type Post2TeamLegal_holdsCreate_policyHeaders record {
-    string? Content\-Type?;
+public type list_continue_body_3 record {
+    string cursor?;
 };
 
-# Represents the Headers record for the operation: post2File_requestsUpdate
-public type Post2File_requestsUpdateHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type list_continue_body_2 record {
+    string cursor?;
 };
 
-# Represents the Headers record for the operation: post2FilesSave_url
-public type Post2FilesSave_urlHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: getFolderMetadata
+public type GetFolderMetadataHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2TeamReportsGet_devices
-public type Post2TeamReportsGet_devicesHeaders record {
-    string? Content\-Type?;
+public type '2sharingget_file_metadatabatch_result_policy_member_policy record {
+    string \.tag?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesTemplatesAdd_for_user
-public type Post2File_propertiesTemplatesAdd_for_userHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type '2sharinglist_file_membersbatch_result_members record {
+    '2sharinglist_file_membersbatch_result_members_groups[] groups?;
+    '2sharinglist_file_membersbatch_result_members_invitees[] invitees?;
+    '2sharinglist_file_membersbatch_result_members_users[] users?;
 };
 
-# Represents the Headers record for the operation: post2FilesUpload_sessionFinish_batch
-public type Post2FilesUpload_sessionFinish_batchHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type linked_apps_list_member_linked_apps_body record {
+    string team_member_id?;
 };
 
-# Represents the Headers record for the operation: post2SharingList_folder_membersContinue
-public type Post2SharingList_folder_membersContinueHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type '2file_propertiespropertiesadd_fields record {
+    string name?;
+    string value?;
 };
 
-# Represents the Headers record for the operation: post2File_requestsDelete
-public type Post2File_requestsDeleteHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: uploadSessionFinishBatch
+public type UploadSessionFinishBatchHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2FilesSearchContinue_v2
-public type Post2FilesSearchContinue_v2Headers record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200 record {
+    string profile_photo_url?;
 };
 
-# Represents the Headers record for the operation: post2TeamLinked_appsRevoke_linked_app_batch
-public type Post2TeamLinked_appsRevoke_linked_app_batchHeaders record {
-    string? Content\-Type?;
+# Represents the Headers record for the operation: templatesListForUser
+public type TemplatesListForUserHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2SharingCheck_remove_member_job_status
-public type Post2SharingCheck_remove_member_job_statusHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type list_continue_body_6 record {
+    string cursor?;
 };
 
-# Represents the Headers record for the operation: post2TeamNamespacesListContinue
-public type Post2TeamNamespacesListContinueHeaders record {
-    string? Content\-Type?;
+public type '2filesget_file_lock_batch_entries record {
+    string path?;
 };
 
-# Represents the Headers record for the operation: post2FilesCopy_v2
-public type Post2FilesCopy_v2Headers record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: getPreview
+public type GetPreviewHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2File_requestsCount
-public type Post2File_requestsCountHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type devices_revoke_device_session_batch_body record {
+    devices_revoke_device_session_body[] revoke_devices?;
 };
 
-# Represents the Headers record for the operation: post2SharingUnmount_folder
-public type Post2SharingUnmount_folderHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_58_complete record {
+    string \.tag?;
+    '2teammembersget_info_profile profile?;
+    '2teammembersget_info_role role?;
 };
 
-# Represents the Headers record for the operation: post2SharingRemove_folder_member
-public type Post2SharingRemove_folder_memberHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_70_has_team_shared_dropbox record {
+    string \.tag?;
+    boolean has_team_shared_dropbox?;
 };
 
-# Represents the Headers record for the operation: post2FilesList_revisions
-public type Post2FilesList_revisionsHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_69_team_folders record {
+    inline_response_200_68_content_sync_settings[] content_sync_settings?;
+    boolean is_team_shared_dropbox?;
+    string name?;
+    '2teamgroupsget_info_profile_status status?;
+    inline_response_200_68_sync_setting sync_setting?;
+    string team_folder_id?;
 };
 
-# Represents the Headers record for the operation: post2FilesGet_thumbnail_v2
-public type Post2FilesGet_thumbnail_v2Headers record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: getThumbnail
+public type GetThumbnailHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-arg?;
+    string? dropbox\-api\-select\-admin?;
+    string? dropbox\-api\-select\-user?;
 };
 
 # Proxy server configurations to be used with the HTTP client endpoint.
@@ -1183,107 +2998,44 @@ public type ProxyConfig record {|
     string password = "";
 |};
 
-# Represents the Headers record for the operation: post2FilesUpload_sessionFinish
-public type Post2FilesUpload_sessionFinishHeaders record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_15_entries record {
+    string \.tag?;
+    inline_response_200_15_metadata metadata?;
 };
 
-# Represents the Headers record for the operation: post2File_propertiesPropertiesRemove
-public type Post2File_propertiesPropertiesRemoveHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type get_file_metadata_batch_body record {
+    anydata[] actions?;
+    string[] files?;
 };
 
-# Represents the Headers record for the operation: post2SharingUpdate_folder_member
-public type Post2SharingUpdate_folder_memberHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type copy_batch_check_v2_body record {
+    string async_job_id?;
 };
 
-# Represents the Headers record for the operation: post2FilesDownload_zip
-public type Post2FilesDownload_zipHeaders record {
-    string? Dropbox\-API\-Arg?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Dropbox\-API\-Select\-User?;
+public type upload_session_finish_batch_body record {
+    '2filesupload_sessionfinish_batch_entries[] entries?;
 };
 
-# Represents the Headers record for the operation: post2FilesList_folderGet_latest_cursor
-public type Post2FilesList_folderGet_latest_cursorHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type sharing_transfer_folder_body record {
+    string shared_folder_id?;
+    string to_dropbox_id?;
 };
 
-# Represents the Headers record for the operation: post2FilesMove_batchCheck_v2
-public type Post2FilesMove_batchCheck_v2Headers record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+# Represents the Headers record for the operation: app
+public type AppHeaders record {
+    string? dropbox\-api\-path\-root?;
+    string? dropbox\-api\-select\-user?;
 };
 
-# Represents the Headers record for the operation: post2FilesUpload_sessionFinish_batchCheck
-public type Post2FilesUpload_sessionFinish_batchCheckHeaders record {
-    string? Dropbox\-API\-Select\-Admin?;
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
-};
-
-# Represents the Headers record for the operation: post2ContactsDelete_manual_contacts_batch
-public type Post2ContactsDelete_manual_contacts_batchHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
-};
-
-# Represents the Headers record for the operation: post2TeamMembersMove_former_member_files
-public type Post2TeamMembersMove_former_member_filesHeaders record {
-    string? Content\-Type?;
-};
-
-# Represents the Headers record for the operation: post2TeamMembersUnsuspend
-public type Post2TeamMembersUnsuspendHeaders record {
-    string? Content\-Type?;
-};
-
-# Represents the Headers record for the operation: post2SharingList_foldersContinue
-public type Post2SharingList_foldersContinueHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
-};
-
-# Represents the Headers record for the operation: post2TeamMembersSet_profile_photo
-public type Post2TeamMembersSet_profile_photoHeaders record {
-    string? Content\-Type?;
-};
-
-# Represents the Headers record for the operation: post2TeamLegal_holdsGet_policy
-public type Post2TeamLegal_holdsGet_policyHeaders record {
-    string? Content\-Type?;
-};
-
-# Represents the Headers record for the operation: post2TeamTeam_folderGet_info
-public type Post2TeamTeam_folderGet_infoHeaders record {
-    string? Content\-Type?;
-};
-
-# Represents the Headers record for the operation: post2TeamMembersDelete_profile_photo
-public type Post2TeamMembersDelete_profile_photoHeaders record {
-    string? Content\-Type?;
-};
-
-# Represents the Headers record for the operation: post2CheckUser
-public type Post2CheckUserHeaders record {
-    string? Dropbox\-API\-Path\-Root?;
-    string? Content\-Type?;
-    string? Dropbox\-API\-Select\-User?;
+public type inline_response_200_73_events record {
+    inline_response_200_73_actor actor?;
+    inline_response_200_73_assets[] assets?;
+    inline_response_200_73_actor_user context?;
+    inline_response_200_73_details details?;
+    inline_response_200_73_event_category event_category?;
+    inline_response_200_73_event_type event_type?;
+    boolean involve_non_team_member?;
+    inline_response_200_73_origin origin?;
+    inline_response_200_73_participants[] participants?;
+    string timestamp?;
 };
