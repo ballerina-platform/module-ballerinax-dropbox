@@ -81,7 +81,7 @@ public isolated client class Client {
     # + config - The configurations to be used when initializing the `connector` 
     # + serviceUrl - URL of the target service 
     # + return - An error if connector initialization failed 
-    public isolated function init(ConnectionConfig config, string serviceUrl = "https://api.dropboxapi.com") returns error? {
+    public isolated function init(ConnectionConfig config, string serviceUrl = "https://api.dropboxapi.com/2") returns error? {
         http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, timeout: config.timeout, forwarded: config.forwarded, poolConfig: config.poolConfig, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, validation: config.validation};
         do {
             if config.http1Settings is ClientHttp1Settings {
@@ -109,8 +109,8 @@ public isolated client class Client {
         return;
     }
 
-    resource isolated function post '2/'check/app(check_app_body payload, AppHeaders headers = {}) returns inline_response_200_2|error {
-        string resourcePath = string `/2/check/app`;
+    resource isolated function post 'check/app(check_app_body payload, AppHeaders headers = {}) returns inline_response_200_2|error {
+        string resourcePath = string `/check/app`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -118,8 +118,8 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/'check/user(check_user_body payload, UserHeaders headers = {}) returns inline_response_200_2|error {
-        string resourcePath = string `/2/check/user`;
+    resource isolated function post 'check/user(check_user_body payload, UserHeaders headers = {}) returns inline_response_200_2|error {
+        string resourcePath = string `/check/user`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -127,8 +127,12 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/account/set_profile_photo(account_set_profile_photo_body payload, SetProfilePhotoHeaders headers = {}) returns inline_response_200|error {
-        string resourcePath = string `/2/account/set_profile_photo`;
+    # set_profile_photo
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - set_profile_photo response 
+    resource isolated function post account/set_profile_photo(account_set_profile_photo_body payload, SetProfilePhotoHeaders headers = {}) returns inline_response_200|error {
+        string resourcePath = string `/account/set_profile_photo`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -136,8 +140,12 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/auth/token/from_oauth1(token_from_oauth1_body payload, TokenFromOauth1Headers headers = {}) returns inline_response_200_1|error {
-        string resourcePath = string `/2/auth/token/from_oauth1`;
+    # token/from_oauth1
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - token/from_oauth1 response 
+    resource isolated function post auth/token/from_oauth1(token_from_oauth1_body payload, TokenFromOauth1Headers headers = {}) returns inline_response_200_1|error {
+        string resourcePath = string `/auth/token/from_oauth1`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -145,40 +153,31 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/auth/token/revoke(TokenRevokeHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/auth/token/revoke`;
+    # token/revoke
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post auth/token/revoke(TokenRevokeHeaders headers = {}) returns error? {
+        string resourcePath = string `/auth/token/revoke`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/contacts/delete_manual_contacts(DeleteManualContactsHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/contacts/delete_manual_contacts`;
+    # delete_manual_contacts
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post contacts/delete_manual_contacts(DeleteManualContactsHeaders headers = {}) returns error? {
+        string resourcePath = string `/contacts/delete_manual_contacts`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/contacts/delete_manual_contacts_batch(contacts_delete_manual_contacts_batch_body payload, DeleteManualContactsBatchHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/contacts/delete_manual_contacts_batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_properties/properties/add(properties_add_body payload, PropertiesAddHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/file_properties/properties/add`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_properties/properties/overwrite(properties_overwrite_body payload, PropertiesOverwriteHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/file_properties/properties/overwrite`;
+    # delete_manual_contacts_batch
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post contacts/delete_manual_contacts_batch(contacts_delete_manual_contacts_batch_body payload, DeleteManualContactsBatchHeaders headers = {}) returns error? {
+        string resourcePath = string `/contacts/delete_manual_contacts_batch`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -186,8 +185,11 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/file_properties/properties/remove(properties_remove_body payload, PropertiesRemoveHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/file_properties/properties/remove`;
+    # properties/add
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post file_properties/properties/add(properties_add_body payload, PropertiesAddHeaders headers = {}) returns error? {
+        string resourcePath = string `/file_properties/properties/add`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -195,8 +197,11 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/file_properties/properties/search(properties_search_body payload, PropertiesSearchHeaders headers = {}) returns inline_response_200_3|error {
-        string resourcePath = string `/2/file_properties/properties/search`;
+    # properties/overwrite
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post file_properties/properties/overwrite(properties_overwrite_body payload, PropertiesOverwriteHeaders headers = {}) returns error? {
+        string resourcePath = string `/file_properties/properties/overwrite`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -204,8 +209,11 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/file_properties/properties/search/'continue(search_continue_body payload, PropertiesSearchContinueHeaders headers = {}) returns inline_response_200_3|error {
-        string resourcePath = string `/2/file_properties/properties/search/continue`;
+    # properties/remove
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post file_properties/properties/remove(properties_remove_body payload, PropertiesRemoveHeaders headers = {}) returns error? {
+        string resourcePath = string `/file_properties/properties/remove`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -213,8 +221,12 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/file_properties/properties/update(properties_update_body payload, PropertiesUpdateHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/file_properties/properties/update`;
+    # properties/search
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - properties/search response 
+    resource isolated function post file_properties/properties/search(properties_search_body payload, PropertiesSearchHeaders headers = {}) returns inline_response_200_3|error {
+        string resourcePath = string `/file_properties/properties/search`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -222,16 +234,8 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/file_properties/templates/add_for_team(templates_add_for_team_body payload, map<string|string[]> headers = {}) returns inline_response_200_4|error {
-        string resourcePath = string `/2/file_properties/templates/add_for_team`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/file_properties/templates/add_for_user(templates_add_for_user_body payload, TemplatesAddForUserHeaders headers = {}) returns inline_response_200_4|error {
-        string resourcePath = string `/2/file_properties/templates/add_for_user`;
+    resource isolated function post file_properties/properties/search/'continue(search_continue_body payload, PropertiesSearchContinueHeaders headers = {}) returns inline_response_200_3|error {
+        string resourcePath = string `/file_properties/properties/search/continue`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -239,16 +243,11 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/file_properties/templates/get_for_team(templates_get_for_team_body payload, map<string|string[]> headers = {}) returns inline_response_200_5|error {
-        string resourcePath = string `/2/file_properties/templates/get_for_team`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/file_properties/templates/get_for_user(templates_get_for_user_body payload, TemplatesGetForUserHeaders headers = {}) returns inline_response_200_5|error {
-        string resourcePath = string `/2/file_properties/templates/get_for_user`;
+    # properties/update
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post file_properties/properties/update(properties_update_body payload, PropertiesUpdateHeaders headers = {}) returns error? {
+        string resourcePath = string `/file_properties/properties/update`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -256,29 +255,24 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/file_properties/templates/list_for_team(map<string|string[]> headers = {}) returns inline_response_200_6|error {
-        string resourcePath = string `/2/file_properties/templates/list_for_team`;
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/file_properties/templates/list_for_user(TemplatesListForUserHeaders headers = {}) returns inline_response_200_6|error {
-        string resourcePath = string `/2/file_properties/templates/list_for_user`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_properties/templates/remove_for_team(templates_remove_for_team_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/file_properties/templates/remove_for_team`;
+    # templates/add_for_team
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - templates/add_for_team response 
+    resource isolated function post file_properties/templates/add_for_team(templates_add_for_team_body payload, map<string|string[]> headers = {}) returns inline_response_200_4|error {
+        string resourcePath = string `/file_properties/templates/add_for_team`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/file_properties/templates/remove_for_user(templates_remove_for_user_body payload, TemplatesRemoveForUserHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/file_properties/templates/remove_for_user`;
+    # templates/add_for_user
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - templates/add_for_user response 
+    resource isolated function post file_properties/templates/add_for_user(templates_add_for_user_body payload, TemplatesAddForUserHeaders headers = {}) returns inline_response_200_4|error {
+        string resourcePath = string `/file_properties/templates/add_for_user`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -286,16 +280,24 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/file_properties/templates/update_for_team(templates_update_for_team_body payload, map<string|string[]> headers = {}) returns templates_remove_for_user_body|error {
-        string resourcePath = string `/2/file_properties/templates/update_for_team`;
+    # templates/get_for_team
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - templates/get_for_team response 
+    resource isolated function post file_properties/templates/get_for_team(templates_get_for_team_body payload, map<string|string[]> headers = {}) returns inline_response_200_5|error {
+        string resourcePath = string `/file_properties/templates/get_for_team`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/file_properties/templates/update_for_user(templates_update_for_user_body payload, TemplatesUpdateForUserHeaders headers = {}) returns templates_remove_for_user_body|error {
-        string resourcePath = string `/2/file_properties/templates/update_for_user`;
+    # templates/get_for_user
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - templates/get_for_user response 
+    resource isolated function post file_properties/templates/get_for_user(templates_get_for_user_body payload, TemplatesGetForUserHeaders headers = {}) returns inline_response_200_5|error {
+        string resourcePath = string `/file_properties/templates/get_for_user`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -303,1364 +305,1982 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/file_requests/count(CountHeaders headers = {}) returns inline_response_200_7|error {
-        string resourcePath = string `/2/file_requests/count`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_requests/create(file_requests_create_body payload, CreateHeaders headers = {}) returns inline_response_200_8|error {
-        string resourcePath = string `/2/file_requests/create`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_requests/delete(file_requests_delete_body payload, DeleteHeaders headers = {}) returns inline_response_200_9|error {
-        string resourcePath = string `/2/file_requests/delete`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_requests/delete_all_closed(DeleteAllClosedHeaders headers = {}) returns inline_response_200_9|error {
-        string resourcePath = string `/2/file_requests/delete_all_closed`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_requests/get(file_requests_get_body payload, GetHeaders headers = {}) returns inline_response_200_8|error {
-        string resourcePath = string `/2/file_requests/get`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_requests/list/'continue(list_continue_body payload, ListContinueHeaders headers = {}) returns inline_response_200_10|error {
-        string resourcePath = string `/2/file_requests/list/continue`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_requests/list_v2(file_requests_list_v2_body payload, ListHeaders headers = {}) returns inline_response_200_10|error {
-        string resourcePath = string `/2/file_requests/list_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/file_requests/update(file_requests_update_body payload, UpdateHeaders headers = {}) returns inline_response_200_8|error {
-        string resourcePath = string `/2/file_requests/update`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/copy_batch/check_v2(copy_batch_check_v2_body payload, CopyBatchCheckHeaders headers = {}) returns inline_response_200_12|error {
-        string resourcePath = string `/2/files/copy_batch/check_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/copy_batch_v2(files_copy_batch_v2_body payload, CopyBatchHeaders headers = {}) returns inline_response_200_12|error {
-        string resourcePath = string `/2/files/copy_batch_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/copy_reference/get(copy_reference_get_body payload, CopyReferenceGetHeaders headers = {}) returns inline_response_200_13|error {
-        string resourcePath = string `/2/files/copy_reference/get`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/copy_reference/save(copy_reference_save_body payload, CopyReferenceSaveHeaders headers = {}) returns inline_response_200_11|error {
-        string resourcePath = string `/2/files/copy_reference/save`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/copy_v2(files_copy_v2_body payload, CopyHeaders headers = {}) returns inline_response_200_11|error {
-        string resourcePath = string `/2/files/copy_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/create_folder_batch(files_create_folder_batch_body payload, CreateFolderBatchHeaders headers = {}) returns inline_response_200_15|error {
-        string resourcePath = string `/2/files/create_folder_batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/create_folder_batch/'check(create_folder_batch_check_body payload, CreateFolderBatchCheckHeaders headers = {}) returns inline_response_200_15|error {
-        string resourcePath = string `/2/files/create_folder_batch/check`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/create_folder_v2(files_create_folder_v2_body payload, CreateFolderHeaders headers = {}) returns inline_response_200_14|error {
-        string resourcePath = string `/2/files/create_folder_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/delete_batch(files_delete_batch_body payload, DeleteBatchHeaders headers = {}) returns inline_response_200_16|error {
-        string resourcePath = string `/2/files/delete_batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/delete_batch/'check(delete_batch_check_body payload, DeleteBatchCheckHeaders headers = {}) returns inline_response_200_16|error {
-        string resourcePath = string `/2/files/delete_batch/check`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/delete_v2(files_delete_v2_body payload, Delete1Headers headers = {}) returns inline_response_200_11|error {
-        string resourcePath = string `/2/files/delete_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/download(DownloadHeaders headers = {}) returns inline_response_200_17|error {
-        string resourcePath = string `/2/files/download`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/download_zip(DownloadZipHeaders headers = {}) returns inline_response_200_14|error {
-        string resourcePath = string `/2/files/download_zip`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/export(ExportHeaders headers = {}) returns inline_response_200_18|error {
-        string resourcePath = string `/2/files/export`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/get_file_lock_batch(files_get_file_lock_batch_body payload, GetFileLockBatchHeaders headers = {}) returns inline_response_200_19|error {
-        string resourcePath = string `/2/files/get_file_lock_batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/get_metadata(files_get_metadata_body payload, GetMetadataHeaders headers = {}) returns inline_response_200_20|error {
-        string resourcePath = string `/2/files/get_metadata`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/get_preview(GetPreviewHeaders headers = {}) returns inline_response_200_17|error {
-        string resourcePath = string `/2/files/get_preview`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/get_temporary_link(files_get_temporary_link_body payload, GetTemporaryLinkHeaders headers = {}) returns inline_response_200_21|error {
-        string resourcePath = string `/2/files/get_temporary_link`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/get_temporary_upload_link(files_get_temporary_upload_link_body payload, GetTemporaryUploadLinkHeaders headers = {}) returns inline_response_200_22|error {
-        string resourcePath = string `/2/files/get_temporary_upload_link`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/get_thumbnail_batch(files_get_thumbnail_batch_body payload, GetThumbnailBatchHeaders headers = {}) returns inline_response_200_24|error {
-        string resourcePath = string `/2/files/get_thumbnail_batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/get_thumbnail_v2(GetThumbnailHeaders headers = {}) returns inline_response_200_23|error {
-        string resourcePath = string `/2/files/get_thumbnail_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/list_folder(files_list_folder_body payload, ListFolderHeaders headers = {}) returns inline_response_200_25|error {
-        string resourcePath = string `/2/files/list_folder`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/list_folder/'continue(list_folder_continue_body payload, ListFolderContinueHeaders headers = {}) returns inline_response_200_25|error {
-        string resourcePath = string `/2/files/list_folder/continue`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/list_folder/get_latest_cursor(list_folder_get_latest_cursor_body payload, ListFolderGetLatestCursorHeaders headers = {}) returns list_folder_continue_body|error {
-        string resourcePath = string `/2/files/list_folder/get_latest_cursor`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/list_folder/longpoll(list_folder_longpoll_body payload, ListFolderLongpollHeaders headers = {}) returns inline_response_200_26|error {
-        string resourcePath = string `/2/files/list_folder/longpoll`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/list_revisions(files_list_revisions_body payload, ListRevisionsHeaders headers = {}) returns inline_response_200_27|error {
-        string resourcePath = string `/2/files/list_revisions`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/lock_file_batch(files_lock_file_batch_body payload, LockFileBatchHeaders headers = {}) returns inline_response_200_19|error {
-        string resourcePath = string `/2/files/lock_file_batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/move_batch/check_v2(move_batch_check_v2_body payload, MoveBatchCheckHeaders headers = {}) returns inline_response_200_12|error {
-        string resourcePath = string `/2/files/move_batch/check_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/move_batch_v2(files_move_batch_v2_body payload, MoveBatchHeaders headers = {}) returns inline_response_200_12|error {
-        string resourcePath = string `/2/files/move_batch_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/move_v2(files_move_v2_body payload, MoveHeaders headers = {}) returns inline_response_200_11|error {
-        string resourcePath = string `/2/files/move_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/permanently_delete(files_permanently_delete_body payload, PermanentlyDeleteHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/files/permanently_delete`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/restore(files_restore_body payload, RestoreHeaders headers = {}) returns inline_response_200_17|error {
-        string resourcePath = string `/2/files/restore`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/save_url(files_save_url_body payload, SaveUrlHeaders headers = {}) returns inline_response_200_28|error {
-        string resourcePath = string `/2/files/save_url`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/save_url/check_job_status(save_url_check_job_status_body payload, SaveUrlCheckJobStatusHeaders headers = {}) returns inline_response_200_29|error {
-        string resourcePath = string `/2/files/save_url/check_job_status`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/search/continue_v2(search_continue_v2_body payload, SearchContinueHeaders headers = {}) returns inline_response_200_30|error {
-        string resourcePath = string `/2/files/search/continue_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/search_v2(files_search_v2_body payload, SearchHeaders headers = {}) returns inline_response_200_30|error {
-        string resourcePath = string `/2/files/search_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/unlock_file_batch(files_unlock_file_batch_body payload, UnlockFileBatchHeaders headers = {}) returns inline_response_200_19|error {
-        string resourcePath = string `/2/files/unlock_file_batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/upload(UploadHeaders headers = {}) returns inline_response_200_17|error {
-        string resourcePath = string `/2/files/upload`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/upload_session/'start(UploadSessionStartHeaders headers = {}) returns inline_response_200_32|error {
-        string resourcePath = string `/2/files/upload_session/start`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/upload_session/append_v2(UploadSessionAppendHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/files/upload_session/append_v2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/upload_session/finish(UploadSessionFinishHeaders headers = {}) returns inline_response_200_17|error {
-        string resourcePath = string `/2/files/upload_session/finish`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/upload_session/finish_batch(upload_session_finish_batch_body payload, UploadSessionFinishBatchHeaders headers = {}) returns inline_response_200_31|error {
-        string resourcePath = string `/2/files/upload_session/finish_batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/files/upload_session/finish_batch/'check(finish_batch_check_body payload, UploadSessionFinishBatchCheckHeaders headers = {}) returns inline_response_200_31|error {
-        string resourcePath = string `/2/files/upload_session/finish_batch/check`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/add_file_member(sharing_add_file_member_body payload, AddFileMemberHeaders headers = {}) returns inline_response_200_33[]|error {
-        string resourcePath = string `/2/sharing/add_file_member`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/add_folder_member(sharing_add_folder_member_body payload, AddFolderMemberHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/sharing/add_folder_member`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/check_job_status(sharing_check_job_status_body payload, CheckJobStatusHeaders headers = {}) returns inline_response_200_29|error {
-        string resourcePath = string `/2/sharing/check_job_status`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/check_remove_member_job_status(sharing_check_remove_member_job_status_body payload, CheckRemoveMemberJobStatusHeaders headers = {}) returns inline_response_200_34|error {
-        string resourcePath = string `/2/sharing/check_remove_member_job_status`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/check_share_job_status(sharing_check_share_job_status_body payload, CheckShareJobStatusHeaders headers = {}) returns inline_response_200_35|error {
-        string resourcePath = string `/2/sharing/check_share_job_status`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/get_file_metadata(sharing_get_file_metadata_body payload, GetFileMetadataHeaders headers = {}) returns inline_response_200_36|error {
-        string resourcePath = string `/2/sharing/get_file_metadata`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/get_file_metadata/batch(get_file_metadata_batch_body payload, GetFileMetadataBatchHeaders headers = {}) returns inline_response_200_37[]|error {
-        string resourcePath = string `/2/sharing/get_file_metadata/batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/get_folder_metadata(sharing_get_folder_metadata_body payload, GetFolderMetadataHeaders headers = {}) returns inline_response_200_38|error {
-        string resourcePath = string `/2/sharing/get_folder_metadata`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/get_shared_link_file(GetSharedLinkFileHeaders headers = {}) returns inline_response_200_39|error {
-        string resourcePath = string `/2/sharing/get_shared_link_file`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/get_shared_link_metadata(sharing_get_shared_link_metadata_body payload, GetSharedLinkMetadataHeaders headers = {}) returns inline_response_200_39|error {
-        string resourcePath = string `/2/sharing/get_shared_link_metadata`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_file_members(sharing_list_file_members_body payload, ListFileMembersHeaders headers = {}) returns inline_response_200_40|error {
-        string resourcePath = string `/2/sharing/list_file_members`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_file_members/'continue(list_file_members_continue_body payload, ListFileMembersContinueHeaders headers = {}) returns inline_response_200_40|error {
-        string resourcePath = string `/2/sharing/list_file_members/continue`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_file_members/batch(list_file_members_batch_body payload, ListFileMembersBatchHeaders headers = {}) returns inline_response_200_41[]|error {
-        string resourcePath = string `/2/sharing/list_file_members/batch`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_folder_members/'continue(list_folder_members_continue_body payload, ListFolderMembersContinueHeaders headers = {}) returns inline_response_200_42|error {
-        string resourcePath = string `/2/sharing/list_folder_members/continue`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_folders(sharing_list_folders_body payload, ListFoldersHeaders headers = {}) returns inline_response_200_43|error {
-        string resourcePath = string `/2/sharing/list_folders`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_folders/'continue(list_folders_continue_body payload, ListFoldersContinueHeaders headers = {}) returns inline_response_200_43|error {
-        string resourcePath = string `/2/sharing/list_folders/continue`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_mountable_folders(sharing_list_mountable_folders_body payload, ListMountableFoldersHeaders headers = {}) returns inline_response_200_43|error {
-        string resourcePath = string `/2/sharing/list_mountable_folders`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_mountable_folders/'continue(list_mountable_folders_continue_body payload, ListMountableFoldersContinueHeaders headers = {}) returns inline_response_200_43|error {
-        string resourcePath = string `/2/sharing/list_mountable_folders/continue`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_received_files(sharing_list_received_files_body payload, ListReceivedFilesHeaders headers = {}) returns inline_response_200_44|error {
-        string resourcePath = string `/2/sharing/list_received_files`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_received_files/'continue(list_received_files_continue_body payload, ListReceivedFilesContinueHeaders headers = {}) returns inline_response_200_44|error {
-        string resourcePath = string `/2/sharing/list_received_files/continue`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/list_shared_links(sharing_list_shared_links_body payload, ListSharedLinksHeaders headers = {}) returns inline_response_200_45|error {
-        string resourcePath = string `/2/sharing/list_shared_links`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/modify_shared_link_settings(sharing_modify_shared_link_settings_body payload, ModifySharedLinkSettingsHeaders headers = {}) returns inline_response_200_39|error {
-        string resourcePath = string `/2/sharing/modify_shared_link_settings`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/mount_folder(sharing_mount_folder_body payload, MountFolderHeaders headers = {}) returns inline_response_200_38|error {
-        string resourcePath = string `/2/sharing/mount_folder`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/relinquish_file_membership(sharing_relinquish_file_membership_body payload, RelinquishFileMembershipHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/sharing/relinquish_file_membership`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/relinquish_folder_membership(sharing_relinquish_folder_membership_body payload, RelinquishFolderMembershipHeaders headers = {}) returns inline_response_200_34|error {
-        string resourcePath = string `/2/sharing/relinquish_folder_membership`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/remove_file_member_2(sharing_remove_file_member_2_body payload, RemoveFileMember2Headers headers = {}) returns inline_response_200_46|error {
-        string resourcePath = string `/2/sharing/remove_file_member_2`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/remove_folder_member(sharing_remove_folder_member_body payload, RemoveFolderMemberHeaders headers = {}) returns inline_response_200_47|error {
-        string resourcePath = string `/2/sharing/remove_folder_member`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/revoke_shared_link(sharing_revoke_shared_link_body payload, RevokeSharedLinkHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/sharing/revoke_shared_link`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/set_access_inheritance(sharing_set_access_inheritance_body payload, SetAccessInheritanceHeaders headers = {}) returns inline_response_200_35|error {
-        string resourcePath = string `/2/sharing/set_access_inheritance`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/share_folder(sharing_share_folder_body payload, ShareFolderHeaders headers = {}) returns inline_response_200_35|error {
-        string resourcePath = string `/2/sharing/share_folder`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/transfer_folder(sharing_transfer_folder_body payload, TransferFolderHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/sharing/transfer_folder`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/unmount_folder(sharing_unmount_folder_body payload, UnmountFolderHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/sharing/unmount_folder`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+    # templates/list_for_team
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - templates/list_for_team response 
+    resource isolated function post file_properties/templates/list_for_team(map<string|string[]> headers = {}) returns inline_response_200_6|error {
+        string resourcePath = string `/file_properties/templates/list_for_team`;
         http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/unshare_file(sharing_unshare_file_body payload, UnshareFileHeaders headers = {}) returns error? {
-        string resourcePath = string `/2/sharing/unshare_file`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/unshare_folder(sharing_unshare_folder_body payload, UnshareFolderHeaders headers = {}) returns inline_response_200_34|error {
-        string resourcePath = string `/2/sharing/unshare_folder`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/update_file_member(sharing_update_file_member_body payload, UpdateFileMemberHeaders headers = {}) returns record {}|error {
-        string resourcePath = string `/2/sharing/update_file_member`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
+        return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/sharing/update_folder_member(sharing_update_folder_member_body payload, UpdateFolderMemberHeaders headers = {}) returns record {}|error {
-        string resourcePath = string `/2/sharing/update_folder_member`;
+    # templates/list_for_user
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - templates/list_for_user response 
+    resource isolated function post file_properties/templates/list_for_user(TemplatesListForUserHeaders headers = {}) returns inline_response_200_6|error {
+        string resourcePath = string `/file_properties/templates/list_for_user`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, httpHeaders);
-    }
-
-    resource isolated function post '2/sharing/update_folder_policy(sharing_update_folder_policy_body payload, UpdateFolderPolicyHeaders headers = {}) returns inline_response_200_38|error {
-        string resourcePath = string `/2/sharing/update_folder_policy`;
-        map<string|string[]> httpHeaders = getMapForHeaders(headers);
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/team/devices/list_member_devices(devices_list_member_devices_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/devices/list_member_devices`;
+    # templates/remove_for_team
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post file_properties/templates/remove_for_team(templates_remove_for_team_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/file_properties/templates/remove_for_team`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/devices/list_members_devices(string payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/devices/list_members_devices`;
+    # templates/remove_for_user
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post file_properties/templates/remove_for_user(templates_remove_for_user_body payload, TemplatesRemoveForUserHeaders headers = {}) returns error? {
+        string resourcePath = string `/file_properties/templates/remove_for_user`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # templates/update_for_team
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - templates/update_for_team response 
+    resource isolated function post file_properties/templates/update_for_team(templates_update_for_team_body payload, map<string|string[]> headers = {}) returns templates_remove_for_user_body|error {
+        string resourcePath = string `/file_properties/templates/update_for_team`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # templates/update_for_user
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - templates/update_for_user response 
+    resource isolated function post file_properties/templates/update_for_user(templates_update_for_user_body payload, TemplatesUpdateForUserHeaders headers = {}) returns templates_remove_for_user_body|error {
+        string resourcePath = string `/file_properties/templates/update_for_user`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # count
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - count response 
+    resource isolated function post file_requests/count(CountHeaders headers = {}) returns inline_response_200_7|error {
+        string resourcePath = string `/file_requests/count`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # create
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - create response 
+    resource isolated function post file_requests/create(file_requests_create_body payload, CreateHeaders headers = {}) returns inline_response_200_8|error {
+        string resourcePath = string `/file_requests/create`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # delete
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - delete response 
+    resource isolated function post file_requests/delete(file_requests_delete_body payload, DeleteHeaders headers = {}) returns inline_response_200_9|error {
+        string resourcePath = string `/file_requests/delete`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # delete_all_closed
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - delete_all_closed response 
+    resource isolated function post file_requests/delete_all_closed(DeleteAllClosedHeaders headers = {}) returns inline_response_200_9|error {
+        string resourcePath = string `/file_requests/delete_all_closed`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get response 
+    resource isolated function post file_requests/get(file_requests_get_body payload, GetHeaders headers = {}) returns inline_response_200_8|error {
+        string resourcePath = string `/file_requests/get`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post file_requests/list/'continue(list_continue_body payload, ListContinueHeaders headers = {}) returns inline_response_200_10|error {
+        string resourcePath = string `/file_requests/list/continue`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list response 
+    resource isolated function post file_requests/list_v2(file_requests_list_v2_body payload, ListHeaders headers = {}) returns inline_response_200_10|error {
+        string resourcePath = string `/file_requests/list_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # update
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - update response 
+    resource isolated function post file_requests/update(file_requests_update_body payload, UpdateHeaders headers = {}) returns inline_response_200_8|error {
+        string resourcePath = string `/file_requests/update`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # copy_batch/check
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - copy_batch/check response 
+    resource isolated function post files/copy_batch/check_v2(copy_batch_check_v2_body payload, CopyBatchCheckHeaders headers = {}) returns inline_response_200_12|error {
+        string resourcePath = string `/files/copy_batch/check_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # copy_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - copy_batch response 
+    resource isolated function post files/copy_batch_v2(files_copy_batch_v2_body payload, CopyBatchHeaders headers = {}) returns inline_response_200_12|error {
+        string resourcePath = string `/files/copy_batch_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # copy_reference/get
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - copy_reference/get response 
+    resource isolated function post files/copy_reference/get(copy_reference_get_body payload, CopyReferenceGetHeaders headers = {}) returns inline_response_200_13|error {
+        string resourcePath = string `/files/copy_reference/get`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # copy_reference/save
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - copy_reference/save response 
+    resource isolated function post files/copy_reference/save(copy_reference_save_body payload, CopyReferenceSaveHeaders headers = {}) returns inline_response_200_11|error {
+        string resourcePath = string `/files/copy_reference/save`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # copy
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - copy response 
+    resource isolated function post files/copy_v2(files_copy_v2_body payload, CopyHeaders headers = {}) returns inline_response_200_11|error {
+        string resourcePath = string `/files/copy_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # create_folder_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - create_folder_batch response 
+    resource isolated function post files/create_folder_batch(files_create_folder_batch_body payload, CreateFolderBatchHeaders headers = {}) returns inline_response_200_15|error {
+        string resourcePath = string `/files/create_folder_batch`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post files/create_folder_batch/'check(create_folder_batch_check_body payload, CreateFolderBatchCheckHeaders headers = {}) returns inline_response_200_15|error {
+        string resourcePath = string `/files/create_folder_batch/check`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # create_folder
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - create_folder response 
+    resource isolated function post files/create_folder_v2(files_create_folder_v2_body payload, CreateFolderHeaders headers = {}) returns inline_response_200_14|error {
+        string resourcePath = string `/files/create_folder_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # delete_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - delete_batch response 
+    resource isolated function post files/delete_batch(files_delete_batch_body payload, DeleteBatchHeaders headers = {}) returns inline_response_200_16|error {
+        string resourcePath = string `/files/delete_batch`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post files/delete_batch/'check(delete_batch_check_body payload, DeleteBatchCheckHeaders headers = {}) returns inline_response_200_16|error {
+        string resourcePath = string `/files/delete_batch/check`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # delete
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - delete response 
+    resource isolated function post files/delete_v2(files_delete_v2_body payload, Delete1Headers headers = {}) returns inline_response_200_11|error {
+        string resourcePath = string `/files/delete_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # download
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - download response 
+    resource isolated function post files/download(DownloadHeaders headers = {}) returns inline_response_200_17|error {
+        string resourcePath = string `/files/download`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # download_zip
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - download_zip response 
+    resource isolated function post files/download_zip(DownloadZipHeaders headers = {}) returns inline_response_200_14|error {
+        string resourcePath = string `/files/download_zip`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # export
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - export response 
+    resource isolated function post files/export(ExportHeaders headers = {}) returns inline_response_200_18|error {
+        string resourcePath = string `/files/export`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_file_lock_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_file_lock_batch response 
+    resource isolated function post files/get_file_lock_batch(files_get_file_lock_batch_body payload, GetFileLockBatchHeaders headers = {}) returns inline_response_200_19|error {
+        string resourcePath = string `/files/get_file_lock_batch`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_metadata
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_metadata response 
+    resource isolated function post files/get_metadata(files_get_metadata_body payload, GetMetadataHeaders headers = {}) returns inline_response_200_20|error {
+        string resourcePath = string `/files/get_metadata`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_preview
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_preview response 
+    resource isolated function post files/get_preview(GetPreviewHeaders headers = {}) returns inline_response_200_17|error {
+        string resourcePath = string `/files/get_preview`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_temporary_link
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_temporary_link response 
+    resource isolated function post files/get_temporary_link(files_get_temporary_link_body payload, GetTemporaryLinkHeaders headers = {}) returns inline_response_200_21|error {
+        string resourcePath = string `/files/get_temporary_link`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_temporary_upload_link
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_temporary_upload_link response 
+    resource isolated function post files/get_temporary_upload_link(files_get_temporary_upload_link_body payload, GetTemporaryUploadLinkHeaders headers = {}) returns inline_response_200_22|error {
+        string resourcePath = string `/files/get_temporary_upload_link`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_thumbnail_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_thumbnail_batch response 
+    resource isolated function post files/get_thumbnail_batch(files_get_thumbnail_batch_body payload, GetThumbnailBatchHeaders headers = {}) returns inline_response_200_24|error {
+        string resourcePath = string `/files/get_thumbnail_batch`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_thumbnail
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_thumbnail response 
+    resource isolated function post files/get_thumbnail_v2(GetThumbnailHeaders headers = {}) returns inline_response_200_23|error {
+        string resourcePath = string `/files/get_thumbnail_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_folder
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_folder response 
+    resource isolated function post files/list_folder(files_list_folder_body payload, ListFolderHeaders headers = {}) returns inline_response_200_25|error {
+        string resourcePath = string `/files/list_folder`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post files/list_folder/'continue(list_folder_continue_body payload, ListFolderContinueHeaders headers = {}) returns inline_response_200_25|error {
+        string resourcePath = string `/files/list_folder/continue`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_folder/get_latest_cursor
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_folder/get_latest_cursor response 
+    resource isolated function post files/list_folder/get_latest_cursor(list_folder_get_latest_cursor_body payload, ListFolderGetLatestCursorHeaders headers = {}) returns list_folder_continue_body|error {
+        string resourcePath = string `/files/list_folder/get_latest_cursor`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_folder/longpoll
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_folder/longpoll response 
+    resource isolated function post files/list_folder/longpoll(list_folder_longpoll_body payload, ListFolderLongpollHeaders headers = {}) returns inline_response_200_26|error {
+        string resourcePath = string `/files/list_folder/longpoll`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_revisions
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_revisions response 
+    resource isolated function post files/list_revisions(files_list_revisions_body payload, ListRevisionsHeaders headers = {}) returns inline_response_200_27|error {
+        string resourcePath = string `/files/list_revisions`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # lock_file_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - lock_file_batch response 
+    resource isolated function post files/lock_file_batch(files_lock_file_batch_body payload, LockFileBatchHeaders headers = {}) returns inline_response_200_19|error {
+        string resourcePath = string `/files/lock_file_batch`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # move_batch/check
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - move_batch/check response 
+    resource isolated function post files/move_batch/check_v2(move_batch_check_v2_body payload, MoveBatchCheckHeaders headers = {}) returns inline_response_200_12|error {
+        string resourcePath = string `/files/move_batch/check_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # move_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - move_batch response 
+    resource isolated function post files/move_batch_v2(files_move_batch_v2_body payload, MoveBatchHeaders headers = {}) returns inline_response_200_12|error {
+        string resourcePath = string `/files/move_batch_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # move
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - move response 
+    resource isolated function post files/move_v2(files_move_v2_body payload, MoveHeaders headers = {}) returns inline_response_200_11|error {
+        string resourcePath = string `/files/move_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # permanently_delete
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post files/permanently_delete(files_permanently_delete_body payload, PermanentlyDeleteHeaders headers = {}) returns error? {
+        string resourcePath = string `/files/permanently_delete`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # restore
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - restore response 
+    resource isolated function post files/restore(files_restore_body payload, RestoreHeaders headers = {}) returns inline_response_200_17|error {
+        string resourcePath = string `/files/restore`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # save_url
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - save_url response 
+    resource isolated function post files/save_url(files_save_url_body payload, SaveUrlHeaders headers = {}) returns inline_response_200_28|error {
+        string resourcePath = string `/files/save_url`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # save_url/check_job_status
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - save_url/check_job_status response 
+    resource isolated function post files/save_url/check_job_status(save_url_check_job_status_body payload, SaveUrlCheckJobStatusHeaders headers = {}) returns inline_response_200_29|error {
+        string resourcePath = string `/files/save_url/check_job_status`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # search/continue
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - search/continue response 
+    resource isolated function post files/search/continue_v2(search_continue_v2_body payload, SearchContinueHeaders headers = {}) returns inline_response_200_30|error {
+        string resourcePath = string `/files/search/continue_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # search
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - search response 
+    resource isolated function post files/search_v2(files_search_v2_body payload, SearchHeaders headers = {}) returns inline_response_200_30|error {
+        string resourcePath = string `/files/search_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # unlock_file_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - unlock_file_batch response 
+    resource isolated function post files/unlock_file_batch(files_unlock_file_batch_body payload, UnlockFileBatchHeaders headers = {}) returns inline_response_200_19|error {
+        string resourcePath = string `/files/unlock_file_batch`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # upload
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - upload response 
+    resource isolated function post files/upload(UploadHeaders headers = {}) returns inline_response_200_17|error {
+        string resourcePath = string `/files/upload`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post files/upload_session/'start(UploadSessionStartHeaders headers = {}) returns inline_response_200_32|error {
+        string resourcePath = string `/files/upload_session/start`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # upload_session/append
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post files/upload_session/append_v2(UploadSessionAppendHeaders headers = {}) returns error? {
+        string resourcePath = string `/files/upload_session/append_v2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # upload_session/finish
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - upload_session/finish response 
+    resource isolated function post files/upload_session/finish(UploadSessionFinishHeaders headers = {}) returns inline_response_200_17|error {
+        string resourcePath = string `/files/upload_session/finish`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # upload_session/finish_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - upload_session/finish_batch response 
+    resource isolated function post files/upload_session/finish_batch(upload_session_finish_batch_body payload, UploadSessionFinishBatchHeaders headers = {}) returns inline_response_200_31|error {
+        string resourcePath = string `/files/upload_session/finish_batch`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post files/upload_session/finish_batch/'check(finish_batch_check_body payload, UploadSessionFinishBatchCheckHeaders headers = {}) returns inline_response_200_31|error {
+        string resourcePath = string `/files/upload_session/finish_batch/check`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # add_file_member
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - add_file_member response 
+    resource isolated function post sharing/add_file_member(sharing_add_file_member_body payload, AddFileMemberHeaders headers = {}) returns inline_response_200_33[]|error {
+        string resourcePath = string `/sharing/add_file_member`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # add_folder_member
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post sharing/add_folder_member(sharing_add_folder_member_body payload, AddFolderMemberHeaders headers = {}) returns error? {
+        string resourcePath = string `/sharing/add_folder_member`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # check_job_status
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - check_job_status response 
+    resource isolated function post sharing/check_job_status(sharing_check_job_status_body payload, CheckJobStatusHeaders headers = {}) returns inline_response_200_29|error {
+        string resourcePath = string `/sharing/check_job_status`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # check_remove_member_job_status
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - check_remove_member_job_status response 
+    resource isolated function post sharing/check_remove_member_job_status(sharing_check_remove_member_job_status_body payload, CheckRemoveMemberJobStatusHeaders headers = {}) returns inline_response_200_34|error {
+        string resourcePath = string `/sharing/check_remove_member_job_status`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # check_share_job_status
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - check_share_job_status response 
+    resource isolated function post sharing/check_share_job_status(sharing_check_share_job_status_body payload, CheckShareJobStatusHeaders headers = {}) returns inline_response_200_35|error {
+        string resourcePath = string `/sharing/check_share_job_status`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_file_metadata
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_file_metadata response 
+    resource isolated function post sharing/get_file_metadata(sharing_get_file_metadata_body payload, GetFileMetadataHeaders headers = {}) returns inline_response_200_36|error {
+        string resourcePath = string `/sharing/get_file_metadata`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_file_metadata/batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_file_metadata/batch response 
+    resource isolated function post sharing/get_file_metadata/batch(get_file_metadata_batch_body payload, GetFileMetadataBatchHeaders headers = {}) returns inline_response_200_37[]|error {
+        string resourcePath = string `/sharing/get_file_metadata/batch`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_folder_metadata
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_folder_metadata response 
+    resource isolated function post sharing/get_folder_metadata(sharing_get_folder_metadata_body payload, GetFolderMetadataHeaders headers = {}) returns inline_response_200_38|error {
+        string resourcePath = string `/sharing/get_folder_metadata`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_shared_link_file
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_shared_link_file response 
+    resource isolated function post sharing/get_shared_link_file(GetSharedLinkFileHeaders headers = {}) returns inline_response_200_39|error {
+        string resourcePath = string `/sharing/get_shared_link_file`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # get_shared_link_metadata
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_shared_link_metadata response 
+    resource isolated function post sharing/get_shared_link_metadata(sharing_get_shared_link_metadata_body payload, GetSharedLinkMetadataHeaders headers = {}) returns inline_response_200_39|error {
+        string resourcePath = string `/sharing/get_shared_link_metadata`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_file_members
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_file_members response 
+    resource isolated function post sharing/list_file_members(sharing_list_file_members_body payload, ListFileMembersHeaders headers = {}) returns inline_response_200_40|error {
+        string resourcePath = string `/sharing/list_file_members`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post sharing/list_file_members/'continue(list_file_members_continue_body payload, ListFileMembersContinueHeaders headers = {}) returns inline_response_200_40|error {
+        string resourcePath = string `/sharing/list_file_members/continue`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_file_members/batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_file_members/batch response 
+    resource isolated function post sharing/list_file_members/batch(list_file_members_batch_body payload, ListFileMembersBatchHeaders headers = {}) returns inline_response_200_41[]|error {
+        string resourcePath = string `/sharing/list_file_members/batch`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post sharing/list_folder_members/'continue(list_folder_members_continue_body payload, ListFolderMembersContinueHeaders headers = {}) returns inline_response_200_42|error {
+        string resourcePath = string `/sharing/list_folder_members/continue`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_folders
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_folders response 
+    resource isolated function post sharing/list_folders(sharing_list_folders_body payload, ListFoldersHeaders headers = {}) returns inline_response_200_43|error {
+        string resourcePath = string `/sharing/list_folders`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post sharing/list_folders/'continue(list_folders_continue_body payload, ListFoldersContinueHeaders headers = {}) returns inline_response_200_43|error {
+        string resourcePath = string `/sharing/list_folders/continue`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_mountable_folders
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_mountable_folders response 
+    resource isolated function post sharing/list_mountable_folders(sharing_list_mountable_folders_body payload, ListMountableFoldersHeaders headers = {}) returns inline_response_200_43|error {
+        string resourcePath = string `/sharing/list_mountable_folders`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post sharing/list_mountable_folders/'continue(list_mountable_folders_continue_body payload, ListMountableFoldersContinueHeaders headers = {}) returns inline_response_200_43|error {
+        string resourcePath = string `/sharing/list_mountable_folders/continue`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_received_files
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_received_files response 
+    resource isolated function post sharing/list_received_files(sharing_list_received_files_body payload, ListReceivedFilesHeaders headers = {}) returns inline_response_200_44|error {
+        string resourcePath = string `/sharing/list_received_files`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    resource isolated function post sharing/list_received_files/'continue(list_received_files_continue_body payload, ListReceivedFilesContinueHeaders headers = {}) returns inline_response_200_44|error {
+        string resourcePath = string `/sharing/list_received_files/continue`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # list_shared_links
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - list_shared_links response 
+    resource isolated function post sharing/list_shared_links(sharing_list_shared_links_body payload, ListSharedLinksHeaders headers = {}) returns inline_response_200_45|error {
+        string resourcePath = string `/sharing/list_shared_links`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # modify_shared_link_settings
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - modify_shared_link_settings response 
+    resource isolated function post sharing/modify_shared_link_settings(sharing_modify_shared_link_settings_body payload, ModifySharedLinkSettingsHeaders headers = {}) returns inline_response_200_39|error {
+        string resourcePath = string `/sharing/modify_shared_link_settings`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # mount_folder
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - mount_folder response 
+    resource isolated function post sharing/mount_folder(sharing_mount_folder_body payload, MountFolderHeaders headers = {}) returns inline_response_200_38|error {
+        string resourcePath = string `/sharing/mount_folder`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # relinquish_file_membership
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post sharing/relinquish_file_membership(sharing_relinquish_file_membership_body payload, RelinquishFileMembershipHeaders headers = {}) returns error? {
+        string resourcePath = string `/sharing/relinquish_file_membership`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # relinquish_folder_membership
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - relinquish_folder_membership response 
+    resource isolated function post sharing/relinquish_folder_membership(sharing_relinquish_folder_membership_body payload, RelinquishFolderMembershipHeaders headers = {}) returns inline_response_200_34|error {
+        string resourcePath = string `/sharing/relinquish_folder_membership`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # remove_file_member_2
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - remove_file_member_2 response 
+    resource isolated function post sharing/remove_file_member_2(sharing_remove_file_member_2_body payload, RemoveFileMember2Headers headers = {}) returns inline_response_200_46|error {
+        string resourcePath = string `/sharing/remove_file_member_2`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # remove_folder_member
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - remove_folder_member response 
+    resource isolated function post sharing/remove_folder_member(sharing_remove_folder_member_body payload, RemoveFolderMemberHeaders headers = {}) returns inline_response_200_47|error {
+        string resourcePath = string `/sharing/remove_folder_member`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # revoke_shared_link
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post sharing/revoke_shared_link(sharing_revoke_shared_link_body payload, RevokeSharedLinkHeaders headers = {}) returns error? {
+        string resourcePath = string `/sharing/revoke_shared_link`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # set_access_inheritance
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - set_access_inheritance response 
+    resource isolated function post sharing/set_access_inheritance(sharing_set_access_inheritance_body payload, SetAccessInheritanceHeaders headers = {}) returns inline_response_200_35|error {
+        string resourcePath = string `/sharing/set_access_inheritance`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # share_folder
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - share_folder response 
+    resource isolated function post sharing/share_folder(sharing_share_folder_body payload, ShareFolderHeaders headers = {}) returns inline_response_200_35|error {
+        string resourcePath = string `/sharing/share_folder`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # transfer_folder
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post sharing/transfer_folder(sharing_transfer_folder_body payload, TransferFolderHeaders headers = {}) returns error? {
+        string resourcePath = string `/sharing/transfer_folder`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # unmount_folder
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post sharing/unmount_folder(sharing_unmount_folder_body payload, UnmountFolderHeaders headers = {}) returns error? {
+        string resourcePath = string `/sharing/unmount_folder`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # unshare_file
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post sharing/unshare_file(sharing_unshare_file_body payload, UnshareFileHeaders headers = {}) returns error? {
+        string resourcePath = string `/sharing/unshare_file`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # unshare_folder
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - unshare_folder response 
+    resource isolated function post sharing/unshare_folder(sharing_unshare_folder_body payload, UnshareFolderHeaders headers = {}) returns inline_response_200_34|error {
+        string resourcePath = string `/sharing/unshare_folder`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # update_file_member
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - update_file_member response 
+    resource isolated function post sharing/update_file_member(sharing_update_file_member_body payload, UpdateFileMemberHeaders headers = {}) returns record {}|error {
+        string resourcePath = string `/sharing/update_file_member`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # update_folder_member
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - update_folder_member response 
+    resource isolated function post sharing/update_folder_member(sharing_update_folder_member_body payload, UpdateFolderMemberHeaders headers = {}) returns record {}|error {
+        string resourcePath = string `/sharing/update_folder_member`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # update_folder_policy
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - update_folder_policy response 
+    resource isolated function post sharing/update_folder_policy(sharing_update_folder_policy_body payload, UpdateFolderPolicyHeaders headers = {}) returns inline_response_200_38|error {
+        string resourcePath = string `/sharing/update_folder_policy`;
+        map<string|string[]> httpHeaders = getMapForHeaders(headers);
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, httpHeaders);
+    }
+
+    # devices/list_member_devices
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/devices/list_member_devices(devices_list_member_devices_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/devices/list_member_devices`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # devices/list_members_devices
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/devices/list_members_devices(string payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/devices/list_members_devices`;
         http:Request request = new;
         request.setPayload(payload, "text/plain");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/devices/revoke_device_session(devices_revoke_device_session_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/devices/revoke_device_session`;
+    # devices/revoke_device_session
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/devices/revoke_device_session(devices_revoke_device_session_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/devices/revoke_device_session`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/devices/revoke_device_session_batch(devices_revoke_device_session_batch_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/devices/revoke_device_session_batch`;
+    # devices/revoke_device_session_batch
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/devices/revoke_device_session_batch(devices_revoke_device_session_batch_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/devices/revoke_device_session_batch`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/features/get_values(features_get_values_body payload, map<string|string[]> headers = {}) returns inline_response_200_70|error {
-        string resourcePath = string `/2/team/features/get_values`;
+    # features/get_values
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - features/get_values response 
+    resource isolated function post team/features/get_values(features_get_values_body payload, map<string|string[]> headers = {}) returns inline_response_200_70|error {
+        string resourcePath = string `/team/features/get_values`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/get_info(map<string|string[]> headers = {}) returns inline_response_200_71|error {
-        string resourcePath = string `/2/team/get_info`;
+    # get_info
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_info response 
+    resource isolated function post team/get_info(map<string|string[]> headers = {}) returns inline_response_200_71|error {
+        string resourcePath = string `/team/get_info`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/create(groups_create_body payload, map<string|string[]> headers = {}) returns inline_response_200_48|error {
-        string resourcePath = string `/2/team/groups/create`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/groups/delete(groups_delete_body payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
-        string resourcePath = string `/2/team/groups/delete`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/groups/get_info(groups_get_info_body payload, map<string|string[]> headers = {}) returns inline_response_200_49[]|error {
-        string resourcePath = string `/2/team/groups/get_info`;
+    # groups/create
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/create response 
+    resource isolated function post team/groups/create(groups_create_body payload, map<string|string[]> headers = {}) returns inline_response_200_48|error {
+        string resourcePath = string `/team/groups/create`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/job_status/get(job_status_get_body payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
-        string resourcePath = string `/2/team/groups/job_status/get`;
+    # groups/delete
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/delete response 
+    resource isolated function post team/groups/delete(groups_delete_body payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
+        string resourcePath = string `/team/groups/delete`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/list(groups_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_50|error {
-        string resourcePath = string `/2/team/groups/list`;
+    # groups/get_info
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/get_info response 
+    resource isolated function post team/groups/get_info(groups_get_info_body payload, map<string|string[]> headers = {}) returns inline_response_200_49[]|error {
+        string resourcePath = string `/team/groups/get_info`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/list/'continue(list_continue_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_50|error {
-        string resourcePath = string `/2/team/groups/list/continue`;
+    # groups/job_status/get
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/job_status/get response 
+    resource isolated function post team/groups/job_status/get(job_status_get_body payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
+        string resourcePath = string `/team/groups/job_status/get`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/members/add(members_add_body payload, map<string|string[]> headers = {}) returns inline_response_200_51|error {
-        string resourcePath = string `/2/team/groups/members/add`;
+    # groups/list
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/list response 
+    resource isolated function post team/groups/list(groups_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_50|error {
+        string resourcePath = string `/team/groups/list`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/members/list(members_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_52|error {
-        string resourcePath = string `/2/team/groups/members/list`;
+    resource isolated function post team/groups/list/'continue(list_continue_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_50|error {
+        string resourcePath = string `/team/groups/list/continue`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/members/list/'continue(list_continue_body_2 payload, map<string|string[]> headers = {}) returns inline_response_200_52|error {
-        string resourcePath = string `/2/team/groups/members/list/continue`;
+    # groups/members/add
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/members/add response 
+    resource isolated function post team/groups/members/add(members_add_body payload, map<string|string[]> headers = {}) returns inline_response_200_51|error {
+        string resourcePath = string `/team/groups/members/add`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/members/remove(members_remove_body payload, map<string|string[]> headers = {}) returns inline_response_200_51|error {
-        string resourcePath = string `/2/team/groups/members/remove`;
+    # groups/members/list
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/members/list response 
+    resource isolated function post team/groups/members/list(members_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_52|error {
+        string resourcePath = string `/team/groups/members/list`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/members/set_access_type(members_set_access_type_body payload, map<string|string[]> headers = {}) returns inline_response_200_49[]|error {
-        string resourcePath = string `/2/team/groups/members/set_access_type`;
+    resource isolated function post team/groups/members/list/'continue(list_continue_body_2 payload, map<string|string[]> headers = {}) returns inline_response_200_52|error {
+        string resourcePath = string `/team/groups/members/list/continue`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/groups/update(groups_update_body payload, map<string|string[]> headers = {}) returns inline_response_200_48|error {
-        string resourcePath = string `/2/team/groups/update`;
+    # groups/members/remove
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/members/remove response 
+    resource isolated function post team/groups/members/remove(members_remove_body payload, map<string|string[]> headers = {}) returns inline_response_200_51|error {
+        string resourcePath = string `/team/groups/members/remove`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/legal_holds/create_policy(legal_holds_create_policy_body payload, map<string|string[]> headers = {}) returns inline_response_200_53|error {
-        string resourcePath = string `/2/team/legal_holds/create_policy`;
+    # groups/members/set_access_type
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/members/set_access_type response 
+    resource isolated function post team/groups/members/set_access_type(members_set_access_type_body payload, map<string|string[]> headers = {}) returns inline_response_200_49[]|error {
+        string resourcePath = string `/team/groups/members/set_access_type`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/legal_holds/get_policy(legal_holds_get_policy_body payload, map<string|string[]> headers = {}) returns inline_response_200_53|error {
-        string resourcePath = string `/2/team/legal_holds/get_policy`;
+    # groups/update
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - groups/update response 
+    resource isolated function post team/groups/update(groups_update_body payload, map<string|string[]> headers = {}) returns inline_response_200_48|error {
+        string resourcePath = string `/team/groups/update`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/legal_holds/list_held_revisions(legal_holds_list_held_revisions_body payload, map<string|string[]> headers = {}) returns inline_response_200_54|error {
-        string resourcePath = string `/2/team/legal_holds/list_held_revisions`;
+    # legal_holds/create_policy
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - legal_holds/create_policy response 
+    resource isolated function post team/legal_holds/create_policy(legal_holds_create_policy_body payload, map<string|string[]> headers = {}) returns inline_response_200_53|error {
+        string resourcePath = string `/team/legal_holds/create_policy`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/legal_holds/list_held_revisions_continue(legal_holds_list_held_revisions_continue_body payload, map<string|string[]> headers = {}) returns inline_response_200_54|error {
-        string resourcePath = string `/2/team/legal_holds/list_held_revisions_continue`;
+    # legal_holds/get_policy
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - legal_holds/get_policy response 
+    resource isolated function post team/legal_holds/get_policy(legal_holds_get_policy_body payload, map<string|string[]> headers = {}) returns inline_response_200_53|error {
+        string resourcePath = string `/team/legal_holds/get_policy`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/legal_holds/list_policies(legal_holds_list_policies_body payload, map<string|string[]> headers = {}) returns inline_response_200_55|error {
-        string resourcePath = string `/2/team/legal_holds/list_policies`;
+    # legal_holds/list_held_revisions
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - legal_holds/list_held_revisions response 
+    resource isolated function post team/legal_holds/list_held_revisions(legal_holds_list_held_revisions_body payload, map<string|string[]> headers = {}) returns inline_response_200_54|error {
+        string resourcePath = string `/team/legal_holds/list_held_revisions`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/legal_holds/release_policy(legal_holds_release_policy_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/legal_holds/release_policy`;
+    # legal_holds/list_held_revisions_continue
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - legal_holds/list_held_revisions_continue response 
+    resource isolated function post team/legal_holds/list_held_revisions_continue(legal_holds_list_held_revisions_continue_body payload, map<string|string[]> headers = {}) returns inline_response_200_54|error {
+        string resourcePath = string `/team/legal_holds/list_held_revisions_continue`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/legal_holds/update_policy(legal_holds_update_policy_body payload, map<string|string[]> headers = {}) returns inline_response_200_53|error {
-        string resourcePath = string `/2/team/legal_holds/update_policy`;
+    # legal_holds/list_policies
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - legal_holds/list_policies response 
+    resource isolated function post team/legal_holds/list_policies(legal_holds_list_policies_body payload, map<string|string[]> headers = {}) returns inline_response_200_55|error {
+        string resourcePath = string `/team/legal_holds/list_policies`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/linked_apps/list_member_linked_apps(linked_apps_list_member_linked_apps_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/linked_apps/list_member_linked_apps`;
+    # legal_holds/release_policy
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/legal_holds/release_policy(legal_holds_release_policy_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/legal_holds/release_policy`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/linked_apps/list_members_linked_apps(string payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/linked_apps/list_members_linked_apps`;
-        http:Request request = new;
-        request.setPayload(payload, "text/plain");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/linked_apps/revoke_linked_app(string payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/linked_apps/revoke_linked_app`;
-        http:Request request = new;
-        request.setPayload(payload, "text/plain");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/linked_apps/revoke_linked_app_batch(string payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/linked_apps/revoke_linked_app_batch`;
-        http:Request request = new;
-        request.setPayload(payload, "text/plain");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/member_space_limits/excluded_users/add(excluded_users_add_body payload, map<string|string[]> headers = {}) returns inline_response_200_56|error {
-        string resourcePath = string `/2/team/member_space_limits/excluded_users/add`;
+    # legal_holds/update_policy
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - legal_holds/update_policy response 
+    resource isolated function post team/legal_holds/update_policy(legal_holds_update_policy_body payload, map<string|string[]> headers = {}) returns inline_response_200_53|error {
+        string resourcePath = string `/team/legal_holds/update_policy`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/member_space_limits/excluded_users/list(excluded_users_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_57|error {
-        string resourcePath = string `/2/team/member_space_limits/excluded_users/list`;
+    # linked_apps/list_member_linked_apps
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/linked_apps/list_member_linked_apps(linked_apps_list_member_linked_apps_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/linked_apps/list_member_linked_apps`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/member_space_limits/excluded_users/list/'continue(list_continue_body_3 payload, map<string|string[]> headers = {}) returns inline_response_200_57|error {
-        string resourcePath = string `/2/team/member_space_limits/excluded_users/list/continue`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/member_space_limits/excluded_users/remove(excluded_users_remove_body payload, map<string|string[]> headers = {}) returns inline_response_200_56|error {
-        string resourcePath = string `/2/team/member_space_limits/excluded_users/remove`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/member_space_limits/get_custom_quota(member_space_limits_get_custom_quota_body payload, map<string|string[]> headers = {}) returns inline_response_200_46[]|error {
-        string resourcePath = string `/2/team/member_space_limits/get_custom_quota`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/member_space_limits/remove_custom_quota(member_space_limits_remove_custom_quota_body payload, map<string|string[]> headers = {}) returns inline_response_200_46[]|error {
-        string resourcePath = string `/2/team/member_space_limits/remove_custom_quota`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/member_space_limits/set_custom_quota(member_space_limits_set_custom_quota_body payload, map<string|string[]> headers = {}) returns inline_response_200_46[]|error {
-        string resourcePath = string `/2/team/member_space_limits/set_custom_quota`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/add(members_add_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_58|error {
-        string resourcePath = string `/2/team/members/add`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/add/job_status/get(job_status_get_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_58|error {
-        string resourcePath = string `/2/team/members/add/job_status/get`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/delete_profile_photo(members_delete_profile_photo_body payload, map<string|string[]> headers = {}) returns inline_response_200_59|error {
-        string resourcePath = string `/2/team/members/delete_profile_photo`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/get_info(members_get_info_body payload, map<string|string[]> headers = {}) returns inline_response_200_60[]|error {
-        string resourcePath = string `/2/team/members/get_info`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/list(members_list_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_61|error {
-        string resourcePath = string `/2/team/members/list`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/list/'continue(list_continue_body_4 payload, map<string|string[]> headers = {}) returns inline_response_200_61|error {
-        string resourcePath = string `/2/team/members/list/continue`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/move_former_member_files(members_move_former_member_files_body payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
-        string resourcePath = string `/2/team/members/move_former_member_files`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/move_former_member_files/job_status/'check(job_status_check_body payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
-        string resourcePath = string `/2/team/members/move_former_member_files/job_status/check`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/recover(members_recover_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/members/recover`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/remove(members_remove_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
-        string resourcePath = string `/2/team/members/remove`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/remove/job_status/get(job_status_get_body_2 payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
-        string resourcePath = string `/2/team/members/remove/job_status/get`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/secondary_emails/add(secondary_emails_add_body payload, map<string|string[]> headers = {}) returns inline_response_200_62|error {
-        string resourcePath = string `/2/team/members/secondary_emails/add`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/secondary_emails/delete(secondary_emails_delete_body payload, map<string|string[]> headers = {}) returns inline_response_200_63|error {
-        string resourcePath = string `/2/team/members/secondary_emails/delete`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/secondary_emails/resend_verification_emails(secondary_emails_resend_verification_emails_body payload, map<string|string[]> headers = {}) returns inline_response_200_64|error {
-        string resourcePath = string `/2/team/members/secondary_emails/resend_verification_emails`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/send_welcome_email(members_send_welcome_email_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/members/send_welcome_email`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/set_admin_permissions(members_set_admin_permissions_body payload, map<string|string[]> headers = {}) returns inline_response_200_65|error {
-        string resourcePath = string `/2/team/members/set_admin_permissions`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/set_profile(members_set_profile_body payload, map<string|string[]> headers = {}) returns inline_response_200_59|error {
-        string resourcePath = string `/2/team/members/set_profile`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/set_profile_photo(members_set_profile_photo_body payload, map<string|string[]> headers = {}) returns inline_response_200_59|error {
-        string resourcePath = string `/2/team/members/set_profile_photo`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/suspend(members_suspend_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/members/suspend`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/members/unsuspend(members_unsuspend_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/members/unsuspend`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/namespaces/list(namespaces_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_66|error {
-        string resourcePath = string `/2/team/namespaces/list`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/namespaces/list/'continue(list_continue_body_5 payload, map<string|string[]> headers = {}) returns inline_response_200_66|error {
-        string resourcePath = string `/2/team/namespaces/list/continue`;
-        http:Request request = new;
-        json jsonBody = payload.toJson();
-        request.setPayload(jsonBody, "application/json");
-        return self.clientEp->post(resourcePath, request, headers);
-    }
-
-    resource isolated function post '2/team/reports/get_activity(string payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/reports/get_activity`;
+    # linked_apps/list_members_linked_apps
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/linked_apps/list_members_linked_apps(string payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/linked_apps/list_members_linked_apps`;
         http:Request request = new;
         request.setPayload(payload, "text/plain");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/reports/get_devices(string payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/reports/get_devices`;
+    # linked_apps/revoke_linked_app
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/linked_apps/revoke_linked_app(string payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/linked_apps/revoke_linked_app`;
         http:Request request = new;
         request.setPayload(payload, "text/plain");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/reports/get_membership(string payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/reports/get_membership`;
+    # linked_apps/revoke_linked_app_batch
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/linked_apps/revoke_linked_app_batch(string payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/linked_apps/revoke_linked_app_batch`;
         http:Request request = new;
         request.setPayload(payload, "text/plain");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/reports/get_storage(string payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/reports/get_storage`;
+    # member_space_limits/excluded_users/add
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - member_space_limits/excluded_users/add response 
+    resource isolated function post team/member_space_limits/excluded_users/add(excluded_users_add_body payload, map<string|string[]> headers = {}) returns inline_response_200_56|error {
+        string resourcePath = string `/team/member_space_limits/excluded_users/add`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # member_space_limits/excluded_users/list
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - member_space_limits/excluded_users/list response 
+    resource isolated function post team/member_space_limits/excluded_users/list(excluded_users_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_57|error {
+        string resourcePath = string `/team/member_space_limits/excluded_users/list`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    resource isolated function post team/member_space_limits/excluded_users/list/'continue(list_continue_body_3 payload, map<string|string[]> headers = {}) returns inline_response_200_57|error {
+        string resourcePath = string `/team/member_space_limits/excluded_users/list/continue`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # member_space_limits/excluded_users/remove
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - member_space_limits/excluded_users/remove response 
+    resource isolated function post team/member_space_limits/excluded_users/remove(excluded_users_remove_body payload, map<string|string[]> headers = {}) returns inline_response_200_56|error {
+        string resourcePath = string `/team/member_space_limits/excluded_users/remove`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # member_space_limits/get_custom_quota
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - member_space_limits/get_custom_quota response 
+    resource isolated function post team/member_space_limits/get_custom_quota(member_space_limits_get_custom_quota_body payload, map<string|string[]> headers = {}) returns inline_response_200_46[]|error {
+        string resourcePath = string `/team/member_space_limits/get_custom_quota`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # member_space_limits/remove_custom_quota
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - member_space_limits/remove_custom_quota response 
+    resource isolated function post team/member_space_limits/remove_custom_quota(member_space_limits_remove_custom_quota_body payload, map<string|string[]> headers = {}) returns inline_response_200_46[]|error {
+        string resourcePath = string `/team/member_space_limits/remove_custom_quota`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # member_space_limits/set_custom_quota
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - member_space_limits/set_custom_quota response 
+    resource isolated function post team/member_space_limits/set_custom_quota(member_space_limits_set_custom_quota_body payload, map<string|string[]> headers = {}) returns inline_response_200_46[]|error {
+        string resourcePath = string `/team/member_space_limits/set_custom_quota`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/add
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/add response 
+    resource isolated function post team/members/add(members_add_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_58|error {
+        string resourcePath = string `/team/members/add`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/add/job_status/get
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/add/job_status/get response 
+    resource isolated function post team/members/add/job_status/get(job_status_get_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_58|error {
+        string resourcePath = string `/team/members/add/job_status/get`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/delete_profile_photo
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/delete_profile_photo response 
+    resource isolated function post team/members/delete_profile_photo(members_delete_profile_photo_body payload, map<string|string[]> headers = {}) returns inline_response_200_59|error {
+        string resourcePath = string `/team/members/delete_profile_photo`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/get_info
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/get_info response 
+    resource isolated function post team/members/get_info(members_get_info_body payload, map<string|string[]> headers = {}) returns inline_response_200_60[]|error {
+        string resourcePath = string `/team/members/get_info`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/list
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/list response 
+    resource isolated function post team/members/list(members_list_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_61|error {
+        string resourcePath = string `/team/members/list`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    resource isolated function post team/members/list/'continue(list_continue_body_4 payload, map<string|string[]> headers = {}) returns inline_response_200_61|error {
+        string resourcePath = string `/team/members/list/continue`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/move_former_member_files
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/move_former_member_files response 
+    resource isolated function post team/members/move_former_member_files(members_move_former_member_files_body payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
+        string resourcePath = string `/team/members/move_former_member_files`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    resource isolated function post team/members/move_former_member_files/job_status/'check(job_status_check_body payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
+        string resourcePath = string `/team/members/move_former_member_files/job_status/check`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/recover
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/members/recover(members_recover_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/members/recover`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/remove
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/remove response 
+    resource isolated function post team/members/remove(members_remove_body_1 payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
+        string resourcePath = string `/team/members/remove`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/remove/job_status/get
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/remove/job_status/get response 
+    resource isolated function post team/members/remove/job_status/get(job_status_get_body_2 payload, map<string|string[]> headers = {}) returns inline_response_200_34|error {
+        string resourcePath = string `/team/members/remove/job_status/get`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/secondary_emails/add
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/secondary_emails/add response 
+    resource isolated function post team/members/secondary_emails/add(secondary_emails_add_body payload, map<string|string[]> headers = {}) returns inline_response_200_62|error {
+        string resourcePath = string `/team/members/secondary_emails/add`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/secondary_emails/delete
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/secondary_emails/delete response 
+    resource isolated function post team/members/secondary_emails/delete(secondary_emails_delete_body payload, map<string|string[]> headers = {}) returns inline_response_200_63|error {
+        string resourcePath = string `/team/members/secondary_emails/delete`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/secondary_emails/resend_verification_emails
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/secondary_emails/resend_verification_emails response 
+    resource isolated function post team/members/secondary_emails/resend_verification_emails(secondary_emails_resend_verification_emails_body payload, map<string|string[]> headers = {}) returns inline_response_200_64|error {
+        string resourcePath = string `/team/members/secondary_emails/resend_verification_emails`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/send_welcome_email
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/members/send_welcome_email(members_send_welcome_email_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/members/send_welcome_email`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/set_admin_permissions
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/set_admin_permissions response 
+    resource isolated function post team/members/set_admin_permissions(members_set_admin_permissions_body payload, map<string|string[]> headers = {}) returns inline_response_200_65|error {
+        string resourcePath = string `/team/members/set_admin_permissions`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/set_profile
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/set_profile response 
+    resource isolated function post team/members/set_profile(members_set_profile_body payload, map<string|string[]> headers = {}) returns inline_response_200_59|error {
+        string resourcePath = string `/team/members/set_profile`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/set_profile_photo
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - members/set_profile_photo response 
+    resource isolated function post team/members/set_profile_photo(members_set_profile_photo_body payload, map<string|string[]> headers = {}) returns inline_response_200_59|error {
+        string resourcePath = string `/team/members/set_profile_photo`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/suspend
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/members/suspend(members_suspend_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/members/suspend`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # members/unsuspend
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/members/unsuspend(members_unsuspend_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/members/unsuspend`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # namespaces/list
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - namespaces/list response 
+    resource isolated function post team/namespaces/list(namespaces_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_66|error {
+        string resourcePath = string `/team/namespaces/list`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    resource isolated function post team/namespaces/list/'continue(list_continue_body_5 payload, map<string|string[]> headers = {}) returns inline_response_200_66|error {
+        string resourcePath = string `/team/namespaces/list/continue`;
+        http:Request request = new;
+        json jsonBody = payload.toJson();
+        request.setPayload(jsonBody, "application/json");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # reports/get_activity
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/reports/get_activity(string payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/reports/get_activity`;
         http:Request request = new;
         request.setPayload(payload, "text/plain");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/activate(team_folder_activate_body payload, map<string|string[]> headers = {}) returns inline_response_200_67|error {
-        string resourcePath = string `/2/team/team_folder/activate`;
+    # reports/get_devices
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/reports/get_devices(string payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/reports/get_devices`;
+        http:Request request = new;
+        request.setPayload(payload, "text/plain");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # reports/get_membership
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/reports/get_membership(string payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/reports/get_membership`;
+        http:Request request = new;
+        request.setPayload(payload, "text/plain");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # reports/get_storage
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/reports/get_storage(string payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/reports/get_storage`;
+        http:Request request = new;
+        request.setPayload(payload, "text/plain");
+        return self.clientEp->post(resourcePath, request, headers);
+    }
+
+    # team_folder/activate
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - team_folder/activate response 
+    resource isolated function post team/team_folder/activate(team_folder_activate_body payload, map<string|string[]> headers = {}) returns inline_response_200_67|error {
+        string resourcePath = string `/team/team_folder/activate`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/archive(team_folder_archive_body payload, map<string|string[]> headers = {}) returns inline_response_200_68|error {
-        string resourcePath = string `/2/team/team_folder/archive`;
+    # team_folder/archive
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - team_folder/archive response 
+    resource isolated function post team/team_folder/archive(team_folder_archive_body payload, map<string|string[]> headers = {}) returns inline_response_200_68|error {
+        string resourcePath = string `/team/team_folder/archive`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/archive/'check(archive_check_body payload, map<string|string[]> headers = {}) returns inline_response_200_68|error {
-        string resourcePath = string `/2/team/team_folder/archive/check`;
+    resource isolated function post team/team_folder/archive/'check(archive_check_body payload, map<string|string[]> headers = {}) returns inline_response_200_68|error {
+        string resourcePath = string `/team/team_folder/archive/check`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/create(team_folder_create_body payload, map<string|string[]> headers = {}) returns inline_response_200_67|error {
-        string resourcePath = string `/2/team/team_folder/create`;
+    # team_folder/create
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - team_folder/create response 
+    resource isolated function post team/team_folder/create(team_folder_create_body payload, map<string|string[]> headers = {}) returns inline_response_200_67|error {
+        string resourcePath = string `/team/team_folder/create`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/get_info(team_folder_get_info_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/team_folder/get_info`;
+    # team_folder/get_info
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/team_folder/get_info(team_folder_get_info_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/team_folder/get_info`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/list(team_folder_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_69|error {
-        string resourcePath = string `/2/team/team_folder/list`;
+    # team_folder/list
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - team_folder/list response 
+    resource isolated function post team/team_folder/list(team_folder_list_body payload, map<string|string[]> headers = {}) returns inline_response_200_69|error {
+        string resourcePath = string `/team/team_folder/list`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/list/'continue(list_continue_body_6 payload, map<string|string[]> headers = {}) returns inline_response_200_69|error {
-        string resourcePath = string `/2/team/team_folder/list/continue`;
+    resource isolated function post team/team_folder/list/'continue(list_continue_body_6 payload, map<string|string[]> headers = {}) returns inline_response_200_69|error {
+        string resourcePath = string `/team/team_folder/list/continue`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/permanently_delete(team_folder_permanently_delete_body payload, map<string|string[]> headers = {}) returns error? {
-        string resourcePath = string `/2/team/team_folder/permanently_delete`;
+    # team_folder/permanently_delete
+    #
+    # + headers - Headers to be sent with the request 
+    resource isolated function post team/team_folder/permanently_delete(team_folder_permanently_delete_body payload, map<string|string[]> headers = {}) returns error? {
+        string resourcePath = string `/team/team_folder/permanently_delete`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/rename(team_folder_rename_body payload, map<string|string[]> headers = {}) returns inline_response_200_67|error {
-        string resourcePath = string `/2/team/team_folder/rename`;
+    # team_folder/rename
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - team_folder/rename response 
+    resource isolated function post team/team_folder/rename(team_folder_rename_body payload, map<string|string[]> headers = {}) returns inline_response_200_67|error {
+        string resourcePath = string `/team/team_folder/rename`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/team_folder/update_sync_settings(team_folder_update_sync_settings_body payload, map<string|string[]> headers = {}) returns inline_response_200_67|error {
-        string resourcePath = string `/2/team/team_folder/update_sync_settings`;
+    # team_folder/update_sync_settings
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - team_folder/update_sync_settings response 
+    resource isolated function post team/team_folder/update_sync_settings(team_folder_update_sync_settings_body payload, map<string|string[]> headers = {}) returns inline_response_200_67|error {
+        string resourcePath = string `/team/team_folder/update_sync_settings`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team/token/get_authenticated_admin(map<string|string[]> headers = {}) returns inline_response_200_72|error {
-        string resourcePath = string `/2/team/token/get_authenticated_admin`;
+    # token/get_authenticated_admin
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - token/get_authenticated_admin response 
+    resource isolated function post team/token/get_authenticated_admin(map<string|string[]> headers = {}) returns inline_response_200_72|error {
+        string resourcePath = string `/team/token/get_authenticated_admin`;
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team_log/get_events(team_log_get_events_body payload, map<string|string[]> headers = {}) returns inline_response_200_73|error {
-        string resourcePath = string `/2/team_log/get_events`;
+    # get_events
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_events response 
+    resource isolated function post team_log/get_events(team_log_get_events_body payload, map<string|string[]> headers = {}) returns inline_response_200_73|error {
+        string resourcePath = string `/team_log/get_events`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/team_log/get_events/'continue(get_events_continue_body payload, map<string|string[]> headers = {}) returns inline_response_200_73|error {
-        string resourcePath = string `/2/team_log/get_events/continue`;
+    resource isolated function post team_log/get_events/'continue(get_events_continue_body payload, map<string|string[]> headers = {}) returns inline_response_200_73|error {
+        string resourcePath = string `/team_log/get_events/continue`;
         http:Request request = new;
         json jsonBody = payload.toJson();
         request.setPayload(jsonBody, "application/json");
         return self.clientEp->post(resourcePath, request, headers);
     }
 
-    resource isolated function post '2/users/features/get_values(features_get_values_body_1 payload, FeaturesGetValues1Headers headers = {}) returns inline_response_200_74|error {
-        string resourcePath = string `/2/users/features/get_values`;
+    # features/get_values
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - features/get_values response 
+    resource isolated function post users/features/get_values(features_get_values_body_1 payload, FeaturesGetValues1Headers headers = {}) returns inline_response_200_74|error {
+        string resourcePath = string `/users/features/get_values`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -1668,8 +2288,12 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/users/get_account(users_get_account_body payload, GetAccountHeaders headers = {}) returns inline_response_200_75|error {
-        string resourcePath = string `/2/users/get_account`;
+    # get_account
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_account response 
+    resource isolated function post users/get_account(users_get_account_body payload, GetAccountHeaders headers = {}) returns inline_response_200_75|error {
+        string resourcePath = string `/users/get_account`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -1677,8 +2301,12 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/users/get_account_batch(users_get_account_batch_body payload, GetAccountBatchHeaders headers = {}) returns inline_response_200_76[]|error {
-        string resourcePath = string `/2/users/get_account_batch`;
+    # get_account_batch
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_account_batch response 
+    resource isolated function post users/get_account_batch(users_get_account_batch_body payload, GetAccountBatchHeaders headers = {}) returns inline_response_200_76[]|error {
+        string resourcePath = string `/users/get_account_batch`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -1686,15 +2314,23 @@ public isolated client class Client {
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/users/get_current_account(GetCurrentAccountHeaders headers = {}) returns inline_response_200_77|error {
-        string resourcePath = string `/2/users/get_current_account`;
+    # get_current_account
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_current_account response 
+    resource isolated function post users/get_current_account(GetCurrentAccountHeaders headers = {}) returns inline_response_200_77|error {
+        string resourcePath = string `/users/get_current_account`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, httpHeaders);
     }
 
-    resource isolated function post '2/users/get_space_usage(GetSpaceUsageHeaders headers = {}) returns inline_response_200_78|error {
-        string resourcePath = string `/2/users/get_space_usage`;
+    # get_space_usage
+    #
+    # + headers - Headers to be sent with the request 
+    # + return - get_space_usage response 
+    resource isolated function post users/get_space_usage(GetSpaceUsageHeaders headers = {}) returns inline_response_200_78|error {
+        string resourcePath = string `/users/get_space_usage`;
         map<string|string[]> httpHeaders = getMapForHeaders(headers);
         http:Request request = new;
         return self.clientEp->post(resourcePath, request, httpHeaders);

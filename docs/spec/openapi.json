@@ -8,17 +8,17 @@
   },
   "servers": [
     {
-      "url": "https://api.dropboxapi.com"
+      "url": "https://api.dropboxapi.com/2"
     },
     {
-      "url": "https://content.dropboxapi.com"
+      "url": "https://content.dropboxapi.com/2"
     },
     {
-      "url": "https://notify.dropboxapi.com"
+      "url": "https://notify.dropboxapi.com/2"
     }
   ],
   "paths": {
-    "/2/account/set_profile_photo": {
+    "/account/set_profile_photo": {
       "post": {
         "tags": [
           "account"
@@ -113,7 +113,7 @@
         }
       }
     },
-    "/2/auth/token/from_oauth1": {
+    "/auth/token/from_oauth1": {
       "post": {
         "tags": [
           "auth"
@@ -201,7 +201,7 @@
         }
       }
     },
-    "/2/auth/token/revoke": {
+    "/auth/token/revoke": {
       "post": {
         "tags": [
           "auth"
@@ -234,7 +234,7 @@
         }
       }
     },
-    "/2/check/app": {
+    "/check/app": {
       "post": {
         "tags": [
           "check"
@@ -317,7 +317,7 @@
         }
       }
     },
-    "/2/check/user": {
+    "/check/user": {
       "post": {
         "tags": [
           "check"
@@ -400,7 +400,7 @@
         }
       }
     },
-    "/2/contacts/delete_manual_contacts": {
+    "/contacts/delete_manual_contacts": {
       "post": {
         "tags": [
           "contacts"
@@ -433,7 +433,7 @@
         }
       }
     },
-    "/2/contacts/delete_manual_contacts_batch": {
+    "/contacts/delete_manual_contacts_batch": {
       "post": {
         "tags": [
           "contacts"
@@ -498,7 +498,7 @@
         }
       }
     },
-    "/2/file_properties/properties/add": {
+    "/file_properties/properties/add": {
       "post": {
         "tags": [
           "file_properties"
@@ -609,7 +609,7 @@
         }
       }
     },
-    "/2/file_properties/properties/overwrite": {
+    "/file_properties/properties/overwrite": {
       "post": {
         "tags": [
           "file_properties"
@@ -720,7 +720,7 @@
         }
       }
     },
-    "/2/file_properties/properties/remove": {
+    "/file_properties/properties/remove": {
       "post": {
         "tags": [
           "file_properties"
@@ -788,7 +788,7 @@
         }
       }
     },
-    "/2/file_properties/properties/search": {
+    "/file_properties/properties/search": {
       "post": {
         "tags": [
           "file_properties"
@@ -1016,7 +1016,7 @@
         }
       }
     },
-    "/2/file_properties/properties/search/continue": {
+    "/file_properties/properties/search/continue": {
       "post": {
         "tags": [
           "file_properties"
@@ -1195,7 +1195,7 @@
         }
       }
     },
-    "/2/file_properties/properties/update": {
+    "/file_properties/properties/update": {
       "post": {
         "tags": [
           "file_properties"
@@ -1313,7 +1313,7 @@
         }
       }
     },
-    "/2/file_properties/templates/add_for_team": {
+    "/file_properties/templates/add_for_team": {
       "post": {
         "tags": [
           "file_properties"
@@ -1422,7 +1422,7 @@
         ]
       }
     },
-    "/2/file_properties/templates/add_for_user": {
+    "/file_properties/templates/add_for_user": {
       "post": {
         "tags": [
           "file_properties"
@@ -1544,7 +1544,7 @@
         }
       }
     },
-    "/2/file_properties/templates/get_for_team": {
+    "/file_properties/templates/get_for_team": {
       "post": {
         "tags": [
           "file_properties"
@@ -1662,7 +1662,7 @@
         ]
       }
     },
-    "/2/file_properties/templates/get_for_user": {
+    "/file_properties/templates/get_for_user": {
       "post": {
         "tags": [
           "file_properties"
@@ -1793,7 +1793,7 @@
         }
       }
     },
-    "/2/file_properties/templates/list_for_team": {
+    "/file_properties/templates/list_for_team": {
       "post": {
         "tags": [
           "file_properties"
@@ -1849,7 +1849,7 @@
         ]
       }
     },
-    "/2/file_properties/templates/list_for_user": {
+    "/file_properties/templates/list_for_user": {
       "post": {
         "tags": [
           "file_properties"
@@ -1918,7 +1918,7 @@
         }
       }
     },
-    "/2/file_properties/templates/remove_for_team": {
+    "/file_properties/templates/remove_for_team": {
       "post": {
         "tags": [
           "file_properties"
@@ -1960,7 +1960,7 @@
         ]
       }
     },
-    "/2/file_properties/templates/remove_for_user": {
+    "/file_properties/templates/remove_for_user": {
       "post": {
         "tags": [
           "file_properties"
@@ -2015,7 +2015,7 @@
         }
       }
     },
-    "/2/file_properties/templates/update_for_team": {
+    "/file_properties/templates/update_for_team": {
       "post": {
         "tags": [
           "file_properties"
@@ -2129,7 +2129,7 @@
         ]
       }
     },
-    "/2/file_properties/templates/update_for_user": {
+    "/file_properties/templates/update_for_user": {
       "post": {
         "tags": [
           "file_properties"
@@ -2256,7 +2256,7 @@
         }
       }
     },
-    "/2/file_requests/count": {
+    "/file_requests/count": {
       "post": {
         "tags": [
           "file_requests"
@@ -2317,7 +2317,7 @@
         }
       }
     },
-    "/2/file_requests/create": {
+    "/file_requests/create": {
       "post": {
         "tags": [
           "file_requests"
@@ -2481,7 +2481,7 @@
         }
       }
     },
-    "/2/file_requests/delete": {
+    "/file_requests/delete": {
       "post": {
         "tags": [
           "file_requests"
@@ -2699,7 +2699,7 @@
         }
       }
     },
-    "/2/file_requests/delete_all_closed": {
+    "/file_requests/delete_all_closed": {
       "post": {
         "tags": [
           "file_requests"
@@ -2885,7 +2885,7 @@
         }
       }
     },
-    "/2/file_requests/get": {
+    "/file_requests/get": {
       "post": {
         "tags": [
           "file_requests"
@@ -3022,7 +3022,7 @@
         }
       }
     },
-    "/2/file_requests/list_v2": {
+    "/file_requests/list_v2": {
       "post": {
         "tags": [
           "file_requests"
@@ -3240,7 +3240,7 @@
         }
       }
     },
-    "/2/file_requests/list/continue": {
+    "/file_requests/list/continue": {
       "post": {
         "tags": [
           "file_requests"
@@ -3458,7 +3458,7 @@
         }
       }
     },
-    "/2/file_requests/update": {
+    "/file_requests/update": {
       "post": {
         "tags": [
           "file_requests"
@@ -3632,7 +3632,7 @@
         }
       }
     },
-    "/2/files/copy_v2": {
+    "/files/copy_v2": {
       "post": {
         "tags": [
           "files"
@@ -3905,7 +3905,7 @@
         }
       }
     },
-    "/2/files/copy_batch_v2": {
+    "/files/copy_batch_v2": {
       "post": {
         "tags": [
           "files"
@@ -4248,7 +4248,7 @@
         }
       }
     },
-    "/2/files/copy_batch/check_v2": {
+    "/files/copy_batch/check_v2": {
       "post": {
         "tags": [
           "files"
@@ -4563,7 +4563,7 @@
         }
       }
     },
-    "/2/files/copy_reference/get": {
+    "/files/copy_reference/get": {
       "post": {
         "tags": [
           "files"
@@ -4818,7 +4818,7 @@
         }
       }
     },
-    "/2/files/copy_reference/save": {
+    "/files/copy_reference/save": {
       "post": {
         "tags": [
           "files"
@@ -5068,7 +5068,7 @@
         }
       }
     },
-    "/2/files/create_folder_v2": {
+    "/files/create_folder_v2": {
       "post": {
         "tags": [
           "files"
@@ -5269,7 +5269,7 @@
         }
       }
     },
-    "/2/files/create_folder_batch": {
+    "/files/create_folder_batch": {
       "post": {
         "tags": [
           "files"
@@ -5533,7 +5533,7 @@
         }
       }
     },
-    "/2/files/create_folder_batch/check": {
+    "/files/create_folder_batch/check": {
       "post": {
         "tags": [
           "files"
@@ -5779,7 +5779,7 @@
         }
       }
     },
-    "/2/files/delete_v2": {
+    "/files/delete_v2": {
       "post": {
         "tags": [
           "files"
@@ -6032,7 +6032,7 @@
         }
       }
     },
-    "/2/files/delete_batch": {
+    "/files/delete_batch": {
       "post": {
         "tags": [
           "files"
@@ -6364,7 +6364,7 @@
         }
       }
     },
-    "/2/files/delete_batch/check": {
+    "/files/delete_batch/check": {
       "post": {
         "tags": [
           "files"
@@ -6679,7 +6679,7 @@
         }
       }
     },
-    "/2/files/download": {
+    "/files/download": {
       "post": {
         "tags": [
           "files"
@@ -6906,7 +6906,7 @@
         }
       }
     },
-    "/2/files/download_zip": {
+    "/files/download_zip": {
       "post": {
         "tags": [
           "files"
@@ -7080,7 +7080,7 @@
         }
       }
     },
-    "/2/files/export": {
+    "/files/export": {
       "post": {
         "tags": [
           "files"
@@ -7336,7 +7336,7 @@
         }
       }
     },
-    "/2/files/get_file_lock_batch": {
+    "/files/get_file_lock_batch": {
       "post": {
         "tags": [
           "files"
@@ -7697,7 +7697,7 @@
         }
       }
     },
-    "/2/files/get_metadata": {
+    "/files/get_metadata": {
       "post": {
         "tags": [
           "files"
@@ -7958,7 +7958,7 @@
         }
       }
     },
-    "/2/files/get_preview": {
+    "/files/get_preview": {
       "post": {
         "tags": [
           "files"
@@ -8185,7 +8185,7 @@
         }
       }
     },
-    "/2/files/get_temporary_link": {
+    "/files/get_temporary_link": {
       "post": {
         "tags": [
           "files"
@@ -8430,7 +8430,7 @@
         }
       }
     },
-    "/2/files/get_temporary_upload_link": {
+    "/files/get_temporary_upload_link": {
       "post": {
         "tags": [
           "files"
@@ -8545,7 +8545,7 @@
         }
       }
     },
-    "/2/files/get_thumbnail_v2": {
+    "/files/get_thumbnail_v2": {
       "post": {
         "tags": [
           "files"
@@ -8779,7 +8779,7 @@
         }
       }
     },
-    "/2/files/get_thumbnail_batch": {
+    "/files/get_thumbnail_batch": {
       "post": {
         "tags": [
           "files"
@@ -9124,7 +9124,7 @@
         }
       }
     },
-    "/2/files/list_folder": {
+    "/files/list_folder": {
       "post": {
         "tags": [
           "files"
@@ -9515,7 +9515,7 @@
         }
       }
     },
-    "/2/files/list_folder/continue": {
+    "/files/list_folder/continue": {
       "post": {
         "tags": [
           "files"
@@ -9876,7 +9876,7 @@
         }
       }
     },
-    "/2/files/list_folder/get_latest_cursor": {
+    "/files/list_folder/get_latest_cursor": {
       "post": {
         "tags": [
           "files"
@@ -9997,7 +9997,7 @@
         }
       }
     },
-    "/2/files/list_folder/longpoll": {
+    "/files/list_folder/longpoll": {
       "post": {
         "tags": [
           "files"
@@ -10093,7 +10093,7 @@
         }
       }
     },
-    "/2/files/list_revisions": {
+    "/files/list_revisions": {
       "post": {
         "tags": [
           "files"
@@ -10397,7 +10397,7 @@
         }
       }
     },
-    "/2/files/lock_file_batch": {
+    "/files/lock_file_batch": {
       "post": {
         "tags": [
           "files"
@@ -10758,7 +10758,7 @@
         }
       }
     },
-    "/2/files/move_v2": {
+    "/files/move_v2": {
       "post": {
         "tags": [
           "files"
@@ -11031,7 +11031,7 @@
         }
       }
     },
-    "/2/files/move_batch_v2": {
+    "/files/move_batch_v2": {
       "post": {
         "tags": [
           "files"
@@ -11379,7 +11379,7 @@
         }
       }
     },
-    "/2/files/move_batch/check_v2": {
+    "/files/move_batch/check_v2": {
       "post": {
         "tags": [
           "files"
@@ -11694,7 +11694,7 @@
         }
       }
     },
-    "/2/files/permanently_delete": {
+    "/files/permanently_delete": {
       "post": {
         "tags": [
           "files"
@@ -11757,7 +11757,7 @@
         }
       }
     },
-    "/2/files/restore": {
+    "/files/restore": {
       "post": {
         "tags": [
           "files"
@@ -12003,7 +12003,7 @@
         }
       }
     },
-    "/2/files/save_url": {
+    "/files/save_url": {
       "post": {
         "tags": [
           "files"
@@ -12246,7 +12246,7 @@
         }
       }
     },
-    "/2/files/save_url/check_job_status": {
+    "/files/save_url/check_job_status": {
       "post": {
         "tags": [
           "files"
@@ -12329,7 +12329,7 @@
         }
       }
     },
-    "/2/files/search_v2": {
+    "/files/search_v2": {
       "post": {
         "tags": [
           "files"
@@ -12650,7 +12650,7 @@
         }
       }
     },
-    "/2/files/search/continue_v2": {
+    "/files/search/continue_v2": {
       "post": {
         "tags": [
           "files"
@@ -12966,7 +12966,7 @@
         }
       }
     },
-    "/2/files/unlock_file_batch": {
+    "/files/unlock_file_batch": {
       "post": {
         "tags": [
           "files"
@@ -13335,7 +13335,7 @@
         }
       }
     },
-    "/2/files/upload": {
+    "/files/upload": {
       "post": {
         "tags": [
           "files"
@@ -13562,7 +13562,7 @@
         }
       }
     },
-    "/2/files/upload_session/append_v2": {
+    "/files/upload_session/append_v2": {
       "post": {
         "tags": [
           "files"
@@ -13611,7 +13611,7 @@
         }
       }
     },
-    "/2/files/upload_session/finish": {
+    "/files/upload_session/finish": {
       "post": {
         "tags": [
           "files"
@@ -13838,7 +13838,7 @@
         }
       }
     },
-    "/2/files/upload_session/finish_batch": {
+    "/files/upload_session/finish_batch": {
       "post": {
         "tags": [
           "files"
@@ -14209,7 +14209,7 @@
         }
       }
     },
-    "/2/files/upload_session/finish_batch/check": {
+    "/files/upload_session/finish_batch/check": {
       "post": {
         "tags": [
           "files"
@@ -14509,7 +14509,7 @@
         }
       }
     },
-    "/2/files/upload_session/start": {
+    "/files/upload_session/start": {
       "post": {
         "tags": [
           "files"
@@ -14586,7 +14586,7 @@
         }
       }
     },
-    "/2/sharing/add_file_member": {
+    "/sharing/add_file_member": {
       "post": {
         "tags": [
           "sharing"
@@ -14765,7 +14765,7 @@
         }
       }
     },
-    "/2/sharing/add_folder_member": {
+    "/sharing/add_folder_member": {
       "post": {
         "tags": [
           "sharing"
@@ -14899,7 +14899,7 @@
         }
       }
     },
-    "/2/sharing/check_job_status": {
+    "/sharing/check_job_status": {
       "post": {
         "tags": [
           "sharing"
@@ -14990,7 +14990,7 @@
         }
       }
     },
-    "/2/sharing/check_remove_member_job_status": {
+    "/sharing/check_remove_member_job_status": {
       "post": {
         "tags": [
           "sharing"
@@ -15081,7 +15081,7 @@
         }
       }
     },
-    "/2/sharing/check_share_job_status": {
+    "/sharing/check_share_job_status": {
       "post": {
         "tags": [
           "sharing"
@@ -15392,7 +15392,7 @@
         }
       }
     },
-    "/2/sharing/get_file_metadata": {
+    "/sharing/get_file_metadata": {
       "post": {
         "tags": [
           "sharing"
@@ -15617,7 +15617,7 @@
         }
       }
     },
-    "/2/sharing/get_file_metadata/batch": {
+    "/sharing/get_file_metadata/batch": {
       "post": {
         "tags": [
           "sharing"
@@ -15905,7 +15905,7 @@
         }
       }
     },
-    "/2/sharing/get_folder_metadata": {
+    "/sharing/get_folder_metadata": {
       "post": {
         "tags": [
           "sharing"
@@ -16217,7 +16217,7 @@
         }
       }
     },
-    "/2/sharing/get_shared_link_file": {
+    "/sharing/get_shared_link_file": {
       "post": {
         "tags": [
           "sharing"
@@ -16396,7 +16396,7 @@
         }
       }
     },
-    "/2/sharing/get_shared_link_metadata": {
+    "/sharing/get_shared_link_metadata": {
       "post": {
         "tags": [
           "sharing"
@@ -16594,7 +16594,7 @@
         }
       }
     },
-    "/2/sharing/list_file_members": {
+    "/sharing/list_file_members": {
       "post": {
         "tags": [
           "sharing"
@@ -16978,7 +16978,7 @@
         }
       }
     },
-    "/2/sharing/list_file_members/batch": {
+    "/sharing/list_file_members/batch": {
       "post": {
         "tags": [
           "sharing"
@@ -17460,7 +17460,7 @@
         }
       }
     },
-    "/2/sharing/list_file_members/continue": {
+    "/sharing/list_file_members/continue": {
       "post": {
         "tags": [
           "sharing"
@@ -17826,7 +17826,7 @@
         }
       }
     },
-    "/2/sharing/list_folder_members/continue": {
+    "/sharing/list_folder_members/continue": {
       "post": {
         "tags": [
           "sharing"
@@ -18184,7 +18184,7 @@
         }
       }
     },
-    "/2/sharing/list_folders": {
+    "/sharing/list_folders": {
       "post": {
         "tags": [
           "sharing"
@@ -18563,7 +18563,7 @@
         }
       }
     },
-    "/2/sharing/list_folders/continue": {
+    "/sharing/list_folders/continue": {
       "post": {
         "tags": [
           "sharing"
@@ -18936,7 +18936,7 @@
         }
       }
     },
-    "/2/sharing/list_mountable_folders": {
+    "/sharing/list_mountable_folders": {
       "post": {
         "tags": [
           "sharing"
@@ -19315,7 +19315,7 @@
         }
       }
     },
-    "/2/sharing/list_mountable_folders/continue": {
+    "/sharing/list_mountable_folders/continue": {
       "post": {
         "tags": [
           "sharing"
@@ -19688,7 +19688,7 @@
         }
       }
     },
-    "/2/sharing/list_received_files": {
+    "/sharing/list_received_files": {
       "post": {
         "tags": [
           "sharing"
@@ -19965,7 +19965,7 @@
         }
       }
     },
-    "/2/sharing/list_received_files/continue": {
+    "/sharing/list_received_files/continue": {
       "post": {
         "tags": [
           "sharing"
@@ -20228,7 +20228,7 @@
         }
       }
     },
-    "/2/sharing/list_shared_links": {
+    "/sharing/list_shared_links": {
       "post": {
         "tags": [
           "sharing"
@@ -20473,7 +20473,7 @@
         }
       }
     },
-    "/2/sharing/modify_shared_link_settings": {
+    "/sharing/modify_shared_link_settings": {
       "post": {
         "tags": [
           "sharing"
@@ -20693,7 +20693,7 @@
         }
       }
     },
-    "/2/sharing/mount_folder": {
+    "/sharing/mount_folder": {
       "post": {
         "tags": [
           "sharing"
@@ -20991,7 +20991,7 @@
         }
       }
     },
-    "/2/sharing/relinquish_file_membership": {
+    "/sharing/relinquish_file_membership": {
       "post": {
         "tags": [
           "sharing"
@@ -21054,7 +21054,7 @@
         }
       }
     },
-    "/2/sharing/relinquish_folder_membership": {
+    "/sharing/relinquish_folder_membership": {
       "post": {
         "tags": [
           "sharing"
@@ -21142,7 +21142,7 @@
         }
       }
     },
-    "/2/sharing/remove_file_member_2": {
+    "/sharing/remove_file_member_2": {
       "post": {
         "tags": [
           "sharing"
@@ -21250,7 +21250,7 @@
         }
       }
     },
-    "/2/sharing/remove_folder_member": {
+    "/sharing/remove_folder_member": {
       "post": {
         "tags": [
           "sharing"
@@ -21368,7 +21368,7 @@
         }
       }
     },
-    "/2/sharing/revoke_shared_link": {
+    "/sharing/revoke_shared_link": {
       "post": {
         "tags": [
           "sharing"
@@ -21431,7 +21431,7 @@
         }
       }
     },
-    "/2/sharing/set_access_inheritance": {
+    "/sharing/set_access_inheritance": {
       "post": {
         "tags": [
           "sharing"
@@ -21739,7 +21739,7 @@
         }
       }
     },
-    "/2/sharing/share_folder": {
+    "/sharing/share_folder": {
       "post": {
         "tags": [
           "sharing"
@@ -22075,7 +22075,7 @@
         }
       }
     },
-    "/2/sharing/transfer_folder": {
+    "/sharing/transfer_folder": {
       "post": {
         "tags": [
           "sharing"
@@ -22143,7 +22143,7 @@
         }
       }
     },
-    "/2/sharing/unmount_folder": {
+    "/sharing/unmount_folder": {
       "post": {
         "tags": [
           "sharing"
@@ -22206,7 +22206,7 @@
         }
       }
     },
-    "/2/sharing/unshare_file": {
+    "/sharing/unshare_file": {
       "post": {
         "tags": [
           "sharing"
@@ -22269,7 +22269,7 @@
         }
       }
     },
-    "/2/sharing/unshare_folder": {
+    "/sharing/unshare_folder": {
       "post": {
         "tags": [
           "sharing"
@@ -22365,7 +22365,7 @@
         }
       }
     },
-    "/2/sharing/update_file_member": {
+    "/sharing/update_file_member": {
       "post": {
         "tags": [
           "sharing"
@@ -22471,7 +22471,7 @@
         }
       }
     },
-    "/2/sharing/update_folder_member": {
+    "/sharing/update_folder_member": {
       "post": {
         "tags": [
           "sharing"
@@ -22577,7 +22577,7 @@
         }
       }
     },
-    "/2/sharing/update_folder_policy": {
+    "/sharing/update_folder_policy": {
       "post": {
         "tags": [
           "sharing"
@@ -22898,7 +22898,7 @@
         }
       }
     },
-    "/2/team/devices/list_member_devices": {
+    "/team/devices/list_member_devices": {
       "post": {
         "tags": [
           "team",
@@ -22951,7 +22951,7 @@
         }
       }
     },
-    "/2/team/devices/list_members_devices": {
+    "/team/devices/list_members_devices": {
       "post": {
         "tags": [
           "team",
@@ -22978,7 +22978,7 @@
         }
       }
     },
-    "/2/team/devices/revoke_device_session": {
+    "/team/devices/revoke_device_session": {
       "post": {
         "tags": [
           "team",
@@ -23026,7 +23026,7 @@
         }
       }
     },
-    "/2/team/devices/revoke_device_session_batch": {
+    "/team/devices/revoke_device_session_batch": {
       "post": {
         "tags": [
           "team",
@@ -23093,7 +23093,7 @@
         }
       }
     },
-    "/2/team/groups/create": {
+    "/team/groups/create": {
       "post": {
         "tags": [
           "team",
@@ -23399,7 +23399,7 @@
         }
       }
     },
-    "/2/team/groups/delete": {
+    "/team/groups/delete": {
       "post": {
         "tags": [
           "team",
@@ -23470,7 +23470,7 @@
         }
       }
     },
-    "/2/team/groups/get_info": {
+    "/team/groups/get_info": {
       "post": {
         "tags": [
           "team",
@@ -23845,7 +23845,7 @@
         }
       }
     },
-    "/2/team/groups/job_status/get": {
+    "/team/groups/job_status/get": {
       "post": {
         "tags": [
           "team",
@@ -23911,7 +23911,7 @@
         }
       }
     },
-    "/2/team/groups/list": {
+    "/team/groups/list": {
       "post": {
         "tags": [
           "team",
@@ -24031,7 +24031,7 @@
         }
       }
     },
-    "/2/team/groups/list/continue": {
+    "/team/groups/list/continue": {
       "post": {
         "tags": [
           "team",
@@ -24151,7 +24151,7 @@
         }
       }
     },
-    "/2/team/groups/members/add": {
+    "/team/groups/members/add": {
       "post": {
         "tags": [
           "team",
@@ -24519,7 +24519,7 @@
         }
       }
     },
-    "/2/team/groups/members/list": {
+    "/team/groups/members/list": {
       "post": {
         "tags": [
           "team",
@@ -24613,7 +24613,7 @@
         }
       }
     },
-    "/2/team/groups/members/list/continue": {
+    "/team/groups/members/list/continue": {
       "post": {
         "tags": [
           "team",
@@ -24690,7 +24690,7 @@
         }
       }
     },
-    "/2/team/groups/members/remove": {
+    "/team/groups/members/remove": {
       "post": {
         "tags": [
           "team",
@@ -25043,7 +25043,7 @@
         }
       }
     },
-    "/2/team/groups/members/set_access_type": {
+    "/team/groups/members/set_access_type": {
       "post": {
         "tags": [
           "team",
@@ -25442,7 +25442,7 @@
         }
       }
     },
-    "/2/team/groups/update": {
+    "/team/groups/update": {
       "post": {
         "tags": [
           "team",
@@ -25770,7 +25770,7 @@
         }
       }
     },
-    "/2/team/legal_holds/create_policy": {
+    "/team/legal_holds/create_policy": {
       "post": {
         "tags": [
           "team",
@@ -25916,7 +25916,7 @@
         }
       }
     },
-    "/2/team/legal_holds/get_policy": {
+    "/team/legal_holds/get_policy": {
       "post": {
         "tags": [
           "team",
@@ -26039,7 +26039,7 @@
         }
       }
     },
-    "/2/team/legal_holds/list_held_revisions": {
+    "/team/legal_holds/list_held_revisions": {
       "post": {
         "tags": [
           "team",
@@ -26190,7 +26190,7 @@
         }
       }
     },
-    "/2/team/legal_holds/list_held_revisions_continue": {
+    "/team/legal_holds/list_held_revisions_continue": {
       "post": {
         "tags": [
           "team",
@@ -26341,7 +26341,7 @@
         }
       }
     },
-    "/2/team/legal_holds/list_policies": {
+    "/team/legal_holds/list_policies": {
       "post": {
         "tags": [
           "team",
@@ -26494,7 +26494,7 @@
         }
       }
     },
-    "/2/team/legal_holds/release_policy": {
+    "/team/legal_holds/release_policy": {
       "post": {
         "tags": [
           "team",
@@ -26532,7 +26532,7 @@
         }
       }
     },
-    "/2/team/legal_holds/update_policy": {
+    "/team/legal_holds/update_policy": {
       "post": {
         "tags": [
           "team",
@@ -26668,7 +26668,7 @@
         }
       }
     },
-    "/2/team/linked_apps/list_member_linked_apps": {
+    "/team/linked_apps/list_member_linked_apps": {
       "post": {
         "tags": [
           "team",
@@ -26706,7 +26706,7 @@
         }
       }
     },
-    "/2/team/linked_apps/list_members_linked_apps": {
+    "/team/linked_apps/list_members_linked_apps": {
       "post": {
         "tags": [
           "team",
@@ -26733,7 +26733,7 @@
         }
       }
     },
-    "/2/team/linked_apps/revoke_linked_app": {
+    "/team/linked_apps/revoke_linked_app": {
       "post": {
         "tags": [
           "team",
@@ -26760,7 +26760,7 @@
         }
       }
     },
-    "/2/team/linked_apps/revoke_linked_app_batch": {
+    "/team/linked_apps/revoke_linked_app_batch": {
       "post": {
         "tags": [
           "team",
@@ -26787,7 +26787,7 @@
         }
       }
     },
-    "/2/team/member_space_limits/excluded_users/add": {
+    "/team/member_space_limits/excluded_users/add": {
       "post": {
         "tags": [
           "team",
@@ -26883,7 +26883,7 @@
         }
       }
     },
-    "/2/team/member_space_limits/excluded_users/list": {
+    "/team/member_space_limits/excluded_users/list": {
       "post": {
         "tags": [
           "team",
@@ -26960,7 +26960,7 @@
         }
       }
     },
-    "/2/team/member_space_limits/excluded_users/list/continue": {
+    "/team/member_space_limits/excluded_users/list/continue": {
       "post": {
         "tags": [
           "team",
@@ -27037,7 +27037,7 @@
         }
       }
     },
-    "/2/team/member_space_limits/excluded_users/remove": {
+    "/team/member_space_limits/excluded_users/remove": {
       "post": {
         "tags": [
           "team",
@@ -27133,7 +27133,7 @@
         }
       }
     },
-    "/2/team/member_space_limits/get_custom_quota": {
+    "/team/member_space_limits/get_custom_quota": {
       "post": {
         "tags": [
           "team",
@@ -27232,7 +27232,7 @@
         }
       }
     },
-    "/2/team/member_space_limits/remove_custom_quota": {
+    "/team/member_space_limits/remove_custom_quota": {
       "post": {
         "tags": [
           "team",
@@ -27331,7 +27331,7 @@
         }
       }
     },
-    "/2/team/member_space_limits/set_custom_quota": {
+    "/team/member_space_limits/set_custom_quota": {
       "post": {
         "tags": [
           "team",
@@ -27445,7 +27445,7 @@
         }
       }
     },
-    "/2/team/members/add": {
+    "/team/members/add": {
       "post": {
         "tags": [
           "team",
@@ -27788,7 +27788,7 @@
         }
       }
     },
-    "/2/team/members/add/job_status/get": {
+    "/team/members/add/job_status/get": {
       "post": {
         "tags": [
           "team",
@@ -28079,7 +28079,7 @@
         }
       }
     },
-    "/2/team/members/delete_profile_photo": {
+    "/team/members/delete_profile_photo": {
       "post": {
         "tags": [
           "team",
@@ -28316,7 +28316,7 @@
         }
       }
     },
-    "/2/team/members/get_info": {
+    "/team/members/get_info": {
       "post": {
         "tags": [
           "team",
@@ -28618,7 +28618,7 @@
         }
       }
     },
-    "/2/team/members/list": {
+    "/team/members/list": {
       "post": {
         "tags": [
           "team",
@@ -28913,7 +28913,7 @@
         }
       }
     },
-    "/2/team/members/list/continue": {
+    "/team/members/list/continue": {
       "post": {
         "tags": [
           "team",
@@ -29203,7 +29203,7 @@
         }
       }
     },
-    "/2/team/members/move_former_member_files": {
+    "/team/members/move_former_member_files": {
       "post": {
         "tags": [
           "team",
@@ -29315,7 +29315,7 @@
         }
       }
     },
-    "/2/team/members/move_former_member_files/job_status/check": {
+    "/team/members/move_former_member_files/job_status/check": {
       "post": {
         "tags": [
           "team",
@@ -29381,7 +29381,7 @@
         }
       }
     },
-    "/2/team/members/recover": {
+    "/team/members/recover": {
       "post": {
         "tags": [
           "team",
@@ -29431,7 +29431,7 @@
         }
       }
     },
-    "/2/team/members/remove": {
+    "/team/members/remove": {
       "post": {
         "tags": [
           "team",
@@ -29558,7 +29558,7 @@
         }
       }
     },
-    "/2/team/members/remove/job_status/get": {
+    "/team/members/remove/job_status/get": {
       "post": {
         "tags": [
           "team",
@@ -29624,7 +29624,7 @@
         }
       }
     },
-    "/2/team/members/secondary_emails/add": {
+    "/team/members/secondary_emails/add": {
       "post": {
         "tags": [
           "team",
@@ -29874,7 +29874,7 @@
         }
       }
     },
-    "/2/team/members/secondary_emails/delete": {
+    "/team/members/secondary_emails/delete": {
       "post": {
         "tags": [
           "team",
@@ -30079,7 +30079,7 @@
         }
       }
     },
-    "/2/team/members/secondary_emails/resend_verification_emails": {
+    "/team/members/secondary_emails/resend_verification_emails": {
       "post": {
         "tags": [
           "team",
@@ -30268,7 +30268,7 @@
         }
       }
     },
-    "/2/team/members/send_welcome_email": {
+    "/team/members/send_welcome_email": {
       "post": {
         "tags": [
           "team",
@@ -30311,7 +30311,7 @@
         }
       }
     },
-    "/2/team/members/set_admin_permissions": {
+    "/team/members/set_admin_permissions": {
       "post": {
         "tags": [
           "team",
@@ -30406,7 +30406,7 @@
         }
       }
     },
-    "/2/team/members/set_profile": {
+    "/team/members/set_profile": {
       "post": {
         "tags": [
           "team",
@@ -30653,7 +30653,7 @@
         }
       }
     },
-    "/2/team/members/set_profile_photo": {
+    "/team/members/set_profile_photo": {
       "post": {
         "tags": [
           "team",
@@ -30907,7 +30907,7 @@
         }
       }
     },
-    "/2/team/members/suspend": {
+    "/team/members/suspend": {
       "post": {
         "tags": [
           "team",
@@ -30962,7 +30962,7 @@
         }
       }
     },
-    "/2/team/members/unsuspend": {
+    "/team/members/unsuspend": {
       "post": {
         "tags": [
           "team",
@@ -31012,7 +31012,7 @@
         }
       }
     },
-    "/2/team/namespaces/list": {
+    "/team/namespaces/list": {
       "post": {
         "tags": [
           "team",
@@ -31146,7 +31146,7 @@
         }
       }
     },
-    "/2/team/namespaces/list/continue": {
+    "/team/namespaces/list/continue": {
       "post": {
         "tags": [
           "team",
@@ -31280,7 +31280,7 @@
         }
       }
     },
-    "/2/team/reports/get_activity": {
+    "/team/reports/get_activity": {
       "post": {
         "tags": [
           "team",
@@ -31307,7 +31307,7 @@
         }
       }
     },
-    "/2/team/reports/get_devices": {
+    "/team/reports/get_devices": {
       "post": {
         "tags": [
           "team",
@@ -31334,7 +31334,7 @@
         }
       }
     },
-    "/2/team/reports/get_membership": {
+    "/team/reports/get_membership": {
       "post": {
         "tags": [
           "team",
@@ -31361,7 +31361,7 @@
         }
       }
     },
-    "/2/team/reports/get_storage": {
+    "/team/reports/get_storage": {
       "post": {
         "tags": [
           "team",
@@ -31388,7 +31388,7 @@
         }
       }
     },
-    "/2/team/team_folder/activate": {
+    "/team/team_folder/activate": {
       "post": {
         "tags": [
           "team",
@@ -31525,7 +31525,7 @@
         }
       }
     },
-    "/2/team/team_folder/archive": {
+    "/team/team_folder/archive": {
       "post": {
         "tags": [
           "team",
@@ -31672,7 +31672,7 @@
         }
       }
     },
-    "/2/team/team_folder/archive/check": {
+    "/team/team_folder/archive/check": {
       "post": {
         "tags": [
           "team",
@@ -31814,7 +31814,7 @@
         }
       }
     },
-    "/2/team/team_folder/create": {
+    "/team/team_folder/create": {
       "post": {
         "tags": [
           "team",
@@ -31956,7 +31956,7 @@
         }
       }
     },
-    "/2/team/team_folder/get_info": {
+    "/team/team_folder/get_info": {
       "post": {
         "tags": [
           "team",
@@ -32006,7 +32006,7 @@
         }
       }
     },
-    "/2/team/team_folder/list": {
+    "/team/team_folder/list": {
       "post": {
         "tags": [
           "team",
@@ -32186,7 +32186,7 @@
         }
       }
     },
-    "/2/team/team_folder/list/continue": {
+    "/team/team_folder/list/continue": {
       "post": {
         "tags": [
           "team",
@@ -32366,7 +32366,7 @@
         }
       }
     },
-    "/2/team/team_folder/permanently_delete": {
+    "/team/team_folder/permanently_delete": {
       "post": {
         "tags": [
           "team",
@@ -32404,7 +32404,7 @@
         }
       }
     },
-    "/2/team/team_folder/rename": {
+    "/team/team_folder/rename": {
       "post": {
         "tags": [
           "team",
@@ -32546,7 +32546,7 @@
         }
       }
     },
-    "/2/team/team_folder/update_sync_settings": {
+    "/team/team_folder/update_sync_settings": {
       "post": {
         "tags": [
           "team",
@@ -32716,7 +32716,7 @@
         }
       }
     },
-    "/2/team/features/get_values": {
+    "/team/features/get_values": {
       "post": {
         "tags": [
           "team"
@@ -32869,7 +32869,7 @@
         }
       }
     },
-    "/2/team/get_info": {
+    "/team/get_info": {
       "post": {
         "tags": [
           "team"
@@ -33006,7 +33006,7 @@
         ]
       }
     },
-    "/2/team/token/get_authenticated_admin": {
+    "/team/token/get_authenticated_admin": {
       "post": {
         "tags": [
           "team"
@@ -33196,7 +33196,7 @@
         }
       }
     },
-    "/2/team_log/get_events": {
+    "/team_log/get_events": {
       "post": {
         "tags": [
           "team_log"
@@ -33845,7 +33845,7 @@
         ]
       }
     },
-    "/2/team_log/get_events/continue": {
+    "/team_log/get_events/continue": {
       "post": {
         "tags": [
           "team_log"
@@ -34489,7 +34489,7 @@
         ]
       }
     },
-    "/2/users/features/get_values": {
+    "/users/features/get_values": {
       "post": {
         "tags": [
           "users"
@@ -34633,7 +34633,7 @@
         }
       }
     },
-    "/2/users/get_account": {
+    "/users/get_account": {
       "post": {
         "tags": [
           "users"
@@ -34773,7 +34773,7 @@
         }
       }
     },
-    "/2/users/get_account_batch": {
+    "/users/get_account_batch": {
       "post": {
         "tags": [
           "users"
@@ -34945,7 +34945,7 @@
         }
       }
     },
-    "/2/users/get_current_account": {
+    "/users/get_current_account": {
       "post": {
         "tags": [
           "users"
@@ -35192,7 +35192,7 @@
         }
       }
     },
-    "/2/users/get_space_usage": {
+    "/users/get_space_usage": {
       "post": {
         "tags": [
           "users"
