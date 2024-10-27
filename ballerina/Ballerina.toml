@@ -5,7 +5,7 @@ name = "dropbox"
 version = "0.1.0"
 license = ["Apache-2.0"]
 authors = ["Ballerina"]
-keywords = []
+keywords = ["Content & Files/File Management & Storage", "Cost/Free"]
 icon = "icon.png"
 repository = "https://github.com/ballerina-platform/module-ballerinax-dropbox"
 
