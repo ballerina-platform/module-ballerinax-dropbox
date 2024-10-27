@@ -17,11 +17,16 @@
 // under the License.
 
 import ballerina/http;
+import ballerina/os;
 import ballerina/test;
 
-configurable http:BearerTokenConfig & readonly authConfig = ?;
+configurable boolean isLiveServer = os:getEnv("IS_LIVE_SERVER") == "true";
+configurable http:BearerTokenConfig & readonly authConfig = {
+    token: isLiveServer ? os:getEnv("DROPBOX_TOKEN") : "test"
+};
 ConnectionConfig config = {auth: authConfig};
-final Client apiClient = check new Client(config, serviceUrl = "https://api.dropboxapi.com/2");
+final Client apiClient = check new Client(config, serviceUrl = isLiveServer ? "https://api.dropboxapi.com/2" : "http://localhost:9090");
+final Client contentClient = check new Client(config, serviceUrl = isLiveServer ? "https://content.dropboxapi.com/2" : "http://localhost:9090");
 
 @test:Config {}
 isolated function testGetSpaceUsage() returns error? {
@@ -61,8 +66,8 @@ isolated function testMove() returns error? {
 
 @test:Config {}
 isolated function testDownload() returns error? {
-    FileMetadata response = check apiClient->/files/download.post(headers = {
-        dropbox\-api\-arg: "{\"path\": \"/Icons\"}"
+    FileMetadata response = check contentClient->/files/download.post(headers = {
+        dropbox\-api\-arg: "{\"path\": \"/Icons/icon.png\"}"
     });
 
     test:assertTrue(response?.name !is ());
@@ -78,7 +83,21 @@ isolated function testGetFileMetadata() returns error? {
 }
 
 @test:Config {}
-isolated function testUpload() {
+isolated function testUpload() returns error? {
+    json params = {
+        "path": "/Homework/math/Matrices.txt",
+        "mode": "add",
+        "autorename": true,
+        "mute": false,
+        "strict_conflict": false
+    };
+    FileMetadata response = check contentClient->/files/upload.post(
+        headers = {
+            dropbox\-api\-arg: params.toString()
+        }
+    );
+
+    test:assertTrue(response?.name !is ());
 }
 
 @test:Config {}
