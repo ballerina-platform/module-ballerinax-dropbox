@@ -28,20 +28,10 @@
         "operationId": "setProfilePhoto",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -51,17 +41,7 @@
                 "type": "object",
                 "properties": {
                   "photo": {
-                    "type": "object",
-                    "properties": {
-                      ".tag": {
-                        "type": "string",
-                        "example": "base64_data"
-                      },
-                      "base64_data": {
-                        "type": "string",
-                        "example": "SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4="
-                      }
-                    }
+                    "$ref": "#/components/schemas/Photo"
                   }
                 }
               },
@@ -123,20 +103,10 @@
         "operationId": "tokenFromOauth1",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -211,20 +181,10 @@
         "operationId": "tokenRevoke",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "responses": {
@@ -244,20 +204,10 @@
         "operationId": "app",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -327,20 +277,10 @@
         "operationId": "user",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -410,20 +350,10 @@
         "operationId": "deleteManualContacts",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "responses": {
@@ -443,20 +373,10 @@
         "operationId": "deleteManualContactsBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -508,20 +428,10 @@
         "operationId": "propertiesAdd",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -619,20 +529,10 @@
         "operationId": "propertiesOverwrite",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -730,20 +630,10 @@
         "operationId": "propertiesRemove",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -798,20 +688,10 @@
         "operationId": "propertiesSearch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -1026,20 +906,10 @@
         "operationId": "propertiesSearchContinue",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -1205,20 +1075,10 @@
         "operationId": "propertiesUpdate",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -1432,20 +1292,10 @@
         "operationId": "templatesAddForUser",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -1672,20 +1522,10 @@
         "operationId": "templatesGetForUser",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -1859,20 +1699,10 @@
         "operationId": "templatesListForUser",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "responses": {
@@ -1970,20 +1800,10 @@
         "operationId": "templatesRemoveForUser",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -2139,20 +1959,10 @@
         "operationId": "templatesUpdateForUser",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -2266,20 +2076,10 @@
         "operationId": "count",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "responses": {
@@ -2327,20 +2127,10 @@
         "operationId": "create",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -2491,20 +2281,10 @@
         "operationId": "delete",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -2709,20 +2489,10 @@
         "operationId": "deleteAllClosed",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "responses": {
@@ -2895,20 +2665,10 @@
         "operationId": "get",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -3032,20 +2792,10 @@
         "operationId": "list",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -3250,20 +3000,10 @@
         "operationId": "listContinue",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -3468,20 +3208,10 @@
         "operationId": "update",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -3642,28 +3372,13 @@
         "operationId": "copy",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -3915,28 +3630,13 @@
         "operationId": "copyBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -4258,28 +3958,13 @@
         "operationId": "copyBatchCheck",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -4573,20 +4258,10 @@
         "operationId": "copyReferenceGet",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -4828,20 +4503,10 @@
         "operationId": "copyReferenceSave",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -5078,28 +4743,13 @@
         "operationId": "createFolder",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -5279,28 +4929,13 @@
         "operationId": "createFolderBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -5543,28 +5178,13 @@
         "operationId": "createFolderBatchCheck",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -5789,28 +5409,13 @@
         "operationId": "delete1",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -6042,28 +5647,13 @@
         "operationId": "deleteBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -6374,28 +5964,13 @@
         "operationId": "deleteBatchCheck",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -6697,28 +6272,13 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "responses": {
@@ -6924,20 +6484,10 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "responses": {
@@ -7098,28 +6648,13 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "responses": {
@@ -7346,20 +6881,10 @@
         "operationId": "getFileLockBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -7707,28 +7232,13 @@
         "operationId": "getMetadata",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -7976,28 +7486,13 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "responses": {
@@ -8195,20 +7690,10 @@
         "operationId": "getTemporaryLink",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -8440,20 +7925,10 @@
         "operationId": "getTemporaryUploadLink",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -8563,28 +8038,13 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "responses": {
@@ -8789,28 +8249,13 @@
         "operationId": "getThumbnailBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -9134,28 +8579,13 @@
         "operationId": "listFolder",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -9525,28 +8955,13 @@
         "operationId": "listFolderContinue",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -9886,28 +9301,13 @@
         "operationId": "listFolderGetLatestCursor",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -10007,28 +9407,13 @@
         "operationId": "listFolderLongpoll",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -10103,28 +9488,13 @@
         "operationId": "listRevisions",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -10407,20 +9777,10 @@
         "operationId": "lockFileBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -10768,28 +10128,13 @@
         "operationId": "move",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -11041,28 +10386,13 @@
         "operationId": "moveBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -11389,28 +10719,13 @@
         "operationId": "moveBatchCheck",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -11704,28 +11019,13 @@
         "operationId": "permanentlyDelete",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -11767,28 +11067,13 @@
         "operationId": "restore",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -12013,20 +11298,10 @@
         "operationId": "saveUrl",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -12256,20 +11531,10 @@
         "operationId": "saveUrlCheckJobStatus",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -12339,20 +11604,10 @@
         "operationId": "search",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -12660,20 +11915,10 @@
         "operationId": "searchContinue",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -12976,28 +12221,13 @@
         "operationId": "unlockFileBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -13353,28 +12583,13 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "responses": {
@@ -13580,28 +12795,13 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "responses": {
@@ -13629,28 +12829,13 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "responses": {
@@ -13848,28 +13033,13 @@
         "operationId": "uploadSessionFinishBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -14219,28 +13389,13 @@
         "operationId": "uploadSessionFinishBatchCheck",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -14527,28 +13682,13 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "responses": {
@@ -14596,28 +13736,13 @@
         "operationId": "addFileMember",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -14775,28 +13900,13 @@
         "operationId": "addFolderMember",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -14909,28 +14019,13 @@
         "operationId": "checkJobStatus",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -15000,28 +14095,13 @@
         "operationId": "checkRemoveMemberJobStatus",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -15091,28 +14171,13 @@
         "operationId": "checkShareJobStatus",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -15402,28 +14467,13 @@
         "operationId": "getFileMetadata",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -15627,20 +14677,10 @@
         "operationId": "getFileMetadataBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -15915,28 +14955,13 @@
         "operationId": "getFolderMetadata",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -16235,20 +15260,10 @@
             }
           },
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "responses": {
@@ -16406,20 +15421,10 @@
         "operationId": "getSharedLinkMetadata",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -16604,28 +15609,13 @@
         "operationId": "listFileMembers",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -16988,20 +15978,10 @@
         "operationId": "listFileMembersBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -17470,20 +16450,10 @@
         "operationId": "listFileMembersContinue",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -17836,28 +16806,13 @@
         "operationId": "listFolderMembersContinue",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -18194,20 +17149,10 @@
         "operationId": "listFolders",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -18573,20 +17518,10 @@
         "operationId": "listFoldersContinue",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -18946,20 +17881,10 @@
         "operationId": "listMountableFolders",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -19325,20 +18250,10 @@
         "operationId": "listMountableFoldersContinue",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -19698,28 +18613,13 @@
         "operationId": "listReceivedFiles",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -19975,20 +18875,10 @@
         "operationId": "listReceivedFilesContinue",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -20238,20 +19128,10 @@
         "operationId": "listSharedLinks",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -20483,20 +19363,10 @@
         "operationId": "modifySharedLinkSettings",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -20703,20 +19573,10 @@
         "operationId": "mountFolder",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -21001,28 +19861,13 @@
         "operationId": "relinquishFileMembership",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -21064,20 +19909,10 @@
         "operationId": "relinquishFolderMembership",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -21152,28 +19987,13 @@
         "operationId": "removeFileMember2",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -21260,28 +20080,13 @@
         "operationId": "removeFolderMember",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -21378,28 +20183,13 @@
         "operationId": "revokeSharedLink",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -21441,20 +20231,10 @@
         "operationId": "setAccessInheritance",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -21749,28 +20529,13 @@
         "operationId": "shareFolder",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -22085,28 +20850,13 @@
         "operationId": "transferFolder",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -22153,28 +20903,13 @@
         "operationId": "unmountFolder",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -22216,28 +20951,13 @@
         "operationId": "unshareFile",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -22279,28 +20999,13 @@
         "operationId": "unshareFolder",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -22375,28 +21080,13 @@
         "operationId": "updateFileMember",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -22481,28 +21171,13 @@
         "operationId": "updateFolderMember",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -22587,28 +21262,13 @@
         "operationId": "updateFolderPolicy",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "requestBody": {
@@ -30669,17 +29329,7 @@
                 "type": "object",
                 "properties": {
                   "photo": {
-                    "type": "object",
-                    "properties": {
-                      ".tag": {
-                        "type": "string",
-                        "example": "base64_data"
-                      },
-                      "base64_data": {
-                        "type": "string",
-                        "example": "SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4="
-                      }
-                    }
+                    "$ref": "#/components/schemas/Photo"
                   },
                   "user": {
                     "type": "object",
@@ -34499,20 +33149,10 @@
         "operationId": "featuresGetValues1",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -34643,20 +33283,10 @@
         "operationId": "getAccount",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -34783,20 +33413,10 @@
         "operationId": "getAccountBatch",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "requestBody": {
@@ -34955,28 +33575,13 @@
         "operationId": "getCurrentAccount",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           },
           {
-            "name": "dropbox-api-select-admin",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectAdmin"
           }
         ],
         "responses": {
@@ -35202,20 +33807,10 @@
         "operationId": "getSpaceUsage",
         "parameters": [
           {
-            "name": "dropbox-api-path-root",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
-            }
+            "$ref": "#/components/parameters/DropboxApiPathRoot"
           },
           {
-            "name": "dropbox-api-select-user",
-            "in": "header",
-            "schema": {
-              "type": "string",
-              "example": "dbmid:FDFSVF-DFSDF"
-            }
+            "$ref": "#/components/parameters/DropboxApiSelectUser"
           }
         ],
         "responses": {
@@ -35272,6 +33867,47 @@
     }
   },
   "components": {
+    "schemas": {
+      "Photo": {
+        "type": "object",
+        "properties": {
+          ".tag": {
+            "type": "string",
+            "example": "base64_data"
+          },
+          "base64_data": {
+            "type": "string",
+            "example": "SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4="
+          }
+        }
+      }
+    },
+    "parameters": {
+      "DropboxApiPathRoot": {
+        "name": "dropbox-api-path-root",
+        "in": "header",
+        "schema": {
+          "type": "string",
+          "example": "{\".tag\": \"namespace_id\", \"namespace_id\": \"2\"}"
+        }
+      },
+      "DropboxApiSelectUser": {
+        "name": "dropbox-api-select-user",
+        "in": "header",
+        "schema": {
+          "type": "string",
+          "example": "dbmid:FDFSVF-DFSDF"
+        }
+      },
+      "DropboxApiSelectAdmin": {
+        "name": "dropbox-api-select-admin",
+        "in": "header",
+        "schema": {
+          "type": "string",
+          "example": "dbmid:FDFSVF-DFSDF"
+        }
+      }
+    },
     "securitySchemes": {
       "bearerAuth": {
         "type": "http",
