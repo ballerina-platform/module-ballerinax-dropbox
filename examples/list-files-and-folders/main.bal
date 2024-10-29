@@ -18,7 +18,7 @@ public function main() returns error? {
     string path = ""; // Folder path for which you want to list files and folders
 
     io:println("First call...");
-    dropbox:inline_response_200_25 response = check dropbox->/files/list_folder.post(payload = {path});
+    dropbox:ListFolderResponse response = check dropbox->/files/list_folder.post(payload = {path});
     print_entries(response.entries);
 
     boolean? has_more = response.has_more;
@@ -30,7 +30,7 @@ public function main() returns error? {
     }
 }
 
-function print_entries(dropbox:inline_response_200_25_entries[]? entries) {
+function print_entries(dropbox:Metadata[]? entries) {
     if entries is () {
         io:println("Error: No entries in response");
     } else {
