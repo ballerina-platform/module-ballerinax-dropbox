@@ -18,7 +18,7 @@ public function main() returns error? {
     string path = ""; // Folder path for which you want to list files and folders
 
     io:println("First call...");
-    dropbox:ListFolderResponse response = check dropbox->/files/list_folder.post(payload = {path});
+    dropbox:ListFolderResult response = check dropbox->/files/list_folder.post(payload = {path});
     print_entries(response.entries);
 
     boolean? has_more = response.has_more;
