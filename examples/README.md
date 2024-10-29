@@ -2,13 +2,17 @@
 
 The `ballerinax/dropbox` connector provides practical examples illustrating usage in various scenarios.
 
-[//]: # (TODO: Add examples)
-1. 
-2. 
+1. [Create a Folder](create-folder) - Create a folder in Dropbox.
+2. [List files and folders in a Folder](list-files-and-folders) - List all the files and folders in a folder in Dropbox.
 
 ## Prerequisites
 
-[//]: # (TODO: Add prerequisites)
+1. Generate Dropbox access token to authenticate the connector as described in the [Setup guide](https://central.ballerina.io/ballerinax/dropbox/latest#setup-guide).
+2. For each example, create a `Config.toml` file to add the configuration parameters. Here's an example of how your `Config.toml` file should look like:
+
+```toml
+token = "<Access Token>"
+```
 
 ## Running an example
 
