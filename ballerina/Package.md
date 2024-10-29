@@ -83,4 +83,6 @@ bal run
 
 The `Dropbox` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/module-ballerinax-dropbox/tree/main/examples/), covering the following use cases:
 
-[//]: # (TODO: Add examples)
+1. [Create a Folder](https://github.com/ballerina-platform/module-ballerinax-dropbox/tree/main/examples/create-folder) - Create a folder in Dropbox.
+
+2. [List files and folders in a Folder](https://github.com/ballerina-platform/module-ballerinax-dropbox/tree/main/examples/list-files-and-folders) - List all the files and folders in a folder in Dropbox.
