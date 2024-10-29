@@ -9,7 +9,6 @@ This document records the sanitation done on top of the official OpenAPI specifi
 The OpenAPI specification is obtained from https://www.postman.com/dropbox-api/dropbox-s-public-workspace/collection/q1zdtug/dropbox-api-reference.
 These changes are done in order to improve the overall usability, and as workarounds for some known language limitations.
 
-[//]: # (TODO: Add sanitation details)
 1. **Change the `url` property of the `servers` object**:
     - **Original**:
         1. `https://api.dropboxapi.com`,
@@ -20,6 +19,7 @@ These changes are done in order to improve the overall usability, and as workaro
         2. `https://content.dropboxapi.com/2`
         3. `https://notify.dropboxapi.com/2`
     - **Reason**: This change is made to ensure that all API paths are relative to the versioned base URL (`/2`), which improves the consistency and usability of the APIs.
+    
 2. **Update API Paths**:
    - **Original**: Paths included the version prefix in each endpoint (e.g., `/2/files/list_folder`).
    - **Updated**: Paths are modified to remove the version prefix from the endpoints, as it is now included in the base URL. For example:
