@@ -19,6 +19,10 @@
 
 import ballerina/http;
 
+public type UnlockFileBatchArg record {
+    LockFileArg[] entries?;
+};
+
 # Represents the Headers record for the operation: createFolderBatch
 public type CreateFolderBatchHeaders record {
     string? dropbox\-api\-path\-root?;
@@ -31,8 +35,13 @@ public type PropertyGroup record {
     string template_id?;
 };
 
-public type finish_batch_check_body record {
-    string async_job_id?;
+public type SpaceUsage record {
+    SpaceAllocation allocation?;
+    decimal used?;
+};
+
+public type ListTemplateResult record {
+    string[] template_ids?;
 };
 
 # Represents the Headers record for the operation: checkRemoveMemberJobStatus
@@ -42,18 +51,25 @@ public type CheckRemoveMemberJobStatusHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
+public type ListFileRequestsV2Result record {
+    string cursor?;
+    FileRequestAsResponse[] file_requests?;
+    boolean has_more?;
+};
+
+public type RelocationPath record {
+    string from_path?;
+    string to_path?;
+};
+
 # Represents the Headers record for the operation: listContinue
 public type ListContinueHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
 };
 
-public type sharinglist_file_membersbatch_result_members_user record {
-    string account_id?;
-    string display_name?;
-    string email?;
-    boolean same_team?;
-    string team_member_id?;
+public type GroupAccessType record {
+    string \.tag?;
 };
 
 public type MembersListV2Result record {
@@ -62,16 +78,9 @@ public type MembersListV2Result record {
     anydata[] members?;
 };
 
-public type list_folder_longpoll_body record {
-    string cursor?;
-    decimal timeout?;
-};
-
-public type sharingget_file_metadatabatch_result_policy record {
-    sharingget_file_metadatabatch_result_policy_acl_update_policy acl_update_policy?;
-    sharingget_file_metadatabatch_result_policy_member_policy member_policy?;
-    SharedFolderMemberPolicy resolved_member_policy?;
-    sharingget_file_metadatabatch_result_policy_member_policy shared_link_policy?;
+public type RemoveFileMemberArg record {
+    string file?;
+    MemberSelector member?;
 };
 
 public type ListSharedLinksResult record {
@@ -80,34 +89,23 @@ public type ListSharedLinksResult record {
     SharedLinkMetadata[] links?;
 };
 
-public type groups_create_body record {
-    boolean add_creator_as_owner?;
-    string group_external_id?;
-    string group_name?;
+public type MembersGetInfoV2Arg record {
+    UserSelectorArg[] members?;
 };
 
-public type legal_holds_update_policy_body record {
-    string id?;
-    string[] members?;
-};
-
-public type delete_batch_check_body record {
-    string async_job_id?;
-};
-
-public type teammemberssecondary_emailsadd_new_secondary_emails record {
-    string[] secondary_emails?;
-    teamgroupsmembersadd_user user?;
+public type AddFileMemberArgs record {
+    string access_level?;
+    boolean add_message_as_comment?;
+    string custom_message?;
+    string file?;
+    MemberSelector[] members?;
+    boolean quiet?;
 };
 
 public type GetTeamEventsResult record {
     string cursor?;
     TeamEvent[] events?;
     boolean has_more?;
-};
-
-public type sharingadd_file_member_result record {
-    string \.tag?;
 };
 
 public type ContentSyncSetting record {
@@ -123,10 +121,6 @@ public type ListFolderLongpollResult record {
     boolean changes?;
 };
 
-public type member_space_limits_set_custom_quota_body record {
-    teammember_space_limitsset_custom_quota_users_and_quotas[] users_and_quotas?;
-};
-
 # Represents the Headers record for the operation: moveBatch
 public type MoveBatchHeaders record {
     string? dropbox\-api\-path\-root?;
@@ -134,40 +128,35 @@ public type MoveBatchHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
+public type RevokeDeviceSessionBatchArg record {
+    RevokeDeviceSessionArg[] revoke_devices?;
+};
+
 public type PropertyFieldTemplateTypeAsReponse record {
     string \.tag?;
 };
 
-public type sharing_list_folders_body record {
-    anydata[] actions?;
-    decimal 'limit?;
+public type PropertiesSearchQuery record {
+    string logical_operator?;
+    PropertiesSearchMode mode?;
+    string query?;
 };
 
-public type AddTemplateResponse record {
-    string template_id?;
+public type GetAccountBatchArg record {
+    string[] account_ids?;
 };
 
-public type sharingget_file_metadatabatch_result_owner_team record {
+public type MembersUnsuspendArg record {
+    UserSelectorArg user?;
+};
+
+public type DeleteFileRequestsResult record {
+    FileRequestAsResponse[] file_requests?;
+};
+
+public type ContentSyncSettingArg record {
     string id?;
-    string name?;
-};
-
-public type job_status_get_body_1 record {
-    string async_job_id?;
-};
-
-public type sharinglist_file_membersbatch_result_members_group_group_management_type record {
-    string \.tag?;
-};
-
-public type sharing_remove_folder_member_body record {
-    boolean leave_a_copy?;
-    sharingadd_file_member_members member?;
-    string shared_folder_id?;
-};
-
-public type job_status_get_body_2 record {
-    string async_job_id?;
+    string sync_setting?;
 };
 
 public type SaveUrlResult record {
@@ -188,11 +177,6 @@ public type SaveUrlResult record {
     decimal size?;
 };
 
-public type files_search_v2_body record {
-    boolean include_highlights?;
-    string query?;
-};
-
 # Represents the Headers record for the operation: getSharedLinkFile
 public type GetSharedLinkFileHeaders record {
     string? dropbox\-api\-path\-root?;
@@ -207,7 +191,11 @@ public type LegalHoldPolicyAsResponse record {
     MembersInfo members?;
     string name?;
     string start_date?;
-    teamgroupsget_info_profile_status status?;
+    TeamMemberStatus status?;
+};
+
+public type ListFilesContinueArg record {
+    string cursor?;
 };
 
 # Represents the Headers record for the operation: setProfilePhoto
@@ -216,43 +204,36 @@ public type SetProfilePhotoHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type GetTemplateResponse record {
-    string description?;
-    PropertyFieldTemplateAsResponse[] fields?;
-    string name?;
-};
-
-public type file_requests_get_body record {
-    string id?;
-};
-
 public type EmmStateOrOfficeAddinPolicy record {
     string \.tag?;
 };
 
-public type team_folder_permanently_delete_body record {
+public type TeamFolderUpdateSyncSettingsArg record {
+    ContentSyncSettingArg[] content_sync_settings?;
+    string sync_setting?;
     string team_folder_id?;
 };
 
-public type sharinglist_file_membersbatch_result_members_groups record {
-    sharinglist_file_membersbatch_result_members_access_type access_type?;
-    sharinglist_file_membersbatch_result_members_group group?;
+public type SharedFileMetadataWithTag record {
+    string \.tag?;
+    AccessLevel access_type?;
+    string id?;
+    string name?;
+    string[] owner_display_names?;
+    Team owner_team?;
+    string path_display?;
+    string path_lower?;
+    anydata[] permissions?;
+    FolderPolicy policy?;
+    string preview_url?;
+    string time_invited?;
+};
+
+public type GroupInfos record {
+    AccessLevel access_type?;
+    GroupInfo group?;
     boolean is_inherited?;
     anydata[] permissions?;
-};
-
-public type files_list_folder_body record {
-    boolean include_deleted?;
-    boolean include_has_explicit_shared_members?;
-    boolean include_media_info?;
-    boolean include_mounted_folders?;
-    boolean include_non_downloadable_files?;
-    string path?;
-    boolean recursive?;
-};
-
-public type sharing_list_shared_links_body record {
-    string cursor?;
 };
 
 # Represents the Headers record for the operation: propertiesRemove
@@ -261,8 +242,8 @@ public type PropertiesRemoveHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type list_folders_continue_body record {
-    string cursor?;
+public type RevokeSharedLinkArg record {
+    string url?;
 };
 
 # Provides settings related to HTTP/1.x protocol.
@@ -275,14 +256,13 @@ public type ClientHttp1Settings record {|
     ProxyConfig proxy?;
 |};
 
-public type sharingadd_file_member_members record {
-    string \.tag?;
-    string email?;
+public type GetFileMetadataArg record {
+    anydata[] actions?;
+    string file?;
 };
 
-public type teamteam_folderupdate_sync_settings_content_sync_settings record {
-    string id?;
-    string sync_setting?;
+public type AddSecondaryEmailsArg record {
+    UserSecondaryEmailsArg[] new_secondary_emails?;
 };
 
 # Represents the Headers record for the operation: getTemporaryLink
@@ -291,16 +271,17 @@ public type GetTemporaryLinkHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type AddTemplateForTeam record {
-    string description?;
-    PropertyFieldTemplate[] fields?;
-    string name?;
+public type ListRevisionsArg record {
+    decimal 'limit?;
+    string mode?;
+    string path?;
 };
 
-public type sharing_update_folder_member_body record {
-    string access_level?;
-    sharingadd_file_member_members member?;
-    string shared_folder_id?;
+public type ListMemberDevicesArg record {
+    boolean include_desktop_clients?;
+    boolean include_mobile_clients?;
+    boolean include_web_sessions?;
+    string team_member_id?;
 };
 
 # Represents the Headers record for the operation: getThumbnailBatch
@@ -310,13 +291,8 @@ public type GetThumbnailBatchHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type DeleteManualContactsBatchRequest record {
-    string[] email_addresses?;
-};
-
-public type sharingadd_folder_member_members record {
-    string access_level?;
-    sharingadd_folder_member_member member?;
+public type ListFileMembersContinueArg record {
+    string cursor?;
 };
 
 # Represents the Headers record for the operation: listFileMembersContinue
@@ -345,23 +321,8 @@ public type GetTemporaryUploadLinkHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type file_requests_update_body record {
-    file_requestsupdate_deadline deadline?;
-    string destination?;
-    string id?;
-    boolean open?;
-    string title?;
-};
-
-public type secondary_emails_add_body record {
-    teammemberssecondary_emailsadd_new_secondary_emails[] new_secondary_emails?;
-};
-
-public type sharing_add_folder_member_body record {
-    string custom_message?;
-    sharingadd_folder_member_members[] members?;
-    boolean quiet?;
-    string shared_folder_id?;
+public type UnshareFileArg record {
+    string file?;
 };
 
 # Represents the Headers record for the operation: listMountableFoldersContinue
@@ -375,8 +336,15 @@ public type ListFoldersResult record {
     SharedFolderMetadata[] entries?;
 };
 
-public type sharingget_file_metadatabatch_result_policy_acl_update_policy record {
-    string \.tag?;
+public type MoveBatchArg record {
+    boolean allow_ownership_transfer?;
+    boolean autorename?;
+    RelocationPath[] entries?;
+};
+
+public type PropertiesSearchArg record {
+    PropertiesSearchQuery[] queries?;
+    string template_filter?;
 };
 
 # Represents the Headers record for the operation: permanentlyDelete
@@ -387,17 +355,7 @@ public type PermanentlyDeleteHeaders record {
 };
 
 public type ExcludedUsersUpdateResult record {
-    sharingadd_file_member_result status?;
-};
-
-public type get_events_continue_body record {
-    string cursor?;
-};
-
-public type sharinglist_file_membersbatch_result_members record {
-    sharinglist_file_membersbatch_result_members_groups[] groups?;
-    sharinglist_file_membersbatch_result_members_invitees[] invitees?;
-    sharinglist_file_membersbatch_result_members_users[] users?;
+    FileMemberActionIndividualResult status?;
 };
 
 public type FileRequestAsResponse record {
@@ -411,19 +369,15 @@ public type FileRequestAsResponse record {
     string url?;
 };
 
-public type team_folder_list_body record {
-    decimal 'limit?;
-};
-
-public type ExportFileResponseMetadata record {
-    string export_hash?;
-    string name?;
-    decimal size?;
-};
-
-public type teamgroupsget_info_members record {
-    teamgroupsget_info_access_type access_type?;
-    teamgroupsget_info_profile profile?;
+public type GroupInfo record {
+    string group_id?;
+    GroupManagementType group_management_type?;
+    string group_name?;
+    GroupManagementType group_type?;
+    boolean is_member?;
+    boolean is_owner?;
+    decimal member_count?;
+    boolean same_team?;
 };
 
 public type MetadataV2 record {
@@ -437,6 +391,20 @@ public type TeamFolderListResult record {
     TeamFolderMetadata[] team_folders?;
 };
 
+public type TransferFolderArg record {
+    string shared_folder_id?;
+    string to_dropbox_id?;
+};
+
+public type GroupMemberInfo record {
+    GroupAccessType access_type?;
+    MemberProfile profile?;
+};
+
+public type AccessLevel record {
+    string \.tag?;
+};
+
 public type SharedLinkMetadataLinkPermissions record {
     boolean can_revoke?;
     LinkAudience resolved_visibility?;
@@ -445,10 +413,6 @@ public type SharedLinkMetadataLinkPermissions record {
 
 public type NamespaceType record {
     string \.tag?;
-};
-
-public type list_folder_continue_body record {
-    string cursor?;
 };
 
 public type TeamLogInfo record {
@@ -461,19 +425,9 @@ public type ListMountableFoldersHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type SetAdminPermissionsResult record {
-    teammembersget_info_role role?;
-    string team_member_id?;
-};
-
 public type PaperAsFilesValue record {
     string \.tag?;
     boolean enabled?;
-};
-
-public type sharing_get_file_metadata_body record {
-    anydata[] actions?;
-    string file?;
 };
 
 public type FileRequest record {
@@ -487,8 +441,18 @@ public type FileRequest record {
     string url?;
 };
 
-public type file_requests_delete_body record {
-    string[] ids?;
+public type ExcludedUsersListArg record {
+    decimal 'limit?;
+};
+
+public type MembersAddV2Arg record {
+    boolean force_async?;
+    MemberAddV2Arg[] new_members?;
+};
+
+public type MembersSetPermissionsResult record {
+    AdminTier role?;
+    string team_member_id?;
 };
 
 # Represents the Headers record for the operation: listFolders
@@ -497,10 +461,10 @@ public type ListFoldersHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type members_set_profile_body record {
-    string new_email?;
-    string new_surname?;
-    members_send_welcome_email_body user?;
+public type GroupCreateArg record {
+    boolean add_creator_as_owner?;
+    string group_external_id?;
+    string group_name?;
 };
 
 # Represents the Headers record for the operation: transferFolder
@@ -508,14 +472,6 @@ public type TransferFolderHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-admin?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type filesget_file_lock_batch_entries record {
-    string path?;
-};
-
-public type files_get_temporary_link_body record {
-    string path?;
 };
 
 public type ParticipantLogInfo record {
@@ -541,12 +497,11 @@ public type MetadataAsResponse record {
     decimal size?;
 };
 
-public type GetThumbnailBatchResponse record {
-    GetThumbnailBatchResultEntry[] entries?;
-};
-
-public type teamgroupsmembersadd_user record {
-    string \.tag?;
+public type UserInfo record {
+    string account_id?;
+    string display_name?;
+    string email?;
+    boolean same_team?;
     string team_member_id?;
 };
 
@@ -554,35 +509,8 @@ public type SharedLinkAccessFailureReason record {
     string \.tag?;
 };
 
-public type files_save_url_body record {
-    string path?;
-    string url?;
-};
-
-public type UpdateTemplateForTeamRequest record {
-    PropertyFieldTemplate[] add_fields?;
-    string description?;
-    string name?;
+public type RemoveTemplateArg record {
     string template_id?;
-};
-
-public type archive_check_body record {
-    string async_job_id?;
-};
-
-public type sharinglist_file_membersbatch_result_members_group record {
-    string group_id?;
-    sharinglist_file_membersbatch_result_members_group_group_management_type group_management_type?;
-    string group_name?;
-    sharinglist_file_membersbatch_result_members_group_group_management_type group_type?;
-    boolean is_member?;
-    boolean is_owner?;
-    decimal member_count?;
-    boolean same_team?;
-};
-
-public type excluded_users_list_body record {
-    decimal 'limit?;
 };
 
 # Represents the Headers record for the operation: listFoldersContinue
@@ -598,32 +526,16 @@ public type GetCurrentAccountHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type member_space_limits_remove_custom_quota_body record {
-    teamgroupsmembersadd_user[] users?;
-};
-
-public type files_get_thumbnail_batch_body record {
-    filesget_thumbnail_batch_entries[] entries?;
-};
-
-public type list_continue_body record {
-    string cursor?;
-};
-
-public type sharing_get_folder_metadata_body record {
-    anydata[] actions?;
-    string shared_folder_id?;
+public type PropertyGroupUpdate record {
+    PropertyField[] add_or_update_fields?;
+    anydata[] remove_fields?;
+    string template_id?;
 };
 
 # Represents the Headers record for the operation: propertiesUpdate
 public type PropertiesUpdateHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type files_create_folder_v2_body record {
-    boolean autorename?;
-    string path?;
 };
 
 # Represents the Headers record for the operation: addFolderMember
@@ -640,6 +552,10 @@ public type GroupMembersChangeResult record {
 
 public type SyncSetting record {
     string \.tag?;
+};
+
+public type SetCustomQuotaArg record {
+    UserCustomQuotaArg[] users_and_quotas?;
 };
 
 public type UploadSessionFinishBatchResult record {
@@ -660,6 +576,11 @@ public type TeamNamespacesListResult record {
     NamespaceMetadata[] namespaces?;
 };
 
+public type TeamFolderArchiveArg record {
+    boolean force_async_off?;
+    string team_folder_id?;
+};
+
 public type SharedLinkCreatePolicy record {
     string \.tag?;
 };
@@ -671,9 +592,8 @@ public type CheckJobStatusHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type members_suspend_body record {
-    members_send_welcome_email_body user?;
-    boolean wipe_data?;
+public type ListMemberAppsArg record {
+    string team_member_id?;
 };
 
 # Represents the Headers record for the operation: propertiesSearch
@@ -682,11 +602,10 @@ public type PropertiesSearchHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type legal_holds_create_policy_body record {
-    string end_date?;
-    string[] members?;
+public type ExportMetadata record {
+    string export_hash?;
     string name?;
-    string start_date?;
+    decimal size?;
 };
 
 # Represents the Headers record for the operation: move
@@ -702,21 +621,14 @@ public type TeamMemberPolicies record {
     TeamSharingPolicies sharing?;
 };
 
-public type sharing_relinquish_folder_membership_body record {
-    boolean leave_a_copy?;
-    string shared_folder_id?;
-};
-
-public type GetCopyReferenceResponse record {
-    string copy_reference?;
-    string expires?;
-    MetadataAsResponse metadata?;
+public type ResendVerificationEmailArg record {
+    UserSecondaryEmailsArg[] emails_to_resend?;
 };
 
 public type LegalHoldHeldRevisionMetadata record {
     string author_email?;
     string author_member_id?;
-    teamgroupsget_info_profile_status author_member_status?;
+    TeamMemberStatus author_member_status?;
     string content_hash?;
     string file_type?;
     string new_filename?;
@@ -731,38 +643,18 @@ public type SessionLogInfo record {
     string session_id?;
 };
 
-public type SearchPropertiesMode record {
-    string \.tag?;
-    string field_name?;
-};
-
 # Represents the Headers record for the operation: getAccountBatch
 public type GetAccountBatchHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
 };
 
-public type GetTemporaryLinkResponse record {
-    string link?;
-    FileMetadata metadata?;
+public type ExcludedUsersUpdateArg record {
+    UserSelectorArg[] users?;
 };
 
-public type filesget_temporary_upload_link_commit_info record {
-    boolean autorename?;
-    string mode?;
-    boolean mute?;
-    string path?;
-    boolean strict_conflict?;
-};
-
-public type TokenFromOauth1Response record {
-    string oauth2_token?;
-};
-
-public type members_add_body record {
-    groups_delete_body group?;
-    teamgroupsmembersadd_members[] members?;
-    boolean return_members?;
+public type FeaturesGetValuesBatchResult record {
+    FeatureValue[] values?;
 };
 
 # Represents the Headers record for the operation: deleteBatch
@@ -779,23 +671,30 @@ public type UnmountFolderHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type files_get_file_lock_batch_body record {
-    filesget_file_lock_batch_entries[] entries?;
+public type TokenFromOauth1Result record {
+    string oauth2_token?;
 };
 
-public type files_restore_body record {
-    string path?;
-    string rev?;
+public type AdminTier record {
+    string \.tag?;
+};
+
+public type TeamFolderIdListArg record {
+    string[] team_folder_ids?;
+};
+
+public type GetFileRequestArgs record {
+    string id?;
+};
+
+public type DeleteFileRequestArgs record {
+    string[] ids?;
 };
 
 # Represents the Headers record for the operation: propertiesAdd
 public type PropertiesAddHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type CheckAppRequest record {
-    string query?;
 };
 
 # Represents the Headers record for the operation: copyReferenceGet
@@ -811,15 +710,16 @@ public type RevokeSharedLinkHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type namespaces_list_body record {
-    decimal 'limit?;
-};
-
 public type NamespaceMetadata record {
     string name?;
     string namespace_id?;
     NamespaceType namespace_type?;
     string team_member_id?;
+};
+
+public type UploadSessionCursor record {
+    decimal offset?;
+    string session_id?;
 };
 
 # Represents the Headers record for the operation: listReceivedFiles
@@ -829,21 +729,8 @@ public type ListReceivedFilesHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type groups_update_body record {
-    groups_delete_body group?;
-    string new_group_external_id?;
-    string new_group_management_type?;
-    string new_group_name?;
-    boolean return_members?;
-};
-
 public type CustomQuotaResponse record {
     string \.tag?;
-};
-
-public type CreateFolderBatchResponse record {
-    string \.tag?;
-    CreateFolderBatchResponseEntry[] entries?;
 };
 
 public type PropertyFieldTemplate record {
@@ -852,13 +739,13 @@ public type PropertyFieldTemplate record {
     string 'type?;
 };
 
-public type team_folder_activate_body record {
-    string team_folder_id?;
+public type GroupsListContinueArg record {
+    string cursor?;
 };
 
-public type members_add_body_1 record {
-    boolean force_async?;
-    teammembersadd_new_members[] new_members?;
+public type ListFilesResult record {
+    string cursor?;
+    SharedFileMetadata[] entries?;
 };
 
 # Represents the Headers record for the operation: templatesGetForUser
@@ -867,31 +754,15 @@ public type TemplatesGetForUserHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type ExportFileResponse record {
-    ExportFileResponseMetadata export_metadata?;
-    FileMetadata file_metadata?;
+public type RevokeDeviceSessionArg record {
+    string \.tag?;
+    string session_id?;
+    string team_member_id?;
 };
 
-public type GetThumbnailResponse record {
-    FileMetadata file_metadata?;
-};
-
-public type GetTemporaryUploadLinkResponse record {
-    string link?;
-};
-
-public type sharing_list_received_files_body record {
-    anydata[] actions?;
-    decimal 'limit?;
-};
-
-public type teammembersadd_new_members record {
-    string member_email?;
-    string member_external_id?;
-    string member_given_name?;
-    string member_surname?;
-    string role?;
-    boolean send_welcome_email?;
+public type CreateFolderBatchResult record {
+    string \.tag?;
+    CreateFolderBatchResultEntry[] entries?;
 };
 
 public type RootInfo record {
@@ -900,8 +771,10 @@ public type RootInfo record {
     string root_namespace_id?;
 };
 
-public type legal_holds_get_policy_body record {
-    string id?;
+public type GetCopyReferenceResult record {
+    string copy_reference?;
+    string expires?;
+    MetadataAsResponse metadata?;
 };
 
 # Represents the Headers record for the operation: lockFileBatch
@@ -910,10 +783,33 @@ public type LockFileBatchHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
+public type TeamFolderListArg record {
+    decimal 'limit?;
+};
+
+public type UpdateFileRequestDeadline record {
+    string \.tag?;
+    string allow_late_uploads?;
+    string deadline?;
+};
+
+public type EchoArg record {
+    string query?;
+};
+
 # Represents the Headers record for the operation: getFileMetadataBatch
 public type GetFileMetadataBatchHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
+};
+
+public type ExportResult record {
+    ExportMetadata export_metadata?;
+    FileMetadata file_metadata?;
+};
+
+public type GetAccountArg record {
+    string account_id?;
 };
 
 public type EventCategory record {
@@ -940,16 +836,10 @@ public type GroupsGetInfoItem record {
     string \.tag?;
     decimal created?;
     string group_id?;
-    sharinglist_file_membersbatch_result_members_group_group_management_type group_management_type?;
+    GroupManagementType group_management_type?;
     string group_name?;
     decimal member_count?;
-    teamgroupsget_info_members[] members?;
-};
-
-public type sharingadd_folder_member_member record {
-    string \.tag?;
-    string dropbox_id?;
-    string email?;
+    GroupMemberInfo[] members?;
 };
 
 public type TeamSharingPolicies record {
@@ -967,14 +857,14 @@ public type TemplatesUpdateForUserHeaders record {
 public type ShareFolderResponse record {
     string \.tag?;
     AccessInheritance access_inheritance?;
-    sharingget_file_metadatabatch_result_policy_acl_update_policy access_type?;
+    AclUpdatePolicy access_type?;
     boolean is_inside_team_folder?;
     boolean is_team_folder?;
     SharedContentLinkMetadata link_metadata?;
     string name?;
     string path_lower?;
     anydata[] permissions?;
-    sharingget_file_metadatabatch_result_policy policy?;
+    FolderPolicy policy?;
     string preview_url?;
     string shared_folder_id?;
     string time_invited?;
@@ -988,49 +878,38 @@ public type AssetLogInfo record {
     PathLogInfo path?;
 };
 
-public type list_mountable_folders_continue_body record {
-    string cursor?;
-};
-
 public type SharedFileMembers record {
-    sharinglist_file_membersbatch_result_members_groups[] groups?;
-    sharinglist_file_membersbatch_result_members_invitees[] invitees?;
-    sharinglist_file_membersbatch_result_members_users[] users?;
+    GroupInfos[] groups?;
+    InviteeMembershipInfo[] invitees?;
+    UserFileMembershipInfo[] users?;
 };
 
-public type OverwritePropertiesRequest record {
-    string path?;
-    PropertyGroup[] property_groups?;
+public type MemberSelector record {
+    string \.tag?;
+    string dropbox_id?;
+    string email?;
+};
+
+public type AddFolderMemberArg record {
+    string custom_message?;
+    AddMember[] members?;
+    boolean quiet?;
+    string shared_folder_id?;
 };
 
 public type UserMembershipInfo record {
-    sharingget_file_metadatabatch_result_policy_acl_update_policy access_type?;
+    AclUpdatePolicy access_type?;
     boolean is_inherited?;
     anydata[] permissions?;
-    sharinglist_file_membersbatch_result_members_user user?;
-};
-
-public type sharinglist_file_membersbatch_result_members_invitees record {
-    sharingget_file_metadatabatch_result_access_type access_type?;
-    sharinglist_file_membersbatch_result_members_invitee invitee?;
-    boolean is_inherited?;
-    anydata[] permissions?;
-};
-
-public type GetTemplateForTeam record {
-    string template_id?;
+    UserInfo user?;
 };
 
 public type ResendVerificationEmailResult record {
     UserResendResult[] results?;
 };
 
-public type member_space_limits_get_custom_quota_body record {
-    teamgroupsmembersadd_user[] users?;
-};
-
-public type legal_holds_list_policies_body record {
-    boolean include_released?;
+public type ListFileRequestsContinueArg record {
+    string cursor?;
 };
 
 public type UserFeaturesGetValuesResult record {
@@ -1041,6 +920,11 @@ public type UserFeaturesGetValuesResult record {
 public type GetFileLockBatchHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
+};
+
+public type UserSelectorArg record {
+    string \.tag?;
+    string team_member_id?;
 };
 
 # Represents the Headers record for the operation: downloadZip
@@ -1056,22 +940,25 @@ public type RelinquishFolderMembershipHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type FileRequestCount record {
-    decimal file_request_count?;
+public type LegalHoldsListHeldRevisionsArg record {
+    string id?;
+};
+
+public type PropertiesSearchResult record {
+    SearchProperties[] matches?;
+};
+
+public type ThumbnailArg record {
+    string format?;
+    string mode?;
+    string path?;
+    string size?;
 };
 
 public type FeatureValue record {
     string \.tag?;
     HasTeamSharedDropboxValue has_team_shared_dropbox?;
     UploadApiRateLimitValue upload_api_rate_limit?;
-};
-
-public type teammembersget_info_role record {
-    string \.tag?;
-};
-
-public type FeaturesGetValuesResponse record {
-    FeatureValue[] values?;
 };
 
 public type PropertyField record {
@@ -1086,9 +973,9 @@ public type ListFolderLongpollHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type team_folder_create_body record {
-    string name?;
-    string sync_setting?;
+public type UnshareFolderArg record {
+    boolean leave_a_copy?;
+    string shared_folder_id?;
 };
 
 # Represents the Headers record for the operation: tokenRevoke
@@ -1097,17 +984,8 @@ public type TokenRevokeHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type members_remove_body_1 record {
-    boolean keep_account?;
-    boolean retain_team_shares?;
-    teamgroupsmembersadd_user transfer_admin_id?;
-    teamgroupsmembersadd_user transfer_dest_id?;
-    teamgroupsmembersadd_user user?;
-    boolean wipe_data?;
-};
-
-public type secondary_emails_delete_body record {
-    teammemberssecondary_emailsadd_new_secondary_emails[] emails_to_delete?;
+public type PlatformType record {
+    string \.tag?;
 };
 
 public type FullAccount record {
@@ -1119,7 +997,7 @@ public type FullAccount record {
     boolean email_verified?;
     boolean is_paired?;
     string locale?;
-    teamgroupsget_info_profile_name name?;
+    Name name?;
     string referral_link?;
     RootInfo root_info?;
     FullTeam team?;
@@ -1130,15 +1008,23 @@ public type EchoResult record {
     string result?;
 };
 
+public type TeamFolderListContinueArg record {
+    string cursor?;
+};
+
 public type TeamMemberInfoV2Result record {
-    teammembersget_info_profile profile?;
-    teammembersget_info_role role?;
+    TeamMemberProfile profile?;
+    AdminTier role?;
 };
 
 # Represents the Headers record for the operation: list
 public type ListHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
+};
+
+public type LegalHoldsListPoliciesArg record {
+    boolean include_released?;
 };
 
 public type EventType record {
@@ -1154,6 +1040,11 @@ public type SharedContentLinkMetadata record {
     string url?;
 };
 
+public type ListFolderLongpollArg record {
+    string cursor?;
+    decimal timeout?;
+};
+
 # Represents the Headers record for the operation: uploadSessionStart
 public type UploadSessionStartHeaders record {
     string? dropbox\-api\-path\-root?;
@@ -1162,21 +1053,16 @@ public type UploadSessionStartHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type SearchPropertiesContinueRequest record {
-    string cursor?;
-};
-
-public type members_remove_body record {
-    groups_delete_body group?;
-    boolean return_members?;
-    teamgroupsmembersadd_user[] users?;
-};
-
 # Represents the Headers record for the operation: updateFileMember
 public type UpdateFileMemberHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-admin?;
     string? dropbox\-api\-select\-user?;
+};
+
+public type CreateFolderBatchResultEntry record {
+    string \.tag?;
+    FolderMetadata metadata?;
 };
 
 # Represents the Headers record for the operation: listReceivedFilesContinue
@@ -1198,13 +1084,8 @@ public type TeamEvent record {
     string timestamp?;
 };
 
-public type sharing_add_file_member_body record {
-    string access_level?;
-    boolean add_message_as_comment?;
-    string custom_message?;
-    string file?;
-    sharingadd_file_member_members[] members?;
-    boolean quiet?;
+public type GetTemporaryLinkArg record {
+    string path?;
 };
 
 # Represents the Headers record for the operation: removeFileMember2
@@ -1218,18 +1099,17 @@ public type AccessInheritance record {
     string \.tag?;
 };
 
-public type move_batch_check_v2_body record {
-    string async_job_id?;
+public type TeamNamespacesListContinueArg record {
+    string cursor?;
 };
 
-public type sharing_modify_shared_link_settings_body record {
-    boolean remove_expiration?;
-    sharingmodify_shared_link_settings_settings settings?;
-    string url?;
+public type GetTeamEventsContinueArg record {
+    string cursor?;
 };
 
-public type teamfeaturesget_values_features record {
-    string \.tag?;
+public type ListFilesArg record {
+    anydata[] actions?;
+    decimal 'limit?;
 };
 
 # Represents the Headers record for the operation: updateFolderPolicy
@@ -1254,27 +1134,10 @@ public type LaunchResultBase record {
     string async_job_id?;
 };
 
-public type GetTemplateForUserRequest record {
-    string template_id?;
-};
-
-public type sharing_update_folder_policy_body record {
-    string acl_update_policy?;
-    string member_policy?;
-    string shared_folder_id?;
-    string shared_link_policy?;
-};
-
 # Represents the Headers record for the operation: modifySharedLinkSettings
 public type ModifySharedLinkSettingsHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type sharing_list_file_members_body record {
-    string file?;
-    boolean include_inherited?;
-    decimal 'limit?;
 };
 
 # Represents the Headers record for the operation: saveUrl
@@ -1283,52 +1146,30 @@ public type SaveUrlHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type sharing_update_file_member_body record {
-    string access_level?;
-    string file?;
-    sharingadd_file_member_members member?;
-};
-
 public type MemberAddResult record {
     string \.tag?;
-    teammembersget_info_profile profile?;
-    teammembersget_info_role role?;
-};
-
-public type teamgroupsget_info_profile_secondary_emails record {
-    string email?;
-    boolean is_verified?;
+    TeamMemberProfile profile?;
+    AdminTier role?;
 };
 
 public type SharedFolderMetadata record {
     AccessInheritance access_inheritance?;
-    sharingget_file_metadatabatch_result_policy_acl_update_policy access_type?;
+    AclUpdatePolicy access_type?;
     boolean is_inside_team_folder?;
     boolean is_team_folder?;
     SharedContentLinkMetadata link_metadata?;
     string name?;
     string path_lower?;
     anydata[] permissions?;
-    sharingget_file_metadatabatch_result_policy policy?;
+    FolderPolicy policy?;
     string preview_url?;
     string shared_folder_id?;
     string time_invited?;
 };
 
-public type UnshareFileRequest record {
-    string file?;
-};
-
-public type CreateFileRequestRequest record {
-    FileRequestDeadline deadline?;
-    string destination?;
-    boolean open?;
-    string title?;
-};
-
-public type files_copy_batch_v2_body record {
-    boolean autorename?;
-    filescopy_batch_v2_entries[] entries?;
+public type UploadSessionFinishArg record {
+    CommitInfo 'commit?;
+    UploadSessionCursor cursor?;
 };
 
 public type CopyBatchResponseEntries record {
@@ -1336,25 +1177,34 @@ public type CopyBatchResponseEntries record {
     MetadataAsResponse success?;
 };
 
-public type members_set_profile_photo_body record {
-    Photo photo?;
-    members_send_welcome_email_body user?;
+public type GroupMembersAddArg record {
+    GroupSelector group?;
+    MemberAccess[] members?;
+    boolean return_members?;
 };
 
-public type members_recover_body record {
-    teamgroupsmembersadd_user user?;
+public type TokenFromOauth1Arg record {
+    string oauth1_token?;
+    string oauth1_token_secret?;
+};
+
+public type GetFileMetadataIndividualResult record {
+    string file?;
+    SharedFileMetadataWithTag result?;
+};
+
+public type TeamMembershipType record {
+    string \.tag?;
+};
+
+public type LegalHoldsPolicyReleaseArg record {
+    string id?;
 };
 
 public type TeamMemberInfo record {
     string display_name?;
     string member_id?;
-    sharingget_file_metadatabatch_result_owner_team team_info?;
-};
-
-public type files_list_revisions_body record {
-    decimal 'limit?;
-    string mode?;
-    string path?;
+    Team team_info?;
 };
 
 # Represents the Headers record for the operation: user
@@ -1369,9 +1219,8 @@ public type FileLockInfo record {
     string lockholder_name?;
 };
 
-public type teammembersget_info_profile_secondary_emails record {
-    string email?;
-    boolean is_verified?;
+public type GetTemporaryUploadLinkResult record {
+    string link?;
 };
 
 # Represents the Headers record for the operation: createFolder
@@ -1386,15 +1235,56 @@ public type MembersAddResult record {
     MemberAddResult[] complete?;
 };
 
-public type AddTemplateForUser record {
-    string description?;
-    PropertyFieldTemplate[] fields?;
-    string name?;
-};
-
 public type ListRevisionsResult record {
     FileMetadata[] entries?;
     boolean is_deleted?;
+};
+
+public type GetTemporaryUploadLinkArg record {
+    CommitInfo commit_info?;
+    decimal duration?;
+};
+
+public type PropertiesSearchMode record {
+    string \.tag?;
+    string field_name?;
+};
+
+public type GroupUpdateArgs record {
+    GroupSelector group?;
+    string new_group_external_id?;
+    string new_group_management_type?;
+    string new_group_name?;
+    boolean return_members?;
+};
+
+public type RelocationArg record {
+    boolean allow_ownership_transfer?;
+    boolean allow_shared_folder?;
+    boolean autorename?;
+    string from_path?;
+    string to_path?;
+};
+
+public type TeamMemberProfile record {
+    string account_id?;
+    string email?;
+    boolean email_verified?;
+    string external_id?;
+    string[] groups?;
+    string joined_on?;
+    string member_folder_id?;
+    TeamMembershipType membership_type?;
+    Name name?;
+    string profile_photo_url?;
+    SecondaryEmail[] secondary_emails?;
+    TeamMemberStatus status?;
+    string team_member_id?;
+};
+
+public type RestoreArg record {
+    string path?;
+    string rev?;
 };
 
 public type GroupsListResult record {
@@ -1403,10 +1293,38 @@ public type GroupsListResult record {
     boolean has_more?;
 };
 
+public type ListFolderResult record {
+    string cursor?;
+    Metadata[] entries?;
+    boolean has_more?;
+};
+
+public type ListFoldersArgs record {
+    anydata[] actions?;
+    decimal 'limit?;
+};
+
+public type GroupsMembersListArg record {
+    GroupSelector group?;
+    decimal 'limit?;
+};
+
 # Represents the Headers record for the operation: deleteManualContacts
 public type DeleteManualContactsHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
+};
+
+public type CommitInfo record {
+    boolean autorename?;
+    string mode?;
+    boolean mute?;
+    string path?;
+    boolean strict_conflict?;
+};
+
+public type MemberPolicy record {
+    string \.tag?;
 };
 
 public type SharedLinkMetadata record {
@@ -1423,6 +1341,10 @@ public type SharedLinkMetadata record {
     string url?;
 };
 
+public type GetThumbnailBatchArg record {
+    ThumbnailArg[] entries?;
+};
+
 # Represents the Headers record for the operation: count
 public type CountHeaders record {
     string? dropbox\-api\-path\-root?;
@@ -1435,30 +1357,27 @@ public type SearchHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type DeleteBatchResponse record {
-    string \.tag?;
-    DeleteBatchResultEntry[] entries?;
-};
-
 public type SharedFolderJoinPolicy record {
     string \.tag?;
 };
 
-public type TokenFromOauth1Request record {
-    string oauth1_token?;
-    string oauth1_token_secret?;
-};
-
-public type sharing_check_remove_member_job_status_body record {
-    string async_job_id?;
-};
-
-public type files_move_v2_body record {
-    boolean allow_ownership_transfer?;
-    boolean allow_shared_folder?;
+public type CreateFolderArg record {
     boolean autorename?;
-    string from_path?;
-    string to_path?;
+    string path?;
+};
+
+public type RemovePropertiesArg record {
+    string path?;
+    string[] property_template_ids?;
+};
+
+public type UserFeaturesGetValuesBatchArg record {
+    UserFeature[] features?;
+};
+
+public type SetAccessInheritanceArg record {
+    string access_inheritance?;
+    string shared_folder_id?;
 };
 
 # Represents the Headers record for the operation: delete
@@ -1467,32 +1386,19 @@ public type DeleteHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type sharingget_file_metadatabatch_result record {
-    string \.tag?;
-    sharingget_file_metadatabatch_result_access_type access_type?;
-    string id?;
-    string name?;
-    string[] owner_display_names?;
-    sharingget_file_metadatabatch_result_owner_team owner_team?;
-    string path_display?;
-    string path_lower?;
-    anydata[] permissions?;
-    sharingget_file_metadatabatch_result_policy policy?;
-    string preview_url?;
-    string time_invited?;
-};
-
-public type SearchPropertiesResponse record {
-    SearchProperties[] matches?;
-};
-
 public type AccountType record {
     string \.tag?;
 };
 
-public type GetFileMetadataIndicidualResult record {
-    string file?;
-    sharingget_file_metadatabatch_result result?;
+public type InviteeMembershipInfo record {
+    AccessLevel access_type?;
+    InviteeInfo invitee?;
+    boolean is_inherited?;
+    anydata[] permissions?;
+};
+
+public type GetTemplateArg record {
+    string template_id?;
 };
 
 # Represents the Headers record for the operation: unshareFolder
@@ -1502,9 +1408,25 @@ public type UnshareFolderHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
+public type CustomQuotaUsersArg record {
+    UserSelectorArg[] users?;
+};
+
+public type DeleteSecondaryEmailsArg record {
+    UserSecondaryEmailsArg[] emails_to_delete?;
+};
+
 public type SpaceAllocation record {
     string \.tag?;
     decimal allocated?;
+};
+
+public type UpdateFileRequestArgs record {
+    UpdateFileRequestDeadline deadline?;
+    string destination?;
+    string id?;
+    boolean open?;
+    string title?;
 };
 
 # Represents the Headers record for the operation: listFileMembers
@@ -1514,30 +1436,12 @@ public type ListFileMembersHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type teamgroupsget_info_profile_membership_type record {
+public type AclUpdatePolicy record {
     string \.tag?;
 };
 
-public type teamgroupsget_info_access_type record {
-    string \.tag?;
-};
-
-public type filesupload_sessionfinish_batch_entries record {
-    filesget_temporary_upload_link_commit_info 'commit?;
-    filesupload_sessionfinish_batch_cursor cursor?;
-};
-
-public type groups_delete_body record {
-    string \.tag?;
-    string group_id?;
-};
-
-public type members_get_info_body record {
-    teamgroupsmembersadd_user[] members?;
-};
-
-public type secondary_emails_resend_verification_emails_body record {
-    teammemberssecondary_emailsadd_new_secondary_emails[] emails_to_resend?;
+public type SetProfilePhotoResult record {
+    string profile_photo_url?;
 };
 
 public type PropertyFieldTemplateAsResponse record {
@@ -1560,20 +1464,14 @@ public type DeleteBatchCheckHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type sharing_check_job_status_body record {
-    string async_job_id?;
+public type RelinquishFileMembershipArg record {
+    string file?;
 };
 
 # Represents the Headers record for the operation: getSpaceUsage
 public type GetSpaceUsageHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type team_folder_update_sync_settings_body record {
-    teamteam_folderupdate_sync_settings_content_sync_settings[] content_sync_settings?;
-    string sync_setting?;
-    string team_folder_id?;
 };
 
 # Represents the Headers record for the operation: shareFolder
@@ -1583,27 +1481,26 @@ public type ShareFolderHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type DeleteFileRequestsResponse record {
-    FileRequestAsResponse[] file_requests?;
+public type Feature record {
+    string \.tag?;
+};
+
+public type GroupsListArg record {
+    decimal 'limit?;
 };
 
 public type GroupFullInfo record {
     decimal created?;
     string group_id?;
-    sharinglist_file_membersbatch_result_members_group_group_management_type group_management_type?;
+    GroupManagementType group_management_type?;
     string group_name?;
     decimal member_count?;
-    teamgroupsget_info_members[] members?;
+    GroupMemberInfo[] members?;
 };
 
-public type legal_holds_list_held_revisions_body record {
-    string id?;
-};
-
-public type files_create_folder_batch_body record {
-    boolean autorename?;
-    boolean force_async?;
-    string[] paths?;
+public type AddMember record {
+    string access_level?;
+    MemberSelector member?;
 };
 
 # Represents the Headers record for the operation: setAccessInheritance
@@ -1612,19 +1509,16 @@ public type SetAccessInheritanceHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type files_lock_file_batch_body record {
-    filesget_file_lock_batch_entries[] entries?;
-};
-
-public type groups_get_info_body record {
-    string \.tag?;
-    string[] group_ids?;
+public type ListFileMembersArg record {
+    string file?;
+    boolean include_inherited?;
+    decimal 'limit?;
 };
 
 public type MembersGetInfoItem record {
     string \.tag?;
-    teammembersget_info_profile profile?;
-    teammembersget_info_role role?;
+    TeamMemberProfile profile?;
+    AdminTier role?;
 };
 
 # Provides a set of configurations for controlling the behaviours when communicating with a remote HTTP endpoint.
@@ -1671,6 +1565,19 @@ public type CheckJobStatusResponse record {
     string \.tag?;
 };
 
+public type ListFileMembersBatchArg record {
+    string[] files?;
+    decimal 'limit?;
+};
+
+public type MembersRecoverArg record {
+    UserSelectorArg user?;
+};
+
+public type ExcludedUsersListContinueArg record {
+    string cursor?;
+};
+
 # Represents the Headers record for the operation: create
 public type CreateHeaders record {
     string? dropbox\-api\-path\-root?;
@@ -1684,20 +1591,31 @@ public type Delete1Headers record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type files_get_metadata_body record {
-    boolean include_deleted?;
-    boolean include_has_explicit_shared_members?;
-    boolean include_media_info?;
+public type MountFolderArg record {
+    string shared_folder_id?;
+};
+
+public type FeaturesGetValuesBatchArg record {
+    Feature[] features?;
+};
+
+public type ShareFolderArg record {
+    string access_inheritance?;
+    string acl_update_policy?;
+    boolean force_async?;
+    string member_policy?;
     string path?;
+    string shared_link_policy?;
 };
 
-public type files_get_temporary_upload_link_body record {
-    filesget_temporary_upload_link_commit_info commit_info?;
-    decimal duration?;
+public type MembersDataTransferArg record {
+    UserSelectorArg transfer_admin_id?;
+    UserSelectorArg transfer_dest_id?;
+    UserSelectorArg user?;
 };
 
-public type members_delete_profile_photo_body record {
-    teamgroupsmembersadd_user user?;
+public type LegalHoldsGetPolicyArg record {
+    string id?;
 };
 
 # Represents the Headers record for the operation: upload
@@ -1706,11 +1624,6 @@ public type UploadHeaders record {
     string? dropbox\-api\-arg?;
     string? dropbox\-api\-select\-admin?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type sharing_get_shared_link_metadata_body record {
-    string path?;
-    string url?;
 };
 
 # Represents the Headers record for the operation: download
@@ -1726,17 +1639,32 @@ public type FileRequestDeadlineWithTag record {
     string deadline?;
 };
 
-public type file_requestsupdate_deadline record {
-    string \.tag?;
-    string allow_late_uploads?;
-    string deadline?;
+public type DeleteManualContactsArg record {
+    string[] email_addresses?;
+};
+
+public type GetMetadataArg record {
+    boolean include_deleted?;
+    boolean include_has_explicit_shared_members?;
+    boolean include_media_info?;
+    string path?;
+};
+
+public type ListFolderArg record {
+    boolean include_deleted?;
+    boolean include_has_explicit_shared_members?;
+    boolean include_media_info?;
+    boolean include_mounted_folders?;
+    boolean include_non_downloadable_files?;
+    string path?;
+    boolean recursive?;
 };
 
 public type UserAddResult record {
     string \.tag?;
-    members_send_welcome_email_body invalid_user?;
+    UserSelectorArg invalid_user?;
     AddSecondaryEmailResult[] results?;
-    members_send_welcome_email_body user?;
+    UserSelectorArg user?;
 };
 
 public type Metadata record {
@@ -1757,15 +1685,6 @@ public type Metadata record {
     decimal size?;
 };
 
-public type AddPropertiesRequest record {
-    string path?;
-    PropertyGroup[] property_groups?;
-};
-
-public type sharing_revoke_shared_link_body record {
-    string url?;
-};
-
 # Represents the Headers record for the operation: unshareFile
 public type UnshareFileHeaders record {
     string? dropbox\-api\-path\-root?;
@@ -1779,21 +1698,13 @@ public type DeleteSecondaryEmailResult record {
     string success?;
 };
 
-public type files_permanently_delete_body record {
-    string path?;
-};
-
 public type TeamFolderMetadata record {
     ContentSyncSetting[] content_sync_settings?;
     boolean is_team_shared_dropbox?;
     string name?;
-    teamgroupsget_info_profile_status status?;
+    TeamMemberStatus status?;
     SyncSetting sync_setting?;
     string team_folder_id?;
-};
-
-public type list_folder_members_continue_body record {
-    string cursor?;
 };
 
 # Represents the Headers record for the operation: checkShareJobStatus
@@ -1803,17 +1714,14 @@ public type CheckShareJobStatusHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type team_log_get_events_body record {
-    string category?;
-    decimal 'limit?;
+public type UserSecondaryEmailsArg record {
+    string[] secondary_emails?;
+    UserSelectorArg user?;
 };
 
-public type TeamGetInfoResponse record {
+public type Team record {
+    string id?;
     string name?;
-    decimal num_licensed_users?;
-    decimal num_provisioned_users?;
-    TeamMemberPolicies policies?;
-    string team_id?;
 };
 
 public type ExcludedUsersListResult record {
@@ -1822,8 +1730,9 @@ public type ExcludedUsersListResult record {
     anydata[] users?;
 };
 
-public type sharingget_file_metadatabatch_result_policy_member_policy record {
-    string \.tag?;
+public type TeamFolderCreateArg record {
+    string name?;
+    string sync_setting?;
 };
 
 public type SearchProperties record {
@@ -1843,9 +1752,12 @@ public type UserLogInfo record {
     string team_member_id?;
 };
 
-public type members_send_welcome_email_body record {
-    string \.tag?;
-    string team_member_id?;
+public type TeamGetInfoResult record {
+    string name?;
+    decimal num_licensed_users?;
+    decimal num_provisioned_users?;
+    TeamMemberPolicies policies?;
+    string team_id?;
 };
 
 public type ResendSecondaryEmailResult record {
@@ -1853,40 +1765,50 @@ public type ResendSecondaryEmailResult record {
     string success?;
 };
 
-public type GetFileMetadataResponse record {
-    sharingget_file_metadatabatch_result_access_type access_type?;
-    string id?;
-    string name?;
-    string[] owner_display_names?;
-    sharingget_file_metadatabatch_result_owner_team owner_team?;
-    string path_display?;
-    string path_lower?;
-    anydata[] permissions?;
-    sharingget_file_metadatabatch_result_policy policy?;
-    string preview_url?;
-    string time_invited?;
+public type AddTemplateResult record {
+    string template_id?;
 };
 
-public type SearchFilesResponse record {
-    boolean has_more?;
-    SearchMatch[] matches?;
+public type ListFolderMembersContinueArg record {
+    string cursor?;
+};
+
+public type UpdatePropertiesArg record {
+    string path?;
+    PropertyGroupUpdate[] update_property_groups?;
+};
+
+public type MemberAddV2Arg record {
+    string member_email?;
+    string member_external_id?;
+    string member_given_name?;
+    string member_surname?;
+    string role?;
+    boolean send_welcome_email?;
+};
+
+public type MetadataResult record {
+    MetadataAsResponse metadata?;
+};
+
+public type PollArg record {
+    string async_job_id?;
 };
 
 public type GroupSummary record {
     string group_id?;
-    sharinglist_file_membersbatch_result_members_group_group_management_type group_management_type?;
+    GroupManagementType group_management_type?;
     string group_name?;
     decimal member_count?;
 };
 
 public type TokenGetAuthenticatedAdminResult record {
-    teammembersget_info_profile admin_profile?;
+    TeamMemberProfile admin_profile?;
 };
 
-public type ListFolderResponse record {
-    string cursor?;
-    Metadata[] entries?;
-    boolean has_more?;
+public type GetTemporaryLinkResult record {
+    string link?;
+    FileMetadata metadata?;
 };
 
 # Represents the Headers record for the operation: tokenFromOauth1
@@ -1895,34 +1817,20 @@ public type TokenFromOauth1Headers record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type SearchPropertiesRequest record {
-    SearchPropertiesQuery[] queries?;
-    string template_filter?;
-};
-
 public type GetThumbnailBatchResultEntry record {
     string \.tag?;
     FileMetadata metadata?;
     string thumbnail?;
 };
 
-public type file_requests_list_v2_body record {
-    decimal 'limit?;
-};
-
-public type RelocationBatchV2Response record {
-    string \.tag?;
-    CopyBatchResponseEntries[] entries?;
+public type SearchV2ContinueArg record {
+    string cursor?;
 };
 
 # Represents the Headers record for the operation: propertiesSearchContinue
 public type PropertiesSearchContinueHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type members_unsuspend_body record {
-    members_send_welcome_email_body user?;
 };
 
 public type Photo record {
@@ -1938,19 +1846,18 @@ public type ExportHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type users_get_account_body record {
-    string account_id?;
+public type Name record {
+    string abbreviated_name?;
+    string display_name?;
+    string familiar_name?;
+    string given_name?;
+    string surname?;
 };
 
 # Represents the Headers record for the operation: searchContinue
 public type SearchContinueHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type CreateFolderBatchResponseEntry record {
-    string \.tag?;
-    FolderMetadata metadata?;
 };
 
 public type SharedFolderMemberPolicy record {
@@ -1960,6 +1867,10 @@ public type SharedFolderMemberPolicy record {
 public type UploadApiRateLimitValue record {
     string \.tag?;
     decimal 'limit?;
+};
+
+public type GetCopyReferenceArg record {
+    string path?;
 };
 
 # Represents the Headers record for the operation: getFileMetadata
@@ -1972,16 +1883,13 @@ public type GetFileMetadataHeaders record {
 public type UserResendResult record {
     string \.tag?;
     ResendSecondaryEmailResult[] results?;
-    members_send_welcome_email_body user?;
+    UserSelectorArg user?;
 };
 
-public type teammember_space_limitsset_custom_quota_users_and_quotas record {
-    decimal quota_gb?;
-    teamgroupsmembersadd_user user?;
-};
-
-public type team_folder_get_info_body record {
-    string[] team_folder_ids?;
+public type ListFileMembersCountResult record {
+    string \.tag?;
+    decimal member_count?;
+    SharedFileMembers members?;
 };
 
 public type BasicAccount record {
@@ -1990,8 +1898,19 @@ public type BasicAccount record {
     string email?;
     boolean email_verified?;
     boolean is_teammate?;
-    teamgroupsget_info_profile_name name?;
+    Name name?;
     string profile_photo_url?;
+};
+
+public type DeleteArg record {
+    string path?;
+};
+
+public type UpdateTemplateArg record {
+    PropertyFieldTemplate[] add_fields?;
+    string description?;
+    string name?;
+    string template_id?;
 };
 
 public type FullTeam record {
@@ -2008,31 +1927,27 @@ public type GetMetadataHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type team_folder_rename_body record {
-    string name?;
-    string team_folder_id?;
-};
-
 public type OriginLogInfo record {
     AccessMethodLogInfo access_method?;
     GeoLocationLogInfo geo_location?;
 };
 
-public type sharing_list_mountable_folders_body record {
-    anydata[] actions?;
-    decimal 'limit?;
+public type GroupMembersRemoveArg record {
+    GroupSelector group?;
+    boolean return_members?;
+    UserSelectorArg[] users?;
 };
 
 public type SharedFileMetadata record {
-    sharingget_file_metadatabatch_result_access_type access_type?;
+    AccessLevel access_type?;
     string id?;
     string name?;
     string[] owner_display_names?;
-    sharingget_file_metadatabatch_result_owner_team owner_team?;
+    Team owner_team?;
     string path_display?;
     string path_lower?;
     anydata[] permissions?;
-    sharingget_file_metadatabatch_result_policy policy?;
+    FolderPolicy policy?;
     string preview_url?;
     string time_invited?;
 };
@@ -2044,13 +1959,8 @@ public type EventDetails record {
     UserLogInfo shared_content_owner?;
 };
 
-public type copy_reference_get_body record {
-    string path?;
-};
-
-public type GetSpaceUsageResponse record {
-    SpaceAllocation allocation?;
-    decimal used?;
+public type TeamMemberStatus record {
+    string \.tag?;
 };
 
 public type MembersListResult record {
@@ -2059,8 +1969,8 @@ public type MembersListResult record {
     TeamMemberInfoV2Result[] members?;
 };
 
-public type save_url_check_job_status_body record {
-    string async_job_id?;
+public type LegalHoldsListHeldRevisionsContinueArg record {
+    string id?;
 };
 
 public type HasTeamSharedDropboxValue record {
@@ -2068,29 +1978,24 @@ public type HasTeamSharedDropboxValue record {
     boolean has_team_shared_dropbox?;
 };
 
-public type list_folder_get_latest_cursor_body record {
-    boolean include_deleted?;
-    boolean include_has_explicit_shared_members?;
-    boolean include_media_info?;
-    boolean include_mounted_folders?;
-    boolean include_non_downloadable_files?;
-    string path?;
-    boolean recursive?;
+public type LegalHoldsPolicyCreateArg record {
+    string end_date?;
+    string[] members?;
+    string name?;
+    string start_date?;
 };
 
-public type sharinglist_file_membersbatch_result_members_users record {
-    sharingget_file_metadatabatch_result_policy_acl_update_policy access_type?;
-    boolean is_inherited?;
-    anydata[] permissions?;
-    sharinglist_file_membersbatch_result_members_platform_type platform_type?;
-    string time_last_seen?;
-    sharinglist_file_membersbatch_result_members_user user?;
+public type GetFileMetadataBatchArg record {
+    anydata[] actions?;
+    string[] files?;
 };
 
-public type SearchPropertiesQuery record {
-    string logical_operator?;
-    SearchPropertiesMode mode?;
-    string query?;
+public type ListFolderContinueArg record {
+    string cursor?;
+};
+
+public type TeamNamespacesListArg record {
+    decimal 'limit?;
 };
 
 public type TeamFolderArchiveResponse record {
@@ -2098,13 +2003,9 @@ public type TeamFolderArchiveResponse record {
     ContentSyncSetting[] content_sync_settings?;
     boolean is_team_shared_dropbox?;
     string name?;
-    teamgroupsget_info_profile_status status?;
+    TeamMemberStatus status?;
     SyncSetting sync_setting?;
     string team_folder_id?;
-};
-
-public type job_status_get_body record {
-    string async_job_id?;
 };
 
 # Represents the Headers record for the operation: restore
@@ -2114,26 +2015,27 @@ public type RestoreHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type sharinglist_file_membersbatch_result record {
+public type UpdateFileMemberArgs record {
+    string access_level?;
+    string file?;
+    MemberSelector member?;
+};
+
+public type UserCustomQuotaArg record {
+    decimal quota_gb?;
+    UserSelectorArg user?;
+};
+
+public type GroupsSelector record {
     string \.tag?;
-    decimal member_count?;
-    sharinglist_file_membersbatch_result_members members?;
+    string[] group_ids?;
 };
 
-public type UpdatePropertiesRequest record {
-    string path?;
-    PropertyGroupsUpdate[] update_property_groups?;
+public type PropertiesSearchContinueArg record {
+    string cursor?;
 };
 
-public type sharinglist_file_membersbatch_result_members_access_type record {
-    string \.tag?;
-};
-
-public type groups_list_body record {
-    decimal 'limit?;
-};
-
-public type members_list_body_1 record {
+public type MembersListArg record {
     boolean include_removed?;
     decimal 'limit?;
 };
@@ -2154,11 +2056,9 @@ public type DeleteAllClosedHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type members_set_access_type_body record {
-    string access_type?;
-    groups_delete_body group?;
-    boolean return_members?;
-    teamgroupsmembersadd_user user?;
+public type SearchV2Result record {
+    boolean has_more?;
+    SearchMatch[] matches?;
 };
 
 public type LinkPermission record {
@@ -2166,26 +2066,15 @@ public type LinkPermission record {
     boolean allow?;
 };
 
-public type users_get_account_batch_body record {
-    string[] account_ids?;
+public type RelocationBatchArgBase record {
+    boolean autorename?;
+    RelocationPath[] entries?;
 };
 
-public type SetProfilePhotoResponse record {
-    string profile_photo_url?;
-};
-
-public type legal_holds_release_policy_body record {
-    string id?;
-};
-
-public type members_move_former_member_files_body record {
-    teamgroupsmembersadd_user transfer_admin_id?;
-    teamgroupsmembersadd_user transfer_dest_id?;
-    teamgroupsmembersadd_user user?;
-};
-
-public type DeleteFilesBatchRequest record {
-    FilePath[] entries?;
+public type RemoveFolderMemberArg record {
+    boolean leave_a_copy?;
+    MemberSelector member?;
+    string shared_folder_id?;
 };
 
 public type UploadSessionFinishBatchResultEntry record {
@@ -2206,31 +2095,30 @@ public type UploadSessionFinishBatchResultEntry record {
     decimal size?;
 };
 
+public type LockFileArg record {
+    string path?;
+};
+
+public type AddTemplateArg record {
+    string description?;
+    PropertyFieldTemplate[] fields?;
+    string name?;
+};
+
 public type UserDeleteResult record {
     string \.tag?;
     DeleteSecondaryEmailResult[] results?;
-    members_send_welcome_email_body user?;
+    UserSelectorArg user?;
 };
 
 public type AddSecondaryEmailResult record {
     string \.tag?;
-    teamgroupsget_info_profile_secondary_emails success?;
+    SecondaryEmail success?;
     string unavailable?;
 };
 
 public type LockFileBatchResult record {
     LockFileResultEntry[] entries?;
-};
-
-public type sharing_unmount_folder_body record {
-    string shared_folder_id?;
-};
-
-public type UpdateTemplateForUserRequest record {
-    PropertyFieldTemplate[] add_fields?;
-    string description?;
-    string name?;
-    string template_id?;
 };
 
 # Represents the Headers record for the operation: templatesAddForUser
@@ -2239,62 +2127,24 @@ public type TemplatesAddForUserHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type sharing_set_access_inheritance_body record {
-    string access_inheritance?;
-    string shared_folder_id?;
+public type GroupMembersSetAccessTypeArg record {
+    string access_type?;
+    GroupSelector group?;
+    boolean return_members?;
+    UserSelectorArg user?;
 };
 
-public type members_list_body record {
-    groups_delete_body group?;
+public type RelocationBatchV2Result record {
+    string \.tag?;
+    CopyBatchResponseEntries[] entries?;
+};
+
+public type ListFileRequestsArg record {
     decimal 'limit?;
-};
-
-public type sharing_remove_file_member_2_body record {
-    string file?;
-    sharingadd_file_member_members member?;
-};
-
-public type teammembersget_info_profile record {
-    string account_id?;
-    string email?;
-    boolean email_verified?;
-    string external_id?;
-    string[] groups?;
-    string joined_on?;
-    string member_folder_id?;
-    teamgroupsget_info_profile_membership_type membership_type?;
-    teamgroupsget_info_profile_name name?;
-    string profile_photo_url?;
-    teammembersget_info_profile_secondary_emails[] secondary_emails?;
-    teamgroupsget_info_profile_status status?;
-    string team_member_id?;
-};
-
-public type SetProfilePhotoRequest record {
-    Photo photo?;
-};
-
-public type list_file_members_batch_body record {
-    string[] files?;
-    decimal 'limit?;
-};
-
-public type features_get_values_body_1 record {
-    usersfeaturesget_values_features[] features?;
-};
-
-public type PropertyGroupsUpdate record {
-    PropertyField[] add_or_update_fields?;
-    anydata[] remove_fields?;
-    string template_id?;
 };
 
 public type FileLock record {
     FileLockContent content?;
-};
-
-public type RemoveTemplateForTeamRequest record {
-    string template_id?;
 };
 
 # Represents the Headers record for the operation: listRevisions
@@ -2304,18 +2154,17 @@ public type ListRevisionsHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type excluded_users_add_body record {
-    teamgroupsmembersadd_user[] users?;
+public type InviteeInfo record {
+    string \.tag?;
+    string email?;
 };
 
-public type filesupload_sessionfinish_batch_cursor record {
-    decimal offset?;
-    string session_id?;
+public type ListFoldersContinueArg record {
+    string cursor?;
 };
 
-public type copy_reference_save_body record {
-    string copy_reference?;
-    string path?;
+public type PreviewResult record {
+    FileMetadata file_metadata?;
 };
 
 # Represents the Headers record for the operation: listFolder
@@ -2349,8 +2198,9 @@ public type ListFileMembersBatchHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type search_continue_v2_body record {
-    string cursor?;
+public type GetMetadataArgs record {
+    anydata[] actions?;
+    string shared_folder_id?;
 };
 
 # Represents the Headers record for the operation: addFileMember
@@ -2360,25 +2210,9 @@ public type AddFileMemberHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type teamgroupsget_info_profile_name record {
-    string abbreviated_name?;
-    string display_name?;
-    string familiar_name?;
-    string given_name?;
-    string surname?;
-};
-
-public type teamgroupsget_info_profile record {
-    string account_id?;
-    string email?;
-    boolean email_verified?;
-    string joined_on?;
-    teamgroupsget_info_profile_membership_type membership_type?;
-    teamgroupsget_info_profile_name name?;
-    string profile_photo_url?;
-    teamgroupsget_info_profile_secondary_emails[] secondary_emails?;
-    teamgroupsget_info_profile_status status?;
-    string team_member_id?;
+public type RelinquishFolderMembershipArg record {
+    boolean leave_a_copy?;
+    string shared_folder_id?;
 };
 
 # Represents the Headers record for the operation: templatesRemoveForUser
@@ -2387,15 +2221,36 @@ public type TemplatesRemoveForUserHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
+public type TeamFolderRenameArg record {
+    string name?;
+    string team_folder_id?;
+};
+
 # Represents the Headers record for the operation: listSharedLinks
 public type ListSharedLinksHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
 };
 
-public type team_folder_archive_body record {
-    boolean force_async_off?;
+public type GroupManagementType record {
+    string \.tag?;
+};
+
+public type TeamFolderIdArg record {
     string team_folder_id?;
+};
+
+public type UserFileMembershipInfo record {
+    AclUpdatePolicy access_type?;
+    boolean is_inherited?;
+    anydata[] permissions?;
+    PlatformType platform_type?;
+    string time_last_seen?;
+    UserInfo user?;
+};
+
+public type CountFileRequestsResult record {
+    decimal file_request_count?;
 };
 
 public type FileRequestDeadline record {
@@ -2409,6 +2264,12 @@ public type MetadataSharingInfo record {
     boolean read_only?;
 };
 
+public type UpdateFolderMemberArg record {
+    string access_level?;
+    MemberSelector member?;
+    string shared_folder_id?;
+};
+
 # Represents the Headers record for the operation: removeFolderMember
 public type RemoveFolderMemberHeaders record {
     string? dropbox\-api\-path\-root?;
@@ -2416,17 +2277,12 @@ public type RemoveFolderMemberHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type sharing_unshare_folder_body record {
-    boolean leave_a_copy?;
-    string shared_folder_id?;
+public type DeleteBatchArg record {
+    DeleteArg[] entries?;
 };
 
-public type CheckUserRequest record {
-    string query?;
-};
-
-public type legal_holds_list_held_revisions_continue_body record {
-    string id?;
+public type GroupsMembersListContinueArg record {
+    string cursor?;
 };
 
 public type SharedContentAccessLevel record {
@@ -2437,18 +2293,10 @@ public type AddSecondaryEmailsResult record {
     UserAddResult[] results?;
 };
 
-public type list_received_files_continue_body record {
-    string cursor?;
-};
-
-public type teamgroupsmembersadd_members record {
-    string access_type?;
-    teamgroupsmembersadd_user user?;
-};
-
-public type members_set_admin_permissions_body record {
-    string new_role?;
-    members_send_welcome_email_body user?;
+public type MembersSetProfileArg record {
+    string new_email?;
+    string new_surname?;
+    UserSelectorArg user?;
 };
 
 public type PathLogInfo record {
@@ -2456,11 +2304,17 @@ public type PathLogInfo record {
     NamespaceRelativePathLogInfo namespace_relative?;
 };
 
-public type GenericResponseWithTag record {
+public type FileMemberActionIndividualResult record {
     string \.tag?;
 };
 
-public type teamgroupsget_info_profile_status record {
+public type CreateFolderBatchArg record {
+    boolean autorename?;
+    boolean force_async?;
+    string[] paths?;
+};
+
+public type GenericResponseWithTag record {
     string \.tag?;
 };
 
@@ -2470,10 +2324,14 @@ public type MountFolderHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
+public type MembersDeleteProfilePhotoArg record {
+    UserSelectorArg user?;
+};
+
 public type SharedFolderMembers record {
     string cursor?;
-    sharinglist_file_membersbatch_result_members_groups[] groups?;
-    sharinglist_file_membersbatch_result_members_invitees[] invitees?;
+    GroupInfos[] groups?;
+    InviteeMembershipInfo[] invitees?;
     UserMembershipInfo[] users?;
 };
 
@@ -2484,17 +2342,14 @@ public type ListFolderContinueHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type files_move_batch_v2_body record {
-    boolean allow_ownership_transfer?;
-    boolean autorename?;
-    filescopy_batch_v2_entries[] entries?;
+public type DeleteBatchResult record {
+    string \.tag?;
+    DeleteBatchResultEntry[] entries?;
 };
 
-public type devices_list_member_devices_body record {
-    boolean include_desktop_clients?;
-    boolean include_mobile_clients?;
-    boolean include_web_sessions?;
-    string team_member_id?;
+public type AddPropertiesArg record {
+    string path?;
+    PropertyGroup[] property_groups?;
 };
 
 # Represents the Headers record for the operation: copyBatchCheck
@@ -2510,20 +2365,17 @@ public type DeleteManualContactsBatchHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type list_file_members_continue_body record {
-    string cursor?;
+public type SharedLinkSettings record {
+    string access?;
+    string audience?;
+    string requested_visibility?;
 };
 
-public type files_copy_v2_body record {
-    boolean allow_ownership_transfer?;
-    boolean allow_shared_folder?;
-    boolean autorename?;
-    string from_path?;
-    string to_path?;
-};
-
-public type job_status_check_body record {
-    string async_job_id?;
+public type CreateFileRequestArgs record {
+    FileRequestDeadline deadline?;
+    string destination?;
+    boolean open?;
+    string title?;
 };
 
 public type FolderMetadataResponse record {
@@ -2544,7 +2396,11 @@ public type LegalHoldPolicy record {
     MembersInfo members?;
     string name?;
     string start_date?;
-    teamgroupsget_info_profile_status status?;
+    TeamMemberStatus status?;
+};
+
+public type LockFileBatchArg record {
+    LockFileArg[] entries?;
 };
 
 # Represents the Headers record for the operation: get
@@ -2568,24 +2424,21 @@ public type UploadSessionAppendHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type sharing_relinquish_file_membership_body record {
-    string file?;
+public type UnmountFolderArg record {
+    string shared_folder_id?;
 };
 
-public type devices_revoke_device_session_body record {
-    string \.tag?;
-    string session_id?;
-    string team_member_id?;
+public type UpdateFolderPolicyArg record {
+    string acl_update_policy?;
+    string member_policy?;
+    string shared_folder_id?;
+    string shared_link_policy?;
 };
 
 # Represents the Headers record for the operation: saveUrlCheckJobStatus
 public type SaveUrlCheckJobStatusHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type files_unlock_file_batch_body record {
-    filesget_file_lock_batch_entries[] entries?;
 };
 
 # Represents the Headers record for the operation: copy
@@ -2595,14 +2448,27 @@ public type CopyHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type excluded_users_remove_body record {
-    teamgroupsmembersadd_user[] users?;
-};
-
 # Represents the Headers record for the operation: update
 public type UpdateHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
+};
+
+public type UserFeature record {
+    string \.tag?;
+};
+
+public type MemberProfile record {
+    string account_id?;
+    string email?;
+    boolean email_verified?;
+    string joined_on?;
+    TeamMembershipType membership_type?;
+    Name name?;
+    string profile_photo_url?;
+    SecondaryEmail[] secondary_emails?;
+    TeamMemberStatus status?;
+    string team_member_id?;
 };
 
 # Represents the Headers record for the operation: listFolderGetLatestCursor
@@ -2610,6 +2476,11 @@ public type ListFolderGetLatestCursorHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-admin?;
     string? dropbox\-api\-select\-user?;
+};
+
+public type SaveUrlArg record {
+    string path?;
+    string url?;
 };
 
 public type FileMetadata record {
@@ -2636,22 +2507,10 @@ public type UpdateFolderMemberHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type sharingget_file_metadatabatch_result_access_type record {
-    string \.tag?;
-};
-
 # Represents the Headers record for the operation: getSharedLinkMetadata
 public type GetSharedLinkMetadataHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type sharing_check_share_job_status_body record {
-    string async_job_id?;
-};
-
-public type create_folder_batch_check_body record {
-    string async_job_id?;
 };
 
 # Represents the Headers record for the operation: moveBatchCheck
@@ -2659,15 +2518,6 @@ public type MoveBatchCheckHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-admin?;
     string? dropbox\-api\-select\-user?;
-};
-
-public type sharing_share_folder_body record {
-    string access_inheritance?;
-    string acl_update_policy?;
-    boolean force_async?;
-    string member_policy?;
-    string path?;
-    string shared_link_policy?;
 };
 
 # Represents the Headers record for the operation: uploadSessionFinishBatchCheck
@@ -2681,17 +2531,19 @@ public type LinkAction record {
     string \.tag?;
 };
 
-public type features_get_values_body record {
-    teamfeaturesget_values_features[] features?;
+public type OverwritePropertyGroupArg record {
+    string path?;
+    PropertyGroup[] property_groups?;
 };
 
-public type sharing_mount_folder_body record {
-    string shared_folder_id?;
+public type GroupSelector record {
+    string \.tag?;
+    string group_id?;
 };
 
 public type FileMemberActionResult record {
-    sharingadd_file_member_members member?;
-    sharingadd_file_member_result result?;
+    MemberSelector member?;
+    FileMemberActionIndividualResult result?;
 };
 
 # Represents the Headers record for the operation: uploadSessionFinish
@@ -2707,17 +2559,21 @@ public type MembersInfo record {
     string[] team_member_ids?;
 };
 
-public type sharinglist_file_membersbatch_result_members_invitee record {
-    string \.tag?;
-    string email?;
-};
-
 public type SharingInfo record {
     string modified_by?;
     boolean no_access?;
     string parent_shared_folder_id?;
     boolean read_only?;
     boolean traverse_only?;
+};
+
+public type GetSharedLinkMetadataArg record {
+    string path?;
+    string url?;
+};
+
+public type MembersListContinueArg record {
+    string cursor?;
 };
 
 # Represents the Headers record for the operation: copyBatch
@@ -2729,7 +2585,28 @@ public type CopyBatchHeaders record {
 
 public type ListFileMembersIndividualResult record {
     string file?;
-    sharinglist_file_membersbatch_result result?;
+    ListFileMembersCountResult result?;
+};
+
+public type MemberAccess record {
+    string access_type?;
+    UserSelectorArg user?;
+};
+
+public type GetTemplateResult record {
+    string description?;
+    PropertyFieldTemplateAsResponse[] fields?;
+    string name?;
+};
+
+public type SecondaryEmail record {
+    string email?;
+    boolean is_verified?;
+};
+
+public type SaveCopyReferenceArg record {
+    string copy_reference?;
+    string path?;
 };
 
 # Represents the Headers record for the operation: relinquishFileMembership
@@ -2739,18 +2616,9 @@ public type RelinquishFileMembershipHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type list_continue_body_1 record {
-    string cursor?;
-};
-
-public type ListFileRequestsResponse record {
-    string cursor?;
-    FileRequestAsResponse[] file_requests?;
-    boolean has_more?;
-};
-
-public type usersfeaturesget_values_features record {
-    string \.tag?;
+public type MembersDeactivateArg record {
+    UserSelectorArg user?;
+    boolean wipe_data?;
 };
 
 public type LegalHoldsListHeldRevisionResult record {
@@ -2758,25 +2626,20 @@ public type LegalHoldsListHeldRevisionResult record {
     boolean has_more?;
 };
 
-public type filescopy_batch_v2_entries record {
-    string from_path?;
-    string to_path?;
+public type FolderPolicy record {
+    AclUpdatePolicy acl_update_policy?;
+    MemberPolicy member_policy?;
+    SharedFolderMemberPolicy resolved_member_policy?;
+    MemberPolicy shared_link_policy?;
 };
 
-public type list_continue_body_5 record {
+public type ListSharedLinksArg record {
     string cursor?;
 };
 
-public type list_continue_body_4 record {
-    string cursor?;
-};
-
-public type list_continue_body_3 record {
-    string cursor?;
-};
-
-public type list_continue_body_2 record {
-    string cursor?;
+public type MembersSetProfilePhotoArg record {
+    Photo photo?;
+    UserSelectorArg user?;
 };
 
 # Represents the Headers record for the operation: getFolderMetadata
@@ -2786,47 +2649,15 @@ public type GetFolderMetadataHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type ListTemplatesResponse record {
-    string[] template_ids?;
-};
-
-public type linked_apps_list_member_linked_apps_body record {
-    string team_member_id?;
-};
-
-public type sharingmodify_shared_link_settings_settings record {
-    string access?;
-    string audience?;
-    string requested_visibility?;
-};
-
-public type GetMetadataResponse record {
-    string \.tag?;
-    string client_modified?;
-    string content_hash?;
-    FileLockInfo file_lock_info?;
-    boolean has_explicit_shared_members?;
-    string id?;
-    boolean is_downloadable?;
-    string name?;
-    string path_display?;
-    string path_lower?;
-    PropertyGroup[] property_groups?;
-    string rev?;
-    string server_modified?;
-    MetadataSharingInfo sharing_info?;
-    decimal size?;
-};
-
-public type MetadataResponse record {
-    MetadataAsResponse metadata?;
-};
-
 # Represents the Headers record for the operation: uploadSessionFinishBatch
 public type UploadSessionFinishBatchHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-admin?;
     string? dropbox\-api\-select\-user?;
+};
+
+public type GetThumbnailBatchResult record {
+    GetThumbnailBatchResultEntry[] entries?;
 };
 
 # Represents the Headers record for the operation: templatesListForUser
@@ -2835,18 +2666,10 @@ public type TemplatesListForUserHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type list_continue_body_6 record {
-    string cursor?;
-};
-
 public type NamespaceRelativePathLogInfo record {
     boolean is_shared_namespace?;
     string ns_id?;
     string relative_path?;
-};
-
-public type sharinglist_file_membersbatch_result_members_platform_type record {
-    string \.tag?;
 };
 
 # Represents the Headers record for the operation: getPreview
@@ -2857,28 +2680,19 @@ public type GetPreviewHeaders record {
     string? dropbox\-api\-select\-user?;
 };
 
-public type devices_revoke_device_session_batch_body record {
-    devices_revoke_device_session_body[] revoke_devices?;
-};
-
 public type TemplateId record {
     string template_id?;
 };
 
-public type FilePath record {
-    string path?;
+public type ModifySharedLinkSettingsArgs record {
+    boolean remove_expiration?;
+    SharedLinkSettings settings?;
+    string url?;
 };
 
-public type RemovePropertiesRequest record {
-    string path?;
-    string[] property_template_ids?;
-};
-
-public type filesget_thumbnail_batch_entries record {
-    string format?;
-    string mode?;
-    string path?;
-    string size?;
+public type MembersSetPermissions2Arg record {
+    string new_role?;
+    UserSelectorArg user?;
 };
 
 # Represents the Headers record for the operation: getThumbnail
@@ -2911,6 +2725,15 @@ public type ProxyConfig record {|
     string password = "";
 |};
 
+public type MembersRemoveArg record {
+    boolean keep_account?;
+    boolean retain_team_shares?;
+    UserSelectorArg transfer_admin_id?;
+    UserSelectorArg transfer_dest_id?;
+    UserSelectorArg user?;
+    boolean wipe_data?;
+};
+
 public type GeoLocationLogInfo record {
     string city?;
     string country?;
@@ -2918,35 +2741,35 @@ public type GeoLocationLogInfo record {
     string region?;
 };
 
-public type ListReceivedFilesResponse record {
-    string cursor?;
-    SharedFileMetadata[] entries?;
+public type SetProfilePhotoArg record {
+    Photo photo?;
+};
+
+public type GetTeamEventsArg record {
+    string category?;
+    decimal 'limit?;
 };
 
 public type DeleteSecondaryEmailsResult record {
     UserDeleteResult[] results?;
 };
 
-public type copy_batch_check_v2_body record {
-    string async_job_id?;
+public type LegalHoldsPolicyUpdateArg record {
+    string id?;
+    string[] members?;
 };
 
-public type get_file_metadata_batch_body record {
-    anydata[] actions?;
-    string[] files?;
-};
-
-public type upload_session_finish_batch_body record {
-    filesupload_sessionfinish_batch_entries[] entries?;
-};
-
-public type sharing_transfer_folder_body record {
-    string shared_folder_id?;
-    string to_dropbox_id?;
+public type SearchV2Arg record {
+    boolean include_highlights?;
+    string query?;
 };
 
 # Represents the Headers record for the operation: app
 public type AppHeaders record {
     string? dropbox\-api\-path\-root?;
     string? dropbox\-api\-select\-user?;
+};
+
+public type UploadSessionFinishBatchArg record {
+    UploadSessionFinishArg[] entries?;
 };

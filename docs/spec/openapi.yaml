@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SetProfilePhotoRequest'
+              $ref: '#/components/schemas/SetProfilePhotoArg'
             examples:
               set_profile_photo:
                 value:
@@ -133,7 +133,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SetProfilePhotoResponse'
+                $ref: '#/components/schemas/SetProfilePhotoResult'
               examples:
                 set_profile_photo response:
                   value:
@@ -157,7 +157,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TokenFromOauth1Request'
+              $ref: '#/components/schemas/TokenFromOauth1Arg'
             examples:
               token/from_oauth1:
                 value:
@@ -176,7 +176,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TokenFromOauth1Response'
+                $ref: '#/components/schemas/TokenFromOauth1Result'
               examples:
                 token/from_oauth1 response:
                   value:
@@ -218,7 +218,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CheckAppRequest'
+              $ref: '#/components/schemas/EchoArg'
             examples:
               app:
                 value:
@@ -260,7 +260,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CheckUserRequest'
+              $ref: '#/components/schemas/EchoArg'
             examples:
               user:
                 value:
@@ -320,7 +320,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DeleteManualContactsBatchRequest'
+              $ref: '#/components/schemas/DeleteManualContactsArg'
             examples:
               delete_manual_contacts_batch:
                 value:
@@ -349,7 +349,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AddPropertiesRequest'
+              $ref: '#/components/schemas/AddPropertiesArg'
             examples:
               properties/add:
                 value:
@@ -381,7 +381,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OverwritePropertiesRequest'
+              $ref: '#/components/schemas/OverwritePropertyGroupArg'
             examples:
               properties/overwrite:
                 value:
@@ -413,7 +413,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RemovePropertiesRequest'
+              $ref: '#/components/schemas/RemovePropertiesArg'
             examples:
               properties/remove:
                 value:
@@ -442,7 +442,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SearchPropertiesRequest'
+              $ref: '#/components/schemas/PropertiesSearchArg'
             examples:
               properties/search:
                 value:
@@ -466,7 +466,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SearchPropertiesResponse'
+                $ref: '#/components/schemas/PropertiesSearchResult'
               examples:
                 properties/search response:
                   value:
@@ -498,7 +498,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SearchPropertiesContinueRequest'
+              $ref: '#/components/schemas/PropertiesSearchContinueArg'
             examples:
               properties/search/continue:
                 value:
@@ -516,7 +516,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SearchPropertiesResponse'
+                $ref: '#/components/schemas/PropertiesSearchResult'
               examples:
                 properties/search/continue response:
                   value:
@@ -548,7 +548,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdatePropertiesRequest'
+              $ref: '#/components/schemas/UpdatePropertiesArg'
             examples:
               properties/update:
                 value:
@@ -579,7 +579,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AddTemplateForTeam'
+              $ref: '#/components/schemas/AddTemplateArg'
             examples:
               templates/add_for_team:
                 value:
@@ -605,7 +605,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AddTemplateResponse'
+                $ref: '#/components/schemas/AddTemplateResult'
               examples:
                 templates/add_for_team response:
                   value:
@@ -631,7 +631,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AddTemplateForUser'
+              $ref: '#/components/schemas/AddTemplateArg'
             examples:
               templates/add_for_user:
                 value:
@@ -657,7 +657,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AddTemplateResponse'
+                $ref: '#/components/schemas/AddTemplateResult'
               examples:
                 templates/add_for_user response:
                   value:
@@ -678,7 +678,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetTemplateForTeam'
+              $ref: '#/components/schemas/GetTemplateArg'
             examples:
               templates/get_for_team:
                 value:
@@ -696,7 +696,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetTemplateResponse'
+                $ref: '#/components/schemas/GetTemplateResult'
               examples:
                 templates/get_for_team response:
                   value:
@@ -731,7 +731,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetTemplateForUserRequest'
+              $ref: '#/components/schemas/GetTemplateArg'
             examples:
               templates/get_for_user:
                 value:
@@ -749,7 +749,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetTemplateResponse'
+                $ref: '#/components/schemas/GetTemplateResult'
               examples:
                 templates/get_for_user response:
                   value:
@@ -788,7 +788,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListTemplatesResponse'
+                $ref: '#/components/schemas/ListTemplateResult'
               examples:
                 templates/list_for_team response:
                   value:
@@ -824,7 +824,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListTemplatesResponse'
+                $ref: '#/components/schemas/ListTemplateResult'
               examples:
                 templates/list_for_user response:
                   value:
@@ -846,7 +846,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RemoveTemplateForTeamRequest'
+              $ref: '#/components/schemas/RemoveTemplateArg'
             examples:
               templates/remove_for_team:
                 value:
@@ -899,7 +899,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateTemplateForTeamRequest'
+              $ref: '#/components/schemas/UpdateTemplateArg'
             examples:
               templates/update_for_team:
                 value:
@@ -952,7 +952,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateTemplateForUserRequest'
+              $ref: '#/components/schemas/UpdateTemplateArg'
             examples:
               templates/update_for_user:
                 value:
@@ -1012,7 +1012,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FileRequestCount'
+                $ref: '#/components/schemas/CountFileRequestsResult'
               examples:
                 count response:
                   value:
@@ -1036,7 +1036,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateFileRequestRequest'
+              $ref: '#/components/schemas/CreateFileRequestArgs'
             examples:
               create:
                 value:
@@ -1093,7 +1093,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/file_requests_delete_body'
+              $ref: '#/components/schemas/DeleteFileRequestArgs'
             examples:
               delete:
                 value:
@@ -1113,7 +1113,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteFileRequestsResponse'
+                $ref: '#/components/schemas/DeleteFileRequestsResult'
               examples:
                 delete response:
                   value:
@@ -1173,7 +1173,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteFileRequestsResponse'
+                $ref: '#/components/schemas/DeleteFileRequestsResult'
               examples:
                 delete_all_closed response:
                   value:
@@ -1224,7 +1224,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/file_requests_get_body'
+              $ref: '#/components/schemas/GetFileRequestArgs'
             examples:
               get:
                 value:
@@ -1276,7 +1276,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/file_requests_list_v2_body'
+              $ref: '#/components/schemas/ListFileRequestsArg'
             examples:
               list:
                 value:
@@ -1294,7 +1294,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListFileRequestsResponse'
+                $ref: '#/components/schemas/ListFileRequestsV2Result'
               examples:
                 list response:
                   value:
@@ -1347,7 +1347,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_continue_body'
+              $ref: '#/components/schemas/ListFileRequestsContinueArg'
             examples:
               list/continue:
                 value:
@@ -1365,7 +1365,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListFileRequestsResponse'
+                $ref: '#/components/schemas/ListFileRequestsV2Result'
               examples:
                 list/continue response:
                   value:
@@ -1418,7 +1418,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/file_requests_update_body'
+              $ref: '#/components/schemas/UpdateFileRequestArgs'
             examples:
               update:
                 value:
@@ -1479,7 +1479,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_copy_v2_body'
+              $ref: '#/components/schemas/RelocationArg'
             examples:
               copy:
                 value:
@@ -1501,7 +1501,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MetadataResponse'
+                $ref: '#/components/schemas/MetadataResult'
               examples:
                 copy response:
                   value:
@@ -1553,7 +1553,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_copy_batch_v2_body'
+              $ref: '#/components/schemas/RelocationBatchArgBase'
             examples:
               copy_batch:
                 value:
@@ -1574,7 +1574,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RelocationBatchV2Response'
+                $ref: '#/components/schemas/RelocationBatchV2Result'
               examples:
                 copy_batch response:
                   value:
@@ -1627,7 +1627,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/copy_batch_check_v2_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               copy_batch/check:
                 value:
@@ -1645,7 +1645,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RelocationBatchV2Response'
+                $ref: '#/components/schemas/RelocationBatchV2Result'
               examples:
                 copy_batch/check response:
                   value:
@@ -1697,7 +1697,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/copy_reference_get_body'
+              $ref: '#/components/schemas/GetCopyReferenceArg'
             examples:
               copy_reference/get:
                 value:
@@ -1715,7 +1715,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetCopyReferenceResponse'
+                $ref: '#/components/schemas/GetCopyReferenceResult'
               examples:
                 copy_reference/get response:
                   value:
@@ -1766,7 +1766,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/copy_reference_save_body'
+              $ref: '#/components/schemas/SaveCopyReferenceArg'
             examples:
               copy_reference/save:
                 value:
@@ -1785,7 +1785,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MetadataResponse'
+                $ref: '#/components/schemas/MetadataResult'
               examples:
                 copy_reference/save response:
                   value:
@@ -1835,7 +1835,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_create_folder_v2_body'
+              $ref: '#/components/schemas/CreateFolderArg'
             examples:
               create_folder:
                 value:
@@ -1894,7 +1894,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_create_folder_batch_body'
+              $ref: '#/components/schemas/CreateFolderBatchArg'
             examples:
               create_folder_batch:
                 value:
@@ -1915,7 +1915,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateFolderBatchResponse'
+                $ref: '#/components/schemas/CreateFolderBatchResult'
               examples:
                 create_folder_batch response:
                   value:
@@ -1957,7 +1957,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/create_folder_batch_check_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               create_folder_batch/check:
                 value:
@@ -1975,7 +1975,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateFolderBatchResponse'
+                $ref: '#/components/schemas/CreateFolderBatchResult'
               examples:
                 create_folder_batch/check response:
                   value:
@@ -2019,7 +2019,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FilePath'
+              $ref: '#/components/schemas/DeleteArg'
             examples:
               delete:
                 value:
@@ -2037,7 +2037,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MetadataResponse'
+                $ref: '#/components/schemas/MetadataResult'
               examples:
                 delete response:
                   value:
@@ -2088,7 +2088,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DeleteFilesBatchRequest'
+              $ref: '#/components/schemas/DeleteBatchArg'
             examples:
               delete_batch:
                 value:
@@ -2107,7 +2107,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteBatchResponse'
+                $ref: '#/components/schemas/DeleteBatchResult'
               examples:
                 delete_batch response:
                   value:
@@ -2160,7 +2160,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/delete_batch_check_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               delete_batch/check:
                 value:
@@ -2178,7 +2178,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteBatchResponse'
+                $ref: '#/components/schemas/DeleteBatchResult'
               examples:
                 delete_batch/check response:
                   value:
@@ -2377,7 +2377,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ExportFileResponse'
+                $ref: '#/components/schemas/ExportResult'
               examples:
                 export response:
                   value:
@@ -2429,7 +2429,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_get_file_lock_batch_body'
+              $ref: '#/components/schemas/LockFileBatchArg'
             examples:
               get_file_lock_batch:
                 value:
@@ -2507,7 +2507,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_get_metadata_body'
+              $ref: '#/components/schemas/GetMetadataArg'
             examples:
               get_metadata:
                 value:
@@ -2528,7 +2528,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetMetadataResponse'
+                $ref: '#/components/schemas/Metadata'
               examples:
                 get_metadata response:
                   value:
@@ -2647,7 +2647,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_get_temporary_link_body'
+              $ref: '#/components/schemas/GetTemporaryLinkArg'
             examples:
               get_temporary_link:
                 value:
@@ -2665,7 +2665,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetTemporaryLinkResponse'
+                $ref: '#/components/schemas/GetTemporaryLinkResult'
               examples:
                 get_temporary_link response:
                   value:
@@ -2738,7 +2738,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_get_temporary_upload_link_body'
+              $ref: '#/components/schemas/GetTemporaryUploadLinkArg'
             examples:
               get_temporary_upload_link:
                 value:
@@ -2762,7 +2762,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetTemporaryUploadLinkResponse'
+                $ref: '#/components/schemas/GetTemporaryUploadLinkResult'
               examples:
                 get_temporary_upload_link response:
                   value:
@@ -2806,7 +2806,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetThumbnailResponse'
+                $ref: '#/components/schemas/PreviewResult'
               examples:
                 get_thumbnail response:
                   value:
@@ -2856,7 +2856,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_get_thumbnail_batch_body'
+              $ref: '#/components/schemas/GetThumbnailBatchArg'
             examples:
               get_thumbnail_batch:
                 value:
@@ -2878,7 +2878,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetThumbnailBatchResponse'
+                $ref: '#/components/schemas/GetThumbnailBatchResult'
               examples:
                 get_thumbnail_batch response:
                   value:
@@ -2935,7 +2935,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_list_folder_body'
+              $ref: '#/components/schemas/ListFolderArg'
             examples:
               list_folder:
                 value:
@@ -2959,7 +2959,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListFolderResponse'
+                $ref: '#/components/schemas/ListFolderResult'
               examples:
                 list_folder response:
                   value:
@@ -3026,7 +3026,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_folder_continue_body'
+              $ref: '#/components/schemas/ListFolderContinueArg'
             examples:
               list_folder/continue:
                 value:
@@ -3044,7 +3044,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListFolderResponse'
+                $ref: '#/components/schemas/ListFolderResult'
               examples:
                 list_folder/continue response:
                   value:
@@ -3111,7 +3111,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_folder_get_latest_cursor_body'
+              $ref: '#/components/schemas/ListFolderArg'
             examples:
               list_folder/get_latest_cursor:
                 value:
@@ -3135,7 +3135,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/list_folder_continue_body'
+                $ref: '#/components/schemas/ListFolderContinueArg'
               examples:
                 list_folder/get_latest_cursor response:
                   value:
@@ -3160,7 +3160,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_folder_longpoll_body'
+              $ref: '#/components/schemas/ListFolderLongpollArg'
             examples:
               list_folder/longpoll:
                 value:
@@ -3205,7 +3205,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_list_revisions_body'
+              $ref: '#/components/schemas/ListRevisionsArg'
             examples:
               list_revisions:
                 value:
@@ -3274,7 +3274,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_lock_file_batch_body'
+              $ref: '#/components/schemas/LockFileBatchArg'
             examples:
               lock_file_batch:
                 value:
@@ -3353,7 +3353,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_move_v2_body'
+              $ref: '#/components/schemas/RelocationArg'
             examples:
               move:
                 value:
@@ -3375,7 +3375,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MetadataResponse'
+                $ref: '#/components/schemas/MetadataResult'
               examples:
                 move response:
                   value:
@@ -3427,7 +3427,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_move_batch_v2_body'
+              $ref: '#/components/schemas/MoveBatchArg'
             examples:
               move_batch:
                 value:
@@ -3449,7 +3449,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RelocationBatchV2Response'
+                $ref: '#/components/schemas/RelocationBatchV2Result'
               examples:
                 move_batch response:
                   value:
@@ -3502,7 +3502,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/move_batch_check_v2_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               move_batch/check:
                 value:
@@ -3520,7 +3520,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RelocationBatchV2Response'
+                $ref: '#/components/schemas/RelocationBatchV2Result'
               examples:
                 move_batch/check response:
                   value:
@@ -3574,7 +3574,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_permanently_delete_body'
+              $ref: '#/components/schemas/DeleteArg'
             examples:
               permanently_delete:
                 value:
@@ -3602,7 +3602,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_restore_body'
+              $ref: '#/components/schemas/RestoreArg'
             examples:
               restore:
                 value:
@@ -3670,7 +3670,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_save_url_body'
+              $ref: '#/components/schemas/SaveUrlArg'
             examples:
               save_url:
                 value:
@@ -3737,7 +3737,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/save_url_check_job_status_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               save_url/check_job_status:
                 value:
@@ -3781,7 +3781,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_search_v2_body'
+              $ref: '#/components/schemas/SearchV2Arg'
             examples:
               search:
                 value:
@@ -3800,7 +3800,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SearchFilesResponse'
+                $ref: '#/components/schemas/SearchV2Result'
               examples:
                 search response:
                   value:
@@ -3855,7 +3855,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/search_continue_v2_body'
+              $ref: '#/components/schemas/SearchV2ContinueArg'
             examples:
               search/continue:
                 value:
@@ -3873,7 +3873,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SearchFilesResponse'
+                $ref: '#/components/schemas/SearchV2Result'
               examples:
                 search/continue response:
                   value:
@@ -3927,7 +3927,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/files_unlock_file_batch_body'
+              $ref: '#/components/schemas/UnlockFileBatchArg'
             examples:
               unlock_file_batch:
                 value:
@@ -4179,7 +4179,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/upload_session_finish_batch_body'
+              $ref: '#/components/schemas/UploadSessionFinishBatchArg'
             examples:
               upload_session/finish_batch:
                 value:
@@ -4257,7 +4257,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/finish_batch_check_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               upload_session/finish_batch/check:
                 value:
@@ -4374,7 +4374,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_add_file_member_body'
+              $ref: '#/components/schemas/AddFileMemberArgs'
             examples:
               add_file_member:
                 value:
@@ -4437,7 +4437,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_add_folder_member_body'
+              $ref: '#/components/schemas/AddFolderMemberArg'
             examples:
               add_folder_member:
                 value:
@@ -4476,7 +4476,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_check_job_status_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               check_job_status:
                 value:
@@ -4519,7 +4519,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_check_remove_member_job_status_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               check_remove_member_job_status:
                 value:
@@ -4562,7 +4562,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_check_share_job_status_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               check_share_job_status:
                 value:
@@ -4639,7 +4639,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_get_file_metadata_body'
+              $ref: '#/components/schemas/GetFileMetadataArg'
             examples:
               get_file_metadata:
                 value:
@@ -4658,7 +4658,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetFileMetadataResponse'
+                $ref: '#/components/schemas/SharedFileMetadata'
               examples:
                 get_file_metadata response:
                   value:
@@ -4704,7 +4704,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/get_file_metadata_batch_body'
+              $ref: '#/components/schemas/GetFileMetadataBatchArg'
             examples:
               get_file_metadata/batch:
                 value:
@@ -4754,7 +4754,7 @@ paths:
                     preview_url: https://www.dropbox.com/scl/fi/fir9vjelf
                     time_invited: 2016-01-20T00:00:00Z
                 items:
-                  $ref: '#/components/schemas/GetFileMetadataIndicidualResult'
+                  $ref: '#/components/schemas/GetFileMetadataIndividualResult'
               examples:
                 get_file_metadata/batch response:
                   value:
@@ -4804,7 +4804,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_get_folder_metadata_body'
+              $ref: '#/components/schemas/GetMetadataArgs'
             examples:
               get_folder_metadata:
                 value:
@@ -4942,7 +4942,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_get_shared_link_metadata_body'
+              $ref: '#/components/schemas/GetSharedLinkMetadataArg'
             examples:
               get_shared_link_metadata:
                 value:
@@ -5006,7 +5006,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_list_file_members_body'
+              $ref: '#/components/schemas/ListFileMembersArg'
             examples:
               list_file_members:
                 value:
@@ -5088,7 +5088,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_file_members_batch_body'
+              $ref: '#/components/schemas/ListFileMembersBatchArg'
             examples:
               list_file_members/batch:
                 value:
@@ -5221,7 +5221,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_file_members_continue_body'
+              $ref: '#/components/schemas/ListFileMembersContinueArg'
             examples:
               list_file_members/continue:
                 value:
@@ -5301,7 +5301,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_folder_members_continue_body'
+              $ref: '#/components/schemas/ListFolderMembersContinueArg'
             examples:
               list_folder_members/continue:
                 value:
@@ -5378,7 +5378,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_list_folders_body'
+              $ref: '#/components/schemas/ListFoldersArgs'
             examples:
               list_folders:
                 value:
@@ -5456,7 +5456,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_folders_continue_body'
+              $ref: '#/components/schemas/ListFoldersContinueArg'
             examples:
               list_folders/continue:
                 value:
@@ -5533,7 +5533,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_list_mountable_folders_body'
+              $ref: '#/components/schemas/ListFoldersArgs'
             examples:
               list_mountable_folders:
                 value:
@@ -5611,7 +5611,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_mountable_folders_continue_body'
+              $ref: '#/components/schemas/ListFoldersContinueArg'
             examples:
               list_mountable_folders/continue:
                 value:
@@ -5690,7 +5690,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_list_received_files_body'
+              $ref: '#/components/schemas/ListFilesArg'
             examples:
               list_received_files:
                 value:
@@ -5709,7 +5709,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListReceivedFilesResponse'
+                $ref: '#/components/schemas/ListFilesResult'
               examples:
                 list_received_files response:
                   value:
@@ -5757,7 +5757,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_received_files_continue_body'
+              $ref: '#/components/schemas/ListFilesContinueArg'
             examples:
               list_received_files/continue:
                 value:
@@ -5775,7 +5775,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListReceivedFilesResponse'
+                $ref: '#/components/schemas/ListFilesResult'
               examples:
                 list_received_files/continue response:
                   value:
@@ -5825,7 +5825,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_list_shared_links_body'
+              $ref: '#/components/schemas/ListSharedLinksArg'
             examples:
               list_shared_links:
                 value:
@@ -5891,7 +5891,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_modify_shared_link_settings_body'
+              $ref: '#/components/schemas/ModifySharedLinkSettingsArgs'
             examples:
               modify_shared_link_settings:
                 value:
@@ -5959,7 +5959,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_mount_folder_body'
+              $ref: '#/components/schemas/MountFolderArg'
             examples:
               mount_folder:
                 value:
@@ -6035,7 +6035,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_relinquish_file_membership_body'
+              $ref: '#/components/schemas/RelinquishFileMembershipArg'
             examples:
               relinquish_file_membership:
                 value:
@@ -6063,7 +6063,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_relinquish_folder_membership_body'
+              $ref: '#/components/schemas/RelinquishFolderMembershipArg'
             examples:
               relinquish_folder_membership:
                 value:
@@ -6107,7 +6107,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_remove_file_member_2_body'
+              $ref: '#/components/schemas/RemoveFileMemberArg'
             examples:
               remove_file_member_2:
                 value:
@@ -6153,7 +6153,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_remove_folder_member_body'
+              $ref: '#/components/schemas/RemoveFolderMemberArg'
             examples:
               remove_folder_member:
                 value:
@@ -6202,7 +6202,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_revoke_shared_link_body'
+              $ref: '#/components/schemas/RevokeSharedLinkArg'
             examples:
               revoke_shared_link:
                 value:
@@ -6230,7 +6230,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_set_access_inheritance_body'
+              $ref: '#/components/schemas/SetAccessInheritanceArg'
             examples:
               set_access_inheritance:
                 value:
@@ -6310,7 +6310,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_share_folder_body'
+              $ref: '#/components/schemas/ShareFolderArg'
             examples:
               share_folder:
                 value:
@@ -6393,7 +6393,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_transfer_folder_body'
+              $ref: '#/components/schemas/TransferFolderArg'
             examples:
               transfer_folder:
                 value:
@@ -6422,7 +6422,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_unmount_folder_body'
+              $ref: '#/components/schemas/UnmountFolderArg'
             examples:
               unmount_folder:
                 value:
@@ -6450,7 +6450,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UnshareFileRequest'
+              $ref: '#/components/schemas/UnshareFileArg'
             examples:
               unshare_file:
                 value:
@@ -6479,7 +6479,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_unshare_folder_body'
+              $ref: '#/components/schemas/UnshareFolderArg'
             examples:
               unshare_folder:
                 value:
@@ -6523,7 +6523,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_update_file_member_body'
+              $ref: '#/components/schemas/UpdateFileMemberArgs'
             examples:
               update_file_member:
                 value:
@@ -6570,7 +6570,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_update_folder_member_body'
+              $ref: '#/components/schemas/UpdateFolderMemberArg'
             examples:
               update_folder_member:
                 value:
@@ -6618,7 +6618,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/sharing_update_folder_policy_body'
+              $ref: '#/components/schemas/UpdateFolderPolicyArg'
             examples:
               update_folder_policy:
                 value:
@@ -6694,7 +6694,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/devices_list_member_devices_body'
+              $ref: '#/components/schemas/ListMemberDevicesArg'
             examples:
               devices/list_member_devices:
                 value:
@@ -6745,7 +6745,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/devices_revoke_device_session_body'
+              $ref: '#/components/schemas/RevokeDeviceSessionArg'
             examples:
               devices/revoke_device_session:
                 value:
@@ -6772,7 +6772,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/devices_revoke_device_session_batch_body'
+              $ref: '#/components/schemas/RevokeDeviceSessionBatchArg'
             examples:
               devices/revoke_device_session_batch:
                 value:
@@ -6801,7 +6801,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/groups_create_body'
+              $ref: '#/components/schemas/GroupCreateArg'
             examples:
               groups/create:
                 value:
@@ -6877,7 +6877,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/groups_delete_body'
+              $ref: '#/components/schemas/GroupSelector'
             examples:
               groups/delete:
                 value:
@@ -6919,7 +6919,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/groups_get_info_body'
+              $ref: '#/components/schemas/GroupsSelector'
             examples:
               groups/get_info:
                 value:
@@ -7033,7 +7033,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/job_status_get_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               groups/job_status/get:
                 value:
@@ -7074,7 +7074,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/groups_list_body'
+              $ref: '#/components/schemas/GroupsListArg'
             examples:
               groups/list:
                 value:
@@ -7122,7 +7122,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_continue_body_1'
+              $ref: '#/components/schemas/GroupsListContinueArg'
             examples:
               groups/list/continue:
                 value:
@@ -7171,7 +7171,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_add_body'
+              $ref: '#/components/schemas/GroupMembersAddArg'
             examples:
               groups/members/add:
                 value:
@@ -7254,7 +7254,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_list_body'
+              $ref: '#/components/schemas/GroupsMembersListArg'
             examples:
               groups/members/list:
                 value:
@@ -7300,7 +7300,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_continue_body_2'
+              $ref: '#/components/schemas/GroupsMembersListContinueArg'
             examples:
               groups/members/list/continue:
                 value:
@@ -7345,7 +7345,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_remove_body'
+              $ref: '#/components/schemas/GroupMembersRemoveArg'
             examples:
               groups/members/remove:
                 value:
@@ -7426,7 +7426,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_set_access_type_body'
+              $ref: '#/components/schemas/GroupMembersSetAccessTypeArg'
             examples:
               groups/members/set_access_type:
                 value:
@@ -7544,7 +7544,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/groups_update_body'
+              $ref: '#/components/schemas/GroupUpdateArgs'
             examples:
               groups/update:
                 value:
@@ -7623,7 +7623,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/legal_holds_create_policy_body'
+              $ref: '#/components/schemas/LegalHoldsPolicyCreateArg'
             examples:
               legal_holds/create_policy:
                 value:
@@ -7678,7 +7678,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/legal_holds_get_policy_body'
+              $ref: '#/components/schemas/LegalHoldsGetPolicyArg'
             examples:
               legal_holds/get_policy:
                 value:
@@ -7729,7 +7729,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/legal_holds_list_held_revisions_body'
+              $ref: '#/components/schemas/LegalHoldsListHeldRevisionsArg'
             examples:
               legal_holds/list_held_revisions:
                 value:
@@ -7782,7 +7782,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/legal_holds_list_held_revisions_continue_body'
+              $ref: '#/components/schemas/LegalHoldsListHeldRevisionsContinueArg'
             examples:
               legal_holds/list_held_revisions_continue:
                 value:
@@ -7835,7 +7835,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/legal_holds_list_policies_body'
+              $ref: '#/components/schemas/LegalHoldsListPoliciesArg'
             examples:
               legal_holds/list_policies:
                 value:
@@ -7887,7 +7887,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/legal_holds_release_policy_body'
+              $ref: '#/components/schemas/LegalHoldsPolicyReleaseArg'
             examples:
               legal_holds/release_policy:
                 value:
@@ -7913,7 +7913,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/legal_holds_update_policy_body'
+              $ref: '#/components/schemas/LegalHoldsPolicyUpdateArg'
             examples:
               legal_holds/update_policy:
                 value:
@@ -7966,7 +7966,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/linked_apps_list_member_linked_apps_body'
+              $ref: '#/components/schemas/ListMemberAppsArg'
             examples:
               linked_apps/list_member_linked_apps:
                 value:
@@ -8058,7 +8058,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/excluded_users_add_body'
+              $ref: '#/components/schemas/ExcludedUsersUpdateArg'
             examples:
               member_space_limits/excluded_users/add:
                 value:
@@ -8101,7 +8101,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/excluded_users_list_body'
+              $ref: '#/components/schemas/ExcludedUsersListArg'
             examples:
               member_space_limits/excluded_users/list:
                 value:
@@ -8143,7 +8143,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_continue_body_3'
+              $ref: '#/components/schemas/ExcludedUsersListContinueArg'
             examples:
               member_space_limits/excluded_users/list/continue:
                 value:
@@ -8185,7 +8185,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/excluded_users_remove_body'
+              $ref: '#/components/schemas/ExcludedUsersUpdateArg'
             examples:
               member_space_limits/excluded_users/remove:
                 value:
@@ -8228,7 +8228,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/member_space_limits_get_custom_quota_body'
+              $ref: '#/components/schemas/CustomQuotaUsersArg'
             examples:
               member_space_limits/get_custom_quota:
                 value:
@@ -8274,7 +8274,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/member_space_limits_remove_custom_quota_body'
+              $ref: '#/components/schemas/CustomQuotaUsersArg'
             examples:
               member_space_limits/remove_custom_quota:
                 value:
@@ -8320,7 +8320,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/member_space_limits_set_custom_quota_body'
+              $ref: '#/components/schemas/SetCustomQuotaArg'
             examples:
               member_space_limits/set_custom_quota:
                 value:
@@ -8373,7 +8373,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_add_body_1'
+              $ref: '#/components/schemas/MembersAddV2Arg'
             examples:
               members/add:
                 value:
@@ -8451,7 +8451,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/job_status_get_body_1'
+              $ref: '#/components/schemas/PollArg'
             examples:
               members/add/job_status/get:
                 value:
@@ -8522,7 +8522,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_delete_profile_photo_body'
+              $ref: '#/components/schemas/MembersDeleteProfilePhotoArg'
             examples:
               members/delete_profile_photo:
                 value:
@@ -8593,7 +8593,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_get_info_body'
+              $ref: '#/components/schemas/MembersGetInfoV2Arg'
             examples:
               members/get_info:
                 value:
@@ -8696,7 +8696,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_list_body_1'
+              $ref: '#/components/schemas/MembersListArg'
             examples:
               members/list:
                 value:
@@ -8768,7 +8768,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_continue_body_4'
+              $ref: '#/components/schemas/MembersListContinueArg'
             examples:
               members/list/continue:
                 value:
@@ -8839,7 +8839,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_move_former_member_files_body'
+              $ref: '#/components/schemas/MembersDataTransferArg'
             examples:
               members/move_former_member_files:
                 value:
@@ -8888,7 +8888,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/job_status_check_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               members/move_former_member_files/job_status/check:
                 value:
@@ -8930,7 +8930,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_recover_body'
+              $ref: '#/components/schemas/MembersRecoverArg'
             examples:
               members/recover:
                 value:
@@ -8962,7 +8962,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_remove_body_1'
+              $ref: '#/components/schemas/MembersRemoveArg'
             examples:
               members/remove:
                 value:
@@ -9014,7 +9014,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/job_status_get_body_2'
+              $ref: '#/components/schemas/PollArg'
             examples:
               members/remove/job_status/get:
                 value:
@@ -9056,7 +9056,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/secondary_emails_add_body'
+              $ref: '#/components/schemas/AddSecondaryEmailsArg'
             examples:
               members/secondary_emails/add:
                 value:
@@ -9119,7 +9119,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/secondary_emails_delete_body'
+              $ref: '#/components/schemas/DeleteSecondaryEmailsArg'
             examples:
               members/secondary_emails/delete:
                 value:
@@ -9175,7 +9175,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/secondary_emails_resend_verification_emails_body'
+              $ref: '#/components/schemas/ResendVerificationEmailArg'
             examples:
               members/secondary_emails/resend_verification_emails:
                 value:
@@ -9231,7 +9231,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_send_welcome_email_body'
+              $ref: '#/components/schemas/UserSelectorArg'
             examples:
               members/send_welcome_email:
                 value:
@@ -9258,7 +9258,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_set_admin_permissions_body'
+              $ref: '#/components/schemas/MembersSetPermissions2Arg'
             examples:
               members/set_admin_permissions:
                 value:
@@ -9279,7 +9279,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SetAdminPermissionsResult'
+                $ref: '#/components/schemas/MembersSetPermissionsResult'
               examples:
                 members/set_admin_permissions response:
                   value:
@@ -9304,7 +9304,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_set_profile_body'
+              $ref: '#/components/schemas/MembersSetProfileArg'
             examples:
               members/set_profile:
                 value:
@@ -9376,7 +9376,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_set_profile_photo_body'
+              $ref: '#/components/schemas/MembersSetProfilePhotoArg'
             examples:
               members/set_profile_photo:
                 value:
@@ -9450,7 +9450,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_suspend_body'
+              $ref: '#/components/schemas/MembersDeactivateArg'
             examples:
               members/suspend:
                 value:
@@ -9480,7 +9480,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/members_unsuspend_body'
+              $ref: '#/components/schemas/MembersUnsuspendArg'
             examples:
               members/unsuspend:
                 value:
@@ -9507,7 +9507,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/namespaces_list_body'
+              $ref: '#/components/schemas/TeamNamespacesListArg'
             examples:
               namespaces/list:
                 value:
@@ -9558,7 +9558,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_continue_body_5'
+              $ref: '#/components/schemas/TeamNamespacesListContinueArg'
             examples:
               namespaces/list/continue:
                 value:
@@ -9698,7 +9698,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/team_folder_activate_body'
+              $ref: '#/components/schemas/TeamFolderIdArg'
             examples:
               team_folder/activate:
                 value:
@@ -9749,7 +9749,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/team_folder_archive_body'
+              $ref: '#/components/schemas/TeamFolderArchiveArg'
             examples:
               team_folder/archive:
                 value:
@@ -9802,7 +9802,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/archive_check_body'
+              $ref: '#/components/schemas/PollArg'
             examples:
               team_folder/archive/check:
                 value:
@@ -9854,7 +9854,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/team_folder_create_body'
+              $ref: '#/components/schemas/TeamFolderCreateArg'
             examples:
               team_folder/create:
                 value:
@@ -9906,7 +9906,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/team_folder_get_info_body'
+              $ref: '#/components/schemas/TeamFolderIdListArg'
             examples:
               team_folder/get_info:
                 value:
@@ -9935,7 +9935,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/team_folder_list_body'
+              $ref: '#/components/schemas/TeamFolderListArg'
             examples:
               team_folder/list:
                 value:
@@ -9989,7 +9989,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/list_continue_body_6'
+              $ref: '#/components/schemas/TeamFolderListContinueArg'
             examples:
               team_folder/list/continue:
                 value:
@@ -10043,7 +10043,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/team_folder_permanently_delete_body'
+              $ref: '#/components/schemas/TeamFolderIdArg'
             examples:
               team_folder/permanently_delete:
                 value:
@@ -10069,7 +10069,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/team_folder_rename_body'
+              $ref: '#/components/schemas/TeamFolderRenameArg'
             examples:
               team_folder/rename:
                 value:
@@ -10120,7 +10120,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/team_folder_update_sync_settings_body'
+              $ref: '#/components/schemas/TeamFolderUpdateSyncSettingsArg'
             examples:
               team_folder/update_sync_settings:
                 value:
@@ -10174,7 +10174,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/features_get_values_body'
+              $ref: '#/components/schemas/FeaturesGetValuesBatchArg'
             examples:
               features/get_values:
                 value:
@@ -10194,7 +10194,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FeaturesGetValuesResponse'
+                $ref: '#/components/schemas/FeaturesGetValuesBatchResult'
               examples:
                 features/get_values response:
                   value:
@@ -10232,7 +10232,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TeamGetInfoResponse'
+                $ref: '#/components/schemas/TeamGetInfoResult'
               examples:
                 get_info response:
                   value:
@@ -10328,7 +10328,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/team_log_get_events_body'
+              $ref: '#/components/schemas/GetTeamEventsArg'
             examples:
               get_events:
                 value:
@@ -10447,7 +10447,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/get_events_continue_body'
+              $ref: '#/components/schemas/GetTeamEventsContinueArg'
             examples:
               get_events/continue:
                 value:
@@ -10567,7 +10567,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/features_get_values_body_1'
+              $ref: '#/components/schemas/UserFeaturesGetValuesBatchArg'
             examples:
               features/get_values:
                 value:
@@ -10615,7 +10615,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/users_get_account_body'
+              $ref: '#/components/schemas/GetAccountArg'
             examples:
               get_account:
                 value:
@@ -10668,7 +10668,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/users_get_account_batch_body'
+              $ref: '#/components/schemas/GetAccountBatchArg'
             examples:
               get_account_batch:
                 value:
@@ -10813,7 +10813,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetSpaceUsageResponse'
+                $ref: '#/components/schemas/SpaceUsage'
               examples:
                 get_space_usage response:
                   value:
@@ -10832,18 +10832,18 @@ components:
         base64_data:
           type: string
           example: SW1hZ2UgZGF0YSBpbiBiYXNlNjQtZW5jb2RlZCBieXRlcy4gTm90IGEgdmFsaWQgZXhhbXBsZS4=
-    SetProfilePhotoRequest:
+    SetProfilePhotoArg:
       type: object
       properties:
         photo:
           $ref: '#/components/schemas/Photo'
-    SetProfilePhotoResponse:
+    SetProfilePhotoResult:
       type: object
       properties:
         profile_photo_url:
           type: string
           example: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
-    TokenFromOauth1Request:
+    TokenFromOauth1Arg:
       type: object
       properties:
         oauth1_token:
@@ -10852,13 +10852,13 @@ components:
         oauth1_token_secret:
           type: string
           example: qomoftv0472git7
-    TokenFromOauth1Response:
+    TokenFromOauth1Result:
       type: object
       properties:
         oauth2_token:
           type: string
           example: 9mCrkS7BIdAAAAAAAAAAHHS0TsSnpYvKQVtKdBnN5IuzhYOGblSgTcHgBFKFMmFn
-    CheckAppRequest:
+    EchoArg:
       type: object
       properties:
         query:
@@ -10870,13 +10870,7 @@ components:
         result:
           type: string
           example: foo
-    CheckUserRequest:
-      type: object
-      properties:
-        query:
-          type: string
-          example: foo
-    DeleteManualContactsBatchRequest:
+    DeleteManualContactsArg:
       type: object
       properties:
         email_addresses:
@@ -10909,7 +10903,7 @@ components:
         template_id:
           type: string
           example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    AddPropertiesRequest:
+    AddPropertiesArg:
       type: object
       properties:
         path:
@@ -10924,7 +10918,7 @@ components:
             template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
           items:
             $ref: '#/components/schemas/PropertyGroup'
-    OverwritePropertiesRequest:
+    OverwritePropertyGroupArg:
       type: object
       properties:
         path:
@@ -10939,7 +10933,7 @@ components:
             template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
           items:
             $ref: '#/components/schemas/PropertyGroup'
-    RemovePropertiesRequest:
+    RemovePropertiesArg:
       type: object
       properties:
         path:
@@ -10952,7 +10946,7 @@ components:
           items:
             type: string
             example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    SearchPropertiesMode:
+    PropertiesSearchMode:
       type: object
       properties:
         ".tag":
@@ -10961,18 +10955,18 @@ components:
         field_name:
           type: string
           example: Security
-    SearchPropertiesQuery:
+    PropertiesSearchQuery:
       type: object
       properties:
         logical_operator:
           type: string
           example: or_operator
         mode:
-          $ref: '#/components/schemas/SearchPropertiesMode'
+          $ref: '#/components/schemas/PropertiesSearchMode'
         query:
           type: string
           example: Confidential
-    SearchPropertiesRequest:
+    PropertiesSearchArg:
       type: object
       properties:
         queries:
@@ -10984,11 +10978,11 @@ components:
               field_name: Security
             query: Confidential
           items:
-            $ref: '#/components/schemas/SearchPropertiesQuery'
+            $ref: '#/components/schemas/PropertiesSearchQuery'
         template_filter:
           type: string
           example: filter_none
-    SearchPropertiesResponse:
+    PropertiesSearchResult:
       type: object
       properties:
         matches:
@@ -11004,13 +10998,13 @@ components:
               template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
           items:
             $ref: '#/components/schemas/SearchProperties'
-    SearchPropertiesContinueRequest:
+    PropertiesSearchContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    PropertyGroupsUpdate:
+    PropertyGroupUpdate:
       type: object
       properties:
         add_or_update_fields:
@@ -11027,7 +11021,7 @@ components:
         template_id:
           type: string
           example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    UpdatePropertiesRequest:
+    UpdatePropertiesArg:
       type: object
       properties:
         path:
@@ -11042,7 +11036,7 @@ components:
             remove_fields: []
             template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
           items:
-            $ref: '#/components/schemas/PropertyGroupsUpdate'
+            $ref: '#/components/schemas/PropertyGroupUpdate'
     PropertyFieldTemplate:
       type: object
       properties:
@@ -11057,7 +11051,7 @@ components:
         type:
           type: string
           example: string
-    AddTemplateForTeam:
+    AddTemplateArg:
       type: object
       properties:
         description:
@@ -11077,39 +11071,19 @@ components:
         name:
           type: string
           example: Security
-    AddTemplateResponse:
+    AddTemplateResult:
       type: object
       properties:
         template_id:
           type: string
           example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    AddTemplateForUser:
-      type: object
-      properties:
-        description:
-          type: string
-          example: These properties describe how confidential this file or folder
-            is.
-        fields:
-          type: array
-          example:
-          - description: |-
-              This is the security policy of the file or folder described.
-              Policies can be Confidential, Public or Internal.
-            name: Security Policy
-            type: string
-          items:
-            $ref: '#/components/schemas/PropertyFieldTemplate'
-        name:
-          type: string
-          example: Security
-    GetTemplateForTeam:
+    GetTemplateArg:
       type: object
       properties:
         template_id:
           type: string
           example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    GetTemplateResponse:
+    GetTemplateResult:
       type: object
       properties:
         description:
@@ -11130,13 +11104,7 @@ components:
         name:
           type: string
           example: Security
-    GetTemplateForUserRequest:
-      type: object
-      properties:
-        template_id:
-          type: string
-          example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    ListTemplatesResponse:
+    ListTemplateResult:
       type: object
       properties:
         template_ids:
@@ -11146,7 +11114,7 @@ components:
           items:
             type: string
             example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    RemoveTemplateForTeamRequest:
+    RemoveTemplateArg:
       type: object
       properties:
         template_id:
@@ -11158,7 +11126,7 @@ components:
         template_id:
           type: string
           example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    UpdateTemplateForTeamRequest:
+    UpdateTemplateArg:
       type: object
       properties:
         add_fields:
@@ -11181,30 +11149,7 @@ components:
         template_id:
           type: string
           example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    UpdateTemplateForUserRequest:
-      type: object
-      properties:
-        add_fields:
-          type: array
-          example:
-          - description: |-
-              This is the security policy of the file or folder described.
-              Policies can be Confidential, Public or Internal.
-            name: Security Policy
-            type: string
-          items:
-            $ref: '#/components/schemas/PropertyFieldTemplate'
-        description:
-          type: string
-          example: These properties will describe how confidential this file or folder
-            is.
-        name:
-          type: string
-          example: New Security Template Name
-        template_id:
-          type: string
-          example: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-    FileRequestCount:
+    CountFileRequestsResult:
       type: object
       properties:
         file_request_count:
@@ -11219,7 +11164,7 @@ components:
         deadline:
           type: string
           example: 2020-10-12T17:00:00Z
-    CreateFileRequestRequest:
+    CreateFileRequestArgs:
       type: object
       properties:
         deadline:
@@ -11259,7 +11204,7 @@ components:
         url:
           type: string
           example: https://www.dropbox.com/request/oaCAVmEyrqYnkZX9955Y
-    file_requests_delete_body:
+    DeleteFileRequestArgs:
       type: object
       properties:
         ids:
@@ -11270,7 +11215,7 @@ components:
           items:
             type: string
             example: oaCAVmEyrqYnkZX9955Y
-    DeleteFileRequestsResponse:
+    DeleteFileRequestsResult:
       type: object
       properties:
         file_requests:
@@ -11305,19 +11250,19 @@ components:
             url: https://www.dropbox.com/request/rxwMPvK3ATTa0VxOJu5T
           items:
             $ref: '#/components/schemas/FileRequestAsResponse'
-    file_requests_get_body:
+    GetFileRequestArgs:
       type: object
       properties:
         id:
           type: string
           example: oaCAVmEyrqYnkZX9955Y
-    file_requests_list_v2_body:
+    ListFileRequestsArg:
       type: object
       properties:
         limit:
           type: number
           example: 1000
-    ListFileRequestsResponse:
+    ListFileRequestsV2Result:
       type: object
       properties:
         cursor:
@@ -11358,13 +11303,13 @@ components:
         has_more:
           type: boolean
           example: true
-    list_continue_body:
+    ListFileRequestsContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    file_requestsupdate_deadline:
+    UpdateFileRequestDeadline:
       type: object
       properties:
         ".tag":
@@ -11376,11 +11321,11 @@ components:
         deadline:
           type: string
           example: 2020-10-12T17:00:00Z
-    file_requests_update_body:
+    UpdateFileRequestArgs:
       type: object
       properties:
         deadline:
-          $ref: '#/components/schemas/file_requestsupdate_deadline'
+          $ref: '#/components/schemas/UpdateFileRequestDeadline'
         destination:
           type: string
           example: /File Requests/Homework
@@ -11393,7 +11338,7 @@ components:
         title:
           type: string
           example: Homework submission
-    files_copy_v2_body:
+    RelocationArg:
       type: object
       properties:
         allow_ownership_transfer:
@@ -11411,12 +11356,12 @@ components:
         to_path:
           type: string
           example: /Homework/algebra
-    MetadataResponse:
+    MetadataResult:
       type: object
       properties:
         metadata:
           $ref: '#/components/schemas/MetadataAsResponse'
-    filescopy_batch_v2_entries:
+    RelocationPath:
       type: object
       properties:
         from_path:
@@ -11425,7 +11370,7 @@ components:
         to_path:
           type: string
           example: /Homework/algebra
-    files_copy_batch_v2_body:
+    RelocationBatchArgBase:
       type: object
       properties:
         autorename:
@@ -11437,8 +11382,8 @@ components:
           - from_path: /Homework/math
             to_path: /Homework/algebra
           items:
-            $ref: '#/components/schemas/filescopy_batch_v2_entries'
-    RelocationBatchV2Response:
+            $ref: '#/components/schemas/RelocationPath'
+    RelocationBatchV2Result:
       type: object
       properties:
         ".tag":
@@ -11476,19 +11421,19 @@ components:
               size: 7212
           items:
             $ref: '#/components/schemas/CopyBatchResponseEntries'
-    copy_batch_check_v2_body:
+    PollArg:
       type: object
       properties:
         async_job_id:
           type: string
           example: 34g93hh34h04y384084
-    copy_reference_get_body:
+    GetCopyReferenceArg:
       type: object
       properties:
         path:
           type: string
           example: /video.mp4
-    GetCopyReferenceResponse:
+    GetCopyReferenceResult:
       type: object
       properties:
         copy_reference:
@@ -11499,7 +11444,7 @@ components:
           example: 2045-05-12T15:50:38Z
         metadata:
           $ref: '#/components/schemas/MetadataAsResponse'
-    copy_reference_save_body:
+    SaveCopyReferenceArg:
       type: object
       properties:
         copy_reference:
@@ -11508,7 +11453,7 @@ components:
         path:
           type: string
           example: /video.mp4
-    files_create_folder_v2_body:
+    CreateFolderArg:
       type: object
       properties:
         autorename:
@@ -11522,7 +11467,7 @@ components:
       properties:
         metadata:
           $ref: '#/components/schemas/FolderMetadata'
-    files_create_folder_batch_body:
+    CreateFolderBatchArg:
       type: object
       properties:
         autorename:
@@ -11538,7 +11483,7 @@ components:
           items:
             type: string
             example: /Homework/math
-    CreateFolderBatchResponse:
+    CreateFolderBatchResult:
       type: object
       properties:
         ".tag":
@@ -11564,20 +11509,14 @@ components:
                 read_only: false
                 traverse_only: false
           items:
-            $ref: '#/components/schemas/CreateFolderBatchResponseEntry'
-    create_folder_batch_check_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
-    FilePath:
+            $ref: '#/components/schemas/CreateFolderBatchResultEntry'
+    DeleteArg:
       type: object
       properties:
         path:
           type: string
           example: /Homework/math/Prime_Numbers.txt
-    DeleteFilesBatchRequest:
+    DeleteBatchArg:
       type: object
       properties:
         entries:
@@ -11585,8 +11524,8 @@ components:
           example:
           - path: /Homework/math/Prime_Numbers.txt
           items:
-            $ref: '#/components/schemas/FilePath'
-    DeleteBatchResponse:
+            $ref: '#/components/schemas/DeleteArg'
+    DeleteBatchResult:
       type: object
       properties:
         ".tag":
@@ -11624,12 +11563,6 @@ components:
               size: 7212
           items:
             $ref: '#/components/schemas/DeleteBatchResultEntry'
-    delete_batch_check_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
     FileMetadata:
       type: object
       properties:
@@ -11679,20 +11612,20 @@ components:
         size:
           type: number
           example: 7212
-    ExportFileResponse:
+    ExportResult:
       type: object
       properties:
         export_metadata:
-          $ref: '#/components/schemas/ExportFileResponseMetadata'
+          $ref: '#/components/schemas/ExportMetadata'
         file_metadata:
           $ref: '#/components/schemas/FileMetadata'
-    filesget_file_lock_batch_entries:
+    LockFileArg:
       type: object
       properties:
         path:
           type: string
           example: /John Doe/sample/test.pdf
-    files_get_file_lock_batch_body:
+    LockFileBatchArg:
       type: object
       properties:
         entries:
@@ -11700,7 +11633,7 @@ components:
           example:
           - path: /John Doe/sample/test.pdf
           items:
-            $ref: '#/components/schemas/filesget_file_lock_batch_entries'
+            $ref: '#/components/schemas/LockFileArg'
     LockFileBatchResult:
       type: object
       properties:
@@ -11742,7 +11675,7 @@ components:
               size: 7212
           items:
             $ref: '#/components/schemas/LockFileResultEntry'
-    files_get_metadata_body:
+    GetMetadataArg:
       type: object
       properties:
         include_deleted:
@@ -11757,65 +11690,13 @@ components:
         path:
           type: string
           example: /Homework/math
-    GetMetadataResponse:
-      type: object
-      properties:
-        ".tag":
-          type: string
-          example: file
-        client_modified:
-          type: string
-          example: 2015-05-12T15:50:38Z
-        content_hash:
-          type: string
-          example: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-        file_lock_info:
-          $ref: '#/components/schemas/FileLockInfo'
-        has_explicit_shared_members:
-          type: boolean
-          example: false
-        id:
-          type: string
-          example: id:a4ayc_80_OEAAAAAAAAAXw
-        is_downloadable:
-          type: boolean
-          example: true
-        name:
-          type: string
-          example: Prime_Numbers.txt
-        path_display:
-          type: string
-          example: /Homework/math/Prime_Numbers.txt
-        path_lower:
-          type: string
-          example: /homework/math/prime_numbers.txt
-        property_groups:
-          type: array
-          example:
-          - fields:
-            - name: Security Policy
-              value: Confidential
-            template_id: ptid:1a5n2i6d3OYEAAAAAAAAAYa
-          items:
-            $ref: '#/components/schemas/PropertyGroup'
-        rev:
-          type: string
-          example: a1c10ce0dd78
-        server_modified:
-          type: string
-          example: 2015-05-12T15:50:38Z
-        sharing_info:
-          $ref: '#/components/schemas/MetadataSharingInfo'
-        size:
-          type: number
-          example: 7212
-    files_get_temporary_link_body:
+    GetTemporaryLinkArg:
       type: object
       properties:
         path:
           type: string
           example: /video.mp4
-    GetTemporaryLinkResponse:
+    GetTemporaryLinkResult:
       type: object
       properties:
         link:
@@ -11823,7 +11704,7 @@ components:
           example: https://dl.dropboxusercontent.com/apitl/1/YXNkZmFzZGcyMzQyMzI0NjU2NDU2NDU2
         metadata:
           $ref: '#/components/schemas/FileMetadata'
-    filesget_temporary_upload_link_commit_info:
+    CommitInfo:
       type: object
       properties:
         autorename:
@@ -11841,26 +11722,26 @@ components:
         strict_conflict:
           type: boolean
           example: false
-    files_get_temporary_upload_link_body:
+    GetTemporaryUploadLinkArg:
       type: object
       properties:
         commit_info:
-          $ref: '#/components/schemas/filesget_temporary_upload_link_commit_info'
+          $ref: '#/components/schemas/CommitInfo'
         duration:
           type: number
           example: 3600
-    GetTemporaryUploadLinkResponse:
+    GetTemporaryUploadLinkResult:
       type: object
       properties:
         link:
           type: string
           example: https://content.dropboxapi.com/apitul/1/bNi2uIYF51cVBND
-    GetThumbnailResponse:
+    PreviewResult:
       type: object
       properties:
         file_metadata:
           $ref: '#/components/schemas/FileMetadata'
-    filesget_thumbnail_batch_entries:
+    ThumbnailArg:
       type: object
       properties:
         format:
@@ -11875,7 +11756,7 @@ components:
         size:
           type: string
           example: w64h64
-    files_get_thumbnail_batch_body:
+    GetThumbnailBatchArg:
       type: object
       properties:
         entries:
@@ -11886,8 +11767,8 @@ components:
             path: /image.jpg
             size: w64h64
           items:
-            $ref: '#/components/schemas/filesget_thumbnail_batch_entries'
-    GetThumbnailBatchResponse:
+            $ref: '#/components/schemas/ThumbnailArg'
+    GetThumbnailBatchResult:
       type: object
       properties:
         entries:
@@ -11922,7 +11803,7 @@ components:
             thumbnail: iVBORw0KGgoAAAANSUhEUgAAAdcAAABrCAMAAAI=
           items:
             $ref: '#/components/schemas/GetThumbnailBatchResultEntry'
-    files_list_folder_body:
+    ListFolderArg:
       type: object
       properties:
         include_deleted:
@@ -11946,7 +11827,7 @@ components:
         recursive:
           type: boolean
           example: false
-    ListFolderResponse:
+    ListFolderResult:
       type: object
       properties:
         cursor:
@@ -12000,37 +11881,13 @@ components:
         has_more:
           type: boolean
           example: false
-    list_folder_continue_body:
+    ListFolderContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    list_folder_get_latest_cursor_body:
-      type: object
-      properties:
-        include_deleted:
-          type: boolean
-          example: false
-        include_has_explicit_shared_members:
-          type: boolean
-          example: false
-        include_media_info:
-          type: boolean
-          example: false
-        include_mounted_folders:
-          type: boolean
-          example: true
-        include_non_downloadable_files:
-          type: boolean
-          example: true
-        path:
-          type: string
-          example: /Homework/math
-        recursive:
-          type: boolean
-          example: false
-    list_folder_longpoll_body:
+    ListFolderLongpollArg:
       type: object
       properties:
         cursor:
@@ -12045,7 +11902,7 @@ components:
         changes:
           type: boolean
           example: true
-    files_list_revisions_body:
+    ListRevisionsArg:
       type: object
       properties:
         limit:
@@ -12092,34 +11949,7 @@ components:
         is_deleted:
           type: boolean
           example: false
-    files_lock_file_batch_body:
-      type: object
-      properties:
-        entries:
-          type: array
-          example:
-          - path: /John Doe/sample/test.pdf
-          items:
-            $ref: '#/components/schemas/filesget_file_lock_batch_entries'
-    files_move_v2_body:
-      type: object
-      properties:
-        allow_ownership_transfer:
-          type: boolean
-          example: false
-        allow_shared_folder:
-          type: boolean
-          example: false
-        autorename:
-          type: boolean
-          example: false
-        from_path:
-          type: string
-          example: /Homework/math
-        to_path:
-          type: string
-          example: /Homework/algebra
-    files_move_batch_v2_body:
+    MoveBatchArg:
       type: object
       properties:
         allow_ownership_transfer:
@@ -12134,20 +11964,8 @@ components:
           - from_path: /Homework/math
             to_path: /Homework/algebra
           items:
-            $ref: '#/components/schemas/filescopy_batch_v2_entries'
-    move_batch_check_v2_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
-    files_permanently_delete_body:
-      type: object
-      properties:
-        path:
-          type: string
-          example: /Homework/math/Prime_Numbers.txt
-    files_restore_body:
+            $ref: '#/components/schemas/RelocationPath'
+    RestoreArg:
       type: object
       properties:
         path:
@@ -12156,7 +11974,7 @@ components:
         rev:
           type: string
           example: a1c10ce0dd78
-    files_save_url_body:
+    SaveUrlArg:
       type: object
       properties:
         path:
@@ -12217,19 +12035,13 @@ components:
         size:
           type: number
           example: 7212
-    save_url_check_job_status_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
     CheckJobStatusResponse:
       type: object
       properties:
         ".tag":
           type: string
           example: in_progress
-    files_search_v2_body:
+    SearchV2Arg:
       type: object
       properties:
         include_highlights:
@@ -12238,7 +12050,7 @@ components:
         query:
           type: string
           example: cat
-    SearchFilesResponse:
+    SearchV2Result:
       type: object
       properties:
         has_more:
@@ -12277,13 +12089,13 @@ components:
                 size: 7212
           items:
             $ref: '#/components/schemas/SearchMatch'
-    search_continue_v2_body:
+    SearchV2ContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    files_unlock_file_batch_body:
+    UnlockFileBatchArg:
       type: object
       properties:
         entries:
@@ -12291,8 +12103,8 @@ components:
           example:
           - path: /John Doe/sample/test.pdf
           items:
-            $ref: '#/components/schemas/filesget_file_lock_batch_entries'
-    filesupload_sessionfinish_batch_cursor:
+            $ref: '#/components/schemas/LockFileArg'
+    UploadSessionCursor:
       type: object
       properties:
         offset:
@@ -12301,14 +12113,14 @@ components:
         session_id:
           type: string
           example: 1234faaf0678bcde
-    filesupload_sessionfinish_batch_entries:
+    UploadSessionFinishArg:
       type: object
       properties:
         commit:
-          $ref: '#/components/schemas/filesget_temporary_upload_link_commit_info'
+          $ref: '#/components/schemas/CommitInfo'
         cursor:
-          $ref: '#/components/schemas/filesupload_sessionfinish_batch_cursor'
-    upload_session_finish_batch_body:
+          $ref: '#/components/schemas/UploadSessionCursor'
+    UploadSessionFinishBatchArg:
       type: object
       properties:
         entries:
@@ -12324,7 +12136,7 @@ components:
               offset: 0
               session_id: 1234faaf0678bcde
           items:
-            $ref: '#/components/schemas/filesupload_sessionfinish_batch_entries'
+            $ref: '#/components/schemas/UploadSessionFinishArg'
     UploadSessionFinishBatchResult:
       type: object
       properties:
@@ -12361,28 +12173,13 @@ components:
             size: 7212
           items:
             $ref: '#/components/schemas/UploadSessionFinishBatchResultEntry'
-    finish_batch_check_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
     UploadSessionStartResult:
       type: object
       properties:
         session_id:
           type: string
           example: 1234faaf0678bcde
-    sharingadd_file_member_members:
-      type: object
-      properties:
-        ".tag":
-          type: string
-          example: email
-        email:
-          type: string
-          example: justin@example.com
-    sharing_add_file_member_body:
+    AddFileMemberArgs:
       type: object
       properties:
         access_level:
@@ -12403,11 +12200,11 @@ components:
           - ".tag": email
             email: justin@example.com
           items:
-            $ref: '#/components/schemas/sharingadd_file_member_members'
+            $ref: '#/components/schemas/MemberSelector'
         quiet:
           type: boolean
           example: false
-    sharingadd_file_member_result:
+    FileMemberActionIndividualResult:
       type: object
       properties:
         ".tag":
@@ -12417,10 +12214,10 @@ components:
       type: object
       properties:
         member:
-          $ref: '#/components/schemas/sharingadd_file_member_members'
+          $ref: '#/components/schemas/MemberSelector'
         result:
-          $ref: '#/components/schemas/sharingadd_file_member_result'
-    sharingadd_folder_member_member:
+          $ref: '#/components/schemas/FileMemberActionIndividualResult'
+    MemberSelector:
       type: object
       properties:
         ".tag":
@@ -12432,15 +12229,15 @@ components:
         email:
           type: string
           example: justin@example.com
-    sharingadd_folder_member_members:
+    AddMember:
       type: object
       properties:
         access_level:
           type: string
           example: editor
         member:
-          $ref: '#/components/schemas/sharingadd_folder_member_member'
-    sharing_add_folder_member_body:
+          $ref: '#/components/schemas/MemberSelector'
+    AddFolderMemberArg:
       type: object
       properties:
         custom_message:
@@ -12458,37 +12255,19 @@ components:
               ".tag": dropbox_id
               dropbox_id: dbid:AAEufNrMPSPe0dMQijRP0N_aZtBJRm26W4Q
           items:
-            $ref: '#/components/schemas/sharingadd_folder_member_members'
+            $ref: '#/components/schemas/AddMember'
         quiet:
           type: boolean
           example: false
         shared_folder_id:
           type: string
           example: "84528192421"
-    sharing_check_job_status_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
-    sharing_check_remove_member_job_status_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
     GenericResponseWithTag:
       type: object
       properties:
         ".tag":
           type: string
           example: complete
-    sharing_check_share_job_status_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
     ShareFolderResponse:
       type: object
       properties:
@@ -12498,7 +12277,7 @@ components:
         access_inheritance:
           $ref: '#/components/schemas/AccessInheritance'
         access_type:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy_acl_update_policy'
+          $ref: '#/components/schemas/AclUpdatePolicy'
         is_inside_team_folder:
           type: boolean
           example: false
@@ -12518,7 +12297,7 @@ components:
           example: []
           items: {}
         policy:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy'
+          $ref: '#/components/schemas/FolderPolicy'
         preview_url:
           type: string
           example: https://www.dropbox.com/scl/fo/fir9vjelf
@@ -12528,7 +12307,7 @@ components:
         time_invited:
           type: string
           example: 2016-01-20T00:00:00Z
-    sharing_get_file_metadata_body:
+    GetFileMetadataArg:
       type: object
       properties:
         actions:
@@ -12538,45 +12317,7 @@ components:
         file:
           type: string
           example: id:3kmLmQFnf1AAAAAAAAAAAw
-    GetFileMetadataResponse:
-      type: object
-      properties:
-        access_type:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_access_type'
-        id:
-          type: string
-          example: id:3kmLmQFnf1AAAAAAAAAAAw
-        name:
-          type: string
-          example: file.txt
-        owner_display_names:
-          type: array
-          example:
-          - Jane Doe
-          items:
-            type: string
-            example: Jane Doe
-        owner_team:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_owner_team'
-        path_display:
-          type: string
-          example: /dir/file.txt
-        path_lower:
-          type: string
-          example: /dir/file.txt
-        permissions:
-          type: array
-          example: []
-          items: {}
-        policy:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy'
-        preview_url:
-          type: string
-          example: https://www.dropbox.com/scl/fi/fir9vjelf
-        time_invited:
-          type: string
-          example: 2016-01-20T00:00:00Z
-    get_file_metadata_batch_body:
+    GetFileMetadataBatchArg:
       type: object
       properties:
         actions:
@@ -12591,13 +12332,13 @@ components:
           items:
             type: string
             example: id:3kmLmQFnf1AAAAAAAAAAAw
-    sharingget_file_metadatabatch_result_access_type:
+    AccessLevel:
       type: object
       properties:
         ".tag":
           type: string
           example: viewer
-    sharingget_file_metadatabatch_result_owner_team:
+    Team:
       type: object
       properties:
         id:
@@ -12606,13 +12347,13 @@ components:
         name:
           type: string
           example: "Acme, Inc."
-    sharingget_file_metadatabatch_result_policy_acl_update_policy:
+    AclUpdatePolicy:
       type: object
       properties:
         ".tag":
           type: string
           example: owner
-    sharingget_file_metadatabatch_result_policy_member_policy:
+    MemberPolicy:
       type: object
       properties:
         ".tag":
@@ -12624,25 +12365,25 @@ components:
         ".tag":
           type: string
           example: team
-    sharingget_file_metadatabatch_result_policy:
+    FolderPolicy:
       type: object
       properties:
         acl_update_policy:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy_acl_update_policy'
+          $ref: '#/components/schemas/AclUpdatePolicy'
         member_policy:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy_member_policy'
+          $ref: '#/components/schemas/MemberPolicy'
         resolved_member_policy:
           $ref: '#/components/schemas/SharedFolderMemberPolicy'
         shared_link_policy:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy_member_policy'
-    sharingget_file_metadatabatch_result:
+          $ref: '#/components/schemas/MemberPolicy'
+    SharedFileMetadataWithTag:
       type: object
       properties:
         ".tag":
           type: string
           example: metadata
         access_type:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_access_type'
+          $ref: '#/components/schemas/AccessLevel'
         id:
           type: string
           example: id:3kmLmQFnf1AAAAAAAAAAAw
@@ -12657,7 +12398,7 @@ components:
             type: string
             example: Jane Doe
         owner_team:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_owner_team'
+          $ref: '#/components/schemas/Team'
         path_display:
           type: string
           example: /dir/file.txt
@@ -12669,22 +12410,22 @@ components:
           example: []
           items: {}
         policy:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy'
+          $ref: '#/components/schemas/FolderPolicy'
         preview_url:
           type: string
           example: https://www.dropbox.com/scl/fi/fir9vjelf
         time_invited:
           type: string
           example: 2016-01-20T00:00:00Z
-    GetFileMetadataIndicidualResult:
+    GetFileMetadataIndividualResult:
       type: object
       properties:
         file:
           type: string
           example: id:3kmLmQFnf1AAAAAAAAAAAw
         result:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result'
-    sharing_get_folder_metadata_body:
+          $ref: '#/components/schemas/SharedFileMetadataWithTag'
+    GetMetadataArgs:
       type: object
       properties:
         actions:
@@ -12700,7 +12441,7 @@ components:
         access_inheritance:
           $ref: '#/components/schemas/AccessInheritance'
         access_type:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy_acl_update_policy'
+          $ref: '#/components/schemas/AclUpdatePolicy'
         is_inside_team_folder:
           type: boolean
           example: false
@@ -12720,7 +12461,7 @@ components:
           example: []
           items: {}
         policy:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy'
+          $ref: '#/components/schemas/FolderPolicy'
         preview_url:
           type: string
           example: https://www.dropbox.com/scl/fo/fir9vjelf
@@ -12764,7 +12505,7 @@ components:
         url:
           type: string
           example: https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0
-    sharing_get_shared_link_metadata_body:
+    GetSharedLinkMetadataArg:
       type: object
       properties:
         path:
@@ -12773,7 +12514,7 @@ components:
         url:
           type: string
           example: https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0
-    sharing_list_file_members_body:
+    ListFileMembersArg:
       type: object
       properties:
         file:
@@ -12807,7 +12548,7 @@ components:
             is_inherited: false
             permissions: []
           items:
-            $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_groups'
+            $ref: '#/components/schemas/GroupInfos'
         invitees:
           type: array
           example:
@@ -12819,7 +12560,7 @@ components:
             is_inherited: false
             permissions: []
           items:
-            $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_invitees'
+            $ref: '#/components/schemas/InviteeMembershipInfo'
         users:
           type: array
           example:
@@ -12837,8 +12578,8 @@ components:
               same_team: true
               team_member_id: dbmid:abcd1234
           items:
-            $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_users'
-    list_file_members_batch_body:
+            $ref: '#/components/schemas/UserFileMembershipInfo'
+    ListFileMembersBatchArg:
       type: object
       properties:
         files:
@@ -12852,31 +12593,25 @@ components:
         limit:
           type: number
           example: 10
-    sharinglist_file_membersbatch_result_members_access_type:
-      type: object
-      properties:
-        ".tag":
-          type: string
-          example: editor
-    sharinglist_file_membersbatch_result_members_group_group_management_type:
+    GroupManagementType:
       type: object
       properties:
         ".tag":
           type: string
           example: user_managed
-    sharinglist_file_membersbatch_result_members_group:
+    GroupInfo:
       type: object
       properties:
         group_id:
           type: string
           example: g:e2db7665347abcd600000000001a2b3c
         group_management_type:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_group_group_management_type'
+          $ref: '#/components/schemas/GroupManagementType'
         group_name:
           type: string
           example: Test group
         group_type:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_group_group_management_type'
+          $ref: '#/components/schemas/GroupManagementType'
         is_member:
           type: boolean
           example: false
@@ -12889,13 +12624,13 @@ components:
         same_team:
           type: boolean
           example: true
-    sharinglist_file_membersbatch_result_members_groups:
+    GroupInfos:
       type: object
       properties:
         access_type:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_access_type'
+          $ref: '#/components/schemas/AccessLevel'
         group:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_group'
+          $ref: '#/components/schemas/GroupInfo'
         is_inherited:
           type: boolean
           example: false
@@ -12903,7 +12638,7 @@ components:
           type: array
           example: []
           items: {}
-    sharinglist_file_membersbatch_result_members_invitee:
+    InviteeInfo:
       type: object
       properties:
         ".tag":
@@ -12912,13 +12647,13 @@ components:
         email:
           type: string
           example: jessica@example.com
-    sharinglist_file_membersbatch_result_members_invitees:
+    InviteeMembershipInfo:
       type: object
       properties:
         access_type:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_access_type'
+          $ref: '#/components/schemas/AccessLevel'
         invitee:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_invitee'
+          $ref: '#/components/schemas/InviteeInfo'
         is_inherited:
           type: boolean
           example: false
@@ -12926,13 +12661,13 @@ components:
           type: array
           example: []
           items: {}
-    sharinglist_file_membersbatch_result_members_platform_type:
+    PlatformType:
       type: object
       properties:
         ".tag":
           type: string
           example: unknown
-    sharinglist_file_membersbatch_result_members_user:
+    UserInfo:
       type: object
       properties:
         account_id:
@@ -12950,11 +12685,11 @@ components:
         team_member_id:
           type: string
           example: dbmid:abcd1234
-    sharinglist_file_membersbatch_result_members_users:
+    UserFileMembershipInfo:
       type: object
       properties:
         access_type:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy_acl_update_policy'
+          $ref: '#/components/schemas/AclUpdatePolicy'
         is_inherited:
           type: boolean
           example: false
@@ -12963,66 +12698,13 @@ components:
           example: []
           items: {}
         platform_type:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_platform_type'
+          $ref: '#/components/schemas/PlatformType'
         time_last_seen:
           type: string
           example: 2016-01-20T00:00:00Z
         user:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_user'
-    sharinglist_file_membersbatch_result_members:
-      type: object
-      properties:
-        groups:
-          type: array
-          example:
-          - access_type:
-              ".tag": editor
-            group:
-              group_id: g:e2db7665347abcd600000000001a2b3c
-              group_management_type:
-                ".tag": user_managed
-              group_name: Test group
-              group_type:
-                ".tag": user_managed
-              is_member: false
-              is_owner: false
-              member_count: 10
-              same_team: true
-            is_inherited: false
-            permissions: []
-          items:
-            $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_groups'
-        invitees:
-          type: array
-          example:
-          - access_type:
-              ".tag": viewer
-            invitee:
-              ".tag": email
-              email: jessica@example.com
-            is_inherited: false
-            permissions: []
-          items:
-            $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_invitees'
-        users:
-          type: array
-          example:
-          - access_type:
-              ".tag": owner
-            is_inherited: false
-            permissions: []
-            platform_type:
-              ".tag": unknown
-            time_last_seen: 2016-01-20T00:00:00Z
-            user:
-              account_id: dbid:AAH4f99T0taONIb-OurWxbNQ6ywGRopQngc
-              display_name: Robert Smith
-              email: bob@example.com
-              same_team: true
-              team_member_id: dbmid:abcd1234
-          items:
-            $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_users'
-    sharinglist_file_membersbatch_result:
+          $ref: '#/components/schemas/UserInfo'
+    ListFileMembersCountResult:
       type: object
       properties:
         ".tag":
@@ -13032,7 +12714,7 @@ components:
           type: number
           example: 3
         members:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members'
+          $ref: '#/components/schemas/SharedFileMembers'
     ListFileMembersIndividualResult:
       type: object
       properties:
@@ -13040,14 +12722,14 @@ components:
           type: string
           example: id:3kmLmQFnf1AAAAAAAAAAAw
         result:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result'
-    list_file_members_continue_body:
+          $ref: '#/components/schemas/ListFileMembersCountResult'
+    ListFileMembersContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    list_folder_members_continue_body:
+    ListFolderMembersContinueArg:
       type: object
       properties:
         cursor:
@@ -13078,7 +12760,7 @@ components:
             is_inherited: false
             permissions: []
           items:
-            $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_groups'
+            $ref: '#/components/schemas/GroupInfos'
         invitees:
           type: array
           example:
@@ -13090,7 +12772,7 @@ components:
             is_inherited: false
             permissions: []
           items:
-            $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_invitees'
+            $ref: '#/components/schemas/InviteeMembershipInfo'
         users:
           type: array
           example:
@@ -13106,7 +12788,7 @@ components:
               team_member_id: dbmid:abcd1234
           items:
             $ref: '#/components/schemas/UserMembershipInfo'
-    sharing_list_folders_body:
+    ListFoldersArgs:
       type: object
       properties:
         actions:
@@ -13161,13 +12843,13 @@ components:
             time_invited: 2016-01-20T00:00:00Z
           items:
             $ref: '#/components/schemas/SharedFolderMetadata'
-    list_folders_continue_body:
+    ListFoldersContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    sharing_list_mountable_folders_body:
+    ListFilesArg:
       type: object
       properties:
         actions:
@@ -13177,23 +12859,7 @@ components:
         limit:
           type: number
           example: 100
-    list_mountable_folders_continue_body:
-      type: object
-      properties:
-        cursor:
-          type: string
-          example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    sharing_list_received_files_body:
-      type: object
-      properties:
-        actions:
-          type: array
-          example: []
-          items: {}
-        limit:
-          type: number
-          example: 100
-    ListReceivedFilesResponse:
+    ListFilesResult:
       type: object
       properties:
         cursor:
@@ -13227,13 +12893,13 @@ components:
             time_invited: 2016-01-20T00:00:00Z
           items:
             $ref: '#/components/schemas/SharedFileMetadata'
-    list_received_files_continue_body:
+    ListFilesContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: AzJJbGlzdF90eXBdofe9c3RPbGlzdGFyZ3NfYnlfZ2lkMRhcbric7Rdog9emfGRlc2MCRWxpbWl0BGRId
-    sharing_list_shared_links_body:
+    ListSharedLinksArg:
       type: object
       properties:
         cursor:
@@ -13274,7 +12940,7 @@ components:
             url: https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0
           items:
             $ref: '#/components/schemas/SharedLinkMetadata'
-    sharingmodify_shared_link_settings_settings:
+    SharedLinkSettings:
       type: object
       properties:
         access:
@@ -13286,30 +12952,30 @@ components:
         requested_visibility:
           type: string
           example: public
-    sharing_modify_shared_link_settings_body:
+    ModifySharedLinkSettingsArgs:
       type: object
       properties:
         remove_expiration:
           type: boolean
           example: false
         settings:
-          $ref: '#/components/schemas/sharingmodify_shared_link_settings_settings'
+          $ref: '#/components/schemas/SharedLinkSettings'
         url:
           type: string
           example: https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0
-    sharing_mount_folder_body:
+    MountFolderArg:
       type: object
       properties:
         shared_folder_id:
           type: string
           example: "84528192421"
-    sharing_relinquish_file_membership_body:
+    RelinquishFileMembershipArg:
       type: object
       properties:
         file:
           type: string
           example: id:3kmLmQFnf1AAAAAAAAAAAw
-    sharing_relinquish_folder_membership_body:
+    RelinquishFolderMembershipArg:
       type: object
       properties:
         leave_a_copy:
@@ -13318,28 +12984,28 @@ components:
         shared_folder_id:
           type: string
           example: "84528192421"
-    sharing_remove_file_member_2_body:
+    RemoveFileMemberArg:
       type: object
       properties:
         file:
           type: string
           example: id:3kmLmQFnf1AAAAAAAAAAAw
         member:
-          $ref: '#/components/schemas/sharingadd_file_member_members'
+          $ref: '#/components/schemas/MemberSelector'
     CustomQuotaResponse:
       type: object
       properties:
         ".tag":
           type: string
           example: other
-    sharing_remove_folder_member_body:
+    RemoveFolderMemberArg:
       type: object
       properties:
         leave_a_copy:
           type: boolean
           example: false
         member:
-          $ref: '#/components/schemas/sharingadd_file_member_members'
+          $ref: '#/components/schemas/MemberSelector'
         shared_folder_id:
           type: string
           example: "84528192421"
@@ -13352,13 +13018,13 @@ components:
         async_job_id:
           type: string
           example: 34g93hh34h04y384084
-    sharing_revoke_shared_link_body:
+    RevokeSharedLinkArg:
       type: object
       properties:
         url:
           type: string
           example: https://www.dropbox.com/s/2sn712vy1ovegw8/Prime_Numbers.txt?dl=0
-    sharing_set_access_inheritance_body:
+    SetAccessInheritanceArg:
       type: object
       properties:
         access_inheritance:
@@ -13367,7 +13033,7 @@ components:
         shared_folder_id:
           type: string
           example: "84528192421"
-    sharing_share_folder_body:
+    ShareFolderArg:
       type: object
       properties:
         access_inheritance:
@@ -13388,7 +13054,7 @@ components:
         shared_link_policy:
           type: string
           example: members
-    sharing_transfer_folder_body:
+    TransferFolderArg:
       type: object
       properties:
         shared_folder_id:
@@ -13397,19 +13063,19 @@ components:
         to_dropbox_id:
           type: string
           example: dbid:AAEufNrMPSPe0dMQijRP0N_aZtBJRm26W4Q
-    sharing_unmount_folder_body:
+    UnmountFolderArg:
       type: object
       properties:
         shared_folder_id:
           type: string
           example: "84528192421"
-    UnshareFileRequest:
+    UnshareFileArg:
       type: object
       properties:
         file:
           type: string
           example: id:3kmLmQFnf1AAAAAAAAAAAw
-    sharing_unshare_folder_body:
+    UnshareFolderArg:
       type: object
       properties:
         leave_a_copy:
@@ -13418,7 +13084,7 @@ components:
         shared_folder_id:
           type: string
           example: "84528192421"
-    sharing_update_file_member_body:
+    UpdateFileMemberArgs:
       type: object
       properties:
         access_level:
@@ -13428,19 +13094,19 @@ components:
           type: string
           example: id:3kmLmQFnf1AAAAAAAAAAAw
         member:
-          $ref: '#/components/schemas/sharingadd_file_member_members'
-    sharing_update_folder_member_body:
+          $ref: '#/components/schemas/MemberSelector'
+    UpdateFolderMemberArg:
       type: object
       properties:
         access_level:
           type: string
           example: editor
         member:
-          $ref: '#/components/schemas/sharingadd_file_member_members'
+          $ref: '#/components/schemas/MemberSelector'
         shared_folder_id:
           type: string
           example: "84528192421"
-    sharing_update_folder_policy_body:
+    UpdateFolderPolicyArg:
       type: object
       properties:
         acl_update_policy:
@@ -13455,7 +13121,7 @@ components:
         shared_link_policy:
           type: string
           example: members
-    devices_list_member_devices_body:
+    ListMemberDevicesArg:
       type: object
       properties:
         include_desktop_clients:
@@ -13470,7 +13136,7 @@ components:
         team_member_id:
           type: string
           example: dbmid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
-    devices_revoke_device_session_body:
+    RevokeDeviceSessionArg:
       type: object
       properties:
         ".tag":
@@ -13482,7 +13148,7 @@ components:
         team_member_id:
           type: string
           example: dbmid:AAHhy7WsR0x-u4ZCqiDl5Fz5zvuL3kmspwU
-    devices_revoke_device_session_batch_body:
+    RevokeDeviceSessionBatchArg:
       type: object
       properties:
         revoke_devices:
@@ -13492,8 +13158,8 @@ components:
             session_id: 1234faaf0678bcde
             team_member_id: dbmid:AAHhy7WsR0x-u4ZCqiDl5Fz5zvuL3kmspwU
           items:
-            $ref: '#/components/schemas/devices_revoke_device_session_body'
-    groups_create_body:
+            $ref: '#/components/schemas/RevokeDeviceSessionArg'
+    GroupCreateArg:
       type: object
       properties:
         add_creator_as_owner:
@@ -13515,7 +13181,7 @@ components:
           type: string
           example: g:e2db7665347abcd600000000001a2b3c
         group_management_type:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_group_group_management_type'
+          $ref: '#/components/schemas/GroupManagementType'
         group_name:
           type: string
           example: project launch
@@ -13552,8 +13218,8 @@ components:
                 ".tag": active
               team_member_id: dbmid:1234567
           items:
-            $ref: '#/components/schemas/teamgroupsget_info_members'
-    groups_delete_body:
+            $ref: '#/components/schemas/GroupMemberInfo'
+    GroupSelector:
       type: object
       properties:
         ".tag":
@@ -13562,7 +13228,7 @@ components:
         group_id:
           type: string
           example: g:e2db7665347abcd600000000001a2b3c
-    groups_get_info_body:
+    GroupsSelector:
       type: object
       properties:
         ".tag":
@@ -13576,19 +13242,19 @@ components:
           items:
             type: string
             example: g:e2db7665347abcd600000000001a2b3c
-    teamgroupsget_info_access_type:
+    GroupAccessType:
       type: object
       properties:
         ".tag":
           type: string
           example: member
-    teamgroupsget_info_profile_membership_type:
+    TeamMembershipType:
       type: object
       properties:
         ".tag":
           type: string
           example: full
-    teamgroupsget_info_profile_name:
+    Name:
       type: object
       properties:
         abbreviated_name:
@@ -13606,7 +13272,7 @@ components:
         surname:
           type: string
           example: Ferdinand
-    teamgroupsget_info_profile_secondary_emails:
+    SecondaryEmail:
       type: object
       properties:
         email:
@@ -13615,13 +13281,13 @@ components:
         is_verified:
           type: boolean
           example: true
-    teamgroupsget_info_profile_status:
+    TeamMemberStatus:
       type: object
       properties:
         ".tag":
           type: string
           example: active
-    teamgroupsget_info_profile:
+    MemberProfile:
       type: object
       properties:
         account_id:
@@ -13637,9 +13303,9 @@ components:
           type: string
           example: 2015-05-12T15:50:38Z
         membership_type:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_membership_type'
+          $ref: '#/components/schemas/TeamMembershipType'
         name:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_name'
+          $ref: '#/components/schemas/Name'
         profile_photo_url:
           type: string
           example: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
@@ -13653,19 +13319,19 @@ components:
           - email: grape@strawberry.com
             is_verified: false
           items:
-            $ref: '#/components/schemas/teamgroupsget_info_profile_secondary_emails'
+            $ref: '#/components/schemas/SecondaryEmail'
         status:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_status'
+          $ref: '#/components/schemas/TeamMemberStatus'
         team_member_id:
           type: string
           example: dbmid:1234567
-    teamgroupsget_info_members:
+    GroupMemberInfo:
       type: object
       properties:
         access_type:
-          $ref: '#/components/schemas/teamgroupsget_info_access_type'
+          $ref: '#/components/schemas/GroupAccessType'
         profile:
-          $ref: '#/components/schemas/teamgroupsget_info_profile'
+          $ref: '#/components/schemas/MemberProfile'
     GroupsGetInfoItem:
       type: object
       properties:
@@ -13679,7 +13345,7 @@ components:
           type: string
           example: g:e2db7665347abcd600000000001a2b3c
         group_management_type:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_group_group_management_type'
+          $ref: '#/components/schemas/GroupManagementType'
         group_name:
           type: string
           example: project launch
@@ -13716,14 +13382,8 @@ components:
                 ".tag": active
               team_member_id: dbmid:1234567
           items:
-            $ref: '#/components/schemas/teamgroupsget_info_members'
-    job_status_get_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
-    groups_list_body:
+            $ref: '#/components/schemas/GroupMemberInfo'
+    GroupsListArg:
       type: object
       properties:
         limit:
@@ -13748,13 +13408,13 @@ components:
         has_more:
           type: boolean
           example: false
-    list_continue_body_1:
+    GroupsListContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    teamgroupsmembersadd_user:
+    UserSelectorArg:
       type: object
       properties:
         ".tag":
@@ -13763,19 +13423,19 @@ components:
         team_member_id:
           type: string
           example: dbmid:efgh5678
-    teamgroupsmembersadd_members:
+    MemberAccess:
       type: object
       properties:
         access_type:
           type: string
           example: member
         user:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    members_add_body:
+          $ref: '#/components/schemas/UserSelectorArg'
+    GroupMembersAddArg:
       type: object
       properties:
         group:
-          $ref: '#/components/schemas/groups_delete_body'
+          $ref: '#/components/schemas/GroupSelector'
         members:
           type: array
           example:
@@ -13784,7 +13444,7 @@ components:
               ".tag": team_member_id
               team_member_id: dbmid:efgh5678
           items:
-            $ref: '#/components/schemas/teamgroupsmembersadd_members'
+            $ref: '#/components/schemas/MemberAccess'
         return_members:
           type: boolean
           example: true
@@ -13796,11 +13456,11 @@ components:
           example: "99988877733388"
         group_info:
           $ref: '#/components/schemas/GroupFullInfo'
-    members_list_body:
+    GroupsMembersListArg:
       type: object
       properties:
         group:
-          $ref: '#/components/schemas/groups_delete_body'
+          $ref: '#/components/schemas/GroupSelector'
         limit:
           type: number
           example: 100
@@ -13817,17 +13477,17 @@ components:
           type: array
           example: []
           items: {}
-    list_continue_body_2:
+    GroupsMembersListContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    members_remove_body:
+    GroupMembersRemoveArg:
       type: object
       properties:
         group:
-          $ref: '#/components/schemas/groups_delete_body'
+          $ref: '#/components/schemas/GroupSelector'
         return_members:
           type: boolean
           example: true
@@ -13837,25 +13497,25 @@ components:
           - ".tag": team_member_id
             team_member_id: dbmid:efgh5678
           items:
-            $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    members_set_access_type_body:
+            $ref: '#/components/schemas/UserSelectorArg'
+    GroupMembersSetAccessTypeArg:
       type: object
       properties:
         access_type:
           type: string
           example: member
         group:
-          $ref: '#/components/schemas/groups_delete_body'
+          $ref: '#/components/schemas/GroupSelector'
         return_members:
           type: boolean
           example: true
         user:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    groups_update_body:
+          $ref: '#/components/schemas/UserSelectorArg'
+    GroupUpdateArgs:
       type: object
       properties:
         group:
-          $ref: '#/components/schemas/groups_delete_body'
+          $ref: '#/components/schemas/GroupSelector'
         new_group_external_id:
           type: string
           example: sales-234
@@ -13868,7 +13528,7 @@ components:
         return_members:
           type: boolean
           example: true
-    legal_holds_create_policy_body:
+    LegalHoldsPolicyCreateArg:
       type: object
       properties:
         end_date:
@@ -13908,14 +13568,14 @@ components:
           type: string
           example: 2016-01-01T00:00:00Z
         status:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_status'
-    legal_holds_get_policy_body:
+          $ref: '#/components/schemas/TeamMemberStatus'
+    LegalHoldsGetPolicyArg:
       type: object
       properties:
         id:
           type: string
           example: pid_dbhid:abcd1234
-    legal_holds_list_held_revisions_body:
+    LegalHoldsListHeldRevisionsArg:
       type: object
       properties:
         id:
@@ -13943,13 +13603,13 @@ components:
         has_more:
           type: boolean
           example: false
-    legal_holds_list_held_revisions_continue_body:
+    LegalHoldsListHeldRevisionsContinueArg:
       type: object
       properties:
         id:
           type: string
           example: pid_dbhid:abcd1234
-    legal_holds_list_policies_body:
+    LegalHoldsListPoliciesArg:
       type: object
       properties:
         include_released:
@@ -13974,13 +13634,13 @@ components:
               ".tag": active
           items:
             $ref: '#/components/schemas/LegalHoldPolicyAsResponse'
-    legal_holds_release_policy_body:
+    LegalHoldsPolicyReleaseArg:
       type: object
       properties:
         id:
           type: string
           example: pid_dbhid:abcd1234
-    legal_holds_update_policy_body:
+    LegalHoldsPolicyUpdateArg:
       type: object
       properties:
         id:
@@ -13993,13 +13653,13 @@ components:
           items:
             type: string
             example: dbmid:FDFSVF-DFSDF
-    linked_apps_list_member_linked_apps_body:
+    ListMemberAppsArg:
       type: object
       properties:
         team_member_id:
           type: string
           example: dbmid:AAFdgehTzw7WlXhZJsbGCLePe8RvQGYDr-I
-    excluded_users_add_body:
+    ExcludedUsersUpdateArg:
       type: object
       properties:
         users:
@@ -14008,13 +13668,13 @@ components:
           - ".tag": team_member_id
             team_member_id: dbmid:efgh5678
           items:
-            $ref: '#/components/schemas/teamgroupsmembersadd_user'
+            $ref: '#/components/schemas/UserSelectorArg'
     ExcludedUsersUpdateResult:
       type: object
       properties:
         status:
-          $ref: '#/components/schemas/sharingadd_file_member_result'
-    excluded_users_list_body:
+          $ref: '#/components/schemas/FileMemberActionIndividualResult'
+    ExcludedUsersListArg:
       type: object
       properties:
         limit:
@@ -14033,13 +13693,13 @@ components:
           type: array
           example: []
           items: {}
-    list_continue_body_3:
+    ExcludedUsersListContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    excluded_users_remove_body:
+    CustomQuotaUsersArg:
       type: object
       properties:
         users:
@@ -14048,36 +13708,16 @@ components:
           - ".tag": team_member_id
             team_member_id: dbmid:efgh5678
           items:
-            $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    member_space_limits_get_custom_quota_body:
-      type: object
-      properties:
-        users:
-          type: array
-          example:
-          - ".tag": team_member_id
-            team_member_id: dbmid:efgh5678
-          items:
-            $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    member_space_limits_remove_custom_quota_body:
-      type: object
-      properties:
-        users:
-          type: array
-          example:
-          - ".tag": team_member_id
-            team_member_id: dbmid:efgh5678
-          items:
-            $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    teammember_space_limitsset_custom_quota_users_and_quotas:
+            $ref: '#/components/schemas/UserSelectorArg'
+    UserCustomQuotaArg:
       type: object
       properties:
         quota_gb:
           type: number
           example: 30
         user:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    member_space_limits_set_custom_quota_body:
+          $ref: '#/components/schemas/UserSelectorArg'
+    SetCustomQuotaArg:
       type: object
       properties:
         users_and_quotas:
@@ -14088,8 +13728,8 @@ components:
               ".tag": team_member_id
               team_member_id: dbmid:efgh5678
           items:
-            $ref: '#/components/schemas/teammember_space_limitsset_custom_quota_users_and_quotas'
-    teammembersadd_new_members:
+            $ref: '#/components/schemas/UserCustomQuotaArg'
+    MemberAddV2Arg:
       type: object
       properties:
         member_email:
@@ -14110,7 +13750,7 @@ components:
         send_welcome_email:
           type: boolean
           example: true
-    members_add_body_1:
+    MembersAddV2Arg:
       type: object
       properties:
         force_async:
@@ -14126,7 +13766,7 @@ components:
             role: member_only
             send_welcome_email: true
           items:
-            $ref: '#/components/schemas/teammembersadd_new_members'
+            $ref: '#/components/schemas/MemberAddV2Arg'
     MembersAddResult:
       type: object
       properties:
@@ -14167,25 +13807,19 @@ components:
               ".tag": member_only
           items:
             $ref: '#/components/schemas/MemberAddResult'
-    job_status_get_body_1:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
-    members_delete_profile_photo_body:
+    MembersDeleteProfilePhotoArg:
       type: object
       properties:
         user:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
+          $ref: '#/components/schemas/UserSelectorArg'
     TeamMemberInfoV2Result:
       type: object
       properties:
         profile:
-          $ref: '#/components/schemas/teammembersget_info_profile'
+          $ref: '#/components/schemas/TeamMemberProfile'
         role:
-          $ref: '#/components/schemas/teammembersget_info_role'
-    members_get_info_body:
+          $ref: '#/components/schemas/AdminTier'
+    MembersGetInfoV2Arg:
       type: object
       properties:
         members:
@@ -14194,17 +13828,8 @@ components:
           - ".tag": team_member_id
             team_member_id: dbmid:efgh5678
           items:
-            $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    teammembersget_info_profile_secondary_emails:
-      type: object
-      properties:
-        email:
-          type: string
-          example: grape@strawberry.com
-        is_verified:
-          type: boolean
-          example: false
-    teammembersget_info_profile:
+            $ref: '#/components/schemas/UserSelectorArg'
+    TeamMemberProfile:
       type: object
       properties:
         account_id:
@@ -14233,9 +13858,9 @@ components:
           type: string
           example: "20"
         membership_type:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_membership_type'
+          $ref: '#/components/schemas/TeamMembershipType'
         name:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_name'
+          $ref: '#/components/schemas/Name'
         profile_photo_url:
           type: string
           example: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
@@ -14247,13 +13872,13 @@ components:
           - email: apple@orange.com
             is_verified: true
           items:
-            $ref: '#/components/schemas/teammembersget_info_profile_secondary_emails'
+            $ref: '#/components/schemas/SecondaryEmail'
         status:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_status'
+          $ref: '#/components/schemas/TeamMemberStatus'
         team_member_id:
           type: string
           example: dbmid:FDFSVF-DFSDF
-    teammembersget_info_role:
+    AdminTier:
       type: object
       properties:
         ".tag":
@@ -14266,10 +13891,10 @@ components:
           type: string
           example: member_info
         profile:
-          $ref: '#/components/schemas/teammembersget_info_profile'
+          $ref: '#/components/schemas/TeamMemberProfile'
         role:
-          $ref: '#/components/schemas/teammembersget_info_role'
-    members_list_body_1:
+          $ref: '#/components/schemas/AdminTier'
+    MembersListArg:
       type: object
       properties:
         include_removed:
@@ -14320,33 +13945,27 @@ components:
               ".tag": member_only
           items:
             $ref: '#/components/schemas/TeamMemberInfoV2Result'
-    list_continue_body_4:
+    MembersListContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    members_move_former_member_files_body:
+    MembersDataTransferArg:
       type: object
       properties:
         transfer_admin_id:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
+          $ref: '#/components/schemas/UserSelectorArg'
         transfer_dest_id:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
+          $ref: '#/components/schemas/UserSelectorArg'
         user:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    job_status_check_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
-    members_recover_body:
+          $ref: '#/components/schemas/UserSelectorArg'
+    MembersRecoverArg:
       type: object
       properties:
         user:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    members_remove_body_1:
+          $ref: '#/components/schemas/UserSelectorArg'
+    MembersRemoveArg:
       type: object
       properties:
         keep_account:
@@ -14356,21 +13975,15 @@ components:
           type: boolean
           example: false
         transfer_admin_id:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
+          $ref: '#/components/schemas/UserSelectorArg'
         transfer_dest_id:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
+          $ref: '#/components/schemas/UserSelectorArg'
         user:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
+          $ref: '#/components/schemas/UserSelectorArg'
         wipe_data:
           type: boolean
           example: true
-    job_status_get_body_2:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
-    teammemberssecondary_emailsadd_new_secondary_emails:
+    UserSecondaryEmailsArg:
       type: object
       properties:
         secondary_emails:
@@ -14382,8 +13995,8 @@ components:
             type: string
             example: bob2@hotmail.com
         user:
-          $ref: '#/components/schemas/teamgroupsmembersadd_user'
-    secondary_emails_add_body:
+          $ref: '#/components/schemas/UserSelectorArg'
+    AddSecondaryEmailsArg:
       type: object
       properties:
         new_secondary_emails:
@@ -14396,7 +14009,7 @@ components:
               ".tag": team_member_id
               team_member_id: dbmid:efgh5678
           items:
-            $ref: '#/components/schemas/teammemberssecondary_emailsadd_new_secondary_emails'
+            $ref: '#/components/schemas/UserSecondaryEmailsArg'
     AddSecondaryEmailsResult:
       type: object
       properties:
@@ -14420,7 +14033,7 @@ components:
               team_member_id: dbmid:efgh5678
           items:
             $ref: '#/components/schemas/UserAddResult'
-    secondary_emails_delete_body:
+    DeleteSecondaryEmailsArg:
       type: object
       properties:
         emails_to_delete:
@@ -14433,7 +14046,7 @@ components:
               ".tag": team_member_id
               team_member_id: dbmid:efgh5678
           items:
-            $ref: '#/components/schemas/teammemberssecondary_emailsadd_new_secondary_emails'
+            $ref: '#/components/schemas/UserSecondaryEmailsArg'
     DeleteSecondaryEmailsResult:
       type: object
       properties:
@@ -14451,7 +14064,7 @@ components:
               team_member_id: dbmid:efgh5678
           items:
             $ref: '#/components/schemas/UserDeleteResult'
-    secondary_emails_resend_verification_emails_body:
+    ResendVerificationEmailArg:
       type: object
       properties:
         emails_to_resend:
@@ -14464,7 +14077,7 @@ components:
               ".tag": team_member_id
               team_member_id: dbmid:efgh5678
           items:
-            $ref: '#/components/schemas/teammemberssecondary_emailsadd_new_secondary_emails'
+            $ref: '#/components/schemas/UserSecondaryEmailsArg'
     ResendVerificationEmailResult:
       type: object
       properties:
@@ -14480,32 +14093,23 @@ components:
               team_member_id: dbmid:efgh5678
           items:
             $ref: '#/components/schemas/UserResendResult'
-    members_send_welcome_email_body:
-      type: object
-      properties:
-        ".tag":
-          type: string
-          example: team_member_id
-        team_member_id:
-          type: string
-          example: dbmid:efgh5678
-    members_set_admin_permissions_body:
+    MembersSetPermissions2Arg:
       type: object
       properties:
         new_role:
           type: string
           example: member_only
         user:
-          $ref: '#/components/schemas/members_send_welcome_email_body'
-    SetAdminPermissionsResult:
+          $ref: '#/components/schemas/UserSelectorArg'
+    MembersSetPermissionsResult:
       type: object
       properties:
         role:
-          $ref: '#/components/schemas/teammembersget_info_role'
+          $ref: '#/components/schemas/AdminTier'
         team_member_id:
           type: string
           example: dbmid:9978889
-    members_set_profile_body:
+    MembersSetProfileArg:
       type: object
       properties:
         new_email:
@@ -14515,28 +14119,28 @@ components:
           type: string
           example: Smith
         user:
-          $ref: '#/components/schemas/members_send_welcome_email_body'
-    members_set_profile_photo_body:
+          $ref: '#/components/schemas/UserSelectorArg'
+    MembersSetProfilePhotoArg:
       type: object
       properties:
         photo:
           $ref: '#/components/schemas/Photo'
         user:
-          $ref: '#/components/schemas/members_send_welcome_email_body'
-    members_suspend_body:
+          $ref: '#/components/schemas/UserSelectorArg'
+    MembersDeactivateArg:
       type: object
       properties:
         user:
-          $ref: '#/components/schemas/members_send_welcome_email_body'
+          $ref: '#/components/schemas/UserSelectorArg'
         wipe_data:
           type: boolean
           example: false
-    members_unsuspend_body:
+    MembersUnsuspendArg:
       type: object
       properties:
         user:
-          $ref: '#/components/schemas/members_send_welcome_email_body'
-    namespaces_list_body:
+          $ref: '#/components/schemas/UserSelectorArg'
+    TeamNamespacesListArg:
       type: object
       properties:
         limit:
@@ -14565,13 +14169,13 @@ components:
             team_member_id: dbmid:1234567
           items:
             $ref: '#/components/schemas/NamespaceMetadata'
-    list_continue_body_5:
+    TeamNamespacesListContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    team_folder_activate_body:
+    TeamFolderIdArg:
       type: object
       properties:
         team_folder_id:
@@ -14595,13 +14199,13 @@ components:
           type: string
           example: Marketing
         status:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_status'
+          $ref: '#/components/schemas/TeamMemberStatus'
         sync_setting:
           $ref: '#/components/schemas/SyncSetting'
         team_folder_id:
           type: string
           example: "123456789"
-    team_folder_archive_body:
+    TeamFolderArchiveArg:
       type: object
       properties:
         force_async_off:
@@ -14631,19 +14235,13 @@ components:
           type: string
           example: Marketing
         status:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_status'
+          $ref: '#/components/schemas/TeamMemberStatus'
         sync_setting:
           $ref: '#/components/schemas/SyncSetting'
         team_folder_id:
           type: string
           example: "123456789"
-    archive_check_body:
-      type: object
-      properties:
-        async_job_id:
-          type: string
-          example: 34g93hh34h04y384084
-    team_folder_create_body:
+    TeamFolderCreateArg:
       type: object
       properties:
         name:
@@ -14652,7 +14250,7 @@ components:
         sync_setting:
           type: string
           example: not_synced
-    team_folder_get_info_body:
+    TeamFolderIdListArg:
       type: object
       properties:
         team_folder_ids:
@@ -14664,7 +14262,7 @@ components:
           items:
             type: string
             example: "947182"
-    team_folder_list_body:
+    TeamFolderListArg:
       type: object
       properties:
         limit:
@@ -14695,19 +14293,13 @@ components:
             team_folder_id: "123456789"
           items:
             $ref: '#/components/schemas/TeamFolderMetadata'
-    list_continue_body_6:
+    TeamFolderListContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    team_folder_permanently_delete_body:
-      type: object
-      properties:
-        team_folder_id:
-          type: string
-          example: "123456789"
-    team_folder_rename_body:
+    TeamFolderRenameArg:
       type: object
       properties:
         name:
@@ -14716,7 +14308,7 @@ components:
         team_folder_id:
           type: string
           example: "123456789"
-    teamteam_folderupdate_sync_settings_content_sync_settings:
+    ContentSyncSettingArg:
       type: object
       properties:
         id:
@@ -14725,7 +14317,7 @@ components:
         sync_setting:
           type: string
           example: not_synced
-    team_folder_update_sync_settings_body:
+    TeamFolderUpdateSyncSettingsArg:
       type: object
       properties:
         content_sync_settings:
@@ -14734,20 +14326,20 @@ components:
           - id: id:a4ayc_80_OEAAAAAAAAAXw
             sync_setting: not_synced
           items:
-            $ref: '#/components/schemas/teamteam_folderupdate_sync_settings_content_sync_settings'
+            $ref: '#/components/schemas/ContentSyncSettingArg'
         sync_setting:
           type: string
           example: not_synced
         team_folder_id:
           type: string
           example: "123456789"
-    teamfeaturesget_values_features:
+    Feature:
       type: object
       properties:
         ".tag":
           type: string
           example: upload_api_rate_limit
-    features_get_values_body:
+    FeaturesGetValuesBatchArg:
       type: object
       properties:
         features:
@@ -14756,8 +14348,8 @@ components:
           - ".tag": upload_api_rate_limit
           - ".tag": has_team_shared_dropbox
           items:
-            $ref: '#/components/schemas/teamfeaturesget_values_features'
-    FeaturesGetValuesResponse:
+            $ref: '#/components/schemas/Feature'
+    FeaturesGetValuesBatchResult:
       type: object
       properties:
         values:
@@ -14773,7 +14365,7 @@ components:
               has_team_shared_dropbox: false
           items:
             $ref: '#/components/schemas/FeatureValue'
-    TeamGetInfoResponse:
+    TeamGetInfoResult:
       type: object
       properties:
         name:
@@ -14794,8 +14386,8 @@ components:
       type: object
       properties:
         admin_profile:
-          $ref: '#/components/schemas/teammembersget_info_profile'
-    team_log_get_events_body:
+          $ref: '#/components/schemas/TeamMemberProfile'
+    GetTeamEventsArg:
       type: object
       properties:
         category:
@@ -14892,19 +14484,19 @@ components:
         has_more:
           type: boolean
           example: false
-    get_events_continue_body:
+    GetTeamEventsContinueArg:
       type: object
       properties:
         cursor:
           type: string
           example: ZtkX9_EHj3x7PMkVuFIhwKYXEpwpLwyxp9vMKomUhllil9q7eWiAu
-    usersfeaturesget_values_features:
+    UserFeature:
       type: object
       properties:
         ".tag":
           type: string
           example: paper_as_files
-    features_get_values_body_1:
+    UserFeaturesGetValuesBatchArg:
       type: object
       properties:
         features:
@@ -14913,7 +14505,7 @@ components:
           - ".tag": paper_as_files
           - ".tag": file_locking
           items:
-            $ref: '#/components/schemas/usersfeaturesget_values_features'
+            $ref: '#/components/schemas/UserFeature'
     UserFeaturesGetValuesResult:
       type: object
       properties:
@@ -14926,7 +14518,7 @@ components:
               enabled: true
           items:
             $ref: '#/components/schemas/UserFeatureValue'
-    users_get_account_body:
+    GetAccountArg:
       type: object
       properties:
         account_id:
@@ -14951,11 +14543,11 @@ components:
           type: boolean
           example: false
         name:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_name'
+          $ref: '#/components/schemas/Name'
         profile_photo_url:
           type: string
           example: https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128
-    users_get_account_batch_body:
+    GetAccountBatchArg:
       type: object
       properties:
         account_ids:
@@ -14993,7 +14585,7 @@ components:
           type: string
           example: en
         name:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_name'
+          $ref: '#/components/schemas/Name'
         referral_link:
           type: string
           example: https://db.tt/ZITNuhtI
@@ -15004,7 +14596,7 @@ components:
         team_member_id:
           type: string
           example: dbmid:AAHhy7WsR0x-u4ZCqiDl5Fz5zvuL3kmspwU
-    GetSpaceUsageResponse:
+    SpaceUsage:
       type: object
       properties:
         allocation:
@@ -15217,7 +14809,7 @@ components:
             $ref: '#/components/schemas/PropertyGroup'
         sharing_info:
           $ref: '#/components/schemas/FolderSharingInfo'
-    CreateFolderBatchResponseEntry:
+    CreateFolderBatchResultEntry:
       type: object
       properties:
         ".tag":
@@ -15233,7 +14825,7 @@ components:
           example: success
         metadata:
           $ref: '#/components/schemas/MetadataAsResponse'
-    ExportFileResponseMetadata:
+    ExportMetadata:
       type: object
       properties:
         export_hash:
@@ -15500,12 +15092,12 @@ components:
           type: string
           example: dbmid:abcd1234
         team_info:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_owner_team'
+          $ref: '#/components/schemas/Team'
     UserMembershipInfo:
       type: object
       properties:
         access_type:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy_acl_update_policy'
+          $ref: '#/components/schemas/AclUpdatePolicy'
         is_inherited:
           type: boolean
           example: false
@@ -15514,12 +15106,12 @@ components:
           example: []
           items: {}
         user:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_user'
+          $ref: '#/components/schemas/UserInfo'
     SharedFileMetadata:
       type: object
       properties:
         access_type:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_access_type'
+          $ref: '#/components/schemas/AccessLevel'
         id:
           type: string
           example: id:3kmLmQFnf1AAAAAAAAAAAw
@@ -15534,7 +15126,7 @@ components:
             type: string
             example: Jane Doe
         owner_team:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_owner_team'
+          $ref: '#/components/schemas/Team'
         path_display:
           type: string
           example: /dir/file.txt
@@ -15546,7 +15138,7 @@ components:
           example: []
           items: {}
         policy:
-          $ref: '#/components/schemas/sharingget_file_metadatabatch_result_policy'
+          $ref: '#/components/schemas/FolderPolicy'
         preview_url:
           type: string
           example: https://www.dropbox.com/scl/fi/fir9vjelf
@@ -15560,7 +15152,7 @@ components:
           type: string
           example: g:e2db7665347abcd600000000001a2b3c
         group_management_type:
-          $ref: '#/components/schemas/sharinglist_file_membersbatch_result_members_group_group_management_type'
+          $ref: '#/components/schemas/GroupManagementType'
         group_name:
           type: string
           example: Test group
@@ -15590,7 +15182,7 @@ components:
           type: string
           example: dbmid:abcd1234abcd1234abcd1234abcd1234a23
         author_member_status:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_status'
+          $ref: '#/components/schemas/TeamMemberStatus'
         content_hash:
           type: string
           example: abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234
@@ -15633,7 +15225,7 @@ components:
           type: string
           example: 2016-01-01T00:00:00Z
         status:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_status'
+          $ref: '#/components/schemas/TeamMemberStatus'
     MemberAddResult:
       type: object
       properties:
@@ -15641,9 +15233,9 @@ components:
           type: string
           example: success
         profile:
-          $ref: '#/components/schemas/teammembersget_info_profile'
+          $ref: '#/components/schemas/TeamMemberProfile'
         role:
-          $ref: '#/components/schemas/teammembersget_info_role'
+          $ref: '#/components/schemas/AdminTier'
     AddSecondaryEmailResult:
       type: object
       properties:
@@ -15651,7 +15243,7 @@ components:
           type: string
           example: success
         success:
-          $ref: '#/components/schemas/teamgroupsget_info_profile_secondary_emails'
+          $ref: '#/components/schemas/SecondaryEmail'
         unavailable:
           type: string
           example: alice@example.com
@@ -15662,7 +15254,7 @@ components:
           type: string
           example: success
         invalid_user:
-          $ref: '#/components/schemas/members_send_welcome_email_body'
+          $ref: '#/components/schemas/UserSelectorArg'
         results:
           type: array
           example:
@@ -15675,7 +15267,7 @@ components:
           items:
             $ref: '#/components/schemas/AddSecondaryEmailResult'
         user:
-          $ref: '#/components/schemas/members_send_welcome_email_body'
+          $ref: '#/components/schemas/UserSelectorArg'
     DeleteSecondaryEmailResult:
       type: object
       properties:
@@ -15704,7 +15296,7 @@ components:
           items:
             $ref: '#/components/schemas/DeleteSecondaryEmailResult'
         user:
-          $ref: '#/components/schemas/members_send_welcome_email_body'
+          $ref: '#/components/schemas/UserSelectorArg'
     ResendSecondaryEmailResult:
       type: object
       properties:
@@ -15728,7 +15320,7 @@ components:
           items:
             $ref: '#/components/schemas/ResendSecondaryEmailResult'
         user:
-          $ref: '#/components/schemas/members_send_welcome_email_body'
+          $ref: '#/components/schemas/UserSelectorArg'
     NamespaceType:
       type: object
       properties:
