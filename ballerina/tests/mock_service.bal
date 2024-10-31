@@ -23,7 +23,7 @@ http:Service mockService = service object {
     # set_profile_photo
     #
     # + return - set_profile_photo response 
-    resource function post account/set_profile_photo(@http:Payload SetProfilePhotoArg payload) returns SetProfilePhotoResult|http:Response {
+    resource function post account/set_profile_photo(SetProfilePhotoArg payload) returns SetProfilePhotoResult|http:Response {
         return {
             "profile_photo_url": "https://dl-web.dropbox.com/account_photo/get/dbaphid%3AAAHWGmIXV3sUuOmBfTz0wPsiqHUpBWvv3ZA?vers=1556069330102&size=128x128"
         };
@@ -32,7 +32,7 @@ http:Service mockService = service object {
     # create_folder
     #
     # + return - create_folder response 
-    resource function post files/create_folder_v2(@http:Payload CreateFolderArg payload) returns FolderMetadataResponse|http:Response {
+    resource function post files/create_folder_v2(CreateFolderArg payload) returns FolderMetadataResponse|http:Response {
         return {
             "metadata": {
                 "name": "math",
@@ -63,7 +63,7 @@ http:Service mockService = service object {
     # delete
     #
     # + return - delete response 
-    resource function post files/delete_v2(@http:Payload DeleteArg payload) returns MetadataResult|http:Response {
+    resource function post files/delete_v2(DeleteArg payload) returns MetadataResult|http:Response {
         return {
             "metadata": {
                 ".tag": "file",
@@ -146,7 +146,7 @@ http:Service mockService = service object {
     # get_metadata
     #
     # + return - get_metadata response 
-    resource function post files/get_metadata(@http:Payload GetMetadataArg payload) returns Metadata|http:Response {
+    resource function post files/get_metadata(GetMetadataArg payload) returns Metadata|http:Response {
         return {
             ".tag": "file",
             "name": "Prime_Numbers.txt",
@@ -187,7 +187,7 @@ http:Service mockService = service object {
     # list_folder
     #
     # + return - list_folder response 
-    resource function post files/list_folder(@http:Payload ListFolderArg payload) returns ListFolderResult|http:Response {
+    resource function post files/list_folder(ListFolderArg payload) returns ListFolderResult|http:Response {
         return {
             "entries": [
                 {
@@ -258,7 +258,7 @@ http:Service mockService = service object {
     # move
     #
     # + return - move response 
-    resource function post files/move_v2(@http:Payload RelocationArg payload) returns MetadataResult|http:Response {
+    resource function post files/move_v2(RelocationArg payload) returns MetadataResult|http:Response {
         return {
             "metadata": {
                 ".tag": "file",
@@ -301,7 +301,7 @@ http:Service mockService = service object {
     # search
     #
     # + return - search response 
-    resource function post files/search_v2(@http:Payload SearchV2Arg payload) returns SearchV2Result|http:Response {
+    resource function post files/search_v2(SearchV2Arg payload) returns SearchV2Result|http:Response {
         return {
             "matches": [
                 {
@@ -392,7 +392,7 @@ http:Service mockService = service object {
     # get_file_metadata
     #
     # + return - get_file_metadata response 
-    resource function post sharing/get_file_metadata(@http:Payload GetFileMetadataArg payload) returns SharedFileMetadata|http:Response {
+    resource function post sharing/get_file_metadata(GetFileMetadataArg payload) returns SharedFileMetadata|http:Response {
         return {
             "id": "id:3kmLmQFnf1AAAAAAAAAAAw",
             "name": "file.txt",
@@ -430,14 +430,14 @@ http:Service mockService = service object {
 
     # unshare_file
     #
-    resource function post sharing/unshare_file(@http:Payload UnshareFileArg payload) returns http:Ok {
+    resource function post sharing/unshare_file(UnshareFileArg payload) returns http:Ok {
         return http:OK;
     }
 
     # unshare_folder
     #
     # + return - unshare_folder response 
-    resource function post sharing/unshare_folder(@http:Payload UnshareFolderArg payload) returns GenericResponseWithTag|http:Response {
+    resource function post sharing/unshare_folder(UnshareFolderArg payload) returns GenericResponseWithTag|http:Response {
         return {
             ".tag": "complete"
         };
