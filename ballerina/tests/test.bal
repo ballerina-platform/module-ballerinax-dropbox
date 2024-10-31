@@ -26,7 +26,9 @@ ConnectionConfig config = {auth: authConfig};
 final Client apiClient = check new Client(config, serviceUrl = isLiveServer ? "https://api.dropboxapi.com/2" : "http://localhost:9090");
 final Client contentClient = check new Client(config, serviceUrl = isLiveServer ? "https://content.dropboxapi.com/2" : "http://localhost:9090");
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testGetSpaceUsage() returns error? {
     SpaceUsage response = check apiClient->/users/get_space_usage.post();
 
@@ -34,14 +36,18 @@ isolated function testGetSpaceUsage() returns error? {
     test:assertTrue(response?.used !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testUnshareFile() returns error? {
     check apiClient->/sharing/unshare_file.post(payload = {
         file: "id:a8oZ8ixm4ZYAAAAAAAAACA"
     });
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testDeleteV2() returns error? {
     MetadataResult response = check apiClient->/files/delete_v2.post(payload = {
         path: "/Test_Delete"
@@ -50,7 +56,9 @@ isolated function testDeleteV2() returns error? {
     test:assertTrue(response?.metadata !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testMove() returns error? {
     MetadataResult response = check apiClient->/files/move_v2.post(
         payload = {
@@ -62,7 +70,9 @@ isolated function testMove() returns error? {
     test:assertTrue(response?.metadata !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testDownload() returns error? {
     FileMetadata response = check contentClient->/files/download.post(headers = {
         dropbox\-api\-arg: "{\"path\": \"/Icons/icon.png\"}"
@@ -71,7 +81,9 @@ isolated function testDownload() returns error? {
     test:assertTrue(response?.name !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testGetFileMetadata() returns error? {
     SharedFileMetadata response = check apiClient->/sharing/get_file_metadata.post(payload = {
         file: "id:a8oZ8ixm4ZYAAAAAAAAACA"
@@ -80,7 +92,9 @@ isolated function testGetFileMetadata() returns error? {
     test:assertTrue(response?.name !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testUpload() returns error? {
     json params = {
         "path": "/Homework/math/Matrices.txt",
@@ -98,7 +112,9 @@ isolated function testUpload() returns error? {
     test:assertTrue(response?.name !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testListFolder() returns error? {
     ListFolderResult response = check apiClient->/files/list_folder.post(payload = {
         path: ""
@@ -107,7 +123,9 @@ isolated function testListFolder() returns error? {
     test:assertTrue(response?.entries !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testSearch() returns error? {
     SearchV2Result response = check apiClient->/files/search_v2.post(payload = {
         query: "Ico"
@@ -116,7 +134,9 @@ isolated function testSearch() returns error? {
     test:assertTrue(response?.matches !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testSetProfilePhoto() returns error? {
     SetProfilePhotoResult response = check apiClient->/account/set_profile_photo.post(
         payload = {
@@ -130,7 +150,9 @@ isolated function testSetProfilePhoto() returns error? {
     test:assertTrue(response?.profile_photo_url !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testGetMetadata() returns error? {
     Metadata response = check apiClient->/files/get_metadata.post(
         payload = {
@@ -144,7 +166,9 @@ isolated function testGetMetadata() returns error? {
     test:assertTrue(response?.name !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testUnshareFolder() returns error? {
     GenericResponseWithTag response = check apiClient->/sharing/unshare_folder.post(
         payload = {
@@ -156,7 +180,9 @@ isolated function testUnshareFolder() returns error? {
     test:assertTrue(response?.\.tag !is ());
 }
 
-@test:Config {}
+@test:Config {
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testCreateFolder() returns error? {
     FolderMetadataResponse response = check apiClient->/files/create_folder_v2.post(
         payload = {
