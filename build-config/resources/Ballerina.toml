@@ -5,8 +5,8 @@ name = "dropbox"
 version = "@toml.version@"
 license = ["Apache-2.0"]
 authors = ["Ballerina"]
-keywords = [] # TODO: Add keywords
-# icon = "icon.png" # TODO: Add icon
+keywords = ["Content & Files/File Management & Storage", "Cost/Free"]
+icon = "icon.png"
 repository = "https://github.com/ballerina-platform/module-ballerinax-dropbox"
 
 [build-options]
