@@ -19,17 +19,20 @@ To use the Dropbox connector, you must have access to the Dropbox API. Dropbox u
 
 ### Creating an App on the DBX Platform
 
-Navigate to https://www.dropbox.com/developers/apps and select “Create app”. 
-1. Choose an API  
-2. Choose the type of access you need 
-3. Give your app a name  
-4. Choose the Dropbox account that will own your app  
+1. Navigate to https://www.dropbox.com/developers/apps and sign up to create an account (or log in if you already have an account)
+<img src=https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-dropbox/main/docs/setup/resources/dropbox-developer-portal.png alt="Dropbox Developer Portal" style="width: 70%;">
+
+2. select “Create app”.
+<img src=https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-dropbox/main/docs/setup/resources/dropbox-apps-dashboard.png alt="Dropbox Apps Dashboard" style="width: 70%;">
+3. Choose an API, type of access you need, and give your app a name.
+<img src=https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-dropbox/main/docs/setup/resources/create-app-page.png alt="Create App Page" style="width: 70%;"> 
 
 For reference, please use the [Dropbox OAuth guide](https://www.dropbox.com/lp/developers/reference/oauth-guide).
 
 ### Generating an Access Token
 
 Once you select “Create app”, a page will load that displays information about your newly created app. To generate an access token scroll down to “OAuth 2” and click “Generate” beneath “Generated access token.” The token will display as a long string of characters. Copy this token for use with the Dropbox connector.
+<img src=https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-dropbox/main/docs/setup/resources/app-settings.png alt="App Settings" style="width: 70%;">
 
 
 ## Quickstart
