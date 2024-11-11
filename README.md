@@ -24,6 +24,7 @@ To use the Dropbox connector, you must have access to the Dropbox API. Dropbox u
 
 2. select “Create app”.
 <img src=https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-dropbox/main/docs/setup/resources/dropbox-apps-dashboard.png alt="Dropbox Apps Dashboard" style="width: 70%;">
+
 3. Choose an API, type of access you need, and give your app a name.
 <img src=https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-dropbox/main/docs/setup/resources/create-app-page.png alt="Create App Page" style="width: 70%;"> 
 
