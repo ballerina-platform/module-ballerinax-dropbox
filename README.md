@@ -52,7 +52,6 @@ import ballerinax/dropbox;
 1. Create a `Config.toml` file and, configure the obtained credentials in the above steps as follows:
 
 ```toml
-[authConfig]
 token = "<Enter your token here>"
 ```
 

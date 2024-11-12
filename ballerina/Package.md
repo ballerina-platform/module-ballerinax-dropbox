@@ -44,15 +44,14 @@ import ballerinax/dropbox;
 1. Create a `Config.toml` file and, configure the obtained credentials in the above steps as follows:
 
 ```toml
-[authConfig]
 token = "<Enter your token here>"
 ```
 
 2. Create a dropbox:ConnectionConfig with the obtained access token and initialize the connector with it.
 
 ```ballerina
-configurable http:BearerTokenConfig & readonly authConfig = ?
-dropbox:ConnectionConfig config = {auth: authConfig};
+configurable string token = ?;
+dropbox:ConnectionConfig config = {auth: {token}};
 
 final dropbox:Client dropbox = check new(config, serviceUrl = "https://api.dropboxapi.com/2");
 ```
