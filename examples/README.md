@@ -2,13 +2,18 @@
 
 The `ballerinax/dropbox` connector provides practical examples illustrating usage in various scenarios.
 
-[//]: # (TODO: Add examples)
-1. 
-2. 
+1. [Create folder in Dropbox](https://github.com/ballerina-platform/module-ballerinax-dropbox/tree/main/examples/create-folder) - Create a new folder in your Dropbox account.
+
+2. [List folder contents in Dropbox](https://github.com/ballerina-platform/module-ballerinax-dropbox/tree/main/examples/list-files-and-folders) - Retrieve and display all files and subfolders within a specific folder in your Dropbox account.
 
 ## Prerequisites
 
-[//]: # (TODO: Add prerequisites)
+1. Generate Dropbox access token to authenticate the connector as described in the [Setup guide](https://central.ballerina.io/ballerinax/dropbox/latest#setup-guide).
+2. For each example, create a `Config.toml` file to add the configuration parameters. Here's an example of how your `Config.toml` file should look like:
+
+```toml
+token = "<Access Token>"
+```
 
 ## Running an example
 
