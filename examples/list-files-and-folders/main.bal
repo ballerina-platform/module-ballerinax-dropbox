@@ -25,10 +25,6 @@ final dropbox:Client dropbox = check new ({
     }
 });
 
-public type fetch_response record {
-    string cursor;
-    boolean has_more;
-}|error?;
 
 public function main() returns error? {
     string path = ""; // Folder path for which you want to list files and folders
