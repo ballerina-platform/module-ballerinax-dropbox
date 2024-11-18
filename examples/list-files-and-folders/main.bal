@@ -33,7 +33,7 @@ public type fetch_response record {
 public function main() returns error? {
     string path = ""; // Folder path for which you want to list files and folders
 
-    io:println("First call...");
+    io:println("Making the first API call to list folder contents");
     dropbox:ListFolderResult response = check dropbox->/files/list_folder.post(payload = {path});
     print_entries(response.entries);
 
