@@ -1,6 +1,6 @@
 ## List files and folders in a Folder
 
-This use case demonstrates how the Dropbox API can be utilized to list all the files and folders in a folder in Dropbox. The Dropbox API for listing a folder involves pagination, i.e. only few items are fetched at a time alongwith a cursor which can be utilized to fetch next set of items. This example leverages this same flow to fetch all the items (files/folders) present at a given folder path.
+This use case demonstrates how the Dropbox API can be utilized to list all the files and subfolders within a specific folder in your Dropbox account. The Dropbox API for listing a folder involves pagination, i.e. only few items are fetched at a time alongwith a cursor which can be utilized to fetch next set of items. This example leverages this same flow to fetch all the items (files/folders) present at a given folder path.
 
 ## Prerequisites
 

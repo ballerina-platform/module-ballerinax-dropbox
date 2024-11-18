@@ -1,6 +1,6 @@
 ## Create a Folder
 
-This use case demonstrates how the Dropbox API can be utilized to create a folder in Dropbox.
+This use case demonstrates how the Dropbox API can be utilized to create a new folder in your Dropbox account.
 
 ## Prerequisites
 
