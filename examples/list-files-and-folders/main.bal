@@ -39,7 +39,7 @@ public function main() returns error? {
 
     boolean? has_more = response.has_more;
     while (has_more !is () && has_more && response.cursor !is ()) {
-        io:println("Next call...");
+        io:println("Making a continuation API call with cursor");
         response = check dropbox->/files/list_folder/'continue.post(payload = {cursor: response.cursor});
         print_entries(response.entries);
         has_more = response.has_more;
