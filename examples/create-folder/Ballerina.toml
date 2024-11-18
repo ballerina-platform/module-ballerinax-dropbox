@@ -4,10 +4,5 @@ name = "create_folder"
 version = "0.1.0"
 distribution = "2201.10.2"
 
-[[dependency]]
-org = "ballerinax"
-name = "dropbox"
-version = "0.1.0"
-
 [build-options]
 observabilityIncluded = true
