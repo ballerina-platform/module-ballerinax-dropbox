@@ -1,9 +1,13 @@
 ## Overview
 
-[Dropbox](https://www.dropbox.com/) cloud storage service that allows users to store, share, and manage files online.
+The Dropbox package offers APIs to connect and interact with [Dropbox API](https://www.dropbox.com/developers/documentation/http/documentation) endpoints, specifically based on [Dropbox API v2](https://dropbox.github.io/dropbox-api-v2-explorer/).
 
-The `ballerinax/dropbox` package offers APIs to connect and interact with [Dropbox API](https://www.dropbox.com/developers/documentation/http/documentation) endpoints, specifically based on [Dropbox API v2](https://dropbox.github.io/dropbox-api-v2-explorer/).
+### Key Features
 
+- Connect and interact with Dropbox API endpoints
+- Support for Dropbox API v2
+- Manage cloud storage files and folders
+- Secure access via OAuth 2.0
 
 ## Setup guide
 
